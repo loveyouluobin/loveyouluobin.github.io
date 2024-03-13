@@ -1,0 +1,1664 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<style>*{margin:0;padding:0;border:0}body{font-family:PingFang SC,PingFang,Helvetica,arial,freesans,clean,sans-serif;font-size:16px;line-height:1.5;color:#333;background-color:#fff;padding:20px;max-width:960px;margin:0 auto;transition:background-color .3s;-moz-transition:background-color .3s;-webkit-transition:background-color .3s;-o-transition:background-color .3s}html,body{height:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}p,blockquote,ul,ol,dl,table,pre{margin:15px 0}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:antialiased}h1 tt,h1 code,h2 tt,h2 code,h3 tt,h3 code,h4 tt,h4 code,h5 tt,h5 code,h6 tt,h6 code{font-size:inherit}h2,h3,h4,h5,h6{margin-top:50px}h1{font-size:28px;padding-bottom:20px;color:#000}h1:nth-of-type(1){margin-top:0}h2{font-size:26px;margin-bottom:16px;border-bottom:1px solid #ccc;color:#000}h3{font-size:22px}h4{font-size:20px}h5{font-size:18px}h6{color:#666;font-size:16px}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p{margin-top:10px}a{color:#4183c4;text-decoration:none}a:hover{text-decoration:underline}ul,ol{padding-left:40px}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}pre,code,tt{font-size:16px;font-family:Consolas,"Liberation Mono",Courier,monospace}code,tt{margin:0;padding:4px 8px;white-space:nowrap;background-color:#282c34;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:white}pre>code{margin:0;padding:0;white-space:pre;border:0;background:transparent}pre{background-color:#282c34;font-size:16px;line-height:20px;overflow:auto;padding:10px 12px;color:white;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}pre pre{margin:0;padding:2px 0;border:0}pre code,pre tt{background-color:transparent;border:0}kbd{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-image:linear-gradient(#f1f1f1,#ddd);background-repeat:repeat-x;border-color:#ccc;border-image:none;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;border-style:solid;border-width:1px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:10px;padding:1px 4px}blockquote{border-left:4px solid #3cae7c;padding:10px 15px;color:#777;background:#f1f1f1;border-top-right-radius:4px;border-bottom-right-radius:4px}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}hr{clear:both;margin:15px 0;height:0;overflow:hidden;border:0;background:transparent;border-bottom:2px solid #ddd;padding:0}table{border-collapse:collapse;border-spacing:0}table th{font-weight:bold}table th,table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}@font-face{font-family:"iconfont";src:url('https://gitee.com/yangxingcai/markdownpad2-auto-catalog/tree/master/ali-iconfont/iconfont.eot?t=1578809028779');src:url('https://gitee.com/yangxingcai/markdownpad2-auto-catalog/tree/master/ali-iconfont/iconfont.eot?t=1578809028779#iefix') format('embedded-opentype'),url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAzgAAsAAAAAF9AAAAyRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCFcgqeOJgcATYCJANUCywABCAFhG0HgV8bvxMjkpHWHpP9xUE8xjPq1Kot+onrlRld0kyftDKRH/c2/ZKYz8Hztd/v3N39IoZ5glCZbtosEZI/qnrFM81LIUQWs/mnOf2XnyAnEbgI+NYE80DFsIoikYoFS9WZJK0nFV4bIVexxLdBTYGasu0SNioe2r43ar4gbMIY+ooCCFicKwDQUS9H8twz+l6XwgopHf249moBUBK6ClmhKlxr3CUf3yWFXDH/l+hKnJYHQGpCT6ifAoAboAR0gHp6xrtBPP42782KkSOsQVv9JbtDAD9lWkj7oBEyEIJBq8KAyWlqFQjZKMTkBAvePLdlVYMhDcCFV61nXAewZr6/vIPWIQCFSwO9aMdEaQ0YaMEbhJqAw0jgBIztcWC4FmigBRiQP6v9A+gYWgzx28TkAUCVCnl0yiJ+zE/4E/zJ/hH+8f5p/kX+Bv8WP+W/21XSNfIFDATAAovmZybxKD4Z3V2oUqPOyazBuek/8yBATJCoEF58JAhJLtz4MXgIo4lTREDcgDuC8OD7kIQFXjoCYJF0xGDRdATBYumIwhIqhkpgeKEJMHzQZBgJ6AgYAh2P4Zh0GgwXdBEMN7QBhh+6BYaBUjA80LukIwzPxQxtaAmMOHQk6VDwBm1E0CQVrNIERgDmAeAOA3KPDdFvj+5G4UOBG8QJ1igsjgQ/ce5cpAjVMWEcHOe6MhuSokOYSRkXQ1VhGS46ASGXW0QUc2FaSAgkcMGSE48m2CGA1zo0lpRfbyAbxdYEtk5gMgkEiHBbopDHNxr5fIaBNLhbtKJcncAeSSFU1M4Cnp5vs0Twl5pLaGZsg0fwQVVGcoczU4L6LLSfbPRIxQC0KoCczcNVo30ytFemlCtmajuKaVrm9co7OpQGMerzjXVBkW6zmQaP/8qv0zM4Sx6tO4FtdWpcClRpGLbjvEwOxHFJOA5PFEK5l9v7iBCLS4LN717GXszLykV1IgtDUAJEZKlJUHGEXdOt3qhxoroLfr0UNKqzC3yjbha5fb64fR0DTnZgeskFb7/T3nhaJh+3L4c6ezPBJ9OR5Hk6q5nO3u/1DnZcu9US1aTGBGcQCCpDNaZk+EFANUyh9+UqGGQoMfwDhMbL1auYrrH2lCmbotRmB6bnG7dPaTyVYP8jkmrRn565rSnRcVpz6uIZpe7MvhaJzRVhOaW0/R5sSXdG21JttwtO+FCdmH4g23ElUf8ApI7jyZYdERHG41e82H1kw0W3FzkyVOfL9+VE7qRI3ePrrut/RuHrUOaho83q7WXkS23HJfHUGdXNR4+jiqaXPxc0/lHxRUq7DSP0Fk1jfrBb6zmiS+OU6dwI1Hr0LqAcp0pdV19TW89ePCViWk4/kKO0RLGoMxMNTpJtcgtYZg/G0bv4Y9iLBo0x2ZpZa5pDGnSCOpNWKDTr+bVGwxTBwFkt4Rs1ZI3BVM90KkqO/KX9u4DQe4SwCQE/T8cz93hLXxcBYWndOucY/NXliNl8MjIjH2wb6utq6rfTL5J+MZa16+gZbNGbbATmQB/F2hZJ3UTZh9qjmTvaJEfvdfTvOEo3fX83SlfDOdNWGKmZXKueYXIjyAU5AfKzESvNh3eQZQad/PRV7JJ1FNW5Zac4Q7lx+yFBhUkrM5YjujqgOG9UUHWLXa8wQLQzUF4pKql6ZKRGqfd6NTSN3uEz5fdWqEfSJp+ClnlbpkkSHFuBCRkPY0dTCRY11e5T6Iaw3tB/iJzRrLqK0rQYSYYd2AWvZOaFK/wok28QMLWyiA7v4JjMojZ3yKN8NAlyXAoZa1chdfbzh0iwdDTx6AwOYTz5lN7hMAsx4Bd0LPpGdzU7PNsQrUk/DZ3B0Aj8C7s8Dr3NZQFOY6OVFBusBhKT6R1mM6J1o9leR9tqMb3NNqgRgxNXyJzWj7TGTSHYbwE99IerNf2B3Y72eXPFK0pueNj+Em1o7+ZgZTBxkTZj7sPvmXF/BAtj7vzJ5QHe6yK+eugEwSqLJFq5r3howWt1cEhekSa0R8jcvRmhJWj6gXmZ2vbryQTI1hrG9n7LL1Qqvfq3vcNVBsbuNq99XhYz2kleVpgdM3Z4gRK8HqytZXkbnnnC7r+FzcyTHz6cZE4DLYp+Q5u5sSeZHz6tWeSEjx5BJ7LacH150paoOb1g67vQU2TtqmQQt8NIupPcWcasnm39pIKBRhZs8+zXI0Z2EpAZoyCAl3lzkYI4N8vw7Ncjq07Jh8HLKfMyYLnhOK6zUJaBDHCDulFroXRJbSD+ZEFBWZEnbjEv+FxJ0T/0KKkqtFBbHGS4OComvJBZolrbe3L7rMnxOfwc6aRMiSVlfgqjqnDUv/TZteLs07JedwpjBgczswaum9S/9S1LY1cpBs2KaaSXwJlXNoPlZtGx6fbph0Qpc7riuupf1pb3Lq/dL12Utaj3olTPYdJvicmJ+S+OHzqevz2KSp55/KDzbpix80rB4EfVDiv7ZHFKcvGpB/Z963/FUcWptqBKrLJZ9UqIJeT3uHxI+ErVLCvoUSbtXBLVI6ikeX5AiOefPZ3nFZX/KRZUZubO6DlfM5UnjdnbQsZ/AU+pJ/YIVz/ixJ/LaDhaqIzEvgwhxC2sN69E28PD0HGVe4sGlAxUiCdIalIqOP3HiNPHrOzczVJ9iC3c/Z5RxJg36vzo4YOKTlXOwP+K6zUvvG2rjbNhJ+ftKy0IDDjN/PaN6VtPDxCWdAj2eIAVdnZCrFaFsKgR/XdcJl5FviIEV62G379DZT0tCEs6BHtcaGV2djLBVc9gCqYORAIiqHj1OBRjZgJpOUeOHD4M0nNzzRGkK6ObYtVEE65ub2pX402EGnmH81qbWnmpxiM8R3Oz2aF3yOsoG72uRPB1s1vOkbe0+3BCCs7cgr8J2Razmy3ASbXp9lbZA5D3owqyee1Mrbyidu5ZNo84R2ws9kg1eAgf8ocMKath89jFrBDNG/964+5uFEO7sY2YqQN9sn4/q1fRu4FROjjo4bq2EeFdYfdbV+8vRoIHY28S0xPvBQ/alBvnf7CE8IOsF1vxD3OlAlFa2y/97UilCC7rtzJt5cpgRNGRo4ePgMD9B7mcsZzc2OCPn6upaKr77jLTvW5LzPhu9v5o9XNXtCvYvOzudbrH17C7okvkuDOg7FiGdMOhy0uH/LzRHbq8ZOgcuNXImOMoMmROUQUyaxZSgQLyLenmQL8V2wduzamKGIHsBfOmzJ+yF4xARg85Z2WfhbvwqReO4+SU1Semwv+H/WfLrGaMMitGiipMU8fUhB0//2x0NbIrq7s7rGa0JVNDJVdQrxr2nGf9sSRaN2HYC+6+yEs/xrhwnvQ3WH8oidEdKlUsFjmlpfuWNuX/PH4VKnTmlcml+bGyKFP8HCEjlhYfkjqli0WDpuDBB6XW+4JHHsrnrCFFLmgoW8qjH8xTtXWCB8j6hysA/n9QffCB95nfOVh3EK8W4pWimxGxT5P39jQ/24G5Zzt/KTzHDkqv/yjs+rUEl4Q35N9IPs2cirEXPYo1pZmwU4lzJz1Hw/7ZiLGzuaFdGwaGSoBHfJLHXjvqIifsEwvJnSTgXVFd5pFX834Ll/CHC8JXkcSu4EIc/Br4BCBwDrbCfmZnl+Ex2BMAAOAT4zsgcJ0JYNtmsAOBrgkHXErMmaRgcfaWaIOFMdcZT2GfmAsMGua1PoQ7YUzdYM1Y2fpdr4QMCb5i1Mbti3uwsvqaURzQzMmjYKlhCiMwh7Y2c4s63rOBG49+mDWZ0/d9CPaH3tg5sOO8MdRzpQpDaF0DyBnjTjVnvgroUkMtzBTxmbMT8C70x35sUNsmMRwhjg8OgjCdAQCocwUAHeqqMHDvPPL5/3wcIWTDOExgEEwMQJu7GJi4pyWwwMiDINwHJKCkgsEzYYSD+QCCmNBOVe5qSUDggqYEBmxaAIr7DWDifjeBhQD8Zw3CH4EJKArR003uclnv3CRkBXsYL0Bz8sItKTvRwG+UE8uSmPvz/WPKmjy0VbPqeECPqY0l8lR2pQgQiRzc9xZBawlCogF5qRTtYVTXYrxkxckt7XAjQUwJUvbA2CKjxhFP3LvY2fn235A0YTEp55jzjP9QkukHB61KU8L5gfhSxzwXMZuSOkW4AJ6eEBfn3iuOrNNKQLDPNEBcUVE19GCklnOJsqQ6fq77DAh4+Y6r3xf+FSEVVdMN07Id1/MfP3n67PkLe6OsMEvyxlLGda+lKhva9zi/3rVKPwL6jYwscbX5bKQcc17nZCmtE7bbDV7LFI682WQpvaIodqereOY5Wu/rjfJfChvkKrf1ZjVPfEyvj2i7WloCAAA=') format('woff2'),url('https://gitee.com/yangxingcai/markdownpad2-auto-catalog/tree/master/ali-iconfont/iconfont.woff?t=1578809028779') format('woff'),url('https://gitee.com/yangxingcai/markdownpad2-auto-catalog/tree/master/ali-iconfont/iconfont.ttf?t=1578809028779') format('truetype'),url('https://gitee.com/yangxingcai/markdownpad2-auto-catalog/tree/master/ali-iconfont/iconfont.svg?t=1578809028779#iconfont') format('svg')}.iconfont{font-family:"iconfont"!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-catalogClose:before{content:"\e64c"}.icon-night:before{content:"\e74d"}.icon-indexB:before{content:"\e743"}.icon-catalogOpen:before{content:"\e692"}.icon-search:before{content:"\e669"}.icon-process:before{content:"\e675"}.icon-color:before{content:"\e69a"}.icon-openD:before{content:"\e625"}.icon-closeD:before{content:"\e626"}.icon-closeC:before{content:"\e690"}.icon-arrLeft:before{content:"\e600"}.icon-openA:before{content:"\e60a"}.icon-cancel:before{content:"\e60d"}.icon-closeB:before{content:"\e6dd"}.icon-arrTop:before{content:"\ea03"}.icon-closeA:before{content:"\e60b"}.icon-openC:before{content:"\e601"}.icon-sun:before{content:"\e744"}.icon-openB:before{content:"\e629"}.icon-indexA:before{content:"\e65b"}
+.active{color:#3cae7c}#left-container,#right-container,#list-container{position:absolute;top:0;left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:20}#left-container{width:280px;height:100%;top:0;border-right:1px solid #ccc;z-index:21;background:#fff;transition:all .3s;-moz-transition:all .3s;-webkit-transition:all .3s;-o-transition:all .3s}#left-container .top-container,#left-container .bottom-container,#left-container #list-container{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#left-container .top-container{position:absolute;top:15px;left:0;padding:0 15px;z-index:25;width:100%;height:48px;border-bottom:1px solid #ccc;color:#999}#left-container #list-container{position:absolute;top:62px;left:0;bottom:41px;padding:0 0 0 15px;z-index:24;overflow:auto}#left-container .bottom-container{position:absolute;left:0;right:0;bottom:0;padding:0 0 0 15px;z-index:24;height:40px;border-top:1px solid #ccc}#right-container{width:100%;height:100%;padding:15px 15px 0 295px;overflow:auto;transition:all .3s;-moz-transition:all .3s;-webkit-transition:all .3s;-o-transition:all .3s}#content{width:100%;max-width:1200px;margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.catalog-button{display:inline-block;float:left;font-size:22px;line-height:34px;cursor:pointer;position:relative;z-index:30}.search-container,.search,input,textarea{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.search-container{width:100%;height:34px;padding-left:35px;position:relative}.search{display:block;width:100%;height:34px;border:1px solid #ccc;padding-left:6px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;outline:0}input,textarea{border:1px solid #ccc;padding:0 6px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;outline:0}.search-icon{position:absolute;right:6px;top:0;font-size:20px;cursor:pointer;display:none}.search-icon:hover{color:#3cae7c}.search-result{max-height:300px;background:white;margin-top:4px;padding:10px 16px;border:1px solid #ccc;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;overflow:auto;position:relative;z-index:200;color:#999;font-size:14px;line-height:1.2;-webkit-box-shadow:0 2px 4px -2px #ccc;-moz-box-shadow:0 2px 4px -2px #ccc;box-shadow:0 2px 4px -2px #ccc;display:none}.search-result a,.search-result i,.search-result span{display:block;margin:0 0 6px 0}.search-result a{cursor:pointer;color:#333}.search-result .js-active,.search-result a:hover{color:#3cae7c}.search-result i{text-align:center;font-size:26px}.search-result span{text-align:center}#list-container{width:100%}#list-container .list-wrapper{height:100%;width:100%;overflow:auto;position:relative}.list-wrapper>ul{margin:0;padding:10px 15px 10px 20px;display:block;z-index:30}.list-wrapper ul li{list-style:none;display:block;width:100%;margin:0 0 -8px 0;padding:0;cursor:pointer;line-height:26px}.list-wrapper ul li ul{margin:-6px 0 0 0;padding-left:20px;z-index:30}.list-wrapper ul li>a{display:inline-block;width:100%;margin:0;z-index:50;color:#333;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.list-wrapper ul li>a p,.list-wrapper ul li>a span{display:table-cell;word-wrap:break-word}.list-wrapper ul li>a p{padding-left:8px;word-break:normal}.list-wrapper ul li>a span{padding-left:8px;padding-right:6px;word-break:break-all}.list-wrapper ul li i{display:block;padding:5px 0 5px 4px;margin-right:-4px;float:left;font-size:16px;line-height:1;margin-top:0;margin-left:-20px;cursor:pointer;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.list-wrapper i{color:#999}.list-wrapper ul li a:hover{color:#3cae7c}.list-wrapper li i:hover{color:#3cae7c;border-color:#3cae7c}.bottom-container{position:absolute;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:30}.mode-container{height:40px}.mode-container>div{position:relative;float:left;height:40px;margin-right:30px;text-align:center;line-height:40px;color:#777;cursor:pointer}.bottom-container>div i{font-size:20px}.structure-child,.color-child{display:block;height:0;border:0;background:white;position:absolute;padding:0 15px;bottom:40px;left:-40px;margin:0;line-height:1;border-top-left-radius:3px;border-top-right-radius:3px;overflow:hidden;transition:height .3s;-moz-transition:height .3s;-webkit-transition:height .3s;-o-transition:height .3s}.structure-child li{width:68px;display:inline-block;height:16px;font-size:14px;margin-top:15px;white-space:nowrap;word-break:normal;position:relative;cursor:pointer}.structure-child li span{margin-left:18px}.structure-child li span::before,.structure-child .active span::before,.structure-child .active span::after{content:'';display:inline-block;position:absolute;box-sizing:border-box;border-radius:50%}.structure-child li span::before{top:0;left:0;width:14px;height:14px;border:1px solid #ccc;background:transparent}
+.structure-child .active span::before{top:0;left:0;width:14px;height:14px;border:2px solid #3cae7c}.structure-child .active span::after{top:4px;left:4px;width:6px;height:6px;background:#3cae7c}.structure-child li label{cursor:pointer}.color-child input{width:68px;margin:15px 0}.color-child span{display:inline-block;margin-top:15px;font-size:14px}.search:focus{outline:0;border-color:#3cae7c;color:#777}.mode-container>div:hover i,.structure ul li:hover,.catalog-button:hover{color:#3cae7c}.structure:hover .structure-child{border:1px solid #ccc;border-bottom:0;height:103px}.color:hover .color-child{border:1px solid #ccc;border-bottom:0;height:87px}.note-tips{font-size:12px;color:#999;margin-top:60px;padding-top:10px;border-top:1px solid #ccc}#content a{color:#3cae7c}#list-container a{text-decoration:none}#switch-button{width:100%;height:100%;position:absolute;right:0;top:0}#switch-button i{position:absolute;z-index:100;display:block;width:14px;height:40px;background-color:white;top:10px;right:-16px;border:1px solid #ccc;overflow:hidden;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;border-top-left-radius:0;border-bottom-left-radius:0;text-align:left;line-height:40px;font-size:14px;color:#999;cursor:pointer}#switch-button i:hover{color:#3cae7c;border-color:#3cae7c}@media screen and (max-width:1440px){#content{width:100%;max-width:960px;margin:auto}}@media screen and (max-width:750px){#left-container{width:60%;padding:0 15px 8px}#right-container{padding:15px 15px 0}}input::-webkit-input-placeholder{color:#999}input:-moz-placeholder{color:#999}input::-moz-placeholder{color:#999}input:-ms-input-placeholder{color:#999}div,ul,pre,code{scrollbar-color:#c1c1c1 #f1f1f1;scrollbar-track-color:#c1c1c1;scrollbar-button-color:#c1c1c1;-ms-scrollbar-track-color:#c1c1c1;-ms-scrollbar-button-color:#c1c1c1}div::-webkit-scrollbar,ul::-webkit-scrollbar,pre::-webkit-scrollbar,code::-webkit-scrollbar{width:4px;height:4px}body::-webkit-scrollbar,#right-container::-webkit-scrollbar{width:10px;height:10px}div::-webkit-scrollbar-track,ul::-webkit-scrollbar-track,pre::-webkit-scrollbar-track,code::-webkit-scrollbar-track{background-color:#f1f1f1}div::-webkit-scrollbar-thumb,ul::-webkit-scrollbar-thumb,pre::-webkit-scrollbar-thumb,code::-webkit-scrollbar-thumb{border-radius:2px;background-color:#c1c1c1}body::-webkit-scrollbar-thumb,#right-container::-webkit-scrollbar-thumb{border-radius:5px}div::-webkit-scrollbar-button,ul::-webkit-scrollbar-button,pre::-webkit-scrollbar-button,code::-webkit-scrollbar-button{display:none}div::-webkit-scrollbar-corner,ul::-webkit-scrollbar-corner,pre::-webkit-scrollbar-corner,code::-webkit-scrollbar-corner{background:#c1c1c1}.change-red{color:#3cae7c}.js-switch-button{width:0;padding:0}.js-switch-button .top-container,.js-switch-button #list-container,.js-switch-button .bottom-container{padding:0;display:none}.full-padding{padding:15px 15px 0}.js-close,.list-wrapper ul li a .js-close{display:none}.js-open{display:block}.js-active,.js-active>i,.js-active>a,.js-active>a p,.js-active>a span,.js-night-view .search-result .js-active{color:#3cae7c}#list-container .js-active>a{background:#f1f1f1}#list-container .js-active>i{padding-left:4px;padding-right:6px;margin-right:-6px;background:#f1f1f1}.js-night-view,.js-night-view h1,.js-night-view h2,.js-night-view h3,.js-night-view h4,.js-night-view h5,.js-night-view h6,.js-night-view div,.js-night-view ul,.js-night-view li,.js-night-view ol,.js-night-view dl,.js-night-view dt,.js-night-view dd,.js-night-view a,.js-night-view p,.js-night-view span,.js-night-view input,.js-night-view textarea,.js-night-view .search,.js-night-view .search-result,.js-night-view .search-result a,.js-night-view .list-wrapper ul li>a,.js-night-view blockquote,.js-night-view pre,.js-night-view code,.js-night-view tt{color:#fff}.js-night-view pre pre{margin:0;padding:2px 0;border:0}.js-night-view input:-ms-input-placeholder,.js-night-view input::-moz-placeholder,.js-night-view input:-moz-placeholder,.js-night-view input::-webkit-input-placeholder{color:#c3c3c3c3}.js-night-view,.js-night-view #left-container,.js-night-view input,.js-night-view .mode-container>div,.js-night-view .structure-child,.js-night-view .search-result,.js-night-view .color-child,.js-night-view #switch-button i{background-color:#212123}.js-night-view h1,.js-night-view h2,.js-night-view h3,.js-night-view h4,.js-night-view h5,.js-night-view h6,.js-night-view div,.js-night-view ul,.js-night-view li,.js-night-view ol,.js-night-view dl,.js-night-view dt,.js-night-view dd,.js-night-view a,.js-night-view p,.js-night-view span,.js-night-view input,.js-night-view textarea,.js-night-view #left-container,.js-night-view #left-container .top-container,.js-night-view .search,.js-night-view .search-result,.js-night-view #left-container .bottom-container,.js-night-view #left-container .bottom-container div,.js-night-view #left-container .bottom-container ul,.js-night-view #switch-button i,.js-night-view table th,.js-night-view table td,.js-night-view .note-tips{border-color:#3e3d42}
+.js-night-view #list-container .js-active>a,.js-night-view #list-container .js-active>i{background:#3e3d42}.js-night-view .list-wrapper li i:hover,.js-night-view .list-wrapper li a:hover p,.js-night-view .list-wrapper li a:hover span{color:#3cae7c;border-color:#3cae7c}.js-night-view .js-active>i,.js-night-view .js-active>a,.js-night-view .js-active>a p,.js-night-view .js-active>a span,.js-night-view .search-result a:hover{color:#3cae7c}.js-night-view #switch-button i:hover{color:#3cae7c;border-color:#3cae7c}.js-night-view .search:focus{border-color:#3cae7c}.js-night-view .search-result{-webkit-box-shadow:0 2px 4px -2px #3e3d42;-moz-box-shadow:0 2px 4px -2px #3e3d42;box-shadow:0 2px 4px -2px #3e3d42}.js-night-view table tr{border-top:1px solid #3e3d42;background-color:#212123}.js-night-view table tr:nth-child(2n){background-color:#1c1b20}.js-night-view pre,.js-night-view code,.js-night-view tt{background-color:#131313;border:1px solid #3e3d42}.js-night-view pre code,.js-night-view pre tt{background-color:transparent;border:0}.js-night-view kbd{background-color:#131313;background-image:linear-gradient(#1c1b20,#212123);border-color:#3e3d42}.js-night-view blockquote{border-left:4px solid #3cae7c;background:#3e3d42}.js-night-view div,.js-night-view ul,.js-night-view pre,.js-night-view code{scrollbar-color:#3e3d42 #212123;scrollbar-track-color:#3e3d42;scrollbar-arrow-color:#3e3d42;-ms-scrollbar-track-color:#3e3d42;-ms-scrollbar-arrow-color:#3e3d42}.js-night-view div::-webkit-scrollbar-track,.js-night-view ul::-webkit-scrollbar-track,.js-night-view pre::-webkit-scrollbar-track,.js-night-view code::-webkit-scrollbar-track{background-color:#212123}.js-night-view div::-webkit-scrollbar-thumb,.js-night-view ul::-webkit-scrollbar-thumb,.js-night-view pre::-webkit-scrollbar-thumb,.js-night-view code::-webkit-scrollbar-thumb{border-radius:2px;background-color:#3e3d42}.js-night-view::-webkit-scrollbar-thumb,.js-night-view #right-container::-webkit-scrollbar-thumb{border-radius:5px;background-color:#3e3d42}.js-night-view div::-webkit-scrollbar-corner,.js-night-view ul::-webkit-scrollbar-corner,.js-night-view pre::-webkit-scrollbar-corner,.js-night-view code::-webkit-scrollbar-corner{background:#3e3d42}.js-night-view strong{color:#3cae7c}.hljs,.js-night-view .hljs{display:block;overflow-x:auto;color:#abb2bf;background:#282c34}.js-night-view .hljs{background:#131313}.hljs-comment,.hljs-quote,.js-night-view .hljs-comment,.js-night-view .hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula,.js-night-view .hljs-doctag,.js-night-view .hljs-keyword,.js-night-view .hljs-formula{color:#c678dd}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst,.js-night-view .hljs-section,.js-night-view .hljs-name,.js-night-view .hljs-selector-tag,.js-night-view .hljs-deletion,.js-night-view .hljs-subst{color:#e06c75}.hljs-literal,.js-night-view .hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string,.js-night-view .hljs-string,.js-night-view .hljs-regexp,.js-night-view .hljs-addition,.js-night-view .hljs-attribute,.js-night-view .hljs-meta-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title,.js-night-view .hljs-built_in,.js-night-view .hljs-class .hljs-title{color:#e6c07b}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number,.js-night-view .hljs-attr,.js-night-view .hljs-variable,.js-night-view .hljs-template-variable,.js-night-view .hljs-type,.js-night-view .hljs-selector-class,.js-night-view .hljs-selector-attr,.js-night-view .hljs-selector-pseudo,.js-night-view .hljs-number{color:#d19a66}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title,.js-night-view .hljs-symbol,.js-night-view .hljs-bullet,.js-night-view .hljs-link,.js-night-view .hljs-meta,.js-night-view .hljs-selector-id,.js-night-view .hljs-title{color:#61aeee}.hljs-emphasis,.js-night-view .hljs-emphasis{font-style:italic}.hljs-strong,.js-night-view .hljs-strong{font-weight:bold}.hljs-link,.js-night-view .hljs-link{text-decoration:underline}</style><script>!function(e){var n="object"==typeof window&&window||"object"==typeof self&&self;"undefined"==typeof exports||exports.nodeType?n&&(n.hljs=e({}),"function"==typeof define&&define.amd&&define([],function(){return n.hljs})):e(exports)}(function(a){var f=[],o=Object.keys,N={},g={},_=!0,n=/^(no-?highlight|plain|text)$/i,E=/\blang(?:uage)?-([\w-]+)\b/i,t=/((^(<[^>]+>|\t|)+|(?:\n)))/gm,r={case_insensitive:"cI",lexemes:"l",contains:"c",keywords:"k",subLanguage:"sL",className:"cN",begin:"b",beginKeywords:"bK",end:"e",endsWithParent:"eW",illegal:"i",excludeBegin:"eB",excludeEnd:"eE",returnBegin:"rB",returnEnd:"rE",variants:"v",IDENT_RE:"IR",UNDERSCORE_IDENT_RE:"UIR",NUMBER_RE:"NR",C_NUMBER_RE:"CNR",BINARY_NUMBER_RE:"BNR",RE_STARTERS_RE:"RSR",BACKSLASH_ESCAPE:"BE",APOS_STRING_MODE:"ASM",QUOTE_STRING_MODE:"QSM",PHRASAL_WORDS_MODE:"PWM",C_LINE_COMMENT_MODE:"CLCM",C_BLOCK_COMMENT_MODE:"CBCM",HASH_COMMENT_MODE:"HCM",NUMBER_MODE:"NM",C_NUMBER_MODE:"CNM",BINARY_NUMBER_MODE:"BNM",CSS_NUMBER_MODE:"CSSNM",REGEXP_MODE:"RM",TITLE_MODE:"TM",UNDERSCORE_TITLE_MODE:"UTM",COMMENT:"C",beginRe:"bR",endRe:"eR",illegalRe:"iR",lexemesRe:"lR",terminators:"t",terminator_end:"tE"},C="</span>",m="Could not find the language '{}', did you forget to load/include a language module?",O={classPrefix:"hljs-",tabReplace:null,useBR:!1,languages:void 0},c="of and for in not or if then".split(" ");function B(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function d(e){return e.nodeName.toLowerCase()}function R(e){return n.test(e)}function i(e){var n,t={},r=Array.prototype.slice.call(arguments,1);for(n in e)t[n]=e[n];return r.forEach(function(e){for(n in e)t[n]=e[n]}),t}function p(e){var a=[];return function e(n,t){for(var r=n.firstChild;r;r=r.nextSibling)3===r.nodeType?t+=r.nodeValue.length:1===r.nodeType&&(a.push({event:"start",offset:t,node:r}),t=e(r,t),d(r).match(/br|hr|img|input/)||a.push({event:"stop",offset:t,node:r}));return t}(e,0),a}function v(e,n,t){var r=0,a="",i=[];function o(){return e.length&&n.length?e[0].offset!==n[0].offset?e[0].offset<n[0].offset?e:n:"start"===n[0].event?e:n:e.length?e:n}function c(e){a+="<"+d(e)+f.map.call(e.attributes,function(e){return" "+e.nodeName+'="'+B(e.value).replace(/"/g,"&quot;")+'"'}).join("")+">"}function l(e){a+="</"+d(e)+">"}function u(e){("start"===e.event?c:l)(e.node)}for(;e.length||n.length;){var s=o();if(a+=B(t.substring(r,s[0].offset)),r=s[0].offset,s===e){for(i.reverse().forEach(l);u(s.splice(0,1)[0]),(s=o())===e&&s.length&&s[0].offset===r;);i.reverse().forEach(c)}else"start"===s[0].event?i.push(s[0].node):i.pop(),u(s.splice(0,1)[0])}return a+B(t.substr(r))}function l(n){return n.v&&!n.cached_variants&&(n.cached_variants=n.v.map(function(e){return i(n,{v:null},e)})),n.cached_variants?n.cached_variants:function e(n){return!!n&&(n.eW||e(n.starts))}(n)?[i(n,{starts:n.starts?i(n.starts):null})]:Object.isFrozen(n)?[i(n)]:[n]}function u(e){if(r&&!e.langApiRestored){for(var n in e.langApiRestored=!0,r)e[n]&&(e[r[n]]=e[n]);(e.c||[]).concat(e.v||[]).forEach(u)}}function M(n,t){var i={};return"string"==typeof n?r("keyword",n):o(n).forEach(function(e){r(e,n[e])}),i;function r(a,e){t&&(e=e.toLowerCase()),e.split(" ").forEach(function(e){var n,t,r=e.split("|");i[r[0]]=[a,(n=r[0],(t=r[1])?Number(t):function(e){return-1!=c.indexOf(e.toLowerCase())}(n)?0:1)]})}}function x(r){function s(e){return e&&e.source||e}function f(e,n){return new RegExp(s(e),"m"+(r.cI?"i":"")+(n?"g":""))}function a(a){var i,e,o={},c=[],l={},t=1;function n(e,n){o[t]=e,c.push([e,n]),t+=new RegExp(n.toString()+"|").exec("").length-1+1}for(var r=0;r<a.c.length;r++){n(e=a.c[r],e.bK?"\\.?(?:"+e.b+")\\.?":e.b)}a.tE&&n("end",a.tE),a.i&&n("illegal",a.i);var u=c.map(function(e){return e[1]});return i=f(function(e,n){for(var t=/\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./,r=0,a="",i=0;i<e.length;i++){var o=r+=1,c=s(e[i]);for(0<i&&(a+=n),a+="(";0<c.length;){var l=t.exec(c);if(null==l){a+=c;break}a+=c.substring(0,l.index),c=c.substring(l.index+l[0].length),"\\"==l[0][0]&&l[1]?a+="\\"+String(Number(l[1])+o):(a+=l[0],"("==l[0]&&r++)}a+=")"}return a}(u,"|"),!0),l.lastIndex=0,l.exec=function(e){var n;if(0===c.length)return null;i.lastIndex=l.lastIndex;var t=i.exec(e);if(!t)return null;for(var r=0;r<t.length;r++)if(null!=t[r]&&null!=o[""+r]){n=o[""+r];break}return"string"==typeof n?(t.type=n,t.extra=[a.i,a.tE]):(t.type="begin",t.rule=n),t},l}if(r.c&&-1!=r.c.indexOf("self")){if(!_)throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");r.c=r.c.filter(function(e){return"self"!=e})}!function n(t,e){t.compiled||(t.compiled=!0,t.k=t.k||t.bK,t.k&&(t.k=M(t.k,r.cI)),t.lR=f(t.l||/\w+/,!0),e&&(t.bK&&(t.b="\\b("+t.bK.split(" ").join("|")+")\\b"),t.b||(t.b=/\B|\b/),t.bR=f(t.b),t.endSameAsBegin&&(t.e=t.b),t.e||t.eW||(t.e=/\B|\b/),t.e&&(t.eR=f(t.e)),t.tE=s(t.e)||"",t.eW&&e.tE&&(t.tE+=(t.e?"|":"")+e.tE)),t.i&&(t.iR=f(t.i)),null==t.relevance&&(t.relevance=1),t.c||(t.c=[]),t.c=Array.prototype.concat.apply([],t.c.map(function(e){return l("self"===e?t:e)})),t.c.forEach(function(e){n(e,t)}),t.starts&&n(t.starts,e),t.t=a(t))}(r)}function S(n,i,a,e){function c(e,n,t,r){if(!t&&""===n)return"";if(!e)return n;var a='<span class="'+(r?"":O.classPrefix);return(a+=e+'">')+n+(t?"":C)}function o(){R+=null!=E.sL?function(){var e="string"==typeof E.sL;if(e&&!N[E.sL])return B(p);var n=e?S(E.sL,p,!0,d[E.sL]):T(p,E.sL.length?E.sL:void 0);return 0<E.relevance&&(v+=n.relevance),e&&(d[E.sL]=n.top),c(n.language,n.value,!1,!0)}():function(){var e,n,t,r,a,i,o;if(!E.k)return B(p);for(r="",n=0,E.lR.lastIndex=0,t=E.lR.exec(p);t;)r+=B(p.substring(n,t.index)),a=E,i=t,o=g.cI?i[0].toLowerCase():i[0],(e=a.k.hasOwnProperty(o)&&a.k[o])?(v+=e[1],r+=c(e[0],B(t[0]))):r+=B(t[0]),n=E.lR.lastIndex,t=E.lR.exec(p);return r+B(p.substr(n))}(),p=""}function l(e){R+=e.cN?c(e.cN,"",!0):"",E=Object.create(e,{parent:{value:E}})}function u(e){var n=e[0],t=e.rule;return t&&t.endSameAsBegin&&(t.eR=new RegExp(n.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&"),"m")),t.skip?p+=n:(t.eB&&(p+=n),o(),t.rB||t.eB||(p=n)),l(t),t.rB?0:n.length}function s(e){var n=e[0],t=i.substr(e.index),r=function e(n,t){if(r=n.eR,a=t,(i=r&&r.exec(a))&&0===i.index){for(;n.endsParent&&n.parent;)n=n.parent;return n}var r,a,i;if(n.eW)return e(n.parent,t)}(E,t);if(r){var a=E;for(a.skip?p+=n:(a.rE||a.eE||(p+=n),o(),a.eE&&(p=n));E.cN&&(R+=C),E.skip||E.sL||(v+=E.relevance),(E=E.parent)!==r.parent;);return r.starts&&(r.endSameAsBegin&&(r.starts.eR=r.eR),l(r.starts)),a.rE?0:n.length}}var f={};function t(e,n){var t=n&&n[0];if(p+=e,null==t)return o(),0;if("begin"==f.type&&"end"==n.type&&f.index==n.index&&""===t)return p+=i.slice(n.index,n.index+1),1;if("begin"===(f=n).type)return u(n);if("illegal"===n.type&&!a)throw new Error('Illegal lexeme "'+t+'" for mode "'+(E.cN||"<unnamed>")+'"');if("end"===n.type){var r=s(n);if(null!=r)return r}return p+=t,t.length}var g=D(n);if(!g)throw console.error(m.replace("{}",n)),new Error('Unknown language: "'+n+'"');x(g);var r,E=e||g,d={},R="";for(r=E;r!==g;r=r.parent)r.cN&&(R=c(r.cN,"",!0)+R);var p="",v=0;try{for(var M,b,h=0;E.t.lastIndex=h,M=E.t.exec(i);)b=t(i.substring(h,M.index),M),h=M.index+b;for(t(i.substr(h)),r=E;r.parent;r=r.parent)r.cN&&(R+=C);return{relevance:v,value:R,i:!1,language:n,top:E}}catch(e){if(e.message&&-1!==e.message.indexOf("Illegal"))return{i:!0,relevance:0,value:B(i)};if(_)return{relevance:0,value:B(i),language:n,top:E,errorRaised:e};throw e}}function T(t,e){e=e||O.languages||o(N);var r={relevance:0,value:B(t)},a=r;return e.filter(D).filter(L).forEach(function(e){var n=S(e,t,!1);n.language=e,n.relevance>a.relevance&&(a=n),n.relevance>r.relevance&&(a=r,r=n)}),a.language&&(r.second_best=a),r}function b(e){return O.tabReplace||O.useBR?e.replace(t,function(e,n){return O.useBR&&"\n"===e?"<br>":O.tabReplace?n.replace(/\t/g,O.tabReplace):""}):e}function s(e){var n,t,r,a,i,o,c,l,u,s,f=function(e){var n,t,r,a,i=e.className+" ";if(i+=e.parentNode?e.parentNode.className:"",t=E.exec(i)){var o=D(t[1]);return o||(console.warn(m.replace("{}",t[1])),console.warn("Falling back to no-highlight mode for this block.",e)),o?t[1]:"no-highlight"}for(n=0,r=(i=i.split(/\s+/)).length;n<r;n++)if(R(a=i[n])||D(a))return a}(e);R(f)||(O.useBR?(n=document.createElement("div")).innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ \/]*>/g,"\n"):n=e,i=n.textContent,r=f?S(f,i,!0):T(i),(t=p(n)).length&&((a=document.createElement("div")).innerHTML=r.value,r.value=v(t,p(a),i)),r.value=b(r.value),e.innerHTML=r.value,e.className=(o=e.className,c=f,l=r.language,u=c?g[c]:l,s=[o.trim()],o.match(/\bhljs\b/)||s.push("hljs"),-1===o.indexOf(u)&&s.push(u),s.join(" ").trim()),e.result={language:r.language,re:r.relevance},r.second_best&&(e.second_best={language:r.second_best.language,re:r.second_best.relevance}))}function h(){if(!h.called){h.called=!0;var e=document.querySelectorAll("pre code");f.forEach.call(e,s)}}var w={disableAutodetect:!0};function D(e){return e=(e||"").toLowerCase(),N[e]||N[g[e]]}function L(e){var n=D(e);return n&&!n.disableAutodetect}return a.highlight=S,a.highlightAuto=T,a.fixMarkup=b,a.highlightBlock=s,a.configure=function(e){O=i(O,e)},a.initHighlighting=h,a.initHighlightingOnLoad=function(){window.addEventListener("DOMContentLoaded",h,!1),window.addEventListener("load",h,!1)},a.registerLanguage=function(n,e){var t;try{t=e(a)}catch(e){if(console.error("Language definition for '{}' could not be registered.".replace("{}",n)),!_)throw e;console.error(e),t=w}u(N[n]=t),t.rawDefinition=e.bind(null,a),t.aliases&&t.aliases.forEach(function(e){g[e]=n})},a.listLanguages=function(){return o(N)},a.getLanguage=D,a.requireLanguage=function(e){var n=D(e);if(n)return n;throw new Error("The '{}' language is required, but not loaded.".replace("{}",e))},a.autoDetection=L,a.inherit=i,a.debugMode=function(){_=!1},a.IR=a.IDENT_RE="[a-zA-Z]\\w*",a.UIR=a.UNDERSCORE_IDENT_RE="[a-zA-Z_]\\w*",a.NR=a.NUMBER_RE="\\b\\d+(\\.\\d+)?",a.CNR=a.C_NUMBER_RE="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",a.BNR=a.BINARY_NUMBER_RE="\\b(0b[01]+)",a.RSR=a.RE_STARTERS_RE="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",a.BE=a.BACKSLASH_ESCAPE={b:"\\\\[\\s\\S]",relevance:0},a.ASM=a.APOS_STRING_MODE={cN:"string",b:"'",e:"'",i:"\\n",c:[a.BE]},a.QSM=a.QUOTE_STRING_MODE={cN:"string",b:'"',e:'"',i:"\\n",c:[a.BE]},a.PWM=a.PHRASAL_WORDS_MODE={b:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},a.C=a.COMMENT=function(e,n,t){var r=a.inherit({cN:"comment",b:e,e:n,c:[]},t||{});return r.c.push(a.PWM),r.c.push({cN:"doctag",b:"(?:TODO|FIXME|NOTE|BUG|XXX):",relevance:0}),r},a.CLCM=a.C_LINE_COMMENT_MODE=a.C("//","$"),a.CBCM=a.C_BLOCK_COMMENT_MODE=a.C("/\\*","\\*/"),a.HCM=a.HASH_COMMENT_MODE=a.C("#","$"),a.NM=a.NUMBER_MODE={cN:"number",b:a.NR,relevance:0},a.CNM=a.C_NUMBER_MODE={cN:"number",b:a.CNR,relevance:0},a.BNM=a.BINARY_NUMBER_MODE={cN:"number",b:a.BNR,relevance:0},a.CSSNM=a.CSS_NUMBER_MODE={cN:"number",b:a.NR+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",relevance:0},a.RM=a.REGEXP_MODE={cN:"regexp",b:/\//,e:/\/[gimuy]*/,i:/\n/,c:[a.BE,{b:/\[/,e:/\]/,relevance:0,c:[a.BE]}]},a.TM=a.TITLE_MODE={cN:"title",b:a.IR,relevance:0},a.UTM=a.UNDERSCORE_TITLE_MODE={cN:"title",b:a.UIR,relevance:0},a.METHOD_GUARD={b:"\\.\\s*"+a.UIR,relevance:0},[a.BE,a.ASM,a.QSM,a.PWM,a.C,a.CLCM,a.CBCM,a.HCM,a.NM,a.CNM,a.BNM,a.CSSNM,a.RM,a.TM,a.UTM,a.METHOD_GUARD].forEach(function(e){!function n(t){Object.freeze(t);var r="function"==typeof t;Object.getOwnPropertyNames(t).forEach(function(e){!t.hasOwnProperty(e)||null===t[e]||"object"!=typeof t[e]&&"function"!=typeof t[e]||r&&("caller"===e||"callee"===e||"arguments"===e)||Object.isFrozen(t[e])||n(t[e])});return t}(e)}),a});hljs.registerLanguage("scss",function(e){var t="@[a-z-]+",r={cN:"variable",b:"(\\$[a-zA-Z-][a-zA-Z0-9_-]*)\\b"},i={cN:"number",b:"#[0-9A-Fa-f]+"};e.CSSNM,e.QSM,e.ASM,e.CBCM;return{cI:!0,i:"[=/|']",c:[e.CLCM,e.CBCM,{cN:"selector-id",b:"\\#[A-Za-z0-9_-]+",relevance:0},{cN:"selector-class",b:"\\.[A-Za-z0-9_-]+",relevance:0},{cN:"selector-attr",b:"\\[",e:"\\]",i:"$"},{cN:"selector-tag",b:"\\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video)\\b",relevance:0},{cN:"selector-pseudo",b:":(visited|valid|root|right|required|read-write|read-only|out-range|optional|only-of-type|only-child|nth-of-type|nth-last-of-type|nth-last-child|nth-child|not|link|left|last-of-type|last-child|lang|invalid|indeterminate|in-range|hover|focus|first-of-type|first-line|first-letter|first-child|first|enabled|empty|disabled|default|checked|before|after|active)"},{cN:"selector-pseudo",b:"::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)"},r,{cN:"attribute",b:"\\b(src|z-index|word-wrap|word-spacing|word-break|width|widows|white-space|visibility|vertical-align|unicode-bidi|transition-timing-function|transition-property|transition-duration|transition-delay|transition|transform-style|transform-origin|transform|top|text-underline-position|text-transform|text-shadow|text-rendering|text-overflow|text-indent|text-decoration-style|text-decoration-line|text-decoration-color|text-decoration|text-align-last|text-align|tab-size|table-layout|right|resize|quotes|position|pointer-events|perspective-origin|perspective|page-break-inside|page-break-before|page-break-after|padding-top|padding-right|padding-left|padding-bottom|padding|overflow-y|overflow-x|overflow-wrap|overflow|outline-width|outline-style|outline-offset|outline-color|outline|orphans|order|opacity|object-position|object-fit|normal|none|nav-up|nav-right|nav-left|nav-index|nav-down|min-width|min-height|max-width|max-height|mask|marks|margin-top|margin-right|margin-left|margin-bottom|margin|list-style-type|list-style-position|list-style-image|list-style|line-height|letter-spacing|left|justify-content|initial|inherit|ime-mode|image-orientation|image-resolution|image-rendering|icon|hyphens|height|font-weight|font-variant-ligatures|font-variant|font-style|font-stretch|font-size-adjust|font-size|font-language-override|font-kerning|font-feature-settings|font-family|font|float|flex-wrap|flex-shrink|flex-grow|flex-flow|flex-direction|flex-basis|flex|filter|empty-cells|display|direction|cursor|counter-reset|counter-increment|content|column-width|column-span|column-rule-width|column-rule-style|column-rule-color|column-rule|column-gap|column-fill|column-count|columns|color|clip-path|clip|clear|caption-side|break-inside|break-before|break-after|box-sizing|box-shadow|box-decoration-break|bottom|border-width|border-top-width|border-top-style|border-top-right-radius|border-top-left-radius|border-top-color|border-top|border-style|border-spacing|border-right-width|border-right-style|border-right-color|border-right|border-radius|border-left-width|border-left-style|border-left-color|border-left|border-image-width|border-image-source|border-image-slice|border-image-repeat|border-image-outset|border-image|border-color|border-collapse|border-bottom-width|border-bottom-style|border-bottom-right-radius|border-bottom-left-radius|border-bottom-color|border-bottom|border|background-size|background-repeat|background-position|background-origin|background-image|background-color|background-clip|background-attachment|background-blend-mode|background|backface-visibility|auto|animation-timing-function|animation-play-state|animation-name|animation-iteration-count|animation-fill-mode|animation-duration|animation-direction|animation-delay|animation|align-self|align-items|align-content)\\b",i:"[^\\s]"},{b:"\\b(whitespace|wait|w-resize|visible|vertical-text|vertical-ideographic|uppercase|upper-roman|upper-alpha|underline|transparent|top|thin|thick|text|text-top|text-bottom|tb-rl|table-header-group|table-footer-group|sw-resize|super|strict|static|square|solid|small-caps|separate|se-resize|scroll|s-resize|rtl|row-resize|ridge|right|repeat|repeat-y|repeat-x|relative|progress|pointer|overline|outside|outset|oblique|nowrap|not-allowed|normal|none|nw-resize|no-repeat|no-drop|newspaper|ne-resize|n-resize|move|middle|medium|ltr|lr-tb|lowercase|lower-roman|lower-alpha|loose|list-item|line|line-through|line-edge|lighter|left|keep-all|justify|italic|inter-word|inter-ideograph|inside|inset|inline|inline-block|inherit|inactive|ideograph-space|ideograph-parenthesis|ideograph-numeric|ideograph-alpha|horizontal|hidden|help|hand|groove|fixed|ellipsis|e-resize|double|dotted|distribute|distribute-space|distribute-letter|distribute-all-lines|disc|disabled|default|decimal|dashed|crosshair|collapse|col-resize|circle|char|center|capitalize|break-word|break-all|bottom|both|bolder|bold|block|bidi-override|below|baseline|auto|always|all-scroll|absolute|table|table-cell)\\b"},{b:":",e:";",c:[r,i,e.CSSNM,e.QSM,e.ASM,{cN:"meta",b:"!important"}]},{b:"@(page|font-face)",l:t,k:"@page @font-face"},{b:"@",e:"[{;]",rB:!0,k:"and or not only",c:[{b:t,cN:"keyword"},r,e.QSM,e.ASM,i,e.CSSNM]}]}});hljs.registerLanguage("cpp",function(e){var t={cN:"keyword",b:"\\b[a-z\\d_]*_t\\b"},r={cN:"string",v:[{b:'(u8?|U|L)?"',e:'"',i:"\\n",c:[e.BE]},{b:"(u8?|U|L)?'(\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)|.)",e:"'",i:"."},{b:/(?:u8?|U|L)?R"([^()\\ ]{0,16})\((?:.|\n)*?\)\1"/}]},a={cN:"number",v:[{b:"\\b(0b[01']+)"},{b:"(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)"},{b:"(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"}],relevance:0},i={cN:"meta",b:/#\s*[a-z]+\b/,e:/$/,k:{"meta-keyword":"if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"},c:[{b:/\\\n/,relevance:0},e.inherit(r,{cN:"meta-string"}),{cN:"meta-string",b:/<.*?>/,e:/$/,i:"\\n"},e.CLCM,e.CBCM]},s=e.IR+"\\s*\\(",c={keyword:"int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace unsigned long volatile static protected bool template mutable if public friend do goto auto void enum else break extern using asm case typeid wchar_tshort reinterpret_cast|10 default double register explicit signed typename try this switch continue inline delete alignas alignof constexpr consteval constinit decltype concept co_await co_return co_yield requires noexcept static_assert thread_local restrict final override atomic_bool atomic_char atomic_schar atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong atomic_ullong new throw return and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq",built_in:"std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr _Bool complex _Complex imaginary _Imaginary",literal:"true false nullptr NULL"},n=[t,e.CLCM,e.CBCM,a,r];return{aliases:["c","cc","h","c++","h++","hpp","hh","hxx","cxx"],k:c,i:"</",c:n.concat([i,{b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:c,c:["self",t]},{b:e.IR+"::",k:c},{v:[{b:/=/,e:/;/},{b:/\(/,e:/\)/},{bK:"new throw return else",e:/;/}],k:c,c:n.concat([{b:/\(/,e:/\)/,k:c,c:n.concat(["self"]),relevance:0}]),relevance:0},{cN:"function",b:"("+e.IR+"[\\*&\\s]+)+"+s,rB:!0,e:/[{;=]/,eE:!0,k:c,i:/[^\w\s\*&]/,c:[{b:s,rB:!0,c:[e.TM],relevance:0},{cN:"params",b:/\(/,e:/\)/,k:c,relevance:0,c:[e.CLCM,e.CBCM,r,a,t,{b:/\(/,e:/\)/,k:c,relevance:0,c:["self",e.CLCM,e.CBCM,r,a,t]}]},e.CLCM,e.CBCM,i]},{cN:"class",bK:"class struct",e:/[{;:]/,c:[{b:/</,e:/>/,c:["self"]},e.TM]}]),exports:{preprocessor:i,strings:r,k:c}}});hljs.registerLanguage("json",function(e){var i={literal:"true false null"},n=[e.CLCM,e.CBCM],c=[e.QSM,e.CNM],r={e:",",eW:!0,eE:!0,c:c,k:i},t={b:"{",e:"}",c:[{cN:"attr",b:/"/,e:/"/,c:[e.BE],i:"\\n"},e.inherit(r,{b:/:/})].concat(n),i:"\\S"},a={b:"\\[",e:"\\]",c:[e.inherit(r)],i:"\\S"};return c.push(t,a),n.forEach(function(e){c.push(e)}),{c:c,k:i,i:"\\S"}});hljs.registerLanguage("nginx",function(e){var r={cN:"variable",v:[{b:/\$\d+/},{b:/\$\{/,e:/}/},{b:"[\\$\\@]"+e.UIR}]},b={eW:!0,l:"[a-z/_]+",k:{literal:"on off yes no true false none blocked debug info notice warn error crit select break last permanent redirect kqueue rtsig epoll poll /dev/poll"},relevance:0,i:"=>",c:[e.HCM,{cN:"string",c:[e.BE,r],v:[{b:/"/,e:/"/},{b:/'/,e:/'/}]},{b:"([a-z]+):/",e:"\\s",eW:!0,eE:!0,c:[r]},{cN:"regexp",c:[e.BE,r],v:[{b:"\\s\\^",e:"\\s|{|;",rE:!0},{b:"~\\*?\\s+",e:"\\s|{|;",rE:!0},{b:"\\*(\\.[a-z\\-]+)+"},{b:"([a-z\\-]+\\.)+\\*"}]},{cN:"number",b:"\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(:\\d{1,5})?\\b"},{cN:"number",b:"\\b\\d+[kKmMgGdshdwy]*\\b",relevance:0},r]};return{aliases:["nginxconf"],c:[e.HCM,{b:e.UIR+"\\s+{",rB:!0,e:"{",c:[{cN:"section",b:e.UIR}],relevance:0},{b:e.UIR+"\\s",e:";|{",rB:!0,c:[{cN:"attribute",b:e.UIR,starts:b}],relevance:0}],i:"[^\\s\\}]"}});hljs.registerLanguage("perl",function(e){var t="getpwent getservent quotemeta msgrcv scalar kill dbmclose undef lc ma syswrite tr send umask sysopen shmwrite vec qx utime local oct semctl localtime readpipe do return format read sprintf dbmopen pop getpgrp not getpwnam rewinddir qqfileno qw endprotoent wait sethostent bless s|0 opendir continue each sleep endgrent shutdown dump chomp connect getsockname die socketpair close flock exists index shmgetsub for endpwent redo lstat msgctl setpgrp abs exit select print ref gethostbyaddr unshift fcntl syscall goto getnetbyaddr join gmtime symlink semget splice x|0 getpeername recv log setsockopt cos last reverse gethostbyname getgrnam study formline endhostent times chop length gethostent getnetent pack getprotoent getservbyname rand mkdir pos chmod y|0 substr endnetent printf next open msgsnd readdir use unlink getsockopt getpriority rindex wantarray hex system getservbyport endservent int chr untie rmdir prototype tell listen fork shmread ucfirst setprotoent else sysseek link getgrgid shmctl waitpid unpack getnetbyname reset chdir grep split require caller lcfirst until warn while values shift telldir getpwuid my getprotobynumber delete and sort uc defined srand accept package seekdir getprotobyname semop our rename seek if q|0 chroot sysread setpwent no crypt getc chown sqrt write setnetent setpriority foreach tie sin msgget map stat getlogin unless elsif truncate exec keys glob tied closedirioctl socket readlink eval xor readline binmode setservent eof ord bind alarm pipe atan2 getgrent exp time push setgrent gt lt or ne m|0 break given say state when",r={cN:"subst",b:"[$@]\\{",e:"\\}",k:t},s={b:"->{",e:"}"},n={v:[{b:/\$\d/},{b:/[\$%@](\^\w\b|#\w+(::\w+)*|{\w+}|\w+(::\w*)*)/},{b:/[\$%@][^\s\w{]/,relevance:0}]},c=[e.BE,r,n],a=[n,e.HCM,e.C("^\\=\\w","\\=cut",{eW:!0}),s,{cN:"string",c:c,v:[{b:"q[qwxr]?\\s*\\(",e:"\\)",relevance:5},{b:"q[qwxr]?\\s*\\[",e:"\\]",relevance:5},{b:"q[qwxr]?\\s*\\{",e:"\\}",relevance:5},{b:"q[qwxr]?\\s*\\|",e:"\\|",relevance:5},{b:"q[qwxr]?\\s*\\<",e:"\\>",relevance:5},{b:"qw\\s+q",e:"q",relevance:5},{b:"'",e:"'",c:[e.BE]},{b:'"',e:'"'},{b:"`",e:"`",c:[e.BE]},{b:"{\\w+}",c:[],relevance:0},{b:"-?\\w+\\s*\\=\\>",c:[],relevance:0}]},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",relevance:0},{b:"(\\/\\/|"+e.RSR+"|\\b(split|return|print|reverse|grep)\\b)\\s*",k:"split return print reverse grep",relevance:0,c:[e.HCM,{cN:"regexp",b:"(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*",relevance:10},{cN:"regexp",b:"(m|qr)?/",e:"/[a-z]*",c:[e.BE],relevance:0}]},{cN:"function",bK:"sub",e:"(\\s*\\(.*?\\))?[;{]",eE:!0,relevance:5,c:[e.TM]},{b:"-\\w\\b",relevance:0},{b:"^__DATA__$",e:"^__END__$",sL:"mojolicious",c:[{b:"^@@.*",e:"$",cN:"comment"}]}];return r.c=a,{aliases:["pl","pm"],l:/[\w\.]+/,k:t,c:s.c=a}});hljs.registerLanguage("ini",function(e){var b={cN:"string",c:[e.BE],v:[{b:"'''",e:"'''",relevance:10},{b:'"""',e:'"""',relevance:10},{b:'"',e:'"'},{b:"'",e:"'"}]};return{aliases:["toml"],cI:!0,i:/\S/,c:[e.C(";","$"),e.HCM,{cN:"section",b:/^\s*\[+/,e:/\]+/},{b:/^[a-z0-9\[\]_\.-]+\s*=\s*/,e:"$",rB:!0,c:[{cN:"attr",b:/[a-z0-9\[\]_\.-]+/},{b:/=/,eW:!0,relevance:0,c:[e.C(";","$"),e.HCM,{cN:"literal",b:/\bon|off|true|false|yes|no\b/},{cN:"variable",v:[{b:/\$[\w\d"][\w\d_]*/},{b:/\$\{(.*?)}/}]},b,{cN:"number",b:/([\+\-]+)?[\d]+_[\d_]+/},e.NM]}]}]}});hljs.registerLanguage("coffeescript",function(e){var c={keyword:"in if for while finally new do return else break catch instanceof throw try this switch continue typeof delete debugger super yield import export from as default await then unless until loop of by when and or is isnt not",literal:"true false null undefined yes no on off",built_in:"npm require console print module global window document"},n="[A-Za-z$_][0-9A-Za-z$_]*",r={cN:"subst",b:/#\{/,e:/}/,k:c},i=[e.BNM,e.inherit(e.CNM,{starts:{e:"(\\s*/)?",relevance:0}}),{cN:"string",v:[{b:/'''/,e:/'''/,c:[e.BE]},{b:/'/,e:/'/,c:[e.BE]},{b:/"""/,e:/"""/,c:[e.BE,r]},{b:/"/,e:/"/,c:[e.BE,r]}]},{cN:"regexp",v:[{b:"///",e:"///",c:[r,e.HCM]},{b:"//[gim]*",relevance:0},{b:/\/(?![ *])(\\\/|.)*?\/[gim]*(?=\W)/}]},{b:"@"+n},{sL:"javascript",eB:!0,eE:!0,v:[{b:"```",e:"```"},{b:"`",e:"`"}]}];r.c=i;var s=e.inherit(e.TM,{b:n}),t="(\\(.*\\))?\\s*\\B[-=]>",a={cN:"params",b:"\\([^\\(]",rB:!0,c:[{b:/\(/,e:/\)/,k:c,c:["self"].concat(i)}]};return{aliases:["coffee","cson","iced"],k:c,i:/\/\*/,c:i.concat([e.C("###","###"),e.HCM,{cN:"function",b:"^\\s*"+n+"\\s*=\\s*"+t,e:"[-=]>",rB:!0,c:[s,a]},{b:/[:\(,=]\s*/,relevance:0,c:[{cN:"function",b:t,e:"[-=]>",rB:!0,c:[a]}]},{cN:"class",bK:"class",e:"$",i:/[:="\[\]]/,c:[{bK:"extends",eW:!0,i:/[:="\[\]]/,c:[s]},s]},{b:n+":",e:":",rB:!0,rE:!0,relevance:0}])}});hljs.registerLanguage("apache",function(e){var r={cN:"number",b:"[\\$%]\\d+"};return{aliases:["apacheconf"],cI:!0,c:[e.HCM,{cN:"section",b:"</?",e:">"},{cN:"attribute",b:/\w+/,relevance:0,k:{nomarkup:"order deny allow setenv rewriterule rewriteengine rewritecond documentroot sethandler errordocument loadmodule options header listen serverroot servername"},starts:{e:/$/,relevance:0,k:{literal:"on off all"},c:[{cN:"meta",b:"\\s\\[",e:"\\]$"},{cN:"variable",b:"[\\$%]\\{",e:"\\}",c:["self",r]},r,e.QSM]}}],i:/\S/}});hljs.registerLanguage("typescript",function(e){var r="[A-Za-z$_][0-9A-Za-z$_]*",t={keyword:"in if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const class public private protected get set super static implements enum export import declare type namespace abstract as from extends async await",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document any number boolean string void Promise"},n={cN:"meta",b:"@"+r},a={b:"\\(",e:/\)/,k:t,c:["self",e.QSM,e.ASM,e.NM]},c={cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:[e.CLCM,e.CBCM,n,a]},s={cN:"number",v:[{b:"\\b(0[bB][01]+)n?"},{b:"\\b(0[oO][0-7]+)n?"},{b:e.CNR+"n?"}],relevance:0},o={cN:"subst",b:"\\$\\{",e:"\\}",k:t,c:[]},i={b:"html`",e:"",starts:{e:"`",rE:!1,c:[e.BE,o],sL:"xml"}},l={b:"css`",e:"",starts:{e:"`",rE:!1,c:[e.BE,o],sL:"css"}},b={cN:"string",b:"`",e:"`",c:[e.BE,o]};return o.c=[e.ASM,e.QSM,i,l,b,s,e.RM],{aliases:["ts"],k:t,c:[{cN:"meta",b:/^\s*['"]use strict['"]/},e.ASM,e.QSM,i,l,b,e.CLCM,e.CBCM,s,{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{cN:"function",b:"(\\(.*?\\)|"+e.IR+")\\s*=>",rB:!0,e:"\\s*=>",c:[{cN:"params",v:[{b:e.IR},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:["self",e.CLCM,e.CBCM]}]}]}],relevance:0},{cN:"function",bK:"function",e:/[\{;]/,eE:!0,k:t,c:["self",e.inherit(e.TM,{b:r}),c],i:/%/,relevance:0},{bK:"constructor",e:/[\{;]/,eE:!0,c:["self",c]},{b:/module\./,k:{built_in:"module"},relevance:0},{bK:"module",e:/\{/,eE:!0},{bK:"interface",e:/\{/,eE:!0,k:"interface extends"},{b:/\$[(.]/},{b:"\\."+e.IR,relevance:0},n,a]}});hljs.registerLanguage("php",function(e){var c={b:"\\$+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*"},i={cN:"meta",b:/<\?(php)?|\?>/},t={cN:"string",c:[e.BE,i],v:[{b:'b"',e:'"'},{b:"b'",e:"'"},e.inherit(e.ASM,{i:null}),e.inherit(e.QSM,{i:null})]},a={v:[e.BNM,e.CNM]};return{aliases:["php","php3","php4","php5","php6","php7"],cI:!0,k:"and include_once list abstract global private echo interface as static endswitch array null if endwhile or const for endforeach self var while isset public protected exit foreach throw elseif include __FILE__ empty require_once do xor return parent clone use __CLASS__ __LINE__ else break print eval new catch __METHOD__ case exception default die require __FUNCTION__ enddeclare final try switch continue endfor endif declare unset true false trait goto instanceof insteadof __DIR__ __NAMESPACE__ yield finally",c:[e.HCM,e.C("//","$",{c:[i]}),e.C("/\\*","\\*/",{c:[{cN:"doctag",b:"@[A-Za-z]+"}]}),e.C("__halt_compiler.+?;",!1,{eW:!0,k:"__halt_compiler",l:e.UIR}),{cN:"string",b:/<<<['"]?\w+['"]?$/,e:/^\w+;?$/,c:[e.BE,{cN:"subst",v:[{b:/\$\w+/},{b:/\{\$/,e:/\}/}]}]},i,{cN:"keyword",b:/\$this\b/},c,{b:/(::|->)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/},{cN:"function",bK:"function",e:/[;{]/,eE:!0,i:"\\$|\\[|%",c:[e.UTM,{cN:"params",b:"\\(",e:"\\)",c:["self",c,e.CBCM,t,a]}]},{cN:"class",bK:"class interface",e:"{",eE:!0,i:/[:\(\$"]/,c:[{bK:"extends implements"},e.UTM]},{bK:"namespace",e:";",i:/[\.']/,c:[e.UTM]},{bK:"use",e:";",c:[e.UTM]},{b:"=>"},t,a]}});hljs.registerLanguage("diff",function(e){return{aliases:["patch"],c:[{cN:"meta",relevance:10,v:[{b:/^@@ +\-\d+,\d+ +\+\d+,\d+ +@@$/},{b:/^\*\*\* +\d+,\d+ +\*\*\*\*$/},{b:/^\-\-\- +\d+,\d+ +\-\-\-\-$/}]},{cN:"comment",v:[{b:/Index: /,e:/$/},{b:/={3,}/,e:/$/},{b:/^\-{3}/,e:/$/},{b:/^\*{3} /,e:/$/},{b:/^\+{3}/,e:/$/},{b:/^\*{15}$/}]},{cN:"addition",b:"^\\+",e:"$"},{cN:"deletion",b:"^\\-",e:"$"},{cN:"addition",b:"^\\!",e:"$"}]}});hljs.registerLanguage("bash",function(e){var t={cN:"variable",v:[{b:/\$[\w\d#@][\w\d_]*/},{b:/\$\{(.*?)}/}]},a={cN:"string",b:/"/,e:/"/,c:[e.BE,t,{cN:"variable",b:/\$\(/,e:/\)/,c:[e.BE]}]};return{aliases:["sh","zsh"],l:/\b-?[a-z\._]+\b/,k:{keyword:"if then else elif fi for while in do done case esac function",literal:"true false",built_in:"break cd continue eval exec exit export getopts hash pwd readonly return shift test times trap umask unset alias bind builtin caller command declare echo enable help let local logout mapfile printf read readarray source type typeset ulimit unalias set shopt autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate fc fg float functions getcap getln history integer jobs kill limit log noglob popd print pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof zpty zregexparse zsocket zstyle ztcp",_:"-ne -eq -lt -gt -f -d -e -s -l -a"},c:[{cN:"meta",b:/^#![^\n]+sh\s*$/,relevance:10},{cN:"function",b:/\w[\w\d_]*\s*\(\s*\)\s*\{/,rB:!0,c:[e.inherit(e.TM,{b:/\w[\w\d_]*/})],relevance:0},e.HCM,a,{cN:"",b:/\\"/},{cN:"string",b:/'/,e:/'/},t]}});hljs.registerLanguage("less",function(e){function r(e){return{cN:"string",b:"~?"+e+".*?"+e}}function t(e,r,t){return{cN:e,b:r,relevance:t}}var a="[\\w-]+",c="("+a+"|@{"+a+"})",s=[],n=[],b={b:"\\(",e:"\\)",c:n,relevance:0};n.push(e.CLCM,e.CBCM,r("'"),r('"'),e.CSSNM,{b:"(url|data-uri)\\(",starts:{cN:"string",e:"[\\)\\n]",eE:!0}},t("number","#[0-9A-Fa-f]+\\b"),b,t("variable","@@?"+a,10),t("variable","@{"+a+"}"),t("built_in","~?`[^`]*?`"),{cN:"attribute",b:a+"\\s*:",e:":",rB:!0,eE:!0},{cN:"meta",b:"!important"});var i=n.concat({b:"{",e:"}",c:s}),l={bK:"when",eW:!0,c:[{bK:"and not"}].concat(n)},o={b:c+"\\s*:",rB:!0,e:"[;}]",relevance:0,c:[{cN:"attribute",b:c,e:":",eE:!0,starts:{eW:!0,i:"[<=$]",relevance:0,c:n}}]},u={cN:"keyword",b:"@(import|media|charset|font-face|(-[a-z]+-)?keyframes|supports|document|namespace|page|viewport|host)\\b",starts:{e:"[;{}]",rE:!0,c:n,relevance:0}},v={cN:"variable",v:[{b:"@"+a+"\\s*:",relevance:15},{b:"@"+a}],starts:{e:"[;}]",rE:!0,c:i}},C={v:[{b:"[\\.#:&\\[>]",e:"[;{}]"},{b:c,e:"{"}],rB:!0,rE:!0,i:"[<='$\"]",relevance:0,c:[e.CLCM,e.CBCM,l,t("keyword","all\\b"),t("variable","@{"+a+"}"),t("selector-tag",c+"%?",0),t("selector-id","#"+c),t("selector-class","\\."+c,0),t("selector-tag","&",0),{cN:"selector-attr",b:"\\[",e:"\\]"},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"\\(",e:"\\)",c:i},{b:"!important"}]};return s.push(e.CLCM,e.CBCM,u,v,o,C),{cI:!0,i:"[=>'/<($\"]",c:s}});hljs.registerLanguage("swift",function(e){var i={keyword:"#available #colorLiteral #column #else #elseif #endif #file #fileLiteral #function #if #imageLiteral #line #selector #sourceLocation _ __COLUMN__ __FILE__ __FUNCTION__ __LINE__ Any as as! as? associatedtype associativity break case catch class continue convenience default defer deinit didSet do dynamic dynamicType else enum extension fallthrough false fileprivate final for func get guard if import in indirect infix init inout internal is lazy left let mutating nil none nonmutating open operator optional override postfix precedence prefix private protocol Protocol public repeat required rethrows return right self Self set static struct subscript super switch throw throws true try try! try? Type typealias unowned var weak where while willSet",literal:"true false nil",built_in:"abs advance alignof alignofValue anyGenerator assert assertionFailure bridgeFromObjectiveC bridgeFromObjectiveCUnconditional bridgeToObjectiveC bridgeToObjectiveCUnconditional c contains count countElements countLeadingZeros debugPrint debugPrintln distance dropFirst dropLast dump encodeBitsAsWords enumerate equal fatalError filter find getBridgedObjectiveCType getVaList indices insertionSort isBridgedToObjectiveC isBridgedVerbatimToObjectiveC isUniquelyReferenced isUniquelyReferencedNonObjC join lazy lexicographicalCompare map max maxElement min minElement numericCast overlaps partition posix precondition preconditionFailure print println quickSort readLine reduce reflect reinterpretCast reverse roundUpToAlignment sizeof sizeofValue sort split startsWith stride strideof strideofValue swap toString transcode underestimateCount unsafeAddressOf unsafeBitCast unsafeDowncast unsafeUnwrap unsafeReflect withExtendedLifetime withObjectAtPlusZero withUnsafePointer withUnsafePointerToObject withUnsafeMutablePointer withUnsafeMutablePointers withUnsafePointer withUnsafePointers withVaList zip"},t=e.C("/\\*","\\*/",{c:["self"]}),n={cN:"subst",b:/\\\(/,e:"\\)",k:i,c:[]},r={cN:"string",c:[e.BE,n],v:[{b:/"""/,e:/"""/},{b:/"/,e:/"/}]},a={cN:"number",b:"\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b",relevance:0};return n.c=[a],{k:i,c:[r,e.CLCM,t,{cN:"type",b:"\\b[A-Z][\\wÀ-ʸ']*[!?]"},{cN:"type",b:"\\b[A-Z][\\wÀ-ʸ']*",relevance:0},a,{cN:"function",bK:"func",e:"{",eE:!0,c:[e.inherit(e.TM,{b:/[A-Za-z$_][0-9A-Za-z$_]*/}),{b:/</,e:/>/},{cN:"params",b:/\(/,e:/\)/,endsParent:!0,k:i,c:["self",a,r,e.CBCM,{b:":"}],i:/["']/}],i:/\[|%/},{cN:"class",bK:"struct protocol class extension enum",k:i,e:"\\{",eE:!0,c:[e.inherit(e.TM,{b:/[A-Za-z$_][\u00C0-\u02B80-9A-Za-z$_]*/})]},{cN:"meta",b:"(@discardableResult|@warn_unused_result|@exported|@lazy|@noescape|@NSCopying|@NSManaged|@objc|@objcMembers|@convention|@required|@noreturn|@IBAction|@IBDesignable|@IBInspectable|@IBOutlet|@infix|@prefix|@postfix|@autoclosure|@testable|@available|@nonobjc|@NSApplicationMain|@UIApplicationMain|@dynamicMemberLookup|@propertyWrapper)"},{bK:"import",e:/$/,c:[e.CLCM,t]}]}});hljs.registerLanguage("makefile",function(e){var i={cN:"variable",v:[{b:"\\$\\("+e.UIR+"\\)",c:[e.BE]},{b:/\$[@%<?\^\+\*]/}]},r={cN:"string",b:/"/,e:/"/,c:[e.BE,i]},a={cN:"variable",b:/\$\([\w-]+\s/,e:/\)/,k:{built_in:"subst patsubst strip findstring filter filter-out sort word wordlist firstword lastword dir notdir suffix basename addsuffix addprefix join wildcard realpath abspath error warning shell origin flavor foreach if or and call eval file value"},c:[i]},n={b:"^"+e.UIR+"\\s*(?=[:+?]?=)"},t={cN:"section",b:/^[^\s]+:/,e:/$/,c:[i]};return{aliases:["mk","mak"],k:"define endef undefine ifdef ifndef ifeq ifneq else endif include -include sinclude override export unexport private vpath",l:/[\w-]+/,c:[e.HCM,i,r,a,n,{cN:"meta",b:/^\.PHONY:/,e:/$/,k:{"meta-keyword":".PHONY"},l:/[\.\w]+/},t]}});hljs.registerLanguage("lua",function(e){var t="\\[=*\\[",a="\\]=*\\]",n={b:t,e:a,c:["self"]},l=[e.C("--(?!"+t+")","$"),e.C("--"+t,a,{c:[n],relevance:10})];return{l:e.UIR,k:{literal:"true false nil",keyword:"and break do else elseif end for goto if in local not or repeat return then until while",built_in:"_G _ENV _VERSION __index __newindex __mode __call __metatable __tostring __len __gc __add __sub __mul __div __mod __pow __concat __unm __eq __lt __le assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstringmodule next pairs pcall print rawequal rawget rawset require select setfenvsetmetatable tonumber tostring type unpack xpcall arg selfcoroutine resume yield status wrap create running debug getupvalue debug sethook getmetatable gethook setmetatable setlocal traceback setfenv getinfo setupvalue getlocal getregistry getfenv io lines write close flush open output type read stderr stdin input stdout popen tmpfile math log max acos huge ldexp pi cos tanh pow deg tan cosh sinh random randomseed frexp ceil floor rad abs sqrt modf asin min mod fmod log10 atan2 exp sin atan os exit setlocale date getenv difftime remove time clock tmpname rename execute package preload loadlib loaded loaders cpath config path seeall string sub upper len gfind rep find match char dump gmatch reverse byte format gsub lower table setn insert getn foreachi maxn foreach concat sort remove"},c:l.concat([{cN:"function",bK:"function",e:"\\)",c:[e.inherit(e.TM,{b:"([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*"}),{cN:"params",b:"\\(",eW:!0,c:l}].concat(l)},e.CNM,e.ASM,e.QSM,{cN:"string",b:t,e:a,c:[n],relevance:5}])}});hljs.registerLanguage("xml",function(e){var c={cN:"symbol",b:"&[a-z]+;|&#[0-9]+;|&#x[a-f0-9]+;"},s={b:"\\s",c:[{cN:"meta-keyword",b:"#?[a-z_][a-z1-9_-]+",i:"\\n"}]},a=e.inherit(s,{b:"\\(",e:"\\)"}),t=e.inherit(e.ASM,{cN:"meta-string"}),l=e.inherit(e.QSM,{cN:"meta-string"}),r={eW:!0,i:/</,relevance:0,c:[{cN:"attr",b:"[A-Za-z0-9\\._:-]+",relevance:0},{b:/=\s*/,relevance:0,c:[{cN:"string",endsParent:!0,v:[{b:/"/,e:/"/,c:[c]},{b:/'/,e:/'/,c:[c]},{b:/[^\s"'=<>`]+/}]}]}]};return{aliases:["html","xhtml","rss","atom","xjb","xsd","xsl","plist","wsf","svg"],cI:!0,c:[{cN:"meta",b:"<![a-z]",e:">",relevance:10,c:[s,l,t,a,{b:"\\[",e:"\\]",c:[{cN:"meta",b:"<![a-z]",e:">",c:[s,a,l,t]}]}]},e.C("\x3c!--","--\x3e",{relevance:10}),{b:"<\\!\\[CDATA\\[",e:"\\]\\]>",relevance:10},c,{cN:"meta",b:/<\?xml/,e:/\?>/,relevance:10},{b:/<\?(php)?/,e:/\?>/,sL:"php",c:[{b:"/\\*",e:"\\*/",skip:!0},{b:'b"',e:'"',skip:!0},{b:"b'",e:"'",skip:!0},e.inherit(e.ASM,{i:null,cN:null,c:null,skip:!0}),e.inherit(e.QSM,{i:null,cN:null,c:null,skip:!0})]},{cN:"tag",b:"<style(?=\\s|>)",e:">",k:{name:"style"},c:[r],starts:{e:"</style>",rE:!0,sL:["css","xml"]}},{cN:"tag",b:"<script(?=\\s|>)",e:">",k:{name:"script"},c:[r],starts:{e:"<\/script>",rE:!0,sL:["actionscript","javascript","handlebars","xml"]}},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"name",b:/[^\/><\s]+/,relevance:0},r]}]}});hljs.registerLanguage("markdown",function(e){return{aliases:["md","mkdown","mkd"],c:[{cN:"section",v:[{b:"^#{1,6}",e:"$"},{b:"^.+?\\n[=-]{2,}$"}]},{b:"<",e:">",sL:"xml",relevance:0},{cN:"bullet",b:"^\\s*([*+-]|(\\d+\\.))\\s+"},{cN:"strong",b:"[*_]{2}.+?[*_]{2}"},{cN:"emphasis",v:[{b:"\\*.+?\\*"},{b:"_.+?_",relevance:0}]},{cN:"quote",b:"^>\\s+",e:"$"},{cN:"code",v:[{b:"^```\\w*\\s*$",e:"^```[ ]*$"},{b:"`.+?`"},{b:"^( {4}|\\t)",e:"$",relevance:0}]},{b:"^[-\\*]{3,}",e:"$"},{b:"\\[.+?\\][\\(\\[].*?[\\)\\]]",rB:!0,c:[{cN:"string",b:"\\[",e:"\\]",eB:!0,rE:!0,relevance:0},{cN:"link",b:"\\]\\(",e:"\\)",eB:!0,eE:!0},{cN:"symbol",b:"\\]\\[",e:"\\]",eB:!0,eE:!0}],relevance:10},{b:/^\[[^\n]+\]:/,rB:!0,c:[{cN:"symbol",b:/\[/,e:/\]/,eB:!0,eE:!0},{cN:"link",b:/:\s*/,e:/$/,eB:!0}]}]}});hljs.registerLanguage("kotlin",function(e){var t={keyword:"abstract as val var vararg get set class object open private protected public noinline crossinline dynamic final enum if else do while for when throw try catch finally import package is in fun override companion reified inline lateinit init interface annotation data sealed internal infix operator out by constructor super tailrec where const inner suspend typealias external expect actual trait volatile transient native default",built_in:"Byte Short Char Int Long Boolean Float Double Void Unit Nothing",literal:"true false null"},a={cN:"symbol",b:e.UIR+"@"},n={cN:"subst",b:"\\${",e:"}",c:[e.CNM]},c={cN:"variable",b:"\\$"+e.UIR},r={cN:"string",v:[{b:'"""',e:'"""(?=[^"])',c:[c,n]},{b:"'",e:"'",i:/\n/,c:[e.BE]},{b:'"',e:'"',i:/\n/,c:[e.BE,c,n]}]};n.c.push(r);var i={cN:"meta",b:"@(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:(?:\\s*"+e.UIR+")?"},l={cN:"meta",b:"@"+e.UIR,c:[{b:/\(/,e:/\)/,c:[e.inherit(r,{cN:"meta-string"})]}]},s={cN:"number",b:"\\b(0[bB]([01]+[01_]+[01]+|[01]+)|0[xX]([a-fA-F0-9]+[a-fA-F0-9_]+[a-fA-F0-9]+|[a-fA-F0-9]+)|(([\\d]+[\\d_]+[\\d]+|[\\d]+)(\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))?|\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))([eE][-+]?\\d+)?)[lLfF]?",relevance:0},b=e.C("/\\*","\\*/",{c:[e.CBCM]}),o={v:[{cN:"type",b:e.UIR},{b:/\(/,e:/\)/,c:[]}]},d=o;return d.v[1].c=[o],o.v[1].c=[d],{aliases:["kt"],k:t,c:[e.C("/\\*\\*","\\*/",{relevance:0,c:[{cN:"doctag",b:"@[A-Za-z]+"}]}),e.CLCM,b,{cN:"keyword",b:/\b(break|continue|return|this)\b/,starts:{c:[{cN:"symbol",b:/@\w+/}]}},a,i,l,{cN:"function",bK:"fun",e:"[(]|$",rB:!0,eE:!0,k:t,i:/fun\s+(<.*>)?[^\s\(]+(\s+[^\s\(]+)\s*=/,relevance:5,c:[{b:e.UIR+"\\s*\\(",rB:!0,relevance:0,c:[e.UTM]},{cN:"type",b:/</,e:/>/,k:"reified",relevance:0},{cN:"params",b:/\(/,e:/\)/,endsParent:!0,k:t,relevance:0,c:[{b:/:/,e:/[=,\/]/,eW:!0,c:[o,e.CLCM,b],relevance:0},e.CLCM,b,i,l,r,e.CNM]},b]},{cN:"class",bK:"class interface trait",e:/[:\{(]|$/,eE:!0,i:"extends implements",c:[{bK:"public protected internal private constructor"},e.UTM,{cN:"type",b:/</,e:/>/,eB:!0,eE:!0,relevance:0},{cN:"type",b:/[,:]\s*/,e:/[<\(,]|$/,eB:!0,rE:!0},i,l]},r,{cN:"meta",b:"^#!/usr/bin/env",e:"$",i:"\n"},s]}});hljs.registerLanguage("ruby",function(e){var c="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?",b={keyword:"and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor",literal:"true false nil"},r={cN:"doctag",b:"@[A-Za-z]+"},a={b:"#<",e:">"},n=[e.C("#","$",{c:[r]}),e.C("^\\=begin","^\\=end",{c:[r],relevance:10}),e.C("^__END__","\\n$")],s={cN:"subst",b:"#\\{",e:"}",k:b},t={cN:"string",c:[e.BE,s],v:[{b:/'/,e:/'/},{b:/"/,e:/"/},{b:/`/,e:/`/},{b:"%[qQwWx]?\\(",e:"\\)"},{b:"%[qQwWx]?\\[",e:"\\]"},{b:"%[qQwWx]?{",e:"}"},{b:"%[qQwWx]?<",e:">"},{b:"%[qQwWx]?/",e:"/"},{b:"%[qQwWx]?%",e:"%"},{b:"%[qQwWx]?-",e:"-"},{b:"%[qQwWx]?\\|",e:"\\|"},{b:/\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/},{b:/<<[-~]?'?(\w+)(?:.|\n)*?\n\s*\1\b/,rB:!0,c:[{b:/<<[-~]?'?/},{b:/\w+/,endSameAsBegin:!0,c:[e.BE,s]}]}]},i={cN:"params",b:"\\(",e:"\\)",endsParent:!0,k:b},l=[t,a,{cN:"class",bK:"class module",e:"$|;",i:/=/,c:[e.inherit(e.TM,{b:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?"}),{b:"<\\s*",c:[{b:"("+e.IR+"::)?"+e.IR}]}].concat(n)},{cN:"function",bK:"def",e:"$|;",c:[e.inherit(e.TM,{b:c}),i].concat(n)},{b:e.IR+"::"},{cN:"symbol",b:e.UIR+"(\\!|\\?)?:",relevance:0},{cN:"symbol",b:":(?!\\s)",c:[t,{b:c}],relevance:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",relevance:0},{b:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},{cN:"params",b:/\|/,e:/\|/,k:b},{b:"("+e.RSR+"|unless)\\s*",k:"unless",c:[a,{cN:"regexp",c:[e.BE,s],i:/\n/,v:[{b:"/",e:"/[a-z]*"},{b:"%r{",e:"}[a-z]*"},{b:"%r\\(",e:"\\)[a-z]*"},{b:"%r!",e:"![a-z]*"},{b:"%r\\[",e:"\\][a-z]*"}]}].concat(n),relevance:0}].concat(n);s.c=l;var d=[{b:/^\s*=>/,starts:{e:"$",c:i.c=l}},{cN:"meta",b:"^([>?]>|[\\w#]+\\(\\w+\\):\\d+:\\d+>|(\\w+-)?\\d+\\.\\d+\\.\\d(p\\d+)?[^>]+>)",starts:{e:"$",c:l}}];return{aliases:["rb","gemspec","podspec","thor","irb"],k:b,i:/\/\*/,c:n.concat(d).concat(l)}});hljs.registerLanguage("shell",function(s){return{aliases:["console"],c:[{cN:"meta",b:"^\\s{0,3}[/\\w\\d\\[\\]()@-]*[>%$#]",starts:{e:"$",sL:"bash"}}]}});hljs.registerLanguage("yaml",function(e){var b="true false yes no null",a={cN:"string",relevance:0,v:[{b:/'/,e:/'/},{b:/"/,e:/"/},{b:/\S+/}],c:[e.BE,{cN:"template-variable",v:[{b:"{{",e:"}}"},{b:"%{",e:"}"}]}]};return{cI:!0,aliases:["yml","YAML","yaml"],c:[{cN:"attr",v:[{b:"\\w[\\w :\\/.-]*:(?=[ \t]|$)"},{b:'"\\w[\\w :\\/.-]*":(?=[ \t]|$)'},{b:"'\\w[\\w :\\/.-]*':(?=[ \t]|$)"}]},{cN:"meta",b:"^---s*$",relevance:10},{cN:"string",b:"[\\|>]([0-9]?[+-])?[ ]*\\n( *)[\\S ]+\\n(\\2[\\S ]+\\n?)*"},{b:"<%[%=-]?",e:"[%-]?%>",sL:"ruby",eB:!0,eE:!0,relevance:0},{cN:"type",b:"!"+e.UIR},{cN:"type",b:"!!"+e.UIR},{cN:"meta",b:"&"+e.UIR+"$"},{cN:"meta",b:"\\*"+e.UIR+"$"},{cN:"bullet",b:"\\-(?=[ ]|$)",relevance:0},e.HCM,{bK:b,k:{literal:b}},{cN:"number",b:e.CNR+"\\b"},a]}});hljs.registerLanguage("java",function(e){var a="false synchronized int abstract float private char boolean var static null if const for true while long strictfp finally protected import native final void enum else break transient catch instanceof byte super volatile case assert short package default double public try this switch continue throws protected public private module requires exports do",t={cN:"number",b:"\\b(0[bB]([01]+[01_]+[01]+|[01]+)|0[xX]([a-fA-F0-9]+[a-fA-F0-9_]+[a-fA-F0-9]+|[a-fA-F0-9]+)|(([\\d]+[\\d_]+[\\d]+|[\\d]+)(\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))?|\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))([eE][-+]?\\d+)?)[lLfF]?",relevance:0};return{aliases:["jsp"],k:a,i:/<\/|#/,c:[e.C("/\\*\\*","\\*/",{relevance:0,c:[{b:/\w+@/,relevance:0},{cN:"doctag",b:"@[A-Za-z]+"}]}),e.CLCM,e.CBCM,e.ASM,e.QSM,{cN:"class",bK:"class interface",e:/[{;=]/,eE:!0,k:"class interface",i:/[:"\[\]]/,c:[{bK:"extends implements"},e.UTM]},{bK:"new throw return else",relevance:0},{cN:"function",b:"([À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*(<[À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*(\\s*,\\s*[À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*)*>)?\\s+)+"+e.UIR+"\\s*\\(",rB:!0,e:/[{;=]/,eE:!0,k:a,c:[{b:e.UIR+"\\s*\\(",rB:!0,relevance:0,c:[e.UTM]},{cN:"params",b:/\(/,e:/\)/,k:a,relevance:0,c:[e.ASM,e.QSM,e.CNM,e.CBCM]},e.CLCM,e.CBCM]},t,{cN:"meta",b:"@[A-Za-z]+"}]}});hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});hljs.registerLanguage("objectivec",function(e){var t=/[a-zA-Z@][a-zA-Z0-9_]*/,i="@interface @class @protocol @implementation";return{aliases:["mm","objc","obj-c"],k:{keyword:"int float while char export sizeof typedef const struct for union unsigned long volatile static bool mutable if do return goto void enum else break extern asm case short default double register explicit signed typename this switch continue wchar_t inline readonly assign readwrite self @synchronized id typeof nonatomic super unichar IBOutlet IBAction strong weak copy in out inout bycopy byref oneway __strong __weak __block __autoreleasing @private @protected @public @try @property @end @throw @catch @finally @autoreleasepool @synthesize @dynamic @selector @optional @required @encode @package @import @defs @compatibility_alias __bridge __bridge_transfer __bridge_retained __bridge_retain __covariant __contravariant __kindof _Nonnull _Nullable _Null_unspecified __FUNCTION__ __PRETTY_FUNCTION__ __attribute__ getter setter retain unsafe_unretained nonnull nullable null_unspecified null_resettable class instancetype NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE NS_REQUIRES_SUPER NS_RETURNS_INNER_POINTER NS_INLINE NS_AVAILABLE NS_DEPRECATED NS_ENUM NS_OPTIONS NS_SWIFT_UNAVAILABLE NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END NS_REFINED_FOR_SWIFT NS_SWIFT_NAME NS_SWIFT_NOTHROW NS_DURING NS_HANDLER NS_ENDHANDLER NS_VALUERETURN NS_VOIDRETURN",literal:"false true FALSE TRUE nil YES NO NULL",built_in:"BOOL dispatch_once_t dispatch_queue_t dispatch_sync dispatch_async dispatch_once"},l:t,i:"</",c:[{cN:"built_in",b:"\\b(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)\\w+"},e.CLCM,e.CBCM,e.CNM,e.QSM,e.ASM,{cN:"string",v:[{b:'@"',e:'"',i:"\\n",c:[e.BE]}]},{cN:"meta",b:/#\s*[a-z]+\b/,e:/$/,k:{"meta-keyword":"if else elif endif define undef warning error line pragma ifdef ifndef include"},c:[{b:/\\\n/,relevance:0},e.inherit(e.QSM,{cN:"meta-string"}),{cN:"meta-string",b:/<.*?>/,e:/$/,i:"\\n"},e.CLCM,e.CBCM]},{cN:"class",b:"("+i.split(" ").join("|")+")\\b",e:"({|$)",eE:!0,k:i,l:t,c:[e.UTM]},{b:"\\."+e.UIR,relevance:0}]}});hljs.registerLanguage("go",function(e){var n={keyword:"break default func interface select case map struct chan else goto package switch const fallthrough if range type continue for import return var go defer bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 uint16 uint32 uint64 int uint uintptr rune",literal:"true false iota nil",built_in:"append cap close complex copy imag len make new panic print println real recover delete"};return{aliases:["golang"],k:n,i:"</",c:[e.CLCM,e.CBCM,{cN:"string",v:[e.QSM,e.ASM,{b:"`",e:"`"}]},{cN:"number",v:[{b:e.CNR+"[i]",relevance:1},e.CNM]},{b:/:=/},{cN:"function",bK:"func",e:"\\s*(\\{|$)",eE:!0,c:[e.TM,{cN:"params",b:/\(/,e:/\)/,k:n,i:/["']/}]}]}});hljs.registerLanguage("rust",function(e){var t="([ui](8|16|32|64|128|size)|f(32|64))?",r="drop i8 i16 i32 i64 i128 isize u8 u16 u32 u64 u128 usize f32 f64 str char bool Box Option Result String Vec Copy Send Sized Sync Drop Fn FnMut FnOnce ToOwned Clone Debug PartialEq PartialOrd Eq Ord AsRef AsMut Into From Default Iterator Extend IntoIterator DoubleEndedIterator ExactSizeIterator SliceConcatExt ToString assert! assert_eq! bitflags! bytes! cfg! col! concat! concat_idents! debug_assert! debug_assert_eq! env! panic! file! format! format_args! include_bin! include_str! line! local_data_key! module_path! option_env! print! println! select! stringify! try! unimplemented! unreachable! vec! write! writeln! macro_rules! assert_ne! debug_assert_ne!";return{aliases:["rs"],k:{keyword:"abstract as async await become box break const continue crate do dyn else enum extern false final fn for if impl in let loop macro match mod move mut override priv pub ref return self Self static struct super trait true try type typeof unsafe unsized use virtual where while yield",literal:"true false Some None Ok Err",built_in:r},l:e.IR+"!?",i:"</",c:[e.CLCM,e.C("/\\*","\\*/",{c:["self"]}),e.inherit(e.QSM,{b:/b?"/,i:null}),{cN:"string",v:[{b:/r(#*)"(.|\n)*?"\1(?!#)/},{b:/b?'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/}]},{cN:"symbol",b:/'[a-zA-Z_][a-zA-Z0-9_]*/},{cN:"number",v:[{b:"\\b0b([01_]+)"+t},{b:"\\b0o([0-7_]+)"+t},{b:"\\b0x([A-Fa-f0-9_]+)"+t},{b:"\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)"+t}],relevance:0},{cN:"function",bK:"fn",e:"(\\(|<)",eE:!0,c:[e.UTM]},{cN:"meta",b:"#\\!?\\[",e:"\\]",c:[{cN:"meta-string",b:/"/,e:/"/}]},{cN:"class",bK:"type",e:";",c:[e.inherit(e.UTM,{endsParent:!0})],i:"\\S"},{cN:"class",bK:"trait enum struct union",e:"{",c:[e.inherit(e.UTM,{endsParent:!0})],i:"[\\w\\d]"},{b:e.IR+"::",k:{built_in:r}},{b:"->"}]}});hljs.registerLanguage("http",function(e){var t="HTTP/[0-9\\.]+";return{aliases:["https"],i:"\\S",c:[{b:"^"+t,e:"$",c:[{cN:"number",b:"\\b\\d{3}\\b"}]},{b:"^[A-Z]+ (.*?) "+t+"$",rB:!0,e:"$",c:[{cN:"string",b:" ",e:" ",eB:!0,eE:!0},{b:t},{cN:"keyword",b:"[A-Z]+"}]},{cN:"attribute",b:"^\\w",e:": ",eE:!0,i:"\\n|\\s|=",starts:{e:"$",relevance:0}},{b:"\\n\\n",starts:{sL:[],eW:!0}}]}});hljs.registerLanguage("properties",function(e){var r="[ \\t\\f]*",t="("+r+"[:=]"+r+"|[ \\t\\f]+)",n="([^\\\\\\W:= \\t\\f\\n]|\\\\.)+",a="([^\\\\:= \\t\\f\\n]|\\\\.)+",c={e:t,relevance:0,starts:{cN:"string",e:/$/,relevance:0,c:[{b:"\\\\\\n"}]}};return{cI:!0,i:/\S/,c:[e.C("^\\s*[!#]","$"),{b:n+t,rB:!0,c:[{cN:"attr",b:n,endsParent:!0,relevance:0}],starts:c},{b:a+t,rB:!0,relevance:0,c:[{cN:"meta",b:a,endsParent:!0,relevance:0}],starts:c},{cN:"attr",relevance:0,b:a+r+"$"}]}});hljs.registerLanguage("python",function(e){var r={keyword:"and elif is global as in if from raise for except finally print import pass return exec else break not with class assert yield try while continue del or def lambda async await nonlocal|10",built_in:"Ellipsis NotImplemented",literal:"False None True"},b={cN:"meta",b:/^(>>>|\.\.\.) /},c={cN:"subst",b:/\{/,e:/\}/,k:r,i:/#/},a={b:/\{\{/,relevance:0},l={cN:"string",c:[e.BE],v:[{b:/(u|b)?r?'''/,e:/'''/,c:[e.BE,b],relevance:10},{b:/(u|b)?r?"""/,e:/"""/,c:[e.BE,b],relevance:10},{b:/(fr|rf|f)'''/,e:/'''/,c:[e.BE,b,a,c]},{b:/(fr|rf|f)"""/,e:/"""/,c:[e.BE,b,a,c]},{b:/(u|r|ur)'/,e:/'/,relevance:10},{b:/(u|r|ur)"/,e:/"/,relevance:10},{b:/(b|br)'/,e:/'/},{b:/(b|br)"/,e:/"/},{b:/(fr|rf|f)'/,e:/'/,c:[e.BE,a,c]},{b:/(fr|rf|f)"/,e:/"/,c:[e.BE,a,c]},e.ASM,e.QSM]},n={cN:"number",relevance:0,v:[{b:e.BNR+"[lLjJ]?"},{b:"\\b(0o[0-7]+)[lLjJ]?"},{b:e.CNR+"[lLjJ]?"}]},i={cN:"params",b:/\(/,e:/\)/,c:["self",b,n,l,e.HCM]};return c.c=[l,n,b],{aliases:["py","gyp","ipython"],k:r,i:/(<\/|->|\?)|=>/,c:[b,n,{bK:"if",relevance:0},l,e.HCM,{v:[{cN:"function",bK:"def"},{cN:"class",bK:"class"}],e:/:/,i:/[${=;\n,]/,c:[e.UTM,i,{b:/->/,eW:!0,k:"None"}]},{cN:"meta",b:/^[\t ]*@/,e:/$/},{b:/\b(print|exec)\(/}]}});hljs.registerLanguage("sql",function(e){var t=e.C("--","$");return{cI:!0,i:/[<>{}*]/,c:[{bK:"begin end start commit rollback savepoint lock alter create drop rename call delete do handler insert load replace select truncate update set show pragma grant merge describe use explain help declare prepare execute deallocate release unlock purge reset change stop analyze cache flush optimize repair kill install uninstall checksum restore check backup revoke comment values with",e:/;/,eW:!0,l:/[\w\.]+/,k:{keyword:"as abort abs absolute acc acce accep accept access accessed accessible account acos action activate add addtime admin administer advanced advise aes_decrypt aes_encrypt after agent aggregate ali alia alias all allocate allow alter always analyze ancillary and anti any anydata anydataset anyschema anytype apply archive archived archivelog are as asc ascii asin assembly assertion associate asynchronous at atan atn2 attr attri attrib attribu attribut attribute attributes audit authenticated authentication authid authors auto autoallocate autodblink autoextend automatic availability avg backup badfile basicfile before begin beginning benchmark between bfile bfile_base big bigfile bin binary_double binary_float binlog bit_and bit_count bit_length bit_or bit_xor bitmap blob_base block blocksize body both bound bucket buffer_cache buffer_pool build bulk by byte byteordermark bytes cache caching call calling cancel capacity cascade cascaded case cast catalog category ceil ceiling chain change changed char_base char_length character_length characters characterset charindex charset charsetform charsetid check checksum checksum_agg child choose chr chunk class cleanup clear client clob clob_base clone close cluster_id cluster_probability cluster_set clustering coalesce coercibility col collate collation collect colu colum column column_value columns columns_updated comment commit compact compatibility compiled complete composite_limit compound compress compute concat concat_ws concurrent confirm conn connec connect connect_by_iscycle connect_by_isleaf connect_by_root connect_time connection consider consistent constant constraint constraints constructor container content contents context contributors controlfile conv convert convert_tz corr corr_k corr_s corresponding corruption cos cost count count_big counted covar_pop covar_samp cpu_per_call cpu_per_session crc32 create creation critical cross cube cume_dist curdate current current_date current_time current_timestamp current_user cursor curtime customdatum cycle data database databases datafile datafiles datalength date_add date_cache date_format date_sub dateadd datediff datefromparts datename datepart datetime2fromparts day day_to_second dayname dayofmonth dayofweek dayofyear days db_role_change dbtimezone ddl deallocate declare decode decompose decrement decrypt deduplicate def defa defau defaul default defaults deferred defi defin define degrees delayed delegate delete delete_all delimited demand dense_rank depth dequeue des_decrypt des_encrypt des_key_file desc descr descri describ describe descriptor deterministic diagnostics difference dimension direct_load directory disable disable_all disallow disassociate discardfile disconnect diskgroup distinct distinctrow distribute distributed div do document domain dotnet double downgrade drop dumpfile duplicate duration each edition editionable editions element ellipsis else elsif elt empty enable enable_all enclosed encode encoding encrypt end end-exec endian enforced engine engines enqueue enterprise entityescaping eomonth error errors escaped evalname evaluate event eventdata events except exception exceptions exchange exclude excluding execu execut execute exempt exists exit exp expire explain explode export export_set extended extent external external_1 external_2 externally extract failed failed_login_attempts failover failure far fast feature_set feature_value fetch field fields file file_name_convert filesystem_like_logging final finish first first_value fixed flash_cache flashback floor flush following follows for forall force foreign form forma format found found_rows freelist freelists freepools fresh from from_base64 from_days ftp full function general generated get get_format get_lock getdate getutcdate global global_name globally go goto grant grants greatest group group_concat group_id grouping grouping_id groups gtid_subtract guarantee guard handler hash hashkeys having hea head headi headin heading heap help hex hierarchy high high_priority hosts hour hours http id ident_current ident_incr ident_seed identified identity idle_time if ifnull ignore iif ilike ilm immediate import in include including increment index indexes indexing indextype indicator indices inet6_aton inet6_ntoa inet_aton inet_ntoa infile initial initialized initially initrans inmemory inner innodb input insert install instance instantiable instr interface interleaved intersect into invalidate invisible is is_free_lock is_ipv4 is_ipv4_compat is_not is_not_null is_used_lock isdate isnull isolation iterate java join json json_exists keep keep_duplicates key keys kill language large last last_day last_insert_id last_value lateral lax lcase lead leading least leaves left len lenght length less level levels library like like2 like4 likec limit lines link list listagg little ln load load_file lob lobs local localtime localtimestamp locate locator lock locked log log10 log2 logfile logfiles logging logical logical_reads_per_call logoff logon logs long loop low low_priority lower lpad lrtrim ltrim main make_set makedate maketime managed management manual map mapping mask master master_pos_wait match matched materialized max maxextents maximize maxinstances maxlen maxlogfiles maxloghistory maxlogmembers maxsize maxtrans md5 measures median medium member memcompress memory merge microsecond mid migration min minextents minimum mining minus minute minutes minvalue missing mod mode model modification modify module monitoring month months mount move movement multiset mutex name name_const names nan national native natural nav nchar nclob nested never new newline next nextval no no_write_to_binlog noarchivelog noaudit nobadfile nocheck nocompress nocopy nocycle nodelay nodiscardfile noentityescaping noguarantee nokeep nologfile nomapping nomaxvalue nominimize nominvalue nomonitoring none noneditionable nonschema noorder nopr nopro noprom nopromp noprompt norely noresetlogs noreverse normal norowdependencies noschemacheck noswitch not nothing notice notnull notrim novalidate now nowait nth_value nullif nulls num numb numbe nvarchar nvarchar2 object ocicoll ocidate ocidatetime ociduration ociinterval ociloblocator ocinumber ociref ocirefcursor ocirowid ocistring ocitype oct octet_length of off offline offset oid oidindex old on online only opaque open operations operator optimal optimize option optionally or oracle oracle_date oradata ord ordaudio orddicom orddoc order ordimage ordinality ordvideo organization orlany orlvary out outer outfile outline output over overflow overriding package pad parallel parallel_enable parameters parent parse partial partition partitions pascal passing password password_grace_time password_lock_time password_reuse_max password_reuse_time password_verify_function patch path patindex pctincrease pctthreshold pctused pctversion percent percent_rank percentile_cont percentile_disc performance period period_add period_diff permanent physical pi pipe pipelined pivot pluggable plugin policy position post_transaction pow power pragma prebuilt precedes preceding precision prediction prediction_cost prediction_details prediction_probability prediction_set prepare present preserve prior priority private private_sga privileges procedural procedure procedure_analyze processlist profiles project prompt protection public publishingservername purge quarter query quick quiesce quota quotename radians raise rand range rank raw read reads readsize rebuild record records recover recovery recursive recycle redo reduced ref reference referenced references referencing refresh regexp_like register regr_avgx regr_avgy regr_count regr_intercept regr_r2 regr_slope regr_sxx regr_sxy reject rekey relational relative relaylog release release_lock relies_on relocate rely rem remainder rename repair repeat replace replicate replication required reset resetlogs resize resource respect restore restricted result result_cache resumable resume retention return returning returns reuse reverse revoke right rlike role roles rollback rolling rollup round row row_count rowdependencies rowid rownum rows rtrim rules safe salt sample save savepoint sb1 sb2 sb4 scan schema schemacheck scn scope scroll sdo_georaster sdo_topo_geometry search sec_to_time second seconds section securefile security seed segment select self semi sequence sequential serializable server servererror session session_user sessions_per_user set sets settings sha sha1 sha2 share shared shared_pool short show shrink shutdown si_averagecolor si_colorhistogram si_featurelist si_positionalcolor si_stillimage si_texture siblings sid sign sin size size_t sizes skip slave sleep smalldatetimefromparts smallfile snapshot some soname sort soundex source space sparse spfile split sql sql_big_result sql_buffer_result sql_cache sql_calc_found_rows sql_small_result sql_variant_property sqlcode sqldata sqlerror sqlname sqlstate sqrt square standalone standby start starting startup statement static statistics stats_binomial_test stats_crosstab stats_ks_test stats_mode stats_mw_test stats_one_way_anova stats_t_test_ stats_t_test_indep stats_t_test_one stats_t_test_paired stats_wsr_test status std stddev stddev_pop stddev_samp stdev stop storage store stored str str_to_date straight_join strcmp strict string struct stuff style subdate subpartition subpartitions substitutable substr substring subtime subtring_index subtype success sum suspend switch switchoffset switchover sync synchronous synonym sys sys_xmlagg sysasm sysaux sysdate sysdatetimeoffset sysdba sysoper system system_user sysutcdatetime table tables tablespace tablesample tan tdo template temporary terminated tertiary_weights test than then thread through tier ties time time_format time_zone timediff timefromparts timeout timestamp timestampadd timestampdiff timezone_abbr timezone_minute timezone_region to to_base64 to_date to_days to_seconds todatetimeoffset trace tracking transaction transactional translate translation treat trigger trigger_nestlevel triggers trim truncate try_cast try_convert try_parse type ub1 ub2 ub4 ucase unarchived unbounded uncompress under undo unhex unicode uniform uninstall union unique unix_timestamp unknown unlimited unlock unnest unpivot unrecoverable unsafe unsigned until untrusted unusable unused update updated upgrade upped upper upsert url urowid usable usage use use_stored_outlines user user_data user_resources users using utc_date utc_timestamp uuid uuid_short validate validate_password_strength validation valist value values var var_samp varcharc vari varia variab variabl variable variables variance varp varraw varrawc varray verify version versions view virtual visible void wait wallet warning warnings week weekday weekofyear wellformed when whene whenev wheneve whenever where while whitespace window with within without work wrapped xdb xml xmlagg xmlattributes xmlcast xmlcolattval xmlelement xmlexists xmlforest xmlindex xmlnamespaces xmlpi xmlquery xmlroot xmlschema xmlserialize xmltable xmltype xor year year_to_month years yearweek",literal:"true false null unknown",built_in:"array bigint binary bit blob bool boolean char character date dec decimal float int int8 integer interval number numeric real record serial serial8 smallint text time timestamp tinyint varchar varchar2 varying void"},c:[{cN:"string",b:"'",e:"'",c:[{b:"''"}]},{cN:"string",b:'"',e:'"',c:[{b:'""'}]},{cN:"string",b:"`",e:"`"},e.CNM,e.CBCM,t,e.HCM]},e.CBCM,t,e.HCM]}});hljs.registerLanguage("cs",function(e){var a={keyword:"abstract as base bool break byte case catch char checked const continue decimal default delegate do double enum event explicit extern finally fixed float for foreach goto if implicit in int interface internal is lock long object operator out override params private protected public readonly ref sbyte sealed short sizeof stackalloc static string struct switch this try typeof uint ulong unchecked unsafe ushort using virtual void volatile while add alias ascending async await by descending dynamic equals from get global group into join let nameof on orderby partial remove select set value var when where yield",literal:"null false true"},i={cN:"number",v:[{b:"\\b(0b[01']+)"},{b:"(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)"},{b:"(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)"}],relevance:0},c={cN:"string",b:'@"',e:'"',c:[{b:'""'}]},r=e.inherit(c,{i:/\n/}),n={cN:"subst",b:"{",e:"}",k:a},t=e.inherit(n,{i:/\n/}),s={cN:"string",b:/\$"/,e:'"',i:/\n/,c:[{b:"{{"},{b:"}}"},e.BE,t]},l={cN:"string",b:/\$@"/,e:'"',c:[{b:"{{"},{b:"}}"},{b:'""'},n]},b=e.inherit(l,{i:/\n/,c:[{b:"{{"},{b:"}}"},{b:'""'},t]});n.c=[l,s,c,e.ASM,e.QSM,i,e.CBCM],t.c=[b,s,r,e.ASM,e.QSM,i,e.inherit(e.CBCM,{i:/\n/})];var o={v:[l,s,c,e.ASM,e.QSM]},d=e.IR+"(<"+e.IR+"(\\s*,\\s*"+e.IR+")*>)?(\\[\\])?";return{aliases:["csharp","c#"],k:a,i:/::/,c:[e.C("///","$",{rB:!0,c:[{cN:"doctag",v:[{b:"///",relevance:0},{b:"\x3c!--|--\x3e"},{b:"</?",e:">"}]}]}),e.CLCM,e.CBCM,{cN:"meta",b:"#",e:"$",k:{"meta-keyword":"if else elif endif define undef warning error line region endregion pragma checksum"}},o,i,{bK:"class interface",e:/[{;=]/,i:/[^\s:,]/,c:[e.TM,e.CLCM,e.CBCM]},{bK:"namespace",e:/[{;=]/,i:/[^\s:]/,c:[e.inherit(e.TM,{b:"[a-zA-Z](\\.?\\w)*"}),e.CLCM,e.CBCM]},{cN:"meta",b:"^\\s*\\[",eB:!0,e:"\\]",eE:!0,c:[{cN:"meta-string",b:/"/,e:/"/}]},{bK:"new return throw await else",relevance:0},{cN:"function",b:"("+d+"\\s+)+"+e.IR+"\\s*\\(",rB:!0,e:/\s*[{;=]/,eE:!0,k:a,c:[{b:e.IR+"\\s*\\(",rB:!0,c:[e.TM],relevance:0},{cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,k:a,relevance:0,c:[o,i,e.CBCM]},e.CLCM,e.CBCM]}]}});hljs.registerLanguage("css",function(e){var c={b:/(?:[A-Z\_\.\-]+|--[a-zA-Z0-9_-]+)\s*:/,rB:!0,e:";",eW:!0,c:[{cN:"attribute",b:/\S/,e:":",eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:"built_in",b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM,e.CSSNM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:"number",b:"#[0-9A-Fa-f]+"},{cN:"meta",b:"!important"}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:"selector-id",b:/#[A-Za-z0-9_-]+/},{cN:"selector-class",b:/\.[A-Za-z0-9_-]+/},{cN:"selector-attr",b:/\[/,e:/\]/,i:"$",c:[e.ASM,e.QSM]},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"@(page|font-face)",l:"@[a-z-]+",k:"@page @font-face"},{b:"@",e:"[{;]",i:/:/,rB:!0,c:[{cN:"keyword",b:/@\-?\w[\w]*(\-\w+)*/},{b:/\s/,eW:!0,eE:!0,relevance:0,k:"and or not only",c:[{b:/[a-z-]+:/,cN:"attribute"},e.ASM,e.QSM,e.CSSNM]}]},{cN:"selector-tag",b:"[a-zA-Z-][a-zA-Z0-9_-]*",relevance:0},{b:"{",e:"}",i:/\S/,c:[e.CBCM,c]}]}});hljs.registerLanguage("javascript",function(e){var r="[A-Za-z$_][0-9A-Za-z$_]*",a={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},t={cN:"number",v:[{b:"\\b(0[bB][01]+)n?"},{b:"\\b(0[oO][0-7]+)n?"},{b:e.CNR+"n?"}],relevance:0},c={cN:"subst",b:"\\$\\{",e:"\\}",k:a,c:[]},n={b:"html`",e:"",starts:{e:"`",rE:!1,c:[e.BE,c],sL:"xml"}},s={b:"css`",e:"",starts:{e:"`",rE:!1,c:[e.BE,c],sL:"css"}},o={cN:"string",b:"`",e:"`",c:[e.BE,c]};c.c=[e.ASM,e.QSM,n,s,o,t,e.RM];var i=c.c.concat([e.CBCM,e.CLCM]);return{aliases:["js","jsx","mjs","cjs"],k:a,c:[{cN:"meta",relevance:10,b:/^\s*['"]use (strict|asm)['"]/},{cN:"meta",b:/^#!/,e:/$/},e.ASM,e.QSM,n,s,o,e.CLCM,e.C("/\\*\\*","\\*/",{relevance:0,c:[{cN:"doctag",b:"@[A-Za-z]+",c:[{cN:"type",b:"\\{",e:"\\}",relevance:0},{cN:"variable",b:r+"(?=\\s*(-)|$)",endsParent:!0,relevance:0},{b:/(?=[^\n])\s/,relevance:0}]}]}),e.CBCM,t,{b:/[{,\n]\s*/,relevance:0,c:[{b:r+"\\s*:",rB:!0,relevance:0,c:[{cN:"attr",b:r,relevance:0}]}]},{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{cN:"function",b:"(\\(.*?\\)|"+r+")\\s*=>",rB:!0,e:"\\s*=>",c:[{cN:"params",v:[{b:r},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:a,c:i}]}]},{cN:"",b:/\s/,e:/\s*/,skip:!0},{b:/</,e:/(\/[A-Za-z0-9\\._:-]+|[A-Za-z0-9\\._:-]+\/)>/,sL:"xml",c:[{b:/<[A-Za-z0-9\\._:-]+\s*\/>/,skip:!0},{b:/<[A-Za-z0-9\\._:-]+/,e:/(\/[A-Za-z0-9\\._:-]+|[A-Za-z0-9\\._:-]+\/)>/,skip:!0,c:[{b:/<[A-Za-z0-9\\._:-]+\s*\/>/,skip:!0},"self"]}]}],relevance:0},{cN:"function",bK:"function",e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:r}),{cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,c:i}],i:/\[|%/},{b:/\$[(.]/},e.METHOD_GUARD,{cN:"class",bK:"class",e:/[{;=]/,eE:!0,i:/[:"\[\]]/,c:[{bK:"extends"},e.UTM]},{bK:"constructor get set",e:/\{/,eE:!0}],i:/#(?!!)/}});hljs.initHighlightingOnLoad();</script>
+<script>
+let objThis;
+let indexStyleNumber;
+let originShowIndex;
+
+class MarkdownPad2AutoCatalog {
+  //showIndex  是否显示目录序号
+  //indexStyle 目录样式 1, 2, 3
+  //openDark   是否开启夜览模式
+  constructor(showIndex = false, indexStyle = 1, openDark = false,) {
+    objThis = this; //当前对象的 this
+    if ((typeof showIndex) !== 'boolean') {
+      showIndex = true;
+      console.error('传入参数类型有误，已按照默认配置执行，该参数类型为：Boolean');
+    }
+    if ((typeof indexStyle) !== 'number') {
+      indexStyle = 1;
+      console.error('传入参数类型有误，已按照默认配置执行，该参数类型为：Number');
+    }
+    if ((typeof openDark) !== 'boolean') {
+      openDark = false;
+      console.error('传入参数类型有误，已按照默认配置执行，该参数类型为：Boolean');
+    }
+    this.showIndex = showIndex;
+    this.indexStyle = indexStyle;
+    this.openDark = openDark;
+    indexStyleNumber = indexStyle;
+    originShowIndex = showIndex;
+
+    //目录构建
+    if ((document.querySelector("#left-container")) == null) { //替换文档内容，防止重复生成
+      this.replaceOld();
+    }
+    //样式控制节点元素
+    this.leftElement = document.querySelector('#left-container');
+    this.rightElement = document.querySelector('#right-container');
+    this.content = document.querySelector('#content');
+    this.topElement = document.querySelector('.top-container');
+    this.listElement = document.querySelector('.list-wrapper');
+    this.switchButton = document.querySelector('#switch-button');
+    this.switchListButton = document.querySelector('.catalog-button');
+    this.viewModeButton = document.querySelector('.mode');
+    this.allIcon = this.listElement.children[0].querySelectorAll('i');
+    this.allChildLevel = this.listElement.children[0].querySelectorAll('ul');
+    this.allCatalogElement = this.listElement.querySelectorAll('a');
+    this.showIndexEl = document.querySelector('.index');
+    this.allIndex = this.listElement.querySelectorAll('p');
+    //样式控制
+    this.haveChileLevel();
+    this.switchCatalog();
+    this.switchCatalogList();
+    this.switchParentCatalog();
+    this.singLeCatalogClick();
+    this.catalogTrack();
+    this.nightView();
+    this.showCatalogIndex();
+    this.choseCatalogStyle();
+    this.searchCatalog();
+
+  }
+
+  /*
+     * ----------------------------------------
+     * 创建新的目录、内容和底部提示 布局结构
+     * ----------------------------------------
+    */
+  createContent() {
+    //获取已有正文内容
+    let oldContent = document.body.innerHTML;
+    //清空已有内容
+    document.body.innerHTML = '';
+    // 如果将 body{overflow:hidden;} 样式写在 css中,
+    // 会出现在 MarkdownPad2 编辑器中预览时，超出屏幕的内容无法滑动的 bug
+    document.body.style.overflow = 'hidden';
+    //是否开启夜览模式
+    let modeStyleClass;
+    if (this.openDark) {
+      document.body.className = 'js-night-view';
+      modeStyleClass = 'icon-night';
+    } else {
+      document.body.className = '';
+      modeStyleClass = 'icon-sun';
+    }
+    //创建左侧目录、右侧内容结构元素
+    //1.创建目录、内容结构父级空元素
+    let leftBlock = document.createElement('div');
+    let rightBlock = document.createElement('div');
+    //2.设置目录、内容父级元素id属性
+    leftBlock.id = 'left-container';
+    rightBlock.id = 'right-container';
+    //3.设置目录父级元素的内容结构
+    //是否显示目录序号
+    let isShowIndex = this.showIndex;
+    let indexItem;
+    if (isShowIndex) {
+      indexItem = '<i class="iconfont icon-indexA"></i>';
+    } else {
+      indexItem = '<i class="iconfont icon-indexB"></i>';
+    }
+    //目录样式
+    let indexStyleElement = '';
+    for (let i = 1, len = 3; i <= len; i++) {
+      if (this.indexStyle == i) {
+        indexStyleElement += '<li class="active" >' + '<span>样式 ' + i + '</span></li>';
+      } else {
+        indexStyleElement += '<li>' + '<span>样式 ' + i + '</span></li>';
+      }
+    }
+    leftBlock.innerHTML = '\n<div class="top-container">\n' +
+      '        <i class="catalog-button iconfont icon-catalogClose"></i>\n' +
+      '        <div class="search-container">\n' +
+      '            <input type="text" class="search" name="search" placeholder="输入关键字搜索 . . .">\n' +
+      '            <i class="search-icon iconfont icon-cancel"></i>\n' +
+      '        </div>\n' +
+      '        <div class="search-result"></div>\n' +
+      '    </div>\n' +
+      '    <div id="list-container">\n' +
+      '        <div class="list-wrapper">\n' +
+      '        </div>\n' +
+      '    </div>\n' +
+      '    <div class="bottom-container">\n' +
+      '        <div class="mode-container">\n' +
+      '            <div class="mode">\n' +
+      '                <i class="iconfont ' + modeStyleClass + '"></i>\n' +
+      '            </div>\n' +
+      '            <div class="index">\n' + indexItem +
+      '            \n</div>\n' +
+      '            <div class="structure">\n' +
+      '                <i class="iconfont icon-process"></i>\n' +
+      '                <ul class="structure-child">\n' + indexStyleElement +
+      '                </ul>\n' +
+      '            </div>\n' +
+      '            <div class="color" style="display: none;">\n' +
+      '                <i class="iconfont icon-color"></i>\n' +
+      '                <div class="color-child">\n' +
+      '                    <span>自定义颜色</span>\n' +
+      '                    <input type="color">\n' +
+      '                </div>\n' +
+      '            </div>\n' +
+      '        </div>\n' +
+      '    </div>\n' +
+      '   <div id="switch-button">\n' +
+      '   <i class="iconfont icon-arrLeft"></i>\n' +
+      '   </div>\n';
+    //4.设置内容父级元素的内容结构
+    rightBlock.innerHTML = '\n<div id="content">\n' +
+      oldContent +
+      '\n</div>\n' + '</div>\n';
+
+    //5.追加结构元素到页面
+    document.body.appendChild(leftBlock);
+    document.body.appendChild(rightBlock);
+
+    //6.底部提示
+    let msg = '\n<p class="note-tips">\n' +
+      ' 一次一生的人生该如何度过呢&emsp;' +
+      '<a href="https://loveyouluobin.github.io/" target="_blank"> 联系我</a>';
+    //5.追加结构元素到页面
+    this.noteTips('div', msg, 'content');
+  }
+
+  /*
+  * ----------------------------------------
+  * 将除了第一个 h1 外的 h1 转为 h2，
+  * 并依次将其他 h 标签降一级，h6 不变
+  * ----------------------------------------
+  */
+  changeTag() {
+    let h1Tag = document.querySelectorAll('h1');
+    //转换 h1
+    if (h1Tag.length > 1) {
+      let otherTag = document.querySelectorAll('h2,h3,h4,h5');
+      for (let i = 1, len = h1Tag.length; i < len; i++) {
+        let newTag = document.createElement('h2');
+        newTag.innerHTML = h1Tag[i].innerHTML;
+        // 替换内容
+        h1Tag[i].parentNode.replaceChild(newTag, h1Tag[i]);
+      }
+      for (let j = 0, len = otherTag.length; j < len; j++) {
+        let tagName = 'h' + (parseInt(otherTag[j].nodeName.slice(1)) + 1);
+        let newTag2 = document.createElement(tagName);
+        newTag2.innerHTML = otherTag[j].innerHTML;
+        // 替换内容
+        otherTag[j].parentNode.replaceChild(newTag2, otherTag[j]);
+      }
+    }
+  }
+
+  /**
+   * ----------------------------------------
+   * 获取 H 标签后的数字
+   * ----------------------------------------
+   * @param tag obj 标签对象
+   *
+   */
+  getTagNumber(tag) {
+    if ((typeof tag) != 'object') {
+      console.error('getTagNumber() 调用时参数类型错误，必须是一个h标签的对象集合！');
+      return;
+    }
+    return Number(tag.nodeName.slice(1));
+  }
+
+  /**
+   * ----------------------------------------
+   * 判断目录等级，最大为 5 级即 h6 标签
+   * 根据指 id 属性中 level- 中 "." 字符出现的次数判断
+   * 0为一级，1为二级，依次类推
+   * ----------------------------------------
+   * @param str string 需要在哪个字符串中查找
+   * @param char string 要查找的字符串
+   * @return number 返回指定字符char出现的数字
+   */
+  findStrFre(str, char) {
+    if ((typeof str) !== 'string' || (typeof str) !== 'string') {
+      console.error('findStrFre() 调用时参数类型错误！');
+      return;
+    }
+    let index = str.indexOf(char);
+    let number = 0;
+    while (index !== -1) {
+      number++; // 每出现一次 次数加一
+      // 从字符串出现的位置的下一位置开始继续查找
+      index = str.indexOf(char, index + 1);
+    }
+    return number;
+  }
+
+  /**
+   * ----------------------------------------
+   * 寻找指定等级的目录的集合
+   * ----------------------------------------
+   *
+   * @param level number 第几级目录，最大 5
+   *
+   */
+  levelTagArr(level) {
+    if (level < 1 || level > 5 || (typeof level) !== 'number') {
+      console.error('levelTagArr() 调用时参数类型错误！');
+      return;
+    }
+    // 所有目录集合
+    let allTag = document.querySelectorAll('h2,h3,h4,h5,h6');
+    let level1 = [];
+    let level2 = [];
+    let level3 = [];
+    let level4 = [];
+    let level5 = [];
+    for (let i = 0, len = allTag.length; i < len; i++) {
+      let number = this.findStrFre(allTag[i].id, '.');
+      switch (number) {
+        case 0:
+          level1.push(allTag[i]);
+          break;
+        case 1:
+          level2.push(allTag[i]);
+          break;
+        case 2:
+          level3.push(allTag[i]);
+          break;
+        case 3:
+          level4.push(allTag[i]);
+          break;
+        case 4:
+          level5.push(allTag[i]);
+          break;
+        default:
+          return;
+      }
+    }
+    switch (level) {
+      case 1:
+        return level1;
+      case 2:
+        return level2;
+      case 3:
+        return level3;
+      case 4:
+        return level4;
+      case 5:
+        return level5;
+      default:
+        return;
+    }
+  }
+
+  /**
+   * ----------------------------------------
+   * 设置递增的 level 编号
+   * ----------------------------------------
+   * @param tag obj 标签对象
+   *
+   */
+  setLevelNumber(tag) {
+    if ((typeof tag) != 'object') {
+      console.error('setLevelNumber() 调用时参数类型错误，必须是一个h标签的对象集合！');
+      return;
+    }
+    let str = tag.id;
+    if (str.lastIndexOf('.') == -1) { //如果是一级目录形式 level-1000
+      let newValue = parseInt(str.slice(6)) + 1;
+      return 'level-' + newValue;
+    } else {
+      //如果是大于一级的目录形式 level-1.1 level-1.1.1 ...
+      let lastIndex = str.lastIndexOf('.');
+      let oldValue = str.slice(0, lastIndex);
+      let newValue = parseInt(str.slice(lastIndex + 1)) + 1;
+      return oldValue + '.' + newValue;
+    }
+
+  }
+
+  /*
+   * ----------------------------------------
+   * 设置所有 h 标签带层级的 id
+   * ----------------------------------------
+   */
+  setTagLevel() {
+    // 将多余的 H1 转为 H2
+    this.changeTag();
+    // 获取所有h2~h6标签，h1作为文档的题目，不作为目录标签
+    let allTag = document.querySelectorAll('h2,h3,h4,h5,h6');
+    let tagLength = allTag.length;
+    //判断目录数量，确定第一、二个标题的层级
+    if (tagLength == 0) {
+      let container = document.querySelector('.list-wrapper');
+      container.innerHTML = '<ul>\n' +
+        '<li style="text-align:center;color: #ccc;font-size:14px;">\n' +
+        '抱歉...<br/>文档中未发现 h1~h6 标签<br/>无法生成目录</p>\n</li>\n' +
+        '</ul>\n';
+      return;
+    }
+    if (tagLength == 1) {
+      allTag[0].id = 'level-' + '1'; //第一个标签肯定为一级标题
+    }
+    if (tagLength > 1) {
+      allTag[0].id = 'level-' + '1';
+      let result = this.getTagNumber(allTag[1]) - this.getTagNumber(allTag[0]);
+      if (result <= 0) {  //第二个与第一个属于同级标题
+        allTag[1].id = this.setLevelNumber(allTag[0]);
+      } else {  // 第二个是第一个的子标题
+        allTag[1].id = allTag[0].id + '.1';
+      }
+      for (let i = 2, len = tagLength - 1; i <= len; i++) {
+        let currentTagNumber = this.getTagNumber(allTag[i]);
+        let prevTagNumber = this.getTagNumber(allTag[i - 1]);
+        if (currentTagNumber < prevTagNumber) {
+          for (let j = i - 1; j >= 0; j--) {
+            //如果两个标签的数字值相差 等于 1 或 0，代表这两个标签是同级
+            let status = this.getTagNumber(allTag[j]) - currentTagNumber;
+            if (status == 1) {
+              if (j > 0) {
+                // 类似 h3 h4 h3 的特殊情况
+                if (this.getTagNumber(allTag[j - 1]) == currentTagNumber) {
+                  allTag[i].id = this.setLevelNumber(allTag[j - 1]);
+                  break;
+                }
+              } else {
+                allTag[i].id = this.setLevelNumber(allTag[j]);
+                break;
+              }
+            }
+            if (status == 0) {
+              allTag[i].id = this.setLevelNumber(allTag[j]);
+              break;
+            }
+          }
+        }
+
+        if (currentTagNumber > prevTagNumber) {
+          allTag[i].id = allTag[i - 1].id + '.1';
+        }
+
+        if (currentTagNumber == prevTagNumber) {
+          allTag[i].id = this.setLevelNumber(allTag[i - 1]);
+        }
+      }
+    } else {
+      return;
+    }
+  }
+
+  /**
+   * ----------------------------------------
+   * 提示说明
+   * ----------------------------------------
+   * @param tag sting 提示消息的标签 div p
+   * @param msg string 提示消息
+   * @param id string 父容器，要追加到哪个父容器中的id
+   */
+  noteTips(tag, msg, id) {
+    if ((typeof tag) !== 'string' || (typeof msg) !== 'string' ||
+      (typeof id) !== 'string') {
+      console.error('noteTips() 调用时参数类型错误！');
+      return;
+    }
+    let exp = document.createElement(tag);
+    exp.innerHTML = msg;
+    //5.追加结构元素到页面
+    document.getElementById(id).appendChild(exp);
+  }
+
+  /*
+* 目录结构
+*
+*  <ul>
+       <li>
+           <a href="">
+               <p>1</p>
+               <span>1 级标题</span>
+           </a>
+           <ul>
+               <li>
+                   <a href="">
+                       <p>1.1</p>
+                       <span>2 级标题</span>
+                   </a>
+                   <ul>
+                       <li>
+                           <a href="">
+                               <p>1.1.1</p>
+                               <span>3 级标题</span>
+                           </a>
+                       </li>
+                       <li>
+                           <a href="">
+                               <p>1.1.1.1</p>
+                               <span>4 级标题</span>
+                           </a>
+                           <ul>
+                               <li>
+                                   <a href="">
+                                       <p>1.1.1.2</p>
+                                       <span>5 级标题</span>
+                                   </a>
+                               </li>
+                           </ul>
+                       </li>
+                   </ul>
+               </li>
+           </ul>
+       </li>
+   </ul>
+*
+*/
+
+  /*
+   * ----------------------------------------
+   * 创建目录
+   * ----------------------------------------
+   */
+  createCatalogue() {
+    // 设置所有 h 标签的等级 id
+    this.setTagLevel();
+    // 目录父容器
+    let catalogueBlock = document.querySelector('.list-wrapper');
+    // 创建其余子目录
+    let ulElement = document.createElement('ul');
+    //是否要显示序号
+    let indexClass;
+    if (this.showIndex) {
+      indexClass = "";
+    } else {
+      indexClass = "js-close";
+    }
+    for (let j = 1; j <= 5; j++) {
+      let levelArr = this.levelTagArr(j); // 指定等级的目录集合
+      let levelLength = levelArr.length;
+      if (levelLength == 0) {
+        break;
+      }
+      if (j == 1) {
+        for (let k = 0, len = levelLength; k < len; k++) {
+          let liElement = document.createElement('li');
+          liElement.innerHTML = '\n<a href="' + window.location.pathname + '#' + levelArr[k].id + '"' + " class=" + levelArr[k].id + '>\n' +
+            '<p class="' + indexClass + '">' + levelArr[k].id.slice(6) + '</p>\n' +
+            '<span>' + levelArr[k].innerText + '</span>' +
+            '</a>\n';
+          ulElement.appendChild(liElement);
+          // 追加目录到目录容器中
+          catalogueBlock.appendChild(ulElement);
+        }
+      }
+      if (j > 1) {
+        for (let n = 0, len = levelLength; n < len; n++) {
+          // 上一级目录
+          // 2.追加 ul 到该 上级目录的 li 中
+          let prevLevelArr = this.levelTagArr(j - 1);
+          for (let m = 0, preLen = prevLevelArr.length; m < preLen; m++) {
+            // 当前的 id 值 （去掉 level-和最后一个 "."之后所有值的中间值）
+            let currentId = levelArr[n].id.slice(6, levelArr[n].id.lastIndexOf('.'));
+            // 父目录的 id 值 （去掉 level-）
+            let prevId = prevLevelArr[m].id.slice(6);
+            // 找到所属的上一级目录
+            if (currentId == prevId) {
+              // 找到父目录 li 并添加 class
+              let className = prevLevelArr[m].id;
+              let prevElement = document.getElementsByClassName(className)[0].parentNode;
+              prevElement.setAttribute('class', 'parent-level');
+              let liElement = document.createElement('li');
+              liElement.innerHTML = '\n<a href="' + window.location.pathname + '#' + levelArr[n].id + '"' + " class=" + levelArr[n].id + '>\n' +
+                '<p class="' + indexClass + '">' + levelArr[n].id.slice(6) + '</p>\n' +
+                '<span>' + levelArr[n].innerText + '</span>' +
+                '</a>\n';
+              let currentUlElement = prevElement.querySelector('ul');
+              if (currentUlElement !== null) {
+                currentUlElement.appendChild(liElement);
+              } else {
+                // 创建父目录的 ul
+                currentUlElement = document.createElement('ul');
+                currentUlElement.setAttribute('class', 'js-close');
+                currentUlElement.appendChild(liElement);
+                prevElement.appendChild(currentUlElement);
+                // 创建父目录样式
+                let parentStyle = document.createElement('i');
+                let classIcon;
+                switch (this.indexStyle) {
+                  case 1:
+                    classIcon = 'iconfont icon-closeA';
+                    break;
+                  case 2:
+                    classIcon = 'iconfont icon-closeB';
+                    break;
+                  case 3:
+                    classIcon = 'iconfont icon-closeC';
+                    break;
+                  default:
+                    classIcon = 'iconfont icon-closeA';
+                }
+                parentStyle.setAttribute('class', classIcon);
+                prevElement.insertBefore(parentStyle, prevElement.childNodes[0]);
+              }
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //替换旧文档
+  replaceOld() {
+    this.createContent();
+    this.createCatalogue();
+    // 第一个目录默认样式
+    (document.querySelector('.list-wrapper')).querySelector('li').classList.add('js-active');
+  }
+
+  /*
+  * ----------------------------------------
+  * 没有子目录时改变最外层 ul 的 padding-left的值
+  * ----------------------------------------
+  */
+  haveChileLevel() {
+    let childLevel = this.listElement.querySelector('.parent-level');
+    if (!childLevel) {
+      this.listElement.children[0].style.paddingLeft = '0';
+    }
+  }
+
+  /*
+  * ----------------------------------------
+  * 点击隐藏左侧
+  * ----------------------------------------
+  */
+  switchCatalog() {
+    let switchButton = this.switchButton;
+    let leftElement = this.leftElement;
+    let rightElement = this.rightElement;
+    let status = 0;
+    switchButton.onclick = function () {
+      let browsertWidth = document.documentElement.clientWidth;
+      if (status == 1) {
+        this.children[0].setAttribute('class', 'iconfont icon-arrLeft');
+        if (browsertWidth > 750) {
+          leftElement.style.width = '280px';
+        } else {
+          leftElement.style.width = '60%';
+        }
+        leftElement.classList.remove('js-switch-button');
+        rightElement.style.padding = '15px 15px 0 295px';
+        status = 0;
+      } else {
+        this.children[0].setAttribute('class', 'iconfont icon-closeC');
+        leftElement.style.width = '0';
+        leftElement.style.padding = '0';
+        leftElement.classList.add('js-switch-button');
+        leftElement.classList.add('js-switch-button');
+        rightElement.style.padding = '15px 15px 0';
+        status = 1;
+      }
+    }
+  }
+
+  /*
+  * ----------------------------------------
+  * 整个目录列表展开、收起
+  * ----------------------------------------
+  */
+  switchCatalogList() {
+    let switchListButton = this.switchListButton;
+    let topElement = this.topElement;
+    let allIcon = this.allIcon;
+    let allChildLevel = this.allChildLevel;
+    switchListButton.onclick = function () {
+      let isClose = topElement.querySelector('.icon-catalogClose');
+      if (isClose) { //已收起所有目录
+        // 改变当前目录列表按钮 class
+        this.setAttribute('class', 'catalog-button iconfont icon-catalogOpen');
+        // 改变所有父级目录中 i 的 class
+        for (let i = 0, len = allIcon.length; i < len; i++) {
+          if (indexStyleNumber == 1) {
+            allIcon[i].setAttribute('class', 'iconfont icon-openA');
+          } else if (indexStyleNumber == 2) {
+            allIcon[i].setAttribute('class', 'iconfont icon-openB');
+          } else {
+            allIcon[i].setAttribute('class', 'iconfont icon-openC');
+          }
+        }
+        // 打开其所有子目录
+        for (let j = 0, chLen = allChildLevel.length; j < chLen; j++) {
+          allChildLevel[j].setAttribute('class', 'js-open');
+        }
+      } else {  // 已展开所有目录
+        this.setAttribute('class', 'catalog-button iconfont icon-catalogClose');
+        // 改变所有父级目录中 i 的 class
+        for (let i = 0, allLen = allIcon.length; i < allLen; i++) {
+          if (indexStyleNumber == 1) {
+            allIcon[i].setAttribute('class', 'iconfont icon-closeA');
+          } else if (indexStyleNumber == 2) {
+            allIcon[i].setAttribute('class', 'iconfont icon-closeB');
+          } else {
+            allIcon[i].setAttribute('class', 'iconfont icon-closeC');
+          }
+        }
+        // 关闭其所有子目录
+        for (let j = 0, allChLen = allChildLevel.length; j < allChLen; j++) {
+          allChildLevel[j].setAttribute('class', 'js-close');
+        }
+      }
+    }
+  }
+
+  /*
+  * ----------------------------------------
+  * 父目录点击展开、收起子目录
+  * ----------------------------------------
+  */
+  switchParentCatalog() {
+    let allIcon = this.allIcon;
+    let topElement = this.topElement;
+    //所有一级目录节点
+    let topLevel = document.querySelector('.list-wrapper').children[0].childNodes;
+    let topLevelClass = [];
+
+    for (let i = 0, len = allIcon.length; i < len; i++) {
+      allIcon[i].onclick = function () {
+        // 目录样式 class 名称
+        let closeClass;
+        let openClass;
+        // 确定目录样式
+        switch (indexStyleNumber) {
+          case 1:
+            closeClass = 'iconfont icon-closeA';
+            openClass = 'iconfont icon-openA';
+            break;
+          case 2:
+            closeClass = 'iconfont icon-closeB';
+            openClass = 'iconfont icon-openB';
+            break;
+          case 3:
+            closeClass = 'iconfont icon-closeC';
+            openClass = 'iconfont icon-openC';
+            break;
+          default:
+            closeClass = 'iconfont icon-closeA';
+            openClass = 'iconfont icon-openA';
+        }
+        let status = allIcon[i].nextElementSibling.nextElementSibling.getAttribute('class');
+        if (status === 'js-open') { //子目录已展开
+          allIcon[i].setAttribute('class', closeClass);
+          allIcon[i].nextElementSibling.nextElementSibling.setAttribute('class', 'js-close');
+        } else { //子目录已收起
+          allIcon[i].setAttribute('class', openClass);
+          allIcon[i].nextElementSibling.nextElementSibling.setAttribute('class', 'js-open');
+        }
+        // 所有一级目录下的 ul 的 class 集合
+        for (let j = 0, len = topLevel.length; j < len; j++) {
+          let el = topLevel[j].querySelector('ul');
+          if (el == null) {
+            topLevelClass[j] = null;
+          } else {
+            topLevelClass[j] = el.getAttribute('class');
+          }
+        }
+        //如果所有一级目录的 class 集合中有 js-open ,则表示有打开的一级目录
+        if (topLevelClass.includes('js-open')) {
+          topElement.children[0].setAttribute('class', 'catalog-button iconfont icon-catalogOpen');
+        } else {
+          topElement.children[0].setAttribute('class', 'catalog-button iconfont icon-catalogClose');
+        }
+      }
+    }
+  }
+
+  /**
+   * ----------------------------------------
+   * 递归改变父级目录样式
+   * ----------------------------------------
+   * @param itemLi 需要寻找父目录的当前 li 元素对象
+   * @return {string|boolean}
+   */
+  changeParentColor(itemLi) {
+    if ((typeof itemLi) !== 'object') {
+      console.error('changeParentColor() 参数必须是一个标签对象！');
+      return false;
+    }
+    itemLi.classList.add('js-active');
+    if (itemLi.parentElement.parentElement.nodeName == 'LI') {
+      this.changeParentColor(itemLi.parentElement.parentElement);
+    } else {
+      return;
+    }
+  }
+
+  /*
+  * ----------------------------------------
+  * 单个目录点击
+  * ----------------------------------------
+  */
+  singLeCatalogClick() {
+    let allCatalogElement = this.allCatalogElement;
+    let listElement = this.listElement;
+    for (let i = 0, len = allCatalogElement.length; i < len; i++) {
+      allCatalogElement[i].onclick = function () {
+        // 其他目录恢复原始颜色
+        let oldActiveElement = listElement.querySelectorAll('.js-active');
+        for (let j = 0, oldLen = oldActiveElement.length; j < oldLen; j++) {
+          oldActiveElement[j].classList.remove('js-active');
+        }
+        // 当前目录改变颜色
+        this.parentElement.classList.add('js-active');
+        // 当前父目录添加样式
+        objThis.changeParentColor(allCatalogElement[i].parentElement);
+      }
+    }
+  }
+
+  /*
+   * ----------------------------------------
+   * 根据内容区阅读位置自动追踪目录
+   * ----------------------------------------
+   */
+  catalogTrack() {
+    //获取内容区所有 h2~h6 标题及它们距离浏览器顶部的距离
+    let allTag = this.content.querySelectorAll('h2,h3,h4,h5,h6');
+    let rightElement = this.rightElement;
+    let listElement = this.listElement;
+    let allCatalogElement = this.allCatalogElement;
+    let allTitleDistance = [];
+    for (let i = 0, len = allTag.length; i < len; i++) {
+      allTitleDistance.push(allTag[i].offsetTop - 50);
+    }
+
+    //滑动正文内容时
+    rightElement.onscroll = function () {
+      let roll = rightElement.scrollTop;
+      for (let i = 0, len = allTitleDistance.length; i < len; i++) {
+        if (allTitleDistance[i] <= roll) {
+          // 其他目录恢复原始颜色
+          let oldActiveElement = listElement.querySelectorAll('.js-active');
+          for (let j = 0, len2 = oldActiveElement.length; j < len2; j++) {
+            oldActiveElement[j].classList.remove('js-active');
+          }
+          // 当前目录改变颜色
+          allCatalogElement[i].parentElement.classList.add('js-active');
+          // 当前父目录添加样式
+          objThis.changeParentColor(allCatalogElement[i].parentElement);
+        }
+      }
+    }
+  }
+
+  /*
+  * ----------------------------------------
+  * 夜览模式
+  * ----------------------------------------
+  */
+  nightView() {
+    let isDarkMode; //当前是否是夜览模式
+    if ((document.querySelector('.js-night-view')) == null) {
+      isDarkMode = false;
+    } else {
+      isDarkMode = true;
+    }
+    let viewModeButton = this.viewModeButton;
+    let leftElement = this.leftElement;
+    let switchButton = this.switchButton;
+    viewModeButton.onclick = function () {
+      if (!isDarkMode) {
+        viewModeButton.children[0].setAttribute('class', 'iconfont icon-night');
+        document.body.classList.add('js-night-view');
+        isDarkMode = true;
+        leftElement.style.borderColor = '#3E3D42';
+      } else {
+        viewModeButton.children[0].setAttribute('class', 'iconfont icon-sun');
+        document.body.classList.remove('js-night-view');
+        isDarkMode = false;
+        leftElement.style.borderColor = '#ccc';
+      }
+    }
+
+    //left-container border-color
+    let leftBdColor = leftElement.getAttribute('border-color');
+    switchButton.onmouseover = function () {
+      leftElement.style.borderColor = '#3cae7c';
+    }
+    switchButton.onmouseout = function () {
+      leftElement.style.borderColor = leftBdColor;
+    }
+  }
+
+  /*
+   * ----------------------------------------
+   * 是否显示目录序号
+   * ----------------------------------------
+   */
+  showCatalogIndex() {
+    let status = originShowIndex;
+    let allIndex = this.allIndex;
+    this.showIndexEl.onclick = function () {
+      if (!status) { //显示目录序号
+        this.children[0].setAttribute('class', 'iconfont icon-indexA');
+        for (let i = 0, len = allIndex.length; i < len; i++) {
+          allIndex[i].classList.remove('js-close');
+        }
+        status = true;
+      } else { //关闭目录序号
+        this.children[0].setAttribute('class', 'iconfont icon-indexB');
+        for (let i = 0, len = allIndex.length; i < len; i++) {
+          allIndex[i].classList.add('js-close');
+        }
+        status = false;
+      }
+    }
+  }
+
+  /*
+   * ----------------------------------------
+   * 目录样式选择
+   * ----------------------------------------
+   */
+  choseCatalogStyle() {
+    let allStyle = document.querySelector('.structure-child').querySelectorAll('li');
+    let allIcon = this.allIcon;
+    for (let i = 0, len1 = allStyle.length; i < len1; i++) {
+      allStyle[i].onclick = function () {
+        document.querySelector('.structure-child').querySelector('.active').removeAttribute('class');
+        allStyle[i].setAttribute('class', 'active');
+        for (let j = 0, len2 = allIcon.length; j < len2; j++) {
+          let isClose = allIcon[j].nextElementSibling.nextElementSibling.getAttribute('class');
+          if (i == 0) {
+            if (isClose == 'js-close') { //子目录处于关闭状态
+              allIcon[j].setAttribute('class', 'iconfont icon-closeA');
+            } else { //子目录处于打开状态
+              allIcon[j].setAttribute('class', 'iconfont icon-openA');
+            }
+            indexStyleNumber = 1;
+          } else if (i == 1) {
+            if (isClose == 'js-close') { //子目录处于关闭状态
+              allIcon[j].setAttribute('class', 'iconfont icon-closeB');
+            } else { //子目录处于打开状态
+              allIcon[j].setAttribute('class', 'iconfont icon-openB');
+            }
+            indexStyleNumber = 2;
+          } else {
+            if (isClose == 'js-close') { //子目录处于关闭状态
+              allIcon[j].setAttribute('class', 'iconfont icon-closeC');
+            } else { //子目录处于打开状态
+              allIcon[j].setAttribute('class', 'iconfont icon-openC');
+            }
+            indexStyleNumber = 3;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * ----------------------------------------
+   * 比对搜索框和所有目录的值
+   * ----------------------------------------
+   * @param value 要比对的原始值，即 input 输入框的 value 值
+   *
+   */
+  comparison(value) {
+    if ((typeof value) != 'string') {
+      console.error('comparison() 参数必须是一个字符串');
+      return false;
+    }
+    value = value.toLowerCase();
+    let result = '';
+    let allCatalogElement = this.allCatalogElement;
+    for (let i = 0, len = allCatalogElement.length; i < len; i++) {
+      let text = allCatalogElement[i].innerText.replace(/\s+/g, '');
+      if (text.toLowerCase().indexOf(value) != -1) {
+        let href = allCatalogElement[i].getAttribute('href');
+        result += '\n<a href="' + href + '">' + allCatalogElement[i].innerText + '</a>\n';
+      }
+    }
+    if (result == '') {
+      result = '\n<i class="iconfont icon-search"></i>\n<span>目录中暂无相关搜索结果</span>\n<span>试试 Ctrl+F  在全文档搜索</span>\n';
+    }
+    return result;
+  }
+
+  /*
+   * ----------------------------------------
+   * 搜索目录
+   * ----------------------------------------
+   */
+  searchCatalog() {
+    let searchElement = document.querySelector('.search');
+    let searchResultElement = document.querySelector('.search-result');
+    let searchIconElement = searchElement.nextElementSibling;
+    // 获取焦点
+    searchElement.onfocus = function () {
+      searchElement.onkeyup = function () {
+        let searchNewValue = (searchElement.value).replace(/\s+/g, '');
+        if (searchNewValue) { // 不为空时
+          searchResultElement.style.display = 'block';
+          searchIconElement.style.display = 'block';
+          let results = objThis.comparison(searchNewValue);
+          searchResultElement.innerHTML = results;
+          // 记录当前已点选过的搜索结果
+          let allSearch = searchResultElement.querySelectorAll('a');
+          for (let j = 0, len = allSearch.length; j < len; j++) {
+            allSearch[j].onclick = function () {
+              allSearch[j].classList.add('js-active');
+            }
+          }
+        } else {
+          searchResultElement.style.display = 'none';
+          searchIconElement.style.display = 'none';
+        }
+      }
+    }
+    // 点击取消
+    searchIconElement.onclick = function () {
+      this.style.display = 'none';
+      searchResultElement.style.display = 'none';
+      searchElement.value = '';
+    }
+  }
+}
+
+window.onload = function () {
+  new MarkdownPad2AutoCatalog();
+}
+
+</script>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Cable</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='线束行业知识库'><span>线束行业知识库</span></h2><h3 id='定义-1'><span>定义</span></h3><p><span>一种为负载源提供传输电力或信号的连接载体装置，主要由电线和连接器组成。</span>
+<img src="https://pica.zhimg.com/v2-44167ce8a25b08eb800622c88b8228ef_1440w.jpg?source=172ae18b" referrerpolicy="no-referrer"></p><h3 id='作用-1'><span>作用</span></h3><p><span>　在两个或多个孤立不通的电子电路之间架起沟通的桥梁，从而能够使电流流通，实现各种电子元器件的各项功能，它是各种电器和电子设备中不可缺少的一种部件。相当于电气系统的血脉和神经。</span></p><h3 id='组成-1'><span>组成</span></h3><p><span>线束四大主料，电线，连接器，端子，包扎材料</span></p><p><span>普通线束的组成部分是：电线，端子，连接器。</span></p><p><span>复杂的线束的组成则还要追加：胶带，扎带，套管，护套，标签等等</span></p><p><img src="https://www.z4a.net/images/2024/02/22/_20240222151327.jpg" referrerpolicy="no-referrer"></p><h3 id='性能-1'><span>性能</span></h3><p><span>传输电流大小能力，抗电压能力，抗高低温能力，传输信号时的抗干扰能力，防水性能，耐候能力：耐老化年限，耐酸碱性能。</span></p><h3 id='故障-1'><span>故障</span></h3><p><span>插接件接触不良、导线之间的短路、断路。</span></p><h3 id='线束材料选型'><span>线束材料选型</span></h3><p><span>　　线束材料的好坏，直接影响到线束的质量，线束材料的选择，关系到线束的质量，稳定性和使用寿命。</span>
+<span>　　那如何分辨线束质量的好坏呢？主要处决于线束材料的选型和生产工艺。以下介绍线束材料。</span></p><p><span> 线束四大主料，电线，连接器，端子，套管。专业术语为导线、绝缘护套、接线端子，以及包扎材料组成。只要了解了这些材料，就能轻易分辨线束的质量。</span>
+<span>　　</span></p><h2 id='电线知识库'><span>电线知识库</span></h2><p><img src="https://www.z4a.net/images/2024/02/22/_20240222151013.jpg" referrerpolicy="no-referrer"></p><h3 id='定义-2'><span>定义</span></h3><p><span>通常是由1根或几根导体（一般至少两根）绞合而成的类似绳索的线缆，导体外面包裹有高度绝缘的覆盖层。电缆具有内通电，外绝缘的特征。</span></p><h3 id='组成-2'><span>组成</span></h3><p><span>由绝缘层和导体组成。多芯线还要加上护套/外被。</span></p><h3 id='分类-1'><span>分类</span></h3><p><span>电缆有电力电缆、控制电缆、补偿电缆、屏蔽电缆、高温电缆、计算机电缆、信号电缆、同轴电缆、耐火电缆、船用电缆、矿用电缆、铝合金电缆等等。它们都是由单股或多股导线和绝缘层组成，用来连接电路、电器等。</span></p><h3 id='绝缘层'><span>绝缘层</span></h3><p><span>有聚氯乙烯PVC、聚乙烯PE、交联聚乙烯XLPE 硅橡胶 低烟无卤聚烃(DWPJ)、低烟低卤聚烃(DDPJ)、聚丙(PP)、聚四氟乙(PTFE/F-4)、聚全氟乙丙(FEP/F-46)、聚酰(PA6)、聚酰亚(PI)等;</span></p><h3 id='导体'><span>导体</span></h3><p><span>裸铜 和镀锡铜(无氧铜) 铝线 银线 漆包线 铜包铝。</span></p><h3 id='线型-1'><span>线型</span></h3><p><span>线型分类目的：每种线型都已经规定了线缆的铜丝数结构，大小，绝缘材料，耐温，耐压，防火，软硬程度，行业适应，等等符合各行业要求的线缆信息。 线材的导体材料大多为镀锡铜和裸铜，线材的绝缘材料大多为PVC</span></p><h3 id='线型按电子电器类分一般有'><span>线型按电子电器类分一般有</span></h3><p><span> 美标UL1007 UL1015 UL1571 UL2468国标的RV RVV 欧标的H05V-K H07V-K</span></p><h3 id='线型按使用用途电源类分'><span>线型按使用用途，电源类分</span></h3><p><span>：美标平行线 SPT-2 SPT-1 NISPT-1 NISPT-2 SJTW SJT ST SVT SVTO SJTO SJO</span></p><p><span>欧标 H05VV-F H03VV-F H07RN-F 3G1.0</span></p><p><span>国标RVV53 RVV52 YZW57 YCW66 RVVB53</span></p><h3 id='汽车线专用按国家分'><span>汽车线专用按国家分</span></h3><p><span>国标QB-B QB-C QVR QGV QZ-F</span></p><p><span>德标FLRY-B FLRY-A FLY FLR6Y-B</span></p><p><span>日标AVS AV AVSS CAVS</span></p><p><span>美标SGT TXL GPT QVR</span></p><h3 id='常用特征代码'><span>常用特征代码</span></h3><p><span>用途代码－不标为电力电缆，K-（控制缆），P-（信号缆）；</span>
+<span>导体材料代码－不标为铜（也可以标为CU），L-（铝）；</span>
+<span>内护层代码－Q-（铅包），L-（铝包），H-（橡套），V-（聚氯乙烯护套）， 内护套一般不标识；</span>
+<span>外护层代码－V-（聚氯乙烯），Y-（聚乙烯电力电缆）；</span>
+<span>派生代码－D-（不滴流），P-（干绝缘）；</span>
+<span>特殊产品代码－TH-（湿热带），TA-（干热带），ZR-（阻燃），NH-（耐火），WDZ-（低烟无卤、企业标准）。</span></p><h3 id='线色'><span>线色</span></h3><h3 id='中国汽车电线颜色缩写'><span>中国汽车电线颜色缩写 </span></h3><p><span>缩写  英文  中文 </span>
+<span>Br  Brown  棕色 </span>
+<span>R  Red  红色 </span>
+<span>O  Orange  橙色 </span>
+<span>Y  Yellow  黄色 </span>
+<span>G  Green  绿色 </span>
+<span>Bl  Blue  蓝色 </span>
+<span>V  Violet  紫色 </span>
+<span>Gr  Gray  灰色 </span>
+<span>W  White  白色 </span>
+<span>B  Black  黑色 </span></p><h3 id='日本汽车电线颜色缩写'><span>日本汽车电线颜色缩写 </span></h3><p><span>缩写字母  英文  中文 </span>
+<span>BR  Brown  棕色 </span>
+<span>R  Red  红色 </span>
+<span>OR（O凯美瑞）  Orange  橙色 </span>
+<span>Y  Yellow  黄色 </span>
+<span>G  Green  绿色 </span>
+<span>L  Blue  蓝色 </span>
+<span>PU（V凯美瑞）  Purple  紫色 </span>
+<span>GR  Gray  灰色 </span>
+<span>W  White  白色 </span>
+<span>B  Black  黑色 </span>
+<span>P  Pink  粉红色 </span>
+<span>LG  Light Green  浅绿色 </span>
+<span>SB  Sky Blue  天蓝色 </span></p><h3 id='美国汽车电线颜色缩'><span>美国汽车电线颜色缩 </span></h3><p><span>缩写  英文  中文 </span>
+<span>BN  Brown  棕色 </span>
+<span>RD  Red  红色 </span>
+<span>OG  Orange  橙色 </span>
+<span>YL  Yellow  黄色 </span>
+<span>GN  Green  绿色 </span>
+<span>BU  Blue  蓝色 </span>
+<span>PL  Purple  紫色 </span>
+<span>GY  Gray  灰色 </span>
+<span>WT  White  白色 </span>
+<span>BK  Black  黑色 </span>
+<span>PK  Pink  粉红色 </span>
+<span>VI（P）  Violet （Purple）  紫色 </span>
+<span>CR  Clear  透明 </span>
+<span>TN  Tan  褐色 </span>
+<span>LT BU（LB）  Light Blue  浅蓝色 </span>
+<span>LT GN（LG）  Light Green  浅绿色 </span>
+<span>DK GN（DG）  Dark Green  深绿色 </span></p><h3 id='欧洲汽车电线颜色缩写'><span>欧洲汽车电线颜色缩写</span></h3><p><span>缩写  英文  中文 </span>
+<span>BR  Brown  棕色 </span>
+<span>RO  Red  红色 </span>
+<span>OR  Orange  橙色 </span>
+<span>GE  Yellow  黄色 </span>
+<span>GN  Green  绿色 </span>
+<span>BL  Blue  Blue </span>
+<span>V  Violet  紫色 </span>
+<span>GR  Gray  灰色 </span>
+<span>WS  White  白色 </span>
+<span>SW  Black  黑色 </span>
+<span>RS  Pink  粉红色 </span></p><h3 id='线型-2'><span>线型</span></h3><p><span>用来把一系列适合不同行业，不同国家，不同要求参数的电线特征，定义一个名称用来快速识别和区分电线的不同，一般以国家和行业来区分：</span>
+<span>比如：</span>
+<span>美标的电子线：UL1015 UL1007 UL1569</span>
+<span>美标的护套线：UL2464 UL2725</span>
+<span>中国的电子线 RV RVV</span>
+<span>中国的护套线RVVP RVSP</span>
+<span>日本的汽车电子线 AVSS AVS</span>
+<span>适合电源的 SJT SJTO SJTW 美标圆形电源线</span>
+<span>适合汽车的德标 FLRY-A FLRY-B</span>
+<span>适合汽车的美标 GXT TXL</span>
+<span>适合汽车的国标 QB-B QB-C</span></p><h3 id='汽车线束'><span>汽车线束</span></h3><p><span>的主要材料可以简单的分为接插件和导线两个部分,其中导线标准,时至今日,包括中国的各个国家都建立了自己的标准.19世纪末至20世纪30年代,在这一时期,奔驰、福特、通用等20多家汽车公司相继成立,世界汽车工业快速发展阶段,所以德国、美国率先有了自己的车用电线标准,发展至今日,大致有如下一些标准和型号,分别如下,</span></p><p><span>1.德标汽车电线产品标准</span></p><p><span>1.1 DIN 72551 德国国家标准 FLY、FLRY、FLYW</span></p><p><span>1.2 VW 60306 大众公司标准 FLRY、FLR6Y、FLR7Y、FLR13Y、FLR31Y等</span></p><p><span>2.美国标准汽车电线</span></p><p><span>SAE-美国汽车工程师学会标准</span></p><p><span>SAE 1127 电池电缆</span></p><p><span>SAE 1128 低压初级电缆GXL、TWP、TXL、GPT、HDT、STS、HTS、SXL、TWE、GTE、HTE</span></p><p><span>SAE 1678 低压薄壁初级电缆</span></p><p><span>3.日本汽车电线产品标准</span></p><p><span>JIS C3406 汽车用薄壁绝缘低压电缆 AV型 日本汽车工程学会标准</span></p><p><span>JASO D611 汽车用薄壁绝缘低压电缆 AVS、AVSS、CAVS</span></p><p><span>JASO D608 汽车用耐热低压电缆 AVX、AEX</span></p><p><span>4.韩国汽车电线产品标准</span></p><p><span>KSC 3311 汽车用低压电线 AV型 韩国现代企业标准</span></p><p><span>ES 91110-00 汽车用超薄壁聚氯乙烯绝缘低压电线 AVSS型</span></p><p><span>5.意大利汽车电线产品标准</span></p><p><span>FIAT 91107/13 T2-105型电线</span></p><p><span>FIAT 91107/15 T3-125型电线</span></p><p><span>T2-105 PVC 绝缘低压电线</span></p><p><span>T3-125 PP绝缘低压电线</span></p><p><span>6.中国国标汽车电线</span></p><p><span>JB 8734 国家机械部标准 RVVP、RVV</span></p><p><span>GB/T 2951 电缆绝缘和护套材料通用试验方法</span></p><p><span>JB/T8139 QVR、QVR-105、QVVR</span></p><p><span>OC/T730-2005 道路车辆用薄壁绝缘低压电线</span></p><p><span>今天,汽车行业正在从传统的燃油车快速往新能源电动车阶段发展,在线束需求上较传统导线又有着不同的要求,大致可分为充电枪线束、高压线束、低压线束几个大类,但在相关标准上仍在摸索建立阶段,各国的标准也不尽相同,目前国内充电线缆主要是以CQC1103 -1105标准为主,高压线束主要是以QC/T1037-2016、CQC1122等,目前CQC1122的标准目前还是草稿版.</span></p><h3 id='线规'><span>线规</span></h3><p><span>指电线的大小。世界主流是平方和AWG。</span>
+<span>中国，欧洲，日本都用平方数来区分，平方数越大，电线越粗</span>
+<span>比如0.5平方=0.5mm²=0.5sq</span></p><p><span>美国用AWG来区分，AWG越大，电线越细</span>
+<span>比如 24AWG=24#</span></p><h3 id='故障-2'><span>故障</span></h3><p><span>电缆线路常见的故障有机械损伤、绝缘损伤、绝缘受潮、绝缘老化变质、过电压、电缆过热故障等。当线路发生上述故障时，应切断故障电缆的电源，寻找故障点，对故障进行检查及分析，然后进行修理和试验，该割除的割除，待故障消除后，方可恢复供电。</span>
+<span>电缆故障最直接的原因是绝缘降低而被击穿。</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>1.线束导线材料的选择：根据使用环境的不同，选择相应的正标导线材料。</span>
+<span>　　2.绝缘护套材料的选择：护套材质（塑料件）常用的材质主要有PA6、PA66、ABS、PBT、pp等。可根据实际情况在塑料中添加阻燃或增强材料，以达到增强或阻燃的目的，如添加玻璃纤维增强等。</span>
+<span>　　3.接线端子材料的选择：端子材质（铜件）用的铜主要是黄铜和青铜（黄铜的硬度比青铜的硬度稍低），其中黄铜占的比重较大。另外，可根据不同的需求选择不同的镀层。端子上会有一些表面处理，比如镀金、镀铜、镀镍等，作用是为了增加导电性等</span>
+<span>　　4.包扎材料的选择：线束包扎起到耐磨、阻燃、防腐蚀、防止干扰、降低噪声、美化外观的作用，一般根据工作环境和空间大小来选择包扎材料。在包扎材料的选择上通常有胶带、波纹管、PVC管等。</span></p><h2 id='连接器知识库'><span>连接器知识库</span></h2><p><img src="https://www.z4a.net/images/2024/02/22/_20240222150812.jpg" referrerpolicy="no-referrer"></p><h3 id='定义-3'><span>定义</span></h3><p><span>接插件也叫连接器。国内也称作护套，接头和插座，一般是指电器接插件。</span></p><h3 id='作用-2'><span>作用</span></h3><p><span>1、改善生产过程</span>
+<span>接插件简化电子产品的装配过程。也简化了批量生产过程；</span>
+<span>2、易于维修</span>
+<span>如果某电子元部件失效，装有接插件时可以快速更换失效元部件；</span>
+<span>3、便于升级</span>
+<span>随着技术进步，装有接插件时可以更新元部件，用新的、更完善的元部件代替旧的；</span>
+<span>4、提高设计的灵活性</span>
+<span>使用接插件使工程师们在设计和集成新产品时，以及用元部件组成系统时，有更大的灵活性。</span></p><p><img src="https://www.z4a.net/images/2024/02/22/_20240222151105.jpg" referrerpolicy="no-referrer"></p><h3 id='材质'><span>材质</span></h3><p><span>连接器的材质：5大工程塑料150度以上:PA聚酰胺 PBT/PET聚脂  PC聚碳酸酯 POM聚甲醛 PPO聚苯醚 PPS聚苯硫醚</span>
+<span>5大通用塑料100度以下：PE聚乙烯 PP聚丙烯 PVC聚氯乙烯 PS聚苯乙烯 ABS三元共聚树脂 XPVC交联PVC XLPE交联PE</span>
+<span>其它常用： PU聚胺酯 PTFE聚四氟乙烯 EP环氧 PF聚甲醛 PPS聚苯基硫醚 PPE聚笨醚 PUR聚氨烯 EPDM三元乙丙 SIR硅橡胶 FEP聚全氟 PTEF聚四氟 TPE弹性体热塑</span></p><h3 id='品牌'><span>品牌</span></h3><p><span>市场主流90%以上的连接器，都集中在几个大厂TE MOLEX JST APTV </span>
+<span>其余品牌均为替代品</span>
+<img src="https://pic4.zhimg.com/80/v2-168354c075002c8582604bcc55ee3127_720w.webp" referrerpolicy="no-referrer"></p><h3 id='性能-2'><span>性能</span></h3><p><span>即机械性能、电气性能和环境性能</span>
+<span>机械性能就连接功能而言，插拔力是重要地机械性能。插拔力分为插入力和拔出力（拔出力亦称分离力），两者的要求是不同的。在有关标准中有最大插入力和最小分离力规定，这表明，从使用角度来看，插入力要小（从而有低插入力LIF和无插入力ZIF的结构），而分离力若太小，则会影响接触的可靠性。 接插件的插拔力和机械寿命与接触件结构（正压力大小）接触部位镀层质量（滑动摩擦系数）以及接触件排列尺寸精度（对准度）有关。</span>
+<span>电气性能接插件的主要电气性能包括接触电阻、绝缘电阻和抗电强度。</span>
+<span>①接触电阻高质量的电连接器应当具有低而稳定的接触电阻。接插件的接触电阻从几毫欧到数十毫欧不等。</span>
+<span>②绝缘电阻衡量电接插件接触件之间和接触件与外壳之间绝缘性能的指标，其数量级为数百兆欧至数千兆欧不等。</span>
+<span>③抗电强度或称耐电压、介质耐压，是表征连接器接触件之间或接触件与外壳之间耐受额定试验电压的能力。</span>
+<span>④其它电气性能。电磁干扰泄漏衰减是评价连接器的电磁干扰屏蔽效果,电磁干扰泄漏衰减是评价接插件的电磁干扰屏蔽效果，一般在100MHz~10GHz频率范围内测试。对射频同轴连接器而言，还有特性阻抗、插入损耗、反射系数、电压驻波比（VSWR）等电气指标。由于数字技术的发展，为了连接和传输高速数字脉冲信号，出现了一类新型的连接器即高速信号连接器，相应地，在电气性能方面，除特性阻抗外，还出现了一些新的电气指标，如串扰（crosstalk），传输延迟（delay）、时滞（skew）等。</span>
+<span>环境性能常见的环境性能包括耐温、耐湿、耐盐雾、振动和冲击等。</span>
+<span>①耐温目前连接器的最高工作温度为200℃（少数高温特种连接器除外），最低温度为-65℃。由于连接器工作时，电流在接触点处产生热量，导致温升，因此一般认为工作温度应等于环境温度与接点温升之和。在某些规范中，明确规定了连接器在额定工作电流下容许的最高温升。</span>
+<span>②耐湿潮气的侵入会影响连接h绝缘性能，并锈蚀金属零件。恒定湿热试验条件为相对湿度90%~95%（依据产品规范，可达98%）、温度+40±20℃，试验时间按产品规定，最少为96小时。交变湿热试验则更严苛。</span>
+<span>③耐盐雾连接器在含有潮气和盐分的环境中工作时，其金属结构件、接触件表面处理层有可能产生电化腐蚀，影响连接器的物理和电气性能。为了评价电连接器耐受这种环境的能力，规定了盐雾试验。 它是将连接器悬挂在温度受控的试验箱内，用规定浓度的氯化钠溶液用压缩空气喷出，形成盐雾大气，其暴露时间由产品规范规定，至少为48小时。</span>
+<span>④振动和冲击耐振动和冲击是电连接器的重要性能，在特殊的应用环境中如航空和航天、铁路和公路运输中尤为重要，它是检验电连接器机械结构的坚固性和电接触可靠性的重要指标。在有关的试验方法中都有明确的规定。冲击试验中应规定峰值加速度、持续时间和冲击脉冲波形，以及电气连续性中断的时间。</span>
+<span>⑤其它环境性能根据使用要求，电连接器的其它环境性能还有密封性（空气泄漏、液体压力）、液体浸渍（对特定液体的耐恶习化能力）、低气压等。</span></p><h3 id='分类-2'><span>分类</span></h3><p><span>按外形结构：圆形和矩形（横截面）；</span>
+<span>按孔间距分：1.25 1.5 2.0 2.5 2.54 3.0 4.2 5.1</span></p><h2 id='端子知识库'><span>端子知识库</span></h2><p><img src="https://sem.g3img.com/g3img/mkd992013/20131029085257_49212.jpg" referrerpolicy="no-referrer"></p><h3 id='定义-4'><span>定义</span></h3><p><span>线束压接端子，常称为端子，其以塑件为载体，实现线缆与用电器的导通。端子普通材质以铜为主，接触面常会镀锌或镀锡来增强导通性，采用镀银端子导通性更佳，对于其他对于接触电阻要求较高，耐腐蚀性较高的部位，端子接触面可采用镀金的材质</span>
+<img src="https://pic2.zhimg.com/80/v2-494d362c8fb3ebd3ec958fc2b9678b91_720w.webp" referrerpolicy="no-referrer"></p><h3 id='组成-3'><span>组成</span></h3><p><span>图中可以看处将端子细分则可分为9部分，</span></p><p><span>1-绝缘皮检查窗口。区域5绝缘铆压区为压接芯线外表面绝缘层的，要求压接时，位置1处需留出绝缘皮，供端子压接几何尺寸检查，以压紧且不刺穿为标准。</span></p><p><span>2-喇叭口</span></p><p><span>3-刷尾检查窗口。与1类似，为端子压接芯线的尾端，需留出0.5-1mm的间隙，供端子压接几何尺寸检查。</span></p><p><span>4-锁紧片。端子在插入塑件中后，会与塑件中的锁止结构相对应，使得端子能较为牢靠的固定于塑件中，保证端子不会脱落。</span></p><p><span>5-绝缘铆压区为压接芯线外表面绝缘层的区域。</span></p><p><span>6-导体压接区为端子主要压接芯线的区域。</span></p><p><span>7-端子结合区为端子与用电器，或者连接器公端端子与母端端子连接的区域。</span></p><p><span>8-料带残耳</span></p><p><span>9-压接柱停止耳朵</span></p><p><span>端子作为复杂的结构体不但要满足几何尺寸的合理性，通常采用目视法，剖面分析来观察端子与线缆的压接是否合理、正确。在端子压接完成后，需要进行试验验证其在功能及结构性能上的可靠性，常见的试验有拉力试验和接触电阻试验。</span></p><p><span>端子拉力试验是检测金属端子和线芯连接的紧固性，使用万能拉力试验机进行。重复进行试验，直到将线芯与端子脱落位置，记录拉力机仪表板上数据。接触电阻则为端子与线芯接触部分的阻值，一般接触电阻应以小于30mΩ为标准，各企业标准存在差异。</span></p><p><img src="https://www.z4a.net/images/2024/02/22/5fec30b0770b4-thumb.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h3 id='端子材质'><span>端子材质</span></h3><p><span>一般为铜，主要是黄铜和青铜（黄铜的硬度比青铜的硬度稍低），其中黄铜占的比重较大。</span></p><h3 id='镀层'><span>镀层</span></h3><p><span>可根据不同的需求选择不同的镀层。镀锡 镀镍 镀银 镀金</span></p><h3 id='检测设备'><span>检测设备</span></h3><p><span>端子截面分析仪</span></p><h2 id='包扎材料'><span>包扎材料</span></h2><p><img src="https://www.z4a.net/images/2024/02/22/_20240222150556.jpg" referrerpolicy="no-referrer"></p></div></div>
+</body>
+</html>

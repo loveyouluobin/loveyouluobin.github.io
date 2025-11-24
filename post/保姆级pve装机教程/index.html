@@ -1,0 +1,631 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.147.6"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="保姆级PVE装机教程"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="计算机,网络"><meta property="og:type" content="article"><meta property="og:title" content="保姆级PVE装机教程"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2025-10-23 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2025-10-23 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1763982110"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1763982110"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>保姆级PVE装机教程 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E7%A7%91%E6%99%AE/ class=hvr-icon-pulse rel=section>科普</a></li><li class="menu-item menu-item-flinks"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section>归档</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#安装-pve>安装 PVE</a><ul><li><a href=#制作-u-盘启动器>制作 U 盘启动器</a></li><li><a href=#准备-pve-iso-镜像>准备 PVE ISO 镜像</a></li><li><a href=#安装-pve-系统>安装 PVE 系统</a></li><li><a href=#pve-系统初始化常用配置>PVE 系统初始化常用配置</a></li><li><a href=#pve-一些不错的插件脚本>PVE 一些不错的插件/脚本</a></li></ul></li><li><a href=#安装-ubuntu常规-iso-镜像安装>安装 Ubuntu（常规 ISO 镜像安装）</a><ul><li><a href=#下载上传镜像>下载&上传镜像</a></li><li><a href=#创建-ubuntu-虚拟机>创建 Ubuntu 虚拟机</a></li><li><a href=#ubuntu-安装过程>Ubuntu 安装过程</a></li><li><a href=#ubuntu-常用初始化配置>Ubuntu 常用初始化配置</a></li></ul></li><li><a href=#安装-windows-server-2022>安装 Windows Server 2022</a><ul><li><a href=#下载上传镜像-1>下载&上传镜像</a></li><li><a href=#创建安装-windows-虚拟机>创建安装 Windows 虚拟机</a></li></ul></li><li><a href=#安装-openwrt常规-img-镜像安装>安装 Openwrt（常规 img 镜像安装）</a><ul><li><a href=#下载上传镜像-2>下载&上传镜像</a></li><li><a href=#img-镜像创建虚拟机>img 镜像创建虚拟机</a></li><li><a href=#高大全版本-openwrt-设置>高大全版本 openwrt 设置</a></li><li><a href=#调整虚拟机磁盘大小>调整虚拟机磁盘大小</a></li></ul></li><li><a href=#安装黑群晖>安装黑群晖</a><ul><li><a href=#下载上传镜像-3>下载&上传镜像</a></li><li><a href=#创建群晖虚拟机>创建群晖虚拟机</a></li><li><a href=#rr-引导安装过程>rr 引导安装过程</a></li><li><a href=#群晖安装过程>群晖安装过程</a></li></ul></li><li><a href=#安装-centos>安装 CentOS</a><ul><li><a href=#centos常用初始化配置>CentOS常用初始化配置</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>3200</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank>QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank>Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank>E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank>知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17312441></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=36169></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2025-11-19 15:39:16 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="保姆级PVE装机教程"><meta itemprop=description content></span><header class=post-header><h1 class=post-title itemprop="name headline">保姆级PVE装机教程</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2025-10-23 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2025-10-23 15:39:16 +0000 UTC">2025-10-23
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/nas/ itemprop=url rel=index><span itemprop=name>NAS</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>5678</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>12分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><a id=more></a><h2 id=安装-pve>安装 PVE
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-pve></a></h2><h3 id=制作-u-盘启动器>制作 U 盘启动器
+<a class=header-anchor href=#%e5%88%b6%e4%bd%9c-u-%e7%9b%98%e5%90%af%e5%8a%a8%e5%99%a8></a></h3><p>这里我选择的是
+<a href=https://www.ventoy.net/cn/index.html title=Ventoy rel="noopener external nofollow noreferrer" target=_blank class=exturl>Ventoy
+<i class="fa fa-external-link-alt"></i>
+</a>，解压缩，插入 U 盘，然后点击安装即可</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/Ventoy%E5%88%B7U%E7%9B%98.png alt=Ventoy刷U盘.png></p><p>需要注意的是，不要勾选「安全启动支持」</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/Ventoy%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.png alt=Ventoy注意事项.png></p><h3 id=准备-pve-iso-镜像>准备 PVE ISO 镜像
+<a class=header-anchor href=#%e5%87%86%e5%a4%87-pve-iso-%e9%95%9c%e5%83%8f></a></h3><p>下载安装 PVE 安装镜像:
+<a href=https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso title="PVE ISO 镜像下载地址" rel="noopener external nofollow noreferrer" target=_blank class=exturl>PVE ISO 镜像下载地址
+<i class="fa fa-external-link-alt"></i></a></p><p>将下载好的 ISO 镜像，放入 Ventoy 刷好的 U 盘根目录即可</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/pve%E9%95%9C%E5%83%8F.png alt=pve镜像.png></p><h3 id=安装-pve-系统>安装 PVE 系统
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-pve-%e7%b3%bb%e7%bb%9f></a></h3><ol><li><p><strong>将 U 盘插入 R730XD 的后置 USB 接口（经测试，前置的安装不成功，不确定是个例还是本身就是这么设计的）</strong></p></li><li><p>启动系统，选择 U 盘启动</p><p>按 F11 选择「Boot Manager」 - 「One-shot UEFI Boot Menu」 - 「Disk connect to back USBxxxxx」</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/boot%20manager.png alt="boot manager.png"></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/oneshot.png alt=oneshot.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%80%89%E6%8B%A9USB%E5%90%AF%E5%8A%A8.png alt=选择USB启动.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%80%89%E6%8B%A9pve%E9%95%9C%E5%83%8F.png alt=选择pve镜像.png></p></li><li><p>安装过程</p><p>注意: 由于安装过程没有全程录像/截图，部分插图从其他地方后补，IP 地址可能会不一样，以实际设置为准</p><p>常规安装就行，选择安装的硬盘、设置国家/时区、设置管理网卡口（推荐用 1G 的口当管理口）、设置 IP 地址等，想详细的了解安装过程，可以参考这个视频:
+<a href="https://www.bilibili.com/video/BV1Jt4y1j75a/?vd_source=7d332551d02168644e6cc30bce9bdd0a" title="r730xd 安装pve" rel="noopener external nofollow noreferrer" target=_blank class=exturl>r730xd 安装pve
+<i class="fa fa-external-link-alt"></i></a></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/pve%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png alt=pve安装完成.png></p></li><li><p>安装成功后，可以通过之前设置的 IP 地址，来访问 PVE 后台，帐号是 root，密码是安装过程中设置的</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/pve%E5%90%8E%E5%8F%B0%E7%99%BB%E5%BD%95.png alt=pve后台登录.png></p></li><li><p>也可以通过 22 端口，通过 SSH 登录 Shell</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/pve%20shell.png alt="pve shell.png"></p></li></ol><h3 id=pve-系统初始化常用配置>PVE 系统初始化常用配置
+<a class=header-anchor href=#pve-%e7%b3%bb%e7%bb%9f%e5%88%9d%e5%a7%8b%e5%8c%96%e5%b8%b8%e7%94%a8%e9%85%8d%e7%bd%ae></a></h3><ol><li><p>更换「系统软件源」</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cp /etc/apt/sources.list /etc/apt/sources.list.bak
+</span></span><span class=line><span class=cl>sed -i <span class=s1>&#39;s|^deb http://ftp.debian.org|deb https://mirrors.ustc.edu.cn|g&#39;</span> /etc/apt/sources.list
+</span></span><span class=line><span class=cl>sed -i <span class=s1>&#39;s|^deb http://security.debian.org|deb https://mirrors.ustc.edu.cn/debian-security|g&#39;</span> /etc/apt/sources.list
+</span></span><span class=line><span class=cl>systemctl restart pvedaemon</span></span></code></pre></td></tr></table></div></div></li><li><p>更换「LXC镜像源」</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sed -i.bak <span class=s1>&#39;s|http://download.proxmox.com|https://mirrors.ustc.edu.cn/proxmox|g&#39;</span> /usr/share/perl5/PVE/APLInfo.pm
+</span></span><span class=line><span class=cl>systemctl restart pvedaemon</span></span></code></pre></td></tr></table></div></div></li><li><p>去除「无有效订阅提示」</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2>2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3>3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sed -i.bak <span class=s2>&#34;s/data.status === &#39;Active&#39;/true/g&#34;</span> /usr/share/pve-manager/js/pvemanagerlib.js
+</span></span><span class=line><span class=cl>sed -i.bak <span class=s2>&#34;s/if (res === null || res === undefined || \!res || res/if(/g&#34;</span> /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+</span></span><span class=line><span class=cl>sed -i.bak <span class=s2>&#34;s/.data.status.toLowerCase() !== &#39;active&#39;/false/g&#34;</span> /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+</span></span><span class=line><span class=cl>systemctl restart pveproxy</span></span></code></pre></td></tr></table></div></div></li><li><p>禁用「企业源」</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.bak
+</span></span><span class=line><span class=cl>mv /etc/apt/sources.list.d/ceph.list /etc/apt/sources.list.d/ceph.list.bak
+</span></span><span class=line><span class=cl>apt update</span></span></code></pre></td></tr></table></div></div></li><li><p>删除「lvm-local」（按需，可以使可用空间最大化）</p><p>在 PVE 管理后台打开 Shell 终端，使用 <code>lsblk</code> 查看硬盘情况</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4>4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5>5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6>6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+</span></span><span class=line><span class=cl>sda            8:0    0  7.3T  0 disk 
+</span></span><span class=line><span class=cl>├─sda1         8:1    0 1007K  0 part 
+</span></span><span class=line><span class=cl>├─sda2         8:2    0    1G  0 part /boot/efi
+</span></span><span class=line><span class=cl>└─sda3         8:3    0  7.3T  0 part 
+</span></span><span class=line><span class=cl>  ├─pve-swap 252:0    0    8G  0 lvm  [SWAP]
+</span></span><span class=line><span class=cl>  └─pve-root 252:1    0  7.3T  0 lvm  /</span></span></code></pre></td></tr></table></div></div><p>编辑 local-lvm，勾选所有内容</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/lvm-thin.png alt=lvm-thin.png></p><p>使用命令移除 pve-data</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
+</span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4>4</a>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>lvremove /dev/pve/data
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## 会提示如下，输入 y 继续</span>
+</span></span><span class=line><span class=cl>Do you really want to remove active logical volume pve/data? <span class=o>[</span>y/n<span class=o>]</span>: y
+</span></span><span class=line><span class=cl>  Logical volume <span class=s2>&#34;data&#34;</span> successfully removed.</span></span></code></pre></td></tr></table></div></div><p>使用命令扩大 root 分区</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2>2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3>3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4>4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5>5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6>6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7>7</a>
+</span><span class=lnt id=hl-6-8><a class=lnlinks href=#hl-6-8>8</a>
+</span><span class=lnt id=hl-6-9><a class=lnlinks href=#hl-6-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>lvextend -rl +100%FREE /dev/pve/root
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 提示如下</span>
+</span></span><span class=line><span class=cl><span class=c1># Size of logical volume pve/root changed from &lt;39.56 GiB (10127 extents) to &lt;110.24 GiB (28221 extents).</span>
+</span></span><span class=line><span class=cl><span class=c1>#  Logical volume pve/root successfully resized.</span>
+</span></span><span class=line><span class=cl><span class=c1># resize2fs 1.47.0 (5-Feb-2023)</span>
+</span></span><span class=line><span class=cl><span class=c1># Filesystem at /dev/mapper/pve-root is mounted on /; on-line resizing required</span>
+</span></span><span class=line><span class=cl><span class=c1># old_desc_blocks = 5, new_desc_blocks = 14</span>
+</span></span><span class=line><span class=cl><span class=c1># The filesystem on /dev/mapper/pve-root is now 28898304 (4k) blocks long.</span></span></span></code></pre></td></tr></table></div></div><p>编辑 local 选择所有内容</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/local.png alt=local.png></p><p>移除 lvm-thin</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%A7%BB%E9%99%A4local-lvm.png alt=移除local-lvm.png></p></li><li><p>PVE 添加及显示标注</p><p>添加标记</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%B7%BB%E5%8A%A0%E6%A0%87%E8%AE%B0.png alt=添加标记.png></p><p>显示标记</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%98%BE%E7%A4%BA%E6%A0%87%E8%AE%B0.png alt=显示标记.png></p></li></ol><h3 id=pve-一些不错的插件脚本>PVE 一些不错的插件/脚本
+<a class=header-anchor href=#pve-%e4%b8%80%e4%ba%9b%e4%b8%8d%e9%94%99%e7%9a%84%e6%8f%92%e4%bb%b6%e8%84%9a%e6%9c%ac></a></h3><ol><li><p>PVE 查看温度脚本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>(</span>curl -Lf -o /tmp/temp.sh https://raw.githubusercontent.com/a904055262/PVE-manager-status/main/showtempcpufreq.sh <span class=o>||</span> curl -Lf -o /tmp/temp.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/a904055262/PVE-manager-status/main/showtempcpufreq.sh<span class=o>)</span> <span class=o>&amp;&amp;</span> chmod +x /tmp/temp.sh <span class=o>&amp;&amp;</span> /tmp/temp.sh remod</span></span></code></pre></td></tr></table></div></div><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/pve%E6%B8%A9%E5%BA%A6.png alt=pve温度.png></p></li><li><p>综合脚本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>wget -q -O /root/pve_source.tar.gz <span class=s1>&#39;https://bbs.x86pi.cn/file/topic/2023-11-28/file/01ac88d7d2b840cb88c15cb5e19d4305b2.gz&#39;</span> <span class=o>&amp;&amp;</span> tar zxvf /root/pve_source.tar.gz <span class=o>&amp;&amp;</span> /root/./pve_source</span></span></code></pre></td></tr></table></div></div><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%BB%BC%E5%90%88%E8%84%9A%E6%9C%AC.png alt=综合脚本.png></p></li></ol><h2 id=安装-ubuntu常规-iso-镜像安装>安装 Ubuntu（常规 ISO 镜像安装）
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-ubuntu%e5%b8%b8%e8%a7%84-iso-%e9%95%9c%e5%83%8f%e5%ae%89%e8%a3%85></a></h2><blockquote><p>一般的 ISO 类型的镜像，都可以通过此种方式安装虚拟机</p></blockquote><h3 id=下载上传镜像>下载&上传镜像
+<a class=header-anchor href=#%e4%b8%8b%e8%bd%bd%e4%b8%8a%e4%bc%a0%e9%95%9c%e5%83%8f></a></h3><p>下载地址:
+<a href=https://cn.ubuntu.com/download/server/step1 title="Ubuntu Server 24 LST ISO 镜像" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Ubuntu Server 24 LST ISO 镜像
+<i class="fa fa-external-link-alt"></i>
+</a>，我选择的是服务器版本的 Ubuntu 镜像，不需要 GUI 界面</p><p>可以通过上传功能，将本地的镜像上传到 PVE 上面，也可以通过在 PVE 上面粘贴下载链接直接下载</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E4%B8%8A%E4%BC%A0%E9%95%9C%E5%83%8F.png alt=上传镜像.png></p><h3 id=创建-ubuntu-虚拟机>创建 Ubuntu 虚拟机
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba-ubuntu-%e8%99%9a%e6%8b%9f%e6%9c%ba></a></h3><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png alt=创建虚拟机.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9ubuntu.png alt=操作系统选择ubuntu.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/ubuntu%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4.png alt=ubuntu系统默认.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png alt=选择合适磁盘大小.png><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/cpu%E9%80%89%E6%8B%A9.png alt=cpu选择.png><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%8C%89%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%86%85%E5%AD%98.png alt=img><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%BD%91%E7%BB%9C%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE.png alt=img></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%90%AF%E5%8A%A8ubuntu.png alt=启动ubuntu.png></p><blockquote><p>关于 CPU 型号</p><p>CPU 类型默认为 x86-64-v2-AES，选择与宿主机系统 CPU 相匹配的类型，一般默认即可。</p><p>如果想要完全匹配，可以将 CPU 类型设置为 host，这样虚拟机就会拥有与宿主机系统完全相同的 CPU 性能。</p></blockquote><h3 id=ubuntu-安装过程>Ubuntu 安装过程
+<a class=header-anchor href=#ubuntu-%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b></a></h3><ol><li><p>选择语言</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80.png alt=选择语言.png></p></li><li><p>选择键盘布局</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%80%89%E6%8B%A9%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80.png alt=选择键盘布局.png></p></li><li><p>选择安装方式</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F.png alt=安装方式.png></p></li><li><p>配置网络（可以手动配置，也可以使用 DHCP 给自动分配（需要等一会儿））</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C.png alt=设置网络.png></p></li><li><p>配置代理（一般不需要）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png alt=设置代理.png></p></li><li><p>配置存档镜像（建议修改成清华源: <code>https://mirrors.tuna.tsinghua.edu.cn/ubuntu/</code>）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E8%AE%BE%E7%BD%AE%E6%BA%90.png alt=设置源.png></p></li><li><p>存储方式（一路默认）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AD%98%E5%82%A8%E8%AE%BE%E7%BD%AE.png alt=存储设置.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F2.png alt=存储方式2.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F3.png alt=存储方式3.png></p></li><li><p>用户设置</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE.png alt=用户设置.png></p></li><li><p>SSH 配置（选择安装 OpenSSH Server）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AE%89%E8%A3%85ssh.png alt=安装ssh.png></p></li><li><p>软件包安装（按需，推荐全不选）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/10%E5%85%A8%E4%B8%8D%E9%80%89.png alt=10全不选.png></p></li><li><p>正常安装，如果安装过程中出现 CDROM 挂载错误，按回车继续就好</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5.png alt=安装失败.png></p></li></ol><h3 id=ubuntu-常用初始化配置>Ubuntu 常用初始化配置
+<a class=header-anchor href=#ubuntu-%e5%b8%b8%e7%94%a8%e5%88%9d%e5%a7%8b%e5%8c%96%e9%85%8d%e7%bd%ae></a></h3><ol><li><p>修改引导顺序</p><p>默认的启动引导顺序是: ide2 -> net0 -> scsi0(未启用)</p><p>修改为 scsi0 为第一启动顺序且启用，否则可能会导致重启的时候卡在 <code>(initramfs)</code>界面无法启动</p></li><li><p>开启 root 用户</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo -i
+</span></span><span class=line><span class=cl>passwd root</span></span></code></pre></td></tr></table></div></div></li><li><p>允许 root 用户通过 SSH 登录</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2>2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3>3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4>4</a>
+</span><span class=lnt id=hl-10-5><a class=lnlinks href=#hl-10-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 把 PermitRootLogin prohibit-password（也有可能是 PermitRootLogin without-password）改为 PermitRootLogin yes</span>
+</span></span><span class=line><span class=cl>sudo vi /etc/ssh/sshd_config
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 重启 ssh, 如果提示失败，就 sudo systemctl restart sshd</span>
+</span></span><span class=line><span class=cl>sudo systemctl restart ssh</span></span></code></pre></td></tr></table></div></div></li><li><p>修改软件源</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1> 1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2> 2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3> 3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4> 4</a>
+</span><span class=lnt id=hl-11-5><a class=lnlinks href=#hl-11-5> 5</a>
+</span><span class=lnt id=hl-11-6><a class=lnlinks href=#hl-11-6> 6</a>
+</span><span class=lnt id=hl-11-7><a class=lnlinks href=#hl-11-7> 7</a>
+</span><span class=lnt id=hl-11-8><a class=lnlinks href=#hl-11-8> 8</a>
+</span><span class=lnt id=hl-11-9><a class=lnlinks href=#hl-11-9> 9</a>
+</span><span class=lnt id=hl-11-10><a class=lnlinks href=#hl-11-10>10</a>
+</span><span class=lnt id=hl-11-11><a class=lnlinks href=#hl-11-11>11</a>
+</span><span class=lnt id=hl-11-12><a class=lnlinks href=#hl-11-12>12</a>
+</span><span class=lnt id=hl-11-13><a class=lnlinks href=#hl-11-13>13</a>
+</span><span class=lnt id=hl-11-14><a class=lnlinks href=#hl-11-14>14</a>
+</span><span class=lnt id=hl-11-15><a class=lnlinks href=#hl-11-15>15</a>
+</span><span class=lnt id=hl-11-16><a class=lnlinks href=#hl-11-16>16</a>
+</span><span class=lnt id=hl-11-17><a class=lnlinks href=#hl-11-17>17</a>
+</span><span class=lnt id=hl-11-18><a class=lnlinks href=#hl-11-18>18</a>
+</span><span class=lnt id=hl-11-19><a class=lnlinks href=#hl-11-19>19</a>
+</span><span class=lnt id=hl-11-20><a class=lnlinks href=#hl-11-20>20</a>
+</span><span class=lnt id=hl-11-21><a class=lnlinks href=#hl-11-21>21</a>
+</span><span class=lnt id=hl-11-22><a class=lnlinks href=#hl-11-22>22</a>
+</span><span class=lnt id=hl-11-23><a class=lnlinks href=#hl-11-23>23</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 备份软件源</span>
+</span></span><span class=line><span class=cl>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#修改 sources.list 为以下内容</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>### 阿里的源</span>
+</span></span><span class=line><span class=cl>deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 阿里的和中科大的选一个就行</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>### 中科大的源</span>
+</span></span><span class=line><span class=cl>deb http://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+</span></span><span class=line><span class=cl>deb http://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 更新 apt 缓存，升级包</span>
+</span></span><span class=line><span class=cl>sudo apt update
+</span></span><span class=line><span class=cl>sudo apt upgrade -y</span></span></code></pre></td></tr></table></div></div></li><li><p><code>/</code> 可用空间和分配空间不匹配</p><p>按照上述默认的存储方式安装，可能会出现明明分配了 100G 空间给 ububtu 系统，却只有50G（一半）分配给 <code>/</code>，可按下列方式进行修复</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1> 1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2> 2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3> 3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4> 4</a>
+</span><span class=lnt id=hl-12-5><a class=lnlinks href=#hl-12-5> 5</a>
+</span><span class=lnt id=hl-12-6><a class=lnlinks href=#hl-12-6> 6</a>
+</span><span class=lnt id=hl-12-7><a class=lnlinks href=#hl-12-7> 7</a>
+</span><span class=lnt id=hl-12-8><a class=lnlinks href=#hl-12-8> 8</a>
+</span><span class=lnt id=hl-12-9><a class=lnlinks href=#hl-12-9> 9</a>
+</span><span class=lnt id=hl-12-10><a class=lnlinks href=#hl-12-10>10</a>
+</span><span class=lnt id=hl-12-11><a class=lnlinks href=#hl-12-11>11</a>
+</span><span class=lnt id=hl-12-12><a class=lnlinks href=#hl-12-12>12</a>
+</span><span class=lnt id=hl-12-13><a class=lnlinks href=#hl-12-13>13</a>
+</span><span class=lnt id=hl-12-14><a class=lnlinks href=#hl-12-14>14</a>
+</span><span class=lnt id=hl-12-15><a class=lnlinks href=#hl-12-15>15</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 查看磁盘详细信息，可以看到总空间有 98G，但是只有 49G 分配给了 / </span>
+</span></span><span class=line><span class=cl>root@test:~# lsblk
+</span></span><span class=line><span class=cl>NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+</span></span><span class=line><span class=cl>sda                         8:0    <span class=m>0</span>  100G  <span class=m>0</span> disk 
+</span></span><span class=line><span class=cl>├─sda1                      8:1    <span class=m>0</span>    1M  <span class=m>0</span> part 
+</span></span><span class=line><span class=cl>├─sda2                      8:2    <span class=m>0</span>    2G  <span class=m>0</span> part /boot
+</span></span><span class=line><span class=cl>└─sda3                      8:3    <span class=m>0</span>   98G  <span class=m>0</span> part 
+</span></span><span class=line><span class=cl>  └─ubuntu--vg-ubuntu--lv 252:0    <span class=m>0</span>   49G  <span class=m>0</span> lvm  /
+</span></span><span class=line><span class=cl>sr0                        11:0    <span class=m>1</span>    2G  <span class=m>0</span> rom  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 扩大逻辑卷（把所有剩余的可用空间分配给逻辑卷）</span>
+</span></span><span class=line><span class=cl>sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 扩大文件系统（保扩展后的逻辑卷可以使用）</span>
+</span></span><span class=line><span class=cl>sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</span></span></code></pre></td></tr></table></div></div></li><li><p>安装 <code>docker / docker-compose</code></p><p><code>docker</code> 安装</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1> 1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2> 2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3> 3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4> 4</a>
+</span><span class=lnt id=hl-13-5><a class=lnlinks href=#hl-13-5> 5</a>
+</span><span class=lnt id=hl-13-6><a class=lnlinks href=#hl-13-6> 6</a>
+</span><span class=lnt id=hl-13-7><a class=lnlinks href=#hl-13-7> 7</a>
+</span><span class=lnt id=hl-13-8><a class=lnlinks href=#hl-13-8> 8</a>
+</span><span class=lnt id=hl-13-9><a class=lnlinks href=#hl-13-9> 9</a>
+</span><span class=lnt id=hl-13-10><a class=lnlinks href=#hl-13-10>10</a>
+</span><span class=lnt id=hl-13-11><a class=lnlinks href=#hl-13-11>11</a>
+</span><span class=lnt id=hl-13-12><a class=lnlinks href=#hl-13-12>12</a>
+</span><span class=lnt id=hl-13-13><a class=lnlinks href=#hl-13-13>13</a>
+</span><span class=lnt id=hl-13-14><a class=lnlinks href=#hl-13-14>14</a>
+</span><span class=lnt id=hl-13-15><a class=lnlinks href=#hl-13-15>15</a>
+</span><span class=lnt id=hl-13-16><a class=lnlinks href=#hl-13-16>16</a>
+</span><span class=lnt id=hl-13-17><a class=lnlinks href=#hl-13-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新包索引</span>
+</span></span><span class=line><span class=cl>sudo apt update
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装依赖</span>
+</span></span><span class=line><span class=cl>sudo apt install apt-transport-https ca-certificates curl software-properties-common
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 添加 Docker 的官方 GPG 密钥</span>
+</span></span><span class=line><span class=cl>curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class=p>|</span> sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置稳定的存储库</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;deb [arch=</span><span class=k>$(</span>dpkg --print-architecture<span class=k>)</span><span class=s2> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class=k>$(</span>lsb_release -cs<span class=k>)</span><span class=s2> stable&#34;</span> <span class=p>|</span> sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 再次更新包索引 &amp; 安装 docker</span>
+</span></span><span class=line><span class=cl>sudo apt update <span class=o>&amp;&amp;</span> sudo apt install docker-ce
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 验证 docker 是否安装成功</span>
+</span></span><span class=line><span class=cl>sudo docker --version</span></span></code></pre></td></tr></table></div></div><p><code>docker-compose</code> 安装</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3>3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4>4</a>
+</span><span class=lnt id=hl-14-5><a class=lnlinks href=#hl-14-5>5</a>
+</span><span class=lnt id=hl-14-6><a class=lnlinks href=#hl-14-6>6</a>
+</span><span class=lnt id=hl-14-7><a class=lnlinks href=#hl-14-7>7</a>
+</span><span class=lnt id=hl-14-8><a class=lnlinks href=#hl-14-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 下载 docker-compose 二进制文件</span>
+</span></span><span class=line><span class=cl>sudo curl -L <span class=s2>&#34;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class=k>$(</span>uname -s<span class=k>)</span><span class=s2>-</span><span class=k>$(</span>uname -m<span class=k>)</span><span class=s2>&#34;</span> -o /usr/local/bin/docker-compose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 添加可执行权限</span>
+</span></span><span class=line><span class=cl>sudo chmod +x /usr/local/bin/docker-compose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 验证 docker-compose 是否安装成功</span>
+</span></span><span class=line><span class=cl>docker-compose --version</span></span></code></pre></td></tr></table></div></div></li><li><p>查看 IP 和 路由</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1> 1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2> 2</a>
+</span><span class=lnt id=hl-15-3><a class=lnlinks href=#hl-15-3> 3</a>
+</span><span class=lnt id=hl-15-4><a class=lnlinks href=#hl-15-4> 4</a>
+</span><span class=lnt id=hl-15-5><a class=lnlinks href=#hl-15-5> 5</a>
+</span><span class=lnt id=hl-15-6><a class=lnlinks href=#hl-15-6> 6</a>
+</span><span class=lnt id=hl-15-7><a class=lnlinks href=#hl-15-7> 7</a>
+</span><span class=lnt id=hl-15-8><a class=lnlinks href=#hl-15-8> 8</a>
+</span><span class=lnt id=hl-15-9><a class=lnlinks href=#hl-15-9> 9</a>
+</span><span class=lnt id=hl-15-10><a class=lnlinks href=#hl-15-10>10</a>
+</span><span class=lnt id=hl-15-11><a class=lnlinks href=#hl-15-11>11</a>
+</span><span class=lnt id=hl-15-12><a class=lnlinks href=#hl-15-12>12</a>
+</span><span class=lnt id=hl-15-13><a class=lnlinks href=#hl-15-13>13</a>
+</span><span class=lnt id=hl-15-14><a class=lnlinks href=#hl-15-14>14</a>
+</span><span class=lnt id=hl-15-15><a class=lnlinks href=#hl-15-15>15</a>
+</span><span class=lnt id=hl-15-16><a class=lnlinks href=#hl-15-16>16</a>
+</span><span class=lnt id=hl-15-17><a class=lnlinks href=#hl-15-17>17</a>
+</span><span class=lnt id=hl-15-18><a class=lnlinks href=#hl-15-18>18</a>
+</span><span class=lnt id=hl-15-19><a class=lnlinks href=#hl-15-19>19</a>
+</span><span class=lnt id=hl-15-20><a class=lnlinks href=#hl-15-20>20</a>
+</span><span class=lnt id=hl-15-21><a class=lnlinks href=#hl-15-21>21</a>
+</span><span class=lnt id=hl-15-22><a class=lnlinks href=#hl-15-22>22</a>
+</span><span class=lnt id=hl-15-23><a class=lnlinks href=#hl-15-23>23</a>
+</span><span class=lnt id=hl-15-24><a class=lnlinks href=#hl-15-24>24</a>
+</span><span class=lnt id=hl-15-25><a class=lnlinks href=#hl-15-25>25</a>
+</span><span class=lnt id=hl-15-26><a class=lnlinks href=#hl-15-26>26</a>
+</span><span class=lnt id=hl-15-27><a class=lnlinks href=#hl-15-27>27</a>
+</span><span class=lnt id=hl-15-28><a class=lnlinks href=#hl-15-28>28</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 查看 IP  信息</span>
+</span></span><span class=line><span class=cl>ip addr show
+</span></span><span class=line><span class=cl>---------------------------------
+</span></span><span class=line><span class=cl>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class=m>65536</span> qdisc noqueue state UNKNOWN group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span><span class=line><span class=cl>    inet 127.0.0.1/8 scope host lo
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>    inet6 ::1/128 scope host noprefixroute 
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>2: ens18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class=m>1500</span> qdisc fq_codel state UP group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/ether bc:24:11:72:ec:75 brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    altname enp0s18
+</span></span><span class=line><span class=cl>    inet 192.168.1.102/24 metric <span class=m>100</span> brd 192.168.1.255 scope global dynamic ens18
+</span></span><span class=line><span class=cl>       valid_lft 5405sec preferred_lft 5405sec
+</span></span><span class=line><span class=cl>    inet6 fe80::be24:11ff:fe72:ec75/64 scope link proto kernel_ll 
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class=m>1500</span> qdisc noqueue state DOWN group default 
+</span></span><span class=line><span class=cl>    link/ether 02:42:38:be:27:4a brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看路由信息</span>
+</span></span><span class=line><span class=cl>ip route
+</span></span><span class=line><span class=cl>-------------------------------
+</span></span><span class=line><span class=cl>default via 192.168.1.1 dev ens18 proto dhcp src 192.168.1.102 metric <span class=m>100</span> 
+</span></span><span class=line><span class=cl>172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+</span></span><span class=line><span class=cl>192.168.1.0/24 dev ens18 proto kernel scope link src 192.168.1.102 metric <span class=m>100</span> 
+</span></span><span class=line><span class=cl>192.168.1.1 dev ens18 proto dhcp scope link src 192.168.1.102 metric <span class=m>100</span> </span></span></code></pre></td></tr></table></div></div></li><li><p>固定 IP</p><p>在 <code>/etc/netplan</code> 目录，有类似于 <code>50-cloud-init.yaml</code> 的文件（没有的话就新建）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1> 1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2> 2</a>
+</span><span class=lnt id=hl-16-3><a class=lnlinks href=#hl-16-3> 3</a>
+</span><span class=lnt id=hl-16-4><a class=lnlinks href=#hl-16-4> 4</a>
+</span><span class=lnt id=hl-16-5><a class=lnlinks href=#hl-16-5> 5</a>
+</span><span class=lnt id=hl-16-6><a class=lnlinks href=#hl-16-6> 6</a>
+</span><span class=lnt id=hl-16-7><a class=lnlinks href=#hl-16-7> 7</a>
+</span><span class=lnt id=hl-16-8><a class=lnlinks href=#hl-16-8> 8</a>
+</span><span class=lnt id=hl-16-9><a class=lnlinks href=#hl-16-9> 9</a>
+</span><span class=lnt id=hl-16-10><a class=lnlinks href=#hl-16-10>10</a>
+</span><span class=lnt id=hl-16-11><a class=lnlinks href=#hl-16-11>11</a>
+</span><span class=lnt id=hl-16-12><a class=lnlinks href=#hl-16-12>12</a>
+</span><span class=lnt id=hl-16-13><a class=lnlinks href=#hl-16-13>13</a>
+</span><span class=lnt id=hl-16-14><a class=lnlinks href=#hl-16-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>network</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ethernets</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ens18</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>dhcp4</span><span class=p>:</span><span class=w> </span><span class=kc>no</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>addresses</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=m>192.168.1.115</span><span class=l>/24</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>routes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>to</span><span class=p>:</span><span class=w> </span><span class=l>default</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>via</span><span class=p>:</span><span class=w> </span><span class=m>192.168.1.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>nameservers</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>addresses</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=m>8.8.8.8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=m>8.8.4.4</span></span></span></code></pre></td></tr></table></div></div><p>重启服务</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo netplan apply</span></span></code></pre></td></tr></table></div></div></li><li><p>修改 DNS</p><p>有时候使用上面 <code>sudo netplan apply</code> 发现路由和IP地址是修改了，但是 DNS 服务却没有生效，比如，查出来的结果如下:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span><span class=lnt id=hl-18-5><a class=lnlinks href=#hl-18-5>5</a>
+</span><span class=lnt id=hl-18-6><a class=lnlinks href=#hl-18-6>6</a>
+</span><span class=lnt id=hl-18-7><a class=lnlinks href=#hl-18-7>7</a>
+</span><span class=lnt id=hl-18-8><a class=lnlinks href=#hl-18-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nslookup github.com
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Server: 127.0.0.53
+</span></span><span class=line><span class=cl>Address: 127.0.0.53#53
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Non-authoritative answer:
+</span></span><span class=line><span class=cl>Name: github.com
+</span></span><span class=line><span class=cl>Address: 198.18.0.12</span></span></code></pre></td></tr></table></div></div><p>原因是，系统有时仍然使用自带的 <code>systemd-resolved</code> 进行域名解析，这个时候可以通过修改 <code>systemd-resolved</code> 配置来解决这个问题。</p><p>编辑: <code>/etc/systemd/resolved.conf</code> ，找到 <code>[Resolve]</code> 这一节，修改</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>DNS</span><span class=o>=</span>192.168.1.113</span></span></code></pre></td></tr></table></div></div><p>重启服务</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl restart systemd-resolved</span></span></code></pre></td></tr></table></div></div><p>使配置生效，删除原有的 <code>/etc/resolv.conf</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-21-1><a class=lnlinks href=#hl-21-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo rm /etc/resolv.conf</span></span></code></pre></td></tr></table></div></div><p>然后创建新链接</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-22-1><a class=lnlinks href=#hl-22-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf</span></span></code></pre></td></tr></table></div></div><p>检查 DNS 设置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-23-1><a class=lnlinks href=#hl-23-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat /etc/resolv.con</span></span></code></pre></td></tr></table></div></div></li></ol><h2 id=安装-windows-server-2022>安装 Windows Server 2022
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-windows-server-2022></a></h2><h3 id=下载上传镜像-1>下载&上传镜像
+<a class=header-anchor href=#%e4%b8%8b%e8%bd%bd%e4%b8%8a%e4%bc%a0%e9%95%9c%e5%83%8f-1></a></h3><p>我这里选择的是 WindowsServer2022</p><p>百度网盘:
+<a href="https://pan.baidu.com/s/12qToPWtVidAAOPNQTN9HGg?pwd=pxmr" title=WindowsServer2022 rel="noopener external nofollow noreferrer" target=_blank class=exturl>WindowsServer2022
+<i class="fa fa-external-link-alt"></i>
+</a>，提取码：pxmr</p><h3 id=创建安装-windows-虚拟机>创建安装 Windows 虚拟机
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e5%ae%89%e8%a3%85-windows-%e8%99%9a%e6%8b%9f%e6%9c%ba></a></h3><p>目前没有遇到特别需要注意的地方，按照 Ubuntu ISO 镜像的安装过程进行就好</p><p>需要注意的是，Bios 和 总线/设备，最好按下列推荐的来设置（但是不这样好像也可以正常启动）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/windows%20bios.png alt="windows bios.png"></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/windows%20%E6%80%BB%E7%BA%BF.png alt="windows 总线.png"></p><h2 id=安装-openwrt常规-img-镜像安装>安装 Openwrt（常规 img 镜像安装）
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-openwrt%e5%b8%b8%e8%a7%84-img-%e9%95%9c%e5%83%8f%e5%ae%89%e8%a3%85></a></h2><blockquote><p>一般的，img 类型的镜像，都可以通过此种方式安装虚拟机</p></blockquote><h3 id=下载上传镜像-2>下载&上传镜像
+<a class=header-anchor href=#%e4%b8%8b%e8%bd%bd%e4%b8%8a%e4%bc%a0%e9%95%9c%e5%83%8f-2></a></h3><p>我选择的是高大全版本的 Openwrt 镜像: <code>bleachwrt-plus-20241014-x86-64-generic-squashfs-combined-efi.img.gz</code></p><p>电脑解压上传 <code>img</code> 文件</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/openwrt%E9%95%9C%E5%83%8F%E4%B8%8A%E4%BC%A0.png alt=openwrt镜像上传.png></p><p>记录镜像路径</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E8%AE%B0%E5%BD%95img%E9%95%9C%E5%83%8F%E8%B7%AF%E5%BE%84%E4%BD%8D%E7%BD%AE.png alt=记录img镜像路径位置.png></p><p>忘记了也不用担心，可以在 Shell 里面查看</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-24-1><a class=lnlinks href=#hl-24-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ls /var/lib/vz/template</span></span></code></pre></td></tr></table></div></div><h3 id=img-镜像创建虚拟机>img 镜像创建虚拟机
+<a class=header-anchor href=#img-%e9%95%9c%e5%83%8f%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e6%9c%ba></a></h3><p>创建虚拟机，记住 VM ID（忘记也不要紧，在左侧侧边栏能看到）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/openwrt%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png alt=openwrt创建虚拟机.png></p><p>其他步骤都跟上面安装 Ubuntu 系统类似，唯一需要注意的地方是，在安装操作系统的时候记得选择「不使用任何介质」</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E4%B8%8D%E4%BD%BF%E7%94%A8%E4%BB%8B%E8%B4%A8.png alt=不使用介质.png></p><p>等虚拟机添加成功后，选择「分离」和「移除」硬盘</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%88%86%E7%A6%BB%E7%A1%AC%E7%9B%98.png alt=分离硬盘.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%A7%BB%E9%99%A4%E7%A1%AC%E7%9B%98.png alt=移除硬盘.png></p><p>进入 PVE Shell，给刚刚创建的虚拟机，添加镜像磁盘</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-25-1><a class=lnlinks href=#hl-25-1>1</a>
+</span><span class=lnt id=hl-25-2><a class=lnlinks href=#hl-25-2>2</a>
+</span><span class=lnt id=hl-25-3><a class=lnlinks href=#hl-25-3>3</a>
+</span><span class=lnt id=hl-25-4><a class=lnlinks href=#hl-25-4>4</a>
+</span><span class=lnt id=hl-25-5><a class=lnlinks href=#hl-25-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 几个需要注意的点</span>
+</span></span><span class=line><span class=cl><span class=c1># 1. VM ID 不要输错</span>
+</span></span><span class=line><span class=cl><span class=c1># 2. 镜像要是 img 的，路径也不要写错</span>
+</span></span><span class=line><span class=cl><span class=c1># 3. 最后一个参数是存储位置，根据实际情况填写（我的 local-lvm 已经被删除了，所以这里是 local）</span>
+</span></span><span class=line><span class=cl>qm importdisk <span class=m>106</span> /var/lib/vz/template/iso/bleachwrt-plus-20241012-x86-64-generic-squashfs-combined-efi.img local</span></span></code></pre></td></tr></table></div></div><p>命令执行完成后，在虚拟机的硬件里面会出现一块「未使用的磁盘」，双击添加</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/openwrt%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98.png alt=openwrt添加硬盘.png></p><p>磁盘添加成功后，进入选项界面修改「引导顺序」（我们这里不需要使用 CD-ROM 启动，把这个勾选可以取消掉）</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%BC%95%E5%AF%BC%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F.png alt=引导启动顺序.png></p><p>最后启动虚拟机，就可以进行系统的安装了</p><h3 id=高大全版本-openwrt-设置>高大全版本 openwrt 设置
+<a class=header-anchor href=#%e9%ab%98%e5%a4%a7%e5%85%a8%e7%89%88%e6%9c%ac-openwrt-%e8%ae%be%e7%bd%ae></a></h3><blockquote><p>默认登录信息</p><p>IP：192.168.1.1</p><p>用户：root</p><p>密码：password</p></blockquote><p>如果你想修改登录 IP 相关信息，可以通过修改 <code>/etc/config/network</code> 实现</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-26-1><a class=lnlinks href=#hl-26-1>1</a>
+</span><span class=lnt id=hl-26-2><a class=lnlinks href=#hl-26-2>2</a>
+</span><span class=lnt id=hl-26-3><a class=lnlinks href=#hl-26-3>3</a>
+</span><span class=lnt id=hl-26-4><a class=lnlinks href=#hl-26-4>4</a>
+</span><span class=lnt id=hl-26-5><a class=lnlinks href=#hl-26-5>5</a>
+</span><span class=lnt id=hl-26-6><a class=lnlinks href=#hl-26-6>6</a>
+</span><span class=lnt id=hl-26-7><a class=lnlinks href=#hl-26-7>7</a>
+</span><span class=lnt id=hl-26-8><a class=lnlinks href=#hl-26-8>8</a>
+</span><span class=lnt id=hl-26-9><a class=lnlinks href=#hl-26-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 修改 /etc/config/network，是 lan 口下面的配置（无论你是旁路由还是主路由模式，都是修改 lan 口）</span>
+</span></span><span class=line><span class=cl>config interface <span class=s1>&#39;lan&#39;</span>
+</span></span><span class=line><span class=cl>    option ipaddr <span class=s1>&#39;192.168.1.131&#39;</span>
+</span></span><span class=line><span class=cl>    option netmask <span class=s1>&#39;255.255.255.0&#39;</span>
+</span></span><span class=line><span class=cl>    option gateway <span class=s1>&#39;192.168.1.1&#39;</span>  <span class=c1># 网关</span>
+</span></span><span class=line><span class=cl>    option dns <span class=s1>&#39;8.8.8.8 8.8.4.4&#39;</span>  <span class=c1># DNS</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 然后重启</span>
+</span></span><span class=line><span class=cl>/etc/init.d/network restart</span></span></code></pre></td></tr></table></div></div><h3 id=调整虚拟机磁盘大小>调整虚拟机磁盘大小
+<a class=header-anchor href=#%e8%b0%83%e6%95%b4%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%a3%81%e7%9b%98%e5%a4%a7%e5%b0%8f></a></h3><p>通过上述方式安装的 img 类型映象的虚拟机，磁盘空间大小等于 img 映象的大小，安装成功，磁盘占用就是 100%，所以我们需要重新调整下磁盘大小</p><p>我们需要的信息有两个，一个是虚拟机的 VM ID，一个是该虚拟机需要调整的 磁盘ID</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E8%B0%83%E6%95%B4%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png alt=调整磁盘大小.png></p><p>需要注意的是，并不是所有磁盘都是 <code>scsi0</code> ,磁盘号和磁盘类型，跟你选择添加「未使用磁盘」时候的设置相关</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%A3%81%E7%9B%98id.png alt=磁盘id.png></p><p>在 PVE Shell 中使用下列命令调整磁盘大小</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-27-1><a class=lnlinks href=#hl-27-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>qm resize <span class=m>106</span> scsi0 20G</span></span></code></pre></td></tr></table></div></div><h2 id=安装黑群晖>安装黑群晖
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e9%bb%91%e7%be%a4%e6%99%96></a></h2><h3 id=下载上传镜像-3>下载&上传镜像
+<a class=header-anchor href=#%e4%b8%8b%e8%bd%bd%e4%b8%8a%e4%bc%a0%e9%95%9c%e5%83%8f-3></a></h3><p>黑群晖的安装，需要用 <code>rr</code> 引导</p><p>百度网盘:
+<a href="https://pan.baidu.com/s/1u3zEOBXuQiB-siykY-UCNQ?pwd=yra4" title="rr 引导镜像" rel="noopener external nofollow noreferrer" target=_blank class=exturl>rr 引导镜像
+<i class="fa fa-external-link-alt"></i>
+</a>，提取码：yra4</p><h3 id=创建群晖虚拟机>创建群晖虚拟机
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e7%be%a4%e6%99%96%e8%99%9a%e6%8b%9f%e6%9c%ba></a></h3><ol><li><p>整体步骤跟 Openwrt 一致</p><blockquote><p>&mldr;解压上传镜像</p><p>&mldr;记录 VM ID / img 路径</p><p>&mldr;不使用任何介质</p><p>&mldr;分离/删除 未使用磁盘</p><p>&mldr;qm importdisk 106 /var/lib/vz/template/iso/rr.img local</p></blockquote></li><li><p>添加 <code>qm</code> 导入的 img 磁盘的时候有些不一样了，记得要将磁盘改成 <code>sata</code> 类型</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/sata%E7%B1%BB%E5%9E%8B%E7%A3%81%E7%9B%98.png alt=sata类型磁盘.png></p><p>引导盘添加成功后，我们还需要添加一块数据盘（引导盘只是用来引导启动的，群晖还没有自己的磁盘）, 有两种方式</p><blockquote><p>a. 将某块硬盘直通给群晖</p><p>b. 增加一块虚拟磁盘</p></blockquote><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%B7%BB%E5%8A%A0sata%E7%A1%AC%E7%9B%98.png alt=添加sata硬盘.png></p></li><li><p>修改引导顺序</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F.png alt=rr引导顺序.png></p></li><li><p>因为我们后续安装群晖的时候需要在 rr 引导里面下载群晖的安装文件，默认的空间是不够用的，建议此时调整 rr 引导盘的大小</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-28-1><a class=lnlinks href=#hl-28-1>1</a>
+</span><span class=lnt id=hl-28-2><a class=lnlinks href=#hl-28-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># PVE Shell</span>
+</span></span><span class=line><span class=cl>qm resize <span class=m>106</span> sata0 4G</span></span></code></pre></td></tr></table></div></div></li><li><p>启动虚拟机进行群晖的安装</p></li></ol><h3 id=rr-引导安装过程>rr 引导安装过程
+<a class=header-anchor href=#rr-%e5%bc%95%e5%af%bc%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b></a></h3><ol><li><p>启动 rr</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E5%90%AF%E5%8A%A8%E5%AE%89%E8%A3%85.png alt=启动安装.png></p></li><li><p>启动成功会提示</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F.png alt=rr启动成功.png></p></li><li><p>访问 <code>http://192.168.2.193:7681</code> 进行接下来的安装步骤，选择语言</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80.png alt=rr选择语言.png></p></li><li><p>选择型号，推荐 DS920+</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E9%80%89%E6%8B%A9%E5%9E%8B%E5%8F%B7.png alt=rr选择型号.png></p></li><li><p>选择版本，推荐 7.2</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E9%80%89%E6%8B%A9%E7%89%88%E6%9C%AC.png alt=rr选择版本.png></p></li><li><p>弹出页面，点击URL会自动下载当前引导的系统文件</p><p>注意: 这个 URL 需要复制在浏览器再下一遍！ rr 下载一遍，本机浏览器下载一遍！！后面要用！！！</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E4%B8%8B%E8%BD%BDpac.png alt=rr下载pac.png></p></li><li><p>选择编译引导</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E7%BC%96%E8%AF%91%E5%BC%95%E5%AF%BC.png alt=rr编译引导.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E5%BC%95%E5%AF%BC%E4%B8%8B%E8%BD%BDpac.png alt=rr引导下载pac.png></p><blockquote><p>如果下载一半失败，提示: 「检查网络或磁盘空间error 23：200」</p><p>一般是 rr 引导的磁盘空间不够，按照本文中的「创建群晖虚拟机」章节中步骤 4 的操作即可解决</p></blockquote></li><li><p>rr 引导启动</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E5%90%AF%E5%8A%A8.png alt=rr启动.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/rr%E5%90%AF%E5%8A%A8%E5%AE%8C%E6%AF%95.png alt=rr启动完毕.png></p><p>启动完毕后，可以访问 5000 端口，进行群晖初始化设置</p><blockquote><p>补充说明：上图写的 ip地址不一定正确，可以使用 Synology Assistant 进行搜索</p><p>百度网盘:
+<a href="https://pan.baidu.com/s/1Cv011LP_Ig5nu-vcKbY02Q?pwd=e2jj" title="Synology " rel="noopener external nofollow noreferrer" target=_blank class=exturl>Synology
+<i class="fa fa-external-link-alt"></i>
+</a><a href="https://pan.baidu.com/s/1u3zEOBXuQiB-siykY-UCNQ?pwd=yra4" title=Assistant rel="noopener external nofollow noreferrer" target=_blank class=exturl>Assistant
+<i class="fa fa-external-link-alt"></i>
+</a>，提取码：e2jj</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%BE%A4%E6%99%96%E5%8A%A9%E6%89%8B.png alt=群晖助手.png></p></blockquote></li></ol><h3 id=群晖安装过程>群晖安装过程
+<a class=header-anchor href=#%e7%be%a4%e6%99%96%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b></a></h3><ol><li><p>访问群晖管理页面</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%BE%A4%E6%99%96%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2.png alt=群晖管理页面.png></p></li><li><p>选择「从计算机手动上传 .pat 文件」，文件为「rr 引导安装过程」步骤 6 中下载的 PAC 文件</p><blockquote><p>如果你上面忘记在浏览器下载了，也忘记保存 URL 链接了，也可以选择「自动从xxx下载」</p></blockquote><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%89%8B%E5%8A%A8%E9%80%89%E6%8B%A9pac.png alt=手动选择pac.png></p></li><li><p>清空数据</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%B8%85%E7%A9%BA%E6%95%B0%E6%8D%AE1.png alt=清空数据1.png></p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E6%B8%85%E7%A9%BA%E6%95%B0%E6%8D%AE2.png alt=清空数据2.png></p></li><li><p>其他步骤就正常按照提示安装就行，需要注意的是关于更新的设置，选择手动更新</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E7%BE%A4%E6%99%96%E4%B8%8D%E6%9B%B4%E6%96%B0.png alt=群晖不更新.png></p></li></ol><h2 id=安装-centos>安装 CentOS
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-centos></a></h2><h3 id=centos常用初始化配置>CentOS常用初始化配置
+<a class=header-anchor href=#centos%e5%b8%b8%e7%94%a8%e5%88%9d%e5%a7%8b%e5%8c%96%e9%85%8d%e7%bd%ae></a></h3><ol><li><p>固定IP</p><p>修改 <code>/etc/sysconfig/network-scripts</code> 目录下 <code>ifcfg-eth0</code> 文件，默认情况下该文件设置的为DHCP，内容如下</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://hicane.com/upload/%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5.png alt=默认情况.png></p><p>修改为静态 IP</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-29-1><a class=lnlinks href=#hl-29-1> 1</a>
+</span><span class=lnt id=hl-29-2><a class=lnlinks href=#hl-29-2> 2</a>
+</span><span class=lnt id=hl-29-3><a class=lnlinks href=#hl-29-3> 3</a>
+</span><span class=lnt id=hl-29-4><a class=lnlinks href=#hl-29-4> 4</a>
+</span><span class=lnt id=hl-29-5><a class=lnlinks href=#hl-29-5> 5</a>
+</span><span class=lnt id=hl-29-6><a class=lnlinks href=#hl-29-6> 6</a>
+</span><span class=lnt id=hl-29-7><a class=lnlinks href=#hl-29-7> 7</a>
+</span><span class=lnt id=hl-29-8><a class=lnlinks href=#hl-29-8> 8</a>
+</span><span class=lnt id=hl-29-9><a class=lnlinks href=#hl-29-9> 9</a>
+</span><span class=lnt id=hl-29-10><a class=lnlinks href=#hl-29-10>10</a>
+</span><span class=lnt id=hl-29-11><a class=lnlinks href=#hl-29-11>11</a>
+</span><span class=lnt id=hl-29-12><a class=lnlinks href=#hl-29-12>12</a>
+</span><span class=lnt id=hl-29-13><a class=lnlinks href=#hl-29-13>13</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=line><span class=cl><span class=na>BOOTPROTO</span><span class=o>=</span><span class=s>static</span>
+</span></span><span class=line><span class=cl><span class=na>DEVICE</span><span class=o>=</span><span class=s>eth0</span>
+</span></span><span class=line><span class=cl><span class=na>ONBOOT</span><span class=o>=</span><span class=s>yes</span>
+</span></span><span class=line><span class=cl><span class=na>STARTMODE</span><span class=o>=</span><span class=s>auto</span>
+</span></span><span class=line><span class=cl><span class=na>TYPE</span><span class=o>=</span><span class=s>Ethernet</span>
+</span></span><span class=line><span class=cl><span class=na>USERCTL</span><span class=o>=</span><span class=s>no</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 静态IP配置</span>
+</span></span><span class=line><span class=cl><span class=na>IPADDR</span><span class=o>=</span><span class=s>192.168.1.104 </span>
+</span></span><span class=line><span class=cl><span class=na>NETMASK</span><span class=o>=</span><span class=s>255.255.255.0</span>
+</span></span><span class=line><span class=cl><span class=na>GATEWAY</span><span class=o>=</span><span class=s>192.168.1.1</span>
+</span></span><span class=line><span class=cl><span class=na>DNS1</span><span class=o>=</span><span class=s>8.8.8.8</span>
+</span></span><span class=line><span class=cl><span class=na>DNS2</span><span class=o>=</span><span class=s>8.8.4.4</span></span></span></code></pre></td></tr></table></div></div></li></ol><h1 id=proxmox-vepve添加挂载系统盘以外的磁盘>Proxmox VE（PVE）添加/挂载系统盘以外的磁盘
+<a class=header-anchor href=#proxmox-vepve%e6%b7%bb%e5%8a%a0%e6%8c%82%e8%bd%bd%e7%b3%bb%e7%bb%9f%e7%9b%98%e4%bb%a5%e5%a4%96%e7%9a%84%e7%a3%81%e7%9b%98></a></h1><p>PVE安装后会默认将系统盘分出local和
+<a href="https://zhida.zhihu.com/search?content_id=252316621&amp;content_type=Article&amp;match_order=1&amp;q=local-lvm&amp;zhida_source=entity" title=local-lvm rel="noopener external nofollow noreferrer" target=_blank class=exturl>local-lvm
+<i class="fa fa-external-link-alt"></i>
+</a>。<strong>对于系统盘以外的其他磁盘，都需要挂载才可以用PVE进行管理。</strong></p><p>我的主机是128G固态做PVE的系统盘，750G机械用做数据盘，可以看到PVE所在的128G系统盘nvme0n1是挂载到PVE下的local（我把local和local-lvm合并了，所以只有一个local），同时可以识别到750G机械盘sda的分区，但是这个sda是没有挂载到PVE下的，我需要做的就是把sda挂载到PVE下用PVE管理它。</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://pic1.zhimg.com/v2-649d9094dae670ac449cc2866da2be9c_1440w.jpg alt=img></p><p>任务明确之后，打开shell命令终端，之后和linux系统进行分区的操作一致[
+<a href=https://zhuanlan.zhihu.com/p/16472579153#ref_1 title=1] rel="noopener external nofollow noreferrer" target=_blank class=exturl>1]
+<i class="fa fa-external-link-alt"></i>
+</a>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-30-1><a class=lnlinks href=#hl-30-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>fdisk</span> <span class=p>/</span><span class=n>dev</span><span class=p>/</span><span class=n>sda</span> <span class=c># /dev/sda是你要进行操作的分区</span></span></span></code></pre></td></tr></table></div></div><p><em>（可选步骤）我们可以键入<code>m</code> 查看帮助文档，会提示你键入什么字母表示什么含义：</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-31-1><a class=lnlinks href=#hl-31-1> 1</a>
+</span><span class=lnt id=hl-31-2><a class=lnlinks href=#hl-31-2> 2</a>
+</span><span class=lnt id=hl-31-3><a class=lnlinks href=#hl-31-3> 3</a>
+</span><span class=lnt id=hl-31-4><a class=lnlinks href=#hl-31-4> 4</a>
+</span><span class=lnt id=hl-31-5><a class=lnlinks href=#hl-31-5> 5</a>
+</span><span class=lnt id=hl-31-6><a class=lnlinks href=#hl-31-6> 6</a>
+</span><span class=lnt id=hl-31-7><a class=lnlinks href=#hl-31-7> 7</a>
+</span><span class=lnt id=hl-31-8><a class=lnlinks href=#hl-31-8> 8</a>
+</span><span class=lnt id=hl-31-9><a class=lnlinks href=#hl-31-9> 9</a>
+</span><span class=lnt id=hl-31-10><a class=lnlinks href=#hl-31-10>10</a>
+</span><span class=lnt id=hl-31-11><a class=lnlinks href=#hl-31-11>11</a>
+</span><span class=lnt id=hl-31-12><a class=lnlinks href=#hl-31-12>12</a>
+</span><span class=lnt id=hl-31-13><a class=lnlinks href=#hl-31-13>13</a>
+</span><span class=lnt id=hl-31-14><a class=lnlinks href=#hl-31-14>14</a>
+</span><span class=lnt id=hl-31-15><a class=lnlinks href=#hl-31-15>15</a>
+</span><span class=lnt id=hl-31-16><a class=lnlinks href=#hl-31-16>16</a>
+</span><span class=lnt id=hl-31-17><a class=lnlinks href=#hl-31-17>17</a>
+</span><span class=lnt id=hl-31-18><a class=lnlinks href=#hl-31-18>18</a>
+</span><span class=lnt id=hl-31-19><a class=lnlinks href=#hl-31-19>19</a>
+</span><span class=lnt id=hl-31-20><a class=lnlinks href=#hl-31-20>20</a>
+</span><span class=lnt id=hl-31-21><a class=lnlinks href=#hl-31-21>21</a>
+</span><span class=lnt id=hl-31-22><a class=lnlinks href=#hl-31-22>22</a>
+</span><span class=lnt id=hl-31-23><a class=lnlinks href=#hl-31-23>23</a>
+</span><span class=lnt id=hl-31-24><a class=lnlinks href=#hl-31-24>24</a>
+</span><span class=lnt id=hl-31-25><a class=lnlinks href=#hl-31-25>25</a>
+</span><span class=lnt id=hl-31-26><a class=lnlinks href=#hl-31-26>26</a>
+</span><span class=lnt id=hl-31-27><a class=lnlinks href=#hl-31-27>27</a>
+</span><span class=lnt id=hl-31-28><a class=lnlinks href=#hl-31-28>28</a>
+</span><span class=lnt id=hl-31-29><a class=lnlinks href=#hl-31-29>29</a>
+</span><span class=lnt id=hl-31-30><a class=lnlinks href=#hl-31-30>30</a>
+</span><span class=lnt id=hl-31-31><a class=lnlinks href=#hl-31-31>31</a>
+</span><span class=lnt id=hl-31-32><a class=lnlinks href=#hl-31-32>32</a>
+</span><span class=lnt id=hl-31-33><a class=lnlinks href=#hl-31-33>33</a>
+</span><span class=lnt id=hl-31-34><a class=lnlinks href=#hl-31-34>34</a>
+</span><span class=lnt id=hl-31-35><a class=lnlinks href=#hl-31-35>35</a>
+</span><span class=lnt id=hl-31-36><a class=lnlinks href=#hl-31-36>36</a>
+</span><span class=lnt id=hl-31-37><a class=lnlinks href=#hl-31-37>37</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Command (m for help): m
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Help:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  DOS (MBR)
+</span></span><span class=line><span class=cl>   a   toggle a bootable flag
+</span></span><span class=line><span class=cl>   b   edit nested BSD disklabel
+</span></span><span class=line><span class=cl>   c   toggle the dos compatibility flag
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  Generic
+</span></span><span class=line><span class=cl>   d   delete a partition
+</span></span><span class=line><span class=cl>   F   list free unpartitioned space
+</span></span><span class=line><span class=cl>   l   list known partition types
+</span></span><span class=line><span class=cl>   n   add a new partition
+</span></span><span class=line><span class=cl>   p   print the partition table
+</span></span><span class=line><span class=cl>   t   change a partition type
+</span></span><span class=line><span class=cl>   v   verify the partition table
+</span></span><span class=line><span class=cl>   i   print information about a partition
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  Misc
+</span></span><span class=line><span class=cl>   m   print this menu
+</span></span><span class=line><span class=cl>   u   change display/entry units
+</span></span><span class=line><span class=cl>   x   extra functionality (experts only)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  Script
+</span></span><span class=line><span class=cl>   I   load disk layout from sfdisk script file
+</span></span><span class=line><span class=cl>   O   dump disk layout to sfdisk script file
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  Save &amp; Exit
+</span></span><span class=line><span class=cl>   w   write table to disk and exit
+</span></span><span class=line><span class=cl>   q   quit without saving changes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  Create a new label
+</span></span><span class=line><span class=cl>   g   create a new empty GPT partition table
+</span></span><span class=line><span class=cl>   G   create a new empty SGI (IRIX) partition table
+</span></span><span class=line><span class=cl>   o   create a new empty MBR (DOS) partition table
+</span></span><span class=line><span class=cl>   s   create a new empty Sun partition table</span></span></code></pre></td></tr></table></div></div><p>首先键入<code>d</code>删除，然后按照提示，输入你要删除的分区号。我这里反复键入<code>d</code>+回车，将所有存在的分区全部删除了：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-32-1><a class=lnlinks href=#hl-32-1> 1</a>
+</span><span class=lnt id=hl-32-2><a class=lnlinks href=#hl-32-2> 2</a>
+</span><span class=lnt id=hl-32-3><a class=lnlinks href=#hl-32-3> 3</a>
+</span><span class=lnt id=hl-32-4><a class=lnlinks href=#hl-32-4> 4</a>
+</span><span class=lnt id=hl-32-5><a class=lnlinks href=#hl-32-5> 5</a>
+</span><span class=lnt id=hl-32-6><a class=lnlinks href=#hl-32-6> 6</a>
+</span><span class=lnt id=hl-32-7><a class=lnlinks href=#hl-32-7> 7</a>
+</span><span class=lnt id=hl-32-8><a class=lnlinks href=#hl-32-8> 8</a>
+</span><span class=lnt id=hl-32-9><a class=lnlinks href=#hl-32-9> 9</a>
+</span><span class=lnt id=hl-32-10><a class=lnlinks href=#hl-32-10>10</a>
+</span><span class=lnt id=hl-32-11><a class=lnlinks href=#hl-32-11>11</a>
+</span><span class=lnt id=hl-32-12><a class=lnlinks href=#hl-32-12>12</a>
+</span><span class=lnt id=hl-32-13><a class=lnlinks href=#hl-32-13>13</a>
+</span><span class=lnt id=hl-32-14><a class=lnlinks href=#hl-32-14>14</a>
+</span><span class=lnt id=hl-32-15><a class=lnlinks href=#hl-32-15>15</a>
+</span><span class=lnt id=hl-32-16><a class=lnlinks href=#hl-32-16>16</a>
+</span><span class=lnt id=hl-32-17><a class=lnlinks href=#hl-32-17>17</a>
+</span><span class=lnt id=hl-32-18><a class=lnlinks href=#hl-32-18>18</a>
+</span><span class=lnt id=hl-32-19><a class=lnlinks href=#hl-32-19>19</a>
+</span><span class=lnt id=hl-32-20><a class=lnlinks href=#hl-32-20>20</a>
+</span><span class=lnt id=hl-32-21><a class=lnlinks href=#hl-32-21>21</a>
+</span><span class=lnt id=hl-32-22><a class=lnlinks href=#hl-32-22>22</a>
+</span><span class=lnt id=hl-32-23><a class=lnlinks href=#hl-32-23>23</a>
+</span><span class=lnt id=hl-32-24><a class=lnlinks href=#hl-32-24>24</a>
+</span><span class=lnt id=hl-32-25><a class=lnlinks href=#hl-32-25>25</a>
+</span><span class=lnt id=hl-32-26><a class=lnlinks href=#hl-32-26>26</a>
+</span><span class=lnt id=hl-32-27><a class=lnlinks href=#hl-32-27>27</a>
+</span><span class=lnt id=hl-32-28><a class=lnlinks href=#hl-32-28>28</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>Partition number (1,2,5-7, default 7): 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition 7 has been deleted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition number (1,2,5,6, default 6): 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition 6 has been deleted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition number (1,2,5, default 5): 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition 5 has been deleted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>Partition number (1,2, default 2): 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition 2 has been deleted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>Selected partition 1
+</span></span><span class=line><span class=cl>Partition 1 has been deleted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command (m for help): d
+</span></span><span class=line><span class=cl>No partition is defined yet!</span></span></code></pre></td></tr></table></div></div><p>键入<code>n</code>创建分区，按照提示键入<code>p</code>创建主分区，按照提示选择主分区的数量，我这里直接默认创建1个：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-33-1><a class=lnlinks href=#hl-33-1>1</a>
+</span><span class=lnt id=hl-33-2><a class=lnlinks href=#hl-33-2>2</a>
+</span><span class=lnt id=hl-33-3><a class=lnlinks href=#hl-33-3>3</a>
+</span><span class=lnt id=hl-33-4><a class=lnlinks href=#hl-33-4>4</a>
+</span><span class=lnt id=hl-33-5><a class=lnlinks href=#hl-33-5>5</a>
+</span><span class=lnt id=hl-33-6><a class=lnlinks href=#hl-33-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Command (m for help): n
+</span></span><span class=line><span class=cl>Partition type
+</span></span><span class=line><span class=cl>   p   primary (0 primary, 0 extended, 4 free)
+</span></span><span class=line><span class=cl>   e   extended (container for logical partitions)
+</span></span><span class=line><span class=cl>Select (default p): p
+</span></span><span class=line><span class=cl>Partition number (1-4, default 1): </span></span></code></pre></td></tr></table></div></div><p>之后提示设置分区的起始位置和终止位置（默认是起始地址和最后地址），我这里直接把全部空间分配到这个分区，所以直接两次默认即可：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-34-1><a class=lnlinks href=#hl-34-1>1</a>
+</span><span class=lnt id=hl-34-2><a class=lnlinks href=#hl-34-2>2</a>
+</span><span class=lnt id=hl-34-3><a class=lnlinks href=#hl-34-3>3</a>
+</span><span class=lnt id=hl-34-4><a class=lnlinks href=#hl-34-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>First sector (2048-1465149167, default 2048): 
+</span></span><span class=line><span class=cl>Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-1465149167, default 1465149167): 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Created a new partition 1 of type &#39;Linux&#39; and of size 698.6 GiB.</span></span></code></pre></td></tr></table></div></div><p><em>（可选步骤）如果你不想把全部的空间全部分配到这一个分区，可以起始位置选择默认值，终止位置填写磁盘大小，如下所示：</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-35-1><a class=lnlinks href=#hl-35-1>1</a>
+</span><span class=lnt id=hl-35-2><a class=lnlinks href=#hl-35-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>First sector (2048-1465149167, default 2048): 
+</span></span><span class=line><span class=cl>Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-1465149167, default 1465149167): +5G # 创建一个5G大小的分区</span></span></code></pre></td></tr></table></div></div><p>键入<code>p</code>查看分区是否创建成功：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-36-1><a class=lnlinks href=#hl-36-1> 1</a>
+</span><span class=lnt id=hl-36-2><a class=lnlinks href=#hl-36-2> 2</a>
+</span><span class=lnt id=hl-36-3><a class=lnlinks href=#hl-36-3> 3</a>
+</span><span class=lnt id=hl-36-4><a class=lnlinks href=#hl-36-4> 4</a>
+</span><span class=lnt id=hl-36-5><a class=lnlinks href=#hl-36-5> 5</a>
+</span><span class=lnt id=hl-36-6><a class=lnlinks href=#hl-36-6> 6</a>
+</span><span class=lnt id=hl-36-7><a class=lnlinks href=#hl-36-7> 7</a>
+</span><span class=lnt id=hl-36-8><a class=lnlinks href=#hl-36-8> 8</a>
+</span><span class=lnt id=hl-36-9><a class=lnlinks href=#hl-36-9> 9</a>
+</span><span class=lnt id=hl-36-10><a class=lnlinks href=#hl-36-10>10</a>
+</span><span class=lnt id=hl-36-11><a class=lnlinks href=#hl-36-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Command (m for help): p
+</span></span><span class=line><span class=cl>Disk /dev/sda: 698.64 GiB, 750156374016 bytes, 1465149168 sectors
+</span></span><span class=line><span class=cl>Disk model: ST9750420AS     
+</span></span><span class=line><span class=cl>Units: sectors of 1 * 512 = 512 bytes
+</span></span><span class=line><span class=cl>Sector size (logical/physical): 512 bytes / 4096 bytes
+</span></span><span class=line><span class=cl>I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+</span></span><span class=line><span class=cl>Disklabel type: dos
+</span></span><span class=line><span class=cl>Disk identifier: 0xd907c71c
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Device     Boot Start        End    Sectors   Size Id Type
+</span></span><span class=line><span class=cl>/dev/sda1        2048 1465149167 1465147120 698.6G 83 Linux</span></span></code></pre></td></tr></table></div></div><p>键入<code>w</code>写入创建的分区，保存退出：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-37-1><a class=lnlinks href=#hl-37-1>1</a>
+</span><span class=lnt id=hl-37-2><a class=lnlinks href=#hl-37-2>2</a>
+</span><span class=lnt id=hl-37-3><a class=lnlinks href=#hl-37-3>3</a>
+</span><span class=lnt id=hl-37-4><a class=lnlinks href=#hl-37-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Command (m for help): w
+</span></span><span class=line><span class=cl>The partition table has been altered.
+</span></span><span class=line><span class=cl>Calling ioctl() to re-read partition table.
+</span></span><span class=line><span class=cl>Syncing disks.</span></span></code></pre></td></tr></table></div></div><p>回看PVE中的磁盘，我们已经将sda原本的分区删除，合并成一个分区了：</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://pica.zhimg.com/v2-1eba7ad8cebd844e9dee7196329200e6_1440w.jpg alt=img></p><p>接下来给分区格式化文件系统，我这里将分区格式化为ext4：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-38-1><a class=lnlinks href=#hl-38-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>mkfs -t ext4 /dev/sda1</span></span></code></pre></td></tr></table></div></div><p>分区也弄好了，文件系统也弄好了，接下来要将这个分区挂载到系统的文件目录下，linux中有一个目录/mnt专门用来挂载各种U盘，硬盘等：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-39-1><a class=lnlinks href=#hl-39-1>1</a>
+</span><span class=lnt id=hl-39-2><a class=lnlinks href=#hl-39-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>mkdir /mnt/seagate # 创建需要挂载到的文件目录，seagate这个目录名字可以自定义
+</span></span><span class=line><span class=cl>mount -t ext4 /dev/sda1 /mnt/seagate # 将sda1分区挂载到/mnt/seagate下</span></span></code></pre></td></tr></table></div></div><p>设置开机自动挂载：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-40-1><a class=lnlinks href=#hl-40-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>echo “mount -t ext4 /dev/sda1 /mnt/seagate” &gt;&gt; /etc/rc.local</span></span></code></pre></td></tr></table></div></div><p>之后就可以回到PVE后台，按照下图中步骤操作，添加刚刚挂载好的磁盘：</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://pic2.zhimg.com/v2-6ad6fd4d05dd8a2436e6630e7e04e0e5_1440w.jpg alt=img></p><p>这里<code>内容</code>选项，表示你可以放什么类型的东西，我全选了。</p><p>之后就可以通过PVE管理这个分区了：</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://pic3.zhimg.com/v2-0786c3918113a0de10308a073bea8884_1440w.jpg alt=img></p><p><strong>总结一下全部步骤：</strong></p><ol><li><strong>删除原有分区</strong></li><li><strong>创建新的分区</strong></li><li><strong>将创建的新分区格式化文件系统</strong></li><li><strong>将格式化好的分区挂载到系统目录下</strong></li><li><strong>设置开机自动挂载</strong></li><li><strong>回到PVE后台添加磁盘</strong></li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/>计算机
+</a><a href=/tags/%E7%BD%91%E7%BB%9C/>网络</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E5%B7%A6%E7%BF%BC%E7%8C%AE%E7%A5%AD%E6%9F%A5%E7%90%86%E6%9F%AF%E5%85%8B%E5%8F%B3%E7%BF%BC%E6%8B%A5%E6%8A%B1%E5%A0%A1%E5%9E%92%E5%8C%96%E7%BE%8E%E5%9B%BD%E8%87%AA%E7%94%B1%E6%AD%A3%E8%A2%AB%E4%B8%A4%E9%9D%A2%E5%A4%B9%E5%87%BB/ rel=next title=左翼献祭查理·柯克，右翼拥抱堡垒化，美国自由正被两面夹击><i class="fa fa-chevron-left"></i> 左翼献祭查理·柯克，右翼拥抱堡垒化，美国自由正被两面夹击</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E6%9C%AC%E5%9B%BD%E4%BA%A7%E5%93%81%E7%A8%8E%E8%B4%9F%E6%9B%B4%E9%87%8D%E6%98%AF%E5%85%B3%E7%A8%8E%E4%BF%9D%E6%8A%A4%E7%9A%84%E7%90%86%E7%94%B1%E5%90%97/ rel=prev title=本国产品税负更重是关税保护的理由吗？>本国产品税负更重是关税保护的理由吗？
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B","permalink":"/post/%E4%BF%9D%E5%A7%86%E7%BA%A7pve%E8%A3%85%E6%9C%BA%E6%95%99%E7%A8%8B/","title":"保姆级PVE装机教程","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.1","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1763982110" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1763982110" defer></script></body></html>

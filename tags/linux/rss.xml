@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/linux/</link><description>Recent content in Linux on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Dec 2021 23:39:16 +0000</lastBuildDate><atom:link href="/tags/linux/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux常用命令</title><link>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="一说明">一、说明
+&lt;a class="header-anchor" href="#%e4%b8%80%e8%af%b4%e6%98%8e">&lt;/a>
+&lt;/h2>&lt;p>记录在Linux中经常会用到的命令，持续更新。更多命令详解可参考：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html" title="Linux Tools Quick Tutorial" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Linux Tools Quick Tutorial
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://www.runoob.com/linux/linux-command-manual.html" title="Linux 命令大全" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Linux 命令大全
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://wangdoc.com/bash/intro.html" title="Bash 脚本教程" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Bash 脚本教程
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://wangdoc.com/ssh/index.html" title="SSH 教程" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ SSH 教程
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="1shell选择与切换">1、Shell选择与切换
+&lt;a class="header-anchor" href="#1shell%e9%80%89%e6%8b%a9%e4%b8%8e%e5%88%87%e6%8d%a2">&lt;/a>
+&lt;/h3>&lt;p>在现代的 Linux 上，sh 已经被 bash 代替，&lt;code>/bin/sh&lt;/code>往往是指向&lt;code>/bin/bash&lt;/code>的符号链接。早期macos系统默认使用bash解释器，在macos10.15系统中官方推荐使用zsh解释器。bash和zsh均是shell的一种，由于bash或zsh本质上都是解释器，他们所共同服务的是shell语言，因此在命令语法上基本相同，zsh能基本完美兼容bash的命令，并且使用起来更加优雅。&lt;/p></description></item></channel></rss>

@@ -1,0 +1,855 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.147.6"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="hexo博客安装与配置步骤"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="hexo"><meta property="og:type" content="article"><meta property="og:title" content="hexo博客安装与配置步骤"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2019-08-21 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2019-08-21 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1763982110"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1763982110"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>hexo博客安装与配置步骤 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E7%A7%91%E6%99%AE/ class=hvr-icon-pulse rel=section>科普</a></li><li class="menu-item menu-item-flinks"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section>归档</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#1安装git-nodejs>1.安装Git nodejs</a></li><li><a href=#2安装hexo>2.安装hexo</a><ul><li><a href=#启动本地hexo>启动本地hexo</a></li></ul></li><li><a href=#3git和github关联>3.GIT和github关联</a></li><li><a href=#4推送到github>4.推送到github</a></li><li><a href=#设置next主题>设置next主题</a><ul><li><a href=#1下载主题>1下载主题</a></li><li><a href=#2设置主题>2设置主题</a></li><li><a href=#3发布>3发布</a></li><li><a href=#4部署到hithub>4部署到hithub</a></li></ul></li><li><a href=#next主题更改>next主题更改</a></li><li><a href=#hexo博客front-matter格式>hexo博客front-matter格式</a></li><li><a href=#next分类和标签正确显示>next分类和标签正确显示</a></li><li><a href=#关于页>关于页</a></li><li><a href=#文章置顶>文章置顶</a></li><li><a href=#搜索>搜索</a></li><li><a href=#摘要>摘要</a></li><li><a href=#图片防盗链>图片防盗链</a></li><li><a href=#头像>头像</a></li><li><a href=#去掉文章目录标题的自动编号>去掉文章目录标题的自动编号</a></li><li><a href=#加密>加密</a></li><li><a href=#打赏>打赏</a></li><li><a href=#永久链接>永久链接</a></li><li><a href=#压缩>压缩</a></li><li><a href=#去掉页脚>去掉页脚</a><ul><li><a href=#音频>音频</a></li><li><a href=#视频>视频</a></li></ul></li><li><a href=#hexo-all-minifier压缩使用>hexo-all-minifier压缩使用</a></li><li><a href=#取消动画>取消动画</a></li><li><a href=#友链社交图标>友链社交图标</a></li><li><a href=#本地后台管理>本地后台管理</a></li><li><a href=#重装hexo>重装hexo</a><ul><li><a href=#安装hexo>安装Hexo</a></li><li><a href=#删掉原blog文件夹部分文件>删掉原blog文件夹部分文件</a></li><li><a href=#安装依赖文件>安装依赖文件</a></li><li><a href=#安装部署插件>安装部署插件</a></li></ul></li><li><a href=#升级>升级</a></li><li><a href=#1自动更新>1.自动更新</a></li><li><a href=#2手动更新>2手动更新</a><ul><li><a href=#使用cd命令进入博客根目录>使用cd命令进入博客根目录</a></li><li><a href=#检查插件更新>检查插件更新</a></li></ul></li><li><a href=#升级亲测有效>升级亲测有效</a><ul><li><a href=#升级-1>升级</a></li><li><a href=#全局升级-hexo-版本>全局升级 Hexo 版本</a></li><li><a href=#博客升级-hexo-版本>博客升级 Hexo 版本</a><ul><li><a href=#新增菜单栏选项>新增菜单栏选项</a></li><li><a href=#新增草稿>新增草稿</a></li><li><a href=#图片处理>图片处理</a></li></ul></li></ul></li><li><a href=#新增文章处理>新增文章处理</a></li><li><a href=#发布到coding已失效>发布到coding(已失效)</a></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>3200</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank>QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank>Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank>E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank>知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17312441></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=36169></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2025-11-19 15:39:16 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="hexo博客安装与配置步骤"><meta itemprop=description content="GitHub+Hexo 搭建个人网站详细教程。随着互联网浪潮的翻腾，国内外涌现出越来越多优秀的社交网站让用户分享信息更加便捷。然后，如果你是一个不甘寂寞的程序猿（媛），是否也想要搭建一个属于自己的个人网站，如果你曾经或者现在正有这样的想法，请跟随这篇文章发挥你的Geek精神，让你快速拥有自己的博客网站，写文章记录生活，享受这种从0到1的过程。
+"></span><header class=post-header><h1 class=post-title itemprop="name headline">hexo博客安装与配置步骤</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2019-08-21 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2019-08-21 15:39:16 +0000 UTC">2019-08-21
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E7%BC%96%E7%A8%8B/ itemprop=url rel=index><span itemprop=name>编程</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>6582</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>14分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><p>GitHub+Hexo 搭建个人网站详细教程。随着互联网浪潮的翻腾，国内外涌现出越来越多优秀的社交网站让用户分享信息更加便捷。然后，如果你是一个不甘寂寞的程序猿（媛），是否也想要搭建一个属于自己的个人网站，如果你曾经或者现在正有这样的想法，请跟随这篇文章发挥你的Geek精神，让你快速拥有自己的博客网站，写文章记录生活，享受这种从0到1的过程。</p><p><img src=/imgs/img-lazy-loading.gif data-src=https://s4.ax1x.com/2021/12/18/TEh6AI.png alt></p><a id=more></a><h2 id=1安装git-nodejs>1.安装Git nodejs
+<a class=header-anchor href=#1%e5%ae%89%e8%a3%85git-nodejs></a></h2><p><a href=https://git-scm.com/ title=安装git rel="noopener external nofollow noreferrer" target=_blank class=exturl>安装git
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://npm.taobao.org/mirrors/git-for-windows/ title=淘宝镜像 rel="noopener external nofollow noreferrer" target=_blank class=exturl>淘宝镜像
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://nodejs.org/en/ title=安装nodejs rel="noopener external nofollow noreferrer" target=_blank class=exturl>安装nodejs
+<i class="fa fa-external-link-alt"></i></a></p><p>先在桌面建个blog的文件夹</p><p>开始菜单右键运行 CMD(文件夹右键在此处打开命令窗口无效) 输入d: 进入D盘 再 cd 文档 cd桌面 cd blog 或者cd 文档/桌面/blog</p><p>改变hexo镜像包地址</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>npm</span> <span class=n>install</span> <span class=o>-</span><span class=n>g</span> <span class=n>cnpm</span> <span class=o>--</span><span class=n>registry</span><span class=o>=</span><span class=nl>https</span><span class=p>:</span><span class=c1>//registry.npm.taobao.org
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=2安装hexo>2.安装hexo
+<a class=header-anchor href=#2%e5%ae%89%e8%a3%85hexo></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>cnpm install hexo-cli -g</span></span></code></pre></td></tr></table></div></div><p>查看版本信息 新机安装迁移 到这里就可以了能显示hexo v就可以了 直接hexo s</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>hexo -v</span></span></code></pre></td></tr></table></div></div><p>初始化hexo程序</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=n>hexo</span> <span class=k>init</span></span></span></code></pre></td></tr></table></div></div><h3 id=启动本地hexo>启动本地hexo
+<a class=header-anchor href=#%e5%90%af%e5%8a%a8%e6%9c%ac%e5%9c%b0hexo></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>hexo s </span></span></code></pre></td></tr></table></div></div><p>桌面本地http://localhost:4000</p><h2 id=3git和github关联>3.GIT和github关联
+<a class=header-anchor href=#3git%e5%92%8cgithub%e5%85%b3%e8%81%94></a></h2><p>鼠标右击打开Git Bash here 设置user.name和user.email配置信息：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git config --global user.name <span class=s2>&#34;loveyouluobin&#34;</span>
+</span></span><span class=line><span class=cl>git config --global user.email <span class=s2>&#34;loveyouluobin@qq.com&#34;</span>
+</span></span><span class=line><span class=cl>ssh-keygen -t rsa -C <span class=s2>&#34;loveyouluobin@qq.com&#34;</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>然后直接三个回车即可，默认不需要设置密码</span></span></code></pre></td></tr></table></div></div><p>生成了ssh密钥文件：</p><p>然后找到生成的(/c/Users/Administrator/.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</p><p>打开
+<a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fkeys" title=GitHub_Settings_keys rel="noopener external nofollow noreferrer" target=_blank class=exturl>GitHub_Settings_keys
+<i class="fa fa-external-link-alt"></i>
+</a>页面，新建new SSH Key</p><p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。</p><p>在Git Bash中检测GitHub公钥设置是否成功，输入</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ssh git@github.com </span></span></code></pre></td></tr></table></div></div><p>PTY allocation request failed on channel 0 则成功</p><p>如没有建仓库,新建仓库时一定要是loveyouluobin.github.io</p><p>如果没有加后面的github.io不能以默认域名访问</p><p><strong>设置主页目录Source</strong></p><p>Your GitHub Pages site is currently being built from the <code>main</code> branch.
+<a href=https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/ title="Learn more" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Learn more
+<i class="fa fa-external-link-alt"></i>
+</a>.</p><p>设置为main root 然后保存Save</p><p><a href=https://loveyouluobin.github.io/ title=https://loveyouluobin.github.io/ rel="noopener external nofollow noreferrer" target=_blank class=exturl>https://loveyouluobin.github.io/
+<i class="fa fa-external-link-alt"></i></a></p><h2 id=4推送到github>4.推送到github
+<a class=header-anchor href=#4%e6%8e%a8%e9%80%81%e5%88%b0github></a></h2><p>将hexo和GitHub关联起来，修改D:\文档\桌面\blog配置文件_config.yml</p><p>repository地址在仓库里复制ssh里的地址</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>deploy:
+</span></span><span class=line><span class=cl>  type: git        
+</span></span><span class=line><span class=cl>  repo: git@github.com:loveyouluobin/loveyouluobin.github.io.git
+</span></span><span class=line><span class=cl>  branch: main</span></span></code></pre></td></tr></table></div></div><p>或者</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span><span class=lnt id=hl-9-3><a class=lnlinks href=#hl-9-3>3</a>
+</span><span class=lnt id=hl-9-4><a class=lnlinks href=#hl-9-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>deploy:
+</span></span><span class=line><span class=cl> type: git 
+</span></span><span class=line><span class=cl> repo: https://github.com/loveyouluobin/loveyouluobin.github.io.git
+</span></span><span class=line><span class=cl> branch: main</span></span></code></pre></td></tr></table></div></div><p>CMD里安装deploy-git部署命令</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install hexo-deployer-git --save</span></span></code></pre></td></tr></table></div></div><p>清除之前生成的东西 生成静态文章 部署文章到github 分开运行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1>1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2>2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>hexo clean
+</span></span><span class=line><span class=cl>hexo g
+</span></span><span class=line><span class=cl>hexo d</span></span></code></pre></td></tr></table></div></div><h2 id=设置next主题>设置next主题
+<a class=header-anchor href=#%e8%ae%be%e7%bd%aenext%e4%b8%bb%e9%a2%98></a></h2><h3 id=1下载主题>1下载主题
+<a class=header-anchor href=#1%e4%b8%8b%e8%bd%bd%e4%b8%bb%e9%a2%98></a></h3><p>next主题是hexo的一个著名的第三方主题，在hexo博客源码目录右键打开Git bash here，使用以下命令下载next主题：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>git clone git@github.com:theme-next/hexo-theme-next.git themes/next</span></span></code></pre></td></tr></table></div></div><p>或者直接
+<a href=https://github.com/iissnan/hexo-theme-next title=点此 rel="noopener external nofollow noreferrer" target=_blank class=exturl>点此
+<i class="fa fa-external-link-alt"></i>
+</a>处下载ZIP包解压到themes</p><h3 id=2设置主题>2设置主题
+<a class=header-anchor href=#2%e8%ae%be%e7%bd%ae%e4%b8%bb%e9%a2%98></a></h3><p>打开hexo源码根目录下的_config.yml文件，修改相应部分为以下内容：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2>2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3>3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Extensions
+</span></span><span class=line><span class=cl>## Plugins: https://hexo.io/plugins/
+</span></span><span class=line><span class=cl>## Themes: https://hexo.io/themes/
+</span></span><span class=line><span class=cl>theme: next</span></span></code></pre></td></tr></table></div></div><p>清除 Hexo 的缓存</p><h3 id=3发布>3发布
+<a class=header-anchor href=#3%e5%8f%91%e5%b8%83></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>hexo clean
+</span></span><span class=line><span class=cl>hexo s </span></span></code></pre></td></tr></table></div></div><h3 id=4部署到hithub>4部署到hithub
+<a class=header-anchor href=#4%e9%83%a8%e7%bd%b2%e5%88%b0hithub></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install hexo-deployer-git --save</span></span></code></pre></td></tr></table></div></div><p>报错原因是hexo在5.0之后把swig给删除了需要自己手动安装</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=w> </span><span class=n>npm</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=n>hexo</span><span class=o>-</span><span class=n>renderer</span><span class=o>-</span><span class=n>swig</span></span></span></code></pre></td></tr></table></div></div><p>这时，我们分别输入三条命令：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span><span class=lnt id=hl-17-2><a class=lnlinks href=#hl-17-2>2</a>
+</span><span class=lnt id=hl-17-3><a class=lnlinks href=#hl-17-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hexo clean 
+</span></span><span class=line><span class=cl>hexo g 
+</span></span><span class=line><span class=cl>hexo d</span></span></code></pre></td></tr></table></div></div><h2 id=next主题更改>next主题更改
+<a class=header-anchor href=#next%e4%b8%bb%e9%a2%98%e6%9b%b4%e6%94%b9></a></h2><p>冒号后面要有一个空格 设置前面不能有空格</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span><span class=lnt id=hl-18-5><a class=lnlinks href=#hl-18-5>5</a>
+</span><span class=lnt id=hl-18-6><a class=lnlinks href=#hl-18-6>6</a>
+</span><span class=lnt id=hl-18-7><a class=lnlinks href=#hl-18-7>7</a>
+</span><span class=lnt id=hl-18-8><a class=lnlinks href=#hl-18-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Site
+</span></span><span class=line><span class=cl>title: 小小罗对世界的分享
+</span></span><span class=line><span class=cl>subtitle: 一生一次的生命该如何度过呢？
+</span></span><span class=line><span class=cl>description: 小小罗对世界的分享
+</span></span><span class=line><span class=cl>keywords: 小小罗对世界的分享
+</span></span><span class=line><span class=cl>author: luobin
+</span></span><span class=line><span class=cl>language: zh-CN
+</span></span><span class=line><span class=cl>timezone: Asia/Shanghai</span></span></code></pre></td></tr></table></div></div><p>保存的时候一定要选择utf-8</p><h2 id=hexo博客front-matter格式>hexo博客front-matter格式
+<a class=header-anchor href=#hexo%e5%8d%9a%e5%ae%a2front-matter%e6%a0%bc%e5%bc%8f></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1> 1</a>
+</span><span class=lnt id=hl-19-2><a class=lnlinks href=#hl-19-2> 2</a>
+</span><span class=lnt id=hl-19-3><a class=lnlinks href=#hl-19-3> 3</a>
+</span><span class=lnt id=hl-19-4><a class=lnlinks href=#hl-19-4> 4</a>
+</span><span class=lnt id=hl-19-5><a class=lnlinks href=#hl-19-5> 5</a>
+</span><span class=lnt id=hl-19-6><a class=lnlinks href=#hl-19-6> 6</a>
+</span><span class=lnt id=hl-19-7><a class=lnlinks href=#hl-19-7> 7</a>
+</span><span class=lnt id=hl-19-8><a class=lnlinks href=#hl-19-8> 8</a>
+</span><span class=lnt id=hl-19-9><a class=lnlinks href=#hl-19-9> 9</a>
+</span><span class=lnt id=hl-19-10><a class=lnlinks href=#hl-19-10>10</a>
+</span><span class=lnt id=hl-19-11><a class=lnlinks href=#hl-19-11>11</a>
+</span><span class=lnt id=hl-19-12><a class=lnlinks href=#hl-19-12>12</a>
+</span><span class=lnt id=hl-19-13><a class=lnlinks href=#hl-19-13>13</a>
+</span><span class=lnt id=hl-19-14><a class=lnlinks href=#hl-19-14>14</a>
+</span><span class=lnt id=hl-19-15><a class=lnlinks href=#hl-19-15>15</a>
+</span><span class=lnt id=hl-19-16><a class=lnlinks href=#hl-19-16>16</a>
+</span><span class=lnt id=hl-19-17><a class=lnlinks href=#hl-19-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>title: 标题
+</span></span><span class=line><span class=cl>date: 2020-02-29 16:00:00
+</span></span><span class=line><span class=cl>summary: # 文章摘要
+</span></span><span class=line><span class=cl>toc: true
+</span></span><span class=line><span class=cl>mathjax: true
+</span></span><span class=line><span class=cl>top: true
+</span></span><span class=line><span class=cl>cover: true
+</span></span><span class=line><span class=cl>abbrlink: 213245 # 自己可随意设置
+</span></span><span class=line><span class=cl>img: &#39;https://img-blog.csdnimg.cn/20200309120551356.png&#39; # 设置文章背景图，设置为外链图片，访问快
+</span></span><span class=line><span class=cl>tags:
+</span></span><span class=line><span class=cl>  - 算法
+</span></span><span class=line><span class=cl>  - 计算机知识
+</span></span><span class=line><span class=cl>categories:
+</span></span><span class=line><span class=cl>  - 算法
+</span></span><span class=line><span class=cl>author: # 设置文章作者
+</span></span><span class=line><span class=cl>password: # 设置密码（yml中开启相应功能）
+</span></span><span class=line><span class=cl>coverImg: # 轮播图片</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1> 1</a>
+</span><span class=lnt id=hl-20-2><a class=lnlinks href=#hl-20-2> 2</a>
+</span><span class=lnt id=hl-20-3><a class=lnlinks href=#hl-20-3> 3</a>
+</span><span class=lnt id=hl-20-4><a class=lnlinks href=#hl-20-4> 4</a>
+</span><span class=lnt id=hl-20-5><a class=lnlinks href=#hl-20-5> 5</a>
+</span><span class=lnt id=hl-20-6><a class=lnlinks href=#hl-20-6> 6</a>
+</span><span class=lnt id=hl-20-7><a class=lnlinks href=#hl-20-7> 7</a>
+</span><span class=lnt id=hl-20-8><a class=lnlinks href=#hl-20-8> 8</a>
+</span><span class=lnt id=hl-20-9><a class=lnlinks href=#hl-20-9> 9</a>
+</span><span class=lnt id=hl-20-10><a class=lnlinks href=#hl-20-10>10</a>
+</span><span class=lnt id=hl-20-11><a class=lnlinks href=#hl-20-11>11</a>
+</span><span class=lnt id=hl-20-12><a class=lnlinks href=#hl-20-12>12</a>
+</span><span class=lnt id=hl-20-13><a class=lnlinks href=#hl-20-13>13</a>
+</span><span class=lnt id=hl-20-14><a class=lnlinks href=#hl-20-14>14</a>
+</span><span class=lnt id=hl-20-15><a class=lnlinks href=#hl-20-15>15</a>
+</span><span class=lnt id=hl-20-16><a class=lnlinks href=#hl-20-16>16</a>
+</span><span class=lnt id=hl-20-17><a class=lnlinks href=#hl-20-17>17</a>
+</span><span class=lnt id=hl-20-18><a class=lnlinks href=#hl-20-18>18</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Front-matter 选项详解
+</span></span><span class=line><span class=cl>Front-matter 选项中的所有内容均为非必填的。但我仍然建议至少填写 title 和 date 的值。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>配置选项	默认值	描述
+</span></span><span class=line><span class=cl>title	Markdown的文件标题	文章标题
+</span></span><span class=line><span class=cl>date	文件创建的时间	发布时间，强烈建议填写此选项，且最好保证全局唯一
+</span></span><span class=line><span class=cl>author	根 _config.yml 中的 author	文章作者
+</span></span><span class=line><span class=cl>img	featureImages 中的某个值	文章特征图
+</span></span><span class=line><span class=cl>top	true	推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章
+</span></span><span class=line><span class=cl>cover	false	表示该文章是否需要加入到首页轮播封面中
+</span></span><span class=line><span class=cl>coverImg	无	表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片
+</span></span><span class=line><span class=cl>password	无	文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项
+</span></span><span class=line><span class=cl>toc	ture	是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项
+</span></span><span class=line><span class=cl>mathjax	false	是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行
+</span></span><span class=line><span class=cl>summary	无	文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+</span></span><span class=line><span class=cl>categories	无	文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类
+</span></span><span class=line><span class=cl>tags	无	文章标签，一篇文章可以多个标签
+</span></span><span class=line><span class=cl>reprintPolicy	无	文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个</span></span></code></pre></td></tr></table></div></div><h2 id=next分类和标签正确显示>next分类和标签正确显示
+<a class=header-anchor href=#next%e5%88%86%e7%b1%bb%e5%92%8c%e6%a0%87%e7%ad%be%e6%ad%a3%e7%a1%ae%e6%98%be%e7%a4%ba></a></h2><p>_config.ym config.yml 选择样式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-21-1><a class=lnlinks href=#hl-21-1> 1</a>
+</span><span class=lnt id=hl-21-2><a class=lnlinks href=#hl-21-2> 2</a>
+</span><span class=lnt id=hl-21-3><a class=lnlinks href=#hl-21-3> 3</a>
+</span><span class=lnt id=hl-21-4><a class=lnlinks href=#hl-21-4> 4</a>
+</span><span class=lnt id=hl-21-5><a class=lnlinks href=#hl-21-5> 5</a>
+</span><span class=lnt id=hl-21-6><a class=lnlinks href=#hl-21-6> 6</a>
+</span><span class=lnt id=hl-21-7><a class=lnlinks href=#hl-21-7> 7</a>
+</span><span class=lnt id=hl-21-8><a class=lnlinks href=#hl-21-8> 8</a>
+</span><span class=lnt id=hl-21-9><a class=lnlinks href=#hl-21-9> 9</a>
+</span><span class=lnt id=hl-21-10><a class=lnlinks href=#hl-21-10>10</a>
+</span><span class=lnt id=hl-21-11><a class=lnlinks href=#hl-21-11>11</a>
+</span><span class=lnt id=hl-21-12><a class=lnlinks href=#hl-21-12>12</a>
+</span><span class=lnt id=hl-21-13><a class=lnlinks href=#hl-21-13>13</a>
+</span><span class=lnt id=hl-21-14><a class=lnlinks href=#hl-21-14>14</a>
+</span><span class=lnt id=hl-21-15><a class=lnlinks href=#hl-21-15>15</a>
+</span><span class=lnt id=hl-21-16><a class=lnlinks href=#hl-21-16>16</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Schemes主题样式
+</span></span><span class=line><span class=cl>#scheme: Muse
+</span></span><span class=line><span class=cl>#scheme: Mist
+</span></span><span class=line><span class=cl>scheme: Pisces
+</span></span><span class=line><span class=cl>#scheme: Gemini
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Schemes打开菜单
+</span></span><span class=line><span class=cl>menu:
+</span></span><span class=line><span class=cl>  home: / || fa fa-home
+</span></span><span class=line><span class=cl>  about: /about/ || fa fa-user
+</span></span><span class=line><span class=cl>  tags: /tags/ || fa fa-tags
+</span></span><span class=line><span class=cl>  categories: /categories/ || fa fa-th
+</span></span><span class=line><span class=cl>  archives: /archives/ || fa fa-archive
+</span></span><span class=line><span class=cl>  #schedule: /schedule/ || fa fa-calendar
+</span></span><span class=line><span class=cl>  #sitemap: /sitemap.xml || fa fa-sitemap
+</span></span><span class=line><span class=cl>  #commonweal: /404/ || fa fa-heartbeat</span></span></code></pre></td></tr></table></div></div><p>hexo根目录的source文件夹下新建一个tags和categories文件夹，然后在tags和categories文件夹里面新建一个index.md文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-22-1><a class=lnlinks href=#hl-22-1>1</a>
+</span><span class=lnt id=hl-22-2><a class=lnlinks href=#hl-22-2>2</a>
+</span><span class=lnt id=hl-22-3><a class=lnlinks href=#hl-22-3>3</a>
+</span><span class=lnt id=hl-22-4><a class=lnlinks href=#hl-22-4>4</a>
+</span><span class=lnt id=hl-22-5><a class=lnlinks href=#hl-22-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: &#34;标签&#34;
+</span></span><span class=line><span class=cl>type: tags
+</span></span><span class=line><span class=cl>layout: &#34;tags&#34;
+</span></span><span class=line><span class=cl>---</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-23-1><a class=lnlinks href=#hl-23-1>1</a>
+</span><span class=lnt id=hl-23-2><a class=lnlinks href=#hl-23-2>2</a>
+</span><span class=lnt id=hl-23-3><a class=lnlinks href=#hl-23-3>3</a>
+</span><span class=lnt id=hl-23-4><a class=lnlinks href=#hl-23-4>4</a>
+</span><span class=lnt id=hl-23-5><a class=lnlinks href=#hl-23-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: &#34;分类&#34;
+</span></span><span class=line><span class=cl>type: categories
+</span></span><span class=line><span class=cl>layout: &#34;categories&#34;
+</span></span><span class=line><span class=cl>---</span></span></code></pre></td></tr></table></div></div><h2 id=关于页>关于页
+<a class=header-anchor href=#%e5%85%b3%e4%ba%8e%e9%a1%b5></a></h2><p>hexo根目录的source文件夹下新建一个about 新建一个index.md文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-24-1><a class=lnlinks href=#hl-24-1>1</a>
+</span><span class=lnt id=hl-24-2><a class=lnlinks href=#hl-24-2>2</a>
+</span><span class=lnt id=hl-24-3><a class=lnlinks href=#hl-24-3>3</a>
+</span><span class=lnt id=hl-24-4><a class=lnlinks href=#hl-24-4>4</a>
+</span><span class=lnt id=hl-24-5><a class=lnlinks href=#hl-24-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: 关于
+</span></span><span class=line><span class=cl>type: about
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>其它内容</span></span></code></pre></td></tr></table></div></div><h2 id=文章置顶>文章置顶
+<a class=header-anchor href=#%e6%96%87%e7%ab%a0%e7%bd%ae%e9%a1%b6></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-25-1><a class=lnlinks href=#hl-25-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install hexo-generator-index-pin-top --save</span></span></code></pre></td></tr></table></div></div><p>在需要置顶的文章的 Front-matter 中加上 <code>top: true</code> 即可实现文章置顶功能</p><h2 id=搜索>搜索
+<a class=header-anchor href=#%e6%90%9c%e7%b4%a2></a></h2><p>根目录安装插件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-26-1><a class=lnlinks href=#hl-26-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>npm install hexo-generator-search --save</span></span></code></pre></td></tr></table></div></div><p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-27-1><a class=lnlinks href=#hl-27-1>1</a>
+</span><span class=lnt id=hl-27-2><a class=lnlinks href=#hl-27-2>2</a>
+</span><span class=lnt id=hl-27-3><a class=lnlinks href=#hl-27-3>3</a>
+</span><span class=lnt id=hl-27-4><a class=lnlinks href=#hl-27-4>4</a>
+</span><span class=lnt id=hl-27-5><a class=lnlinks href=#hl-27-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>search</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>  <span class=nx>path</span><span class=o>:</span> <span class=nx>search</span><span class=p>.</span><span class=nx>xml</span>
+</span></span><span class=line><span class=cl>  <span class=nx>field</span><span class=o>:</span> <span class=nx>post</span>
+</span></span><span class=line><span class=cl>  <span class=nx>format</span><span class=o>:</span> <span class=nx>html</span>
+</span></span><span class=line><span class=cl>  <span class=nx>limit</span><span class=o>:</span> <span class=mi>10000</span></span></span></code></pre></td></tr></table></div></div><p>修改主题配置文件</p><p>找到 local_search 项，将它的enable修改为true。</p><h2 id=摘要>摘要
+<a class=header-anchor href=#%e6%91%98%e8%a6%81></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-28-1><a class=lnlinks href=#hl-28-1>1</a>
+</span><span class=lnt id=hl-28-2><a class=lnlinks href=#hl-28-2>2</a>
+</span><span class=lnt id=hl-28-3><a class=lnlinks href=#hl-28-3>3</a>
+</span><span class=lnt id=hl-28-4><a class=lnlinks href=#hl-28-4>4</a>
+</span><span class=lnt id=hl-28-5><a class=lnlinks href=#hl-28-5>5</a>
+</span><span class=lnt id=hl-28-6><a class=lnlinks href=#hl-28-6>6</a>
+</span><span class=lnt id=hl-28-7><a class=lnlinks href=#hl-28-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>站点根目录\themes\next\_config.yml
+</span></span><span class=line><span class=cl>搜索auto_excerpt，然后配置如下，开启摘要，设置摘要长度为150个字
+</span></span><span class=line><span class=cl># Automatically Excerpt (Not recommend).
+</span></span><span class=line><span class=cl># Use &lt;!-- more --&gt; in the post to control excerpt accurately.
+</span></span><span class=line><span class=cl>auto_excerpt:
+</span></span><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  length: 150</span></span></code></pre></td></tr></table></div></div><p>或者在文章中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-29-1><a class=lnlinks href=#hl-29-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>description: 这是摘要</span></span></code></pre></td></tr></table></div></div><h2 id=图片防盗链>图片防盗链
+<a class=header-anchor href=#%e5%9b%be%e7%89%87%e9%98%b2%e7%9b%97%e9%93%be></a></h2><p>主题head.ejs D:\文档\blog\themes\next\layout_partials\head\head.swig</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-30-1><a class=lnlinks href=#hl-30-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;</span></span></code></pre></td></tr></table></div></div><h2 id=头像>头像
+<a class=header-anchor href=#%e5%a4%b4%e5%83%8f></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-31-1><a class=lnlinks href=#hl-31-1>1</a>
+</span><span class=lnt id=hl-31-2><a class=lnlinks href=#hl-31-2>2</a>
+</span><span class=lnt id=hl-31-3><a class=lnlinks href=#hl-31-3>3</a>
+</span><span class=lnt id=hl-31-4><a class=lnlinks href=#hl-31-4>4</a>
+</span><span class=lnt id=hl-31-5><a class=lnlinks href=#hl-31-5>5</a>
+</span><span class=lnt id=hl-31-6><a class=lnlinks href=#hl-31-6>6</a>
+</span><span class=lnt id=hl-31-7><a class=lnlinks href=#hl-31-7>7</a>
+</span><span class=lnt id=hl-31-8><a class=lnlinks href=#hl-31-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Sidebar Avatar
+</span></span><span class=line><span class=cl>avatar:
+</span></span><span class=line><span class=cl>  # Replace the default image and set the url here.
+</span></span><span class=line><span class=cl>  url: /images/avatar.png
+</span></span><span class=line><span class=cl>  # If true, the avatar will be dispalyed in circle.
+</span></span><span class=line><span class=cl>  rounded: true
+</span></span><span class=line><span class=cl>  # If true, the avatar will be rotated with the cursor.
+</span></span><span class=line><span class=cl>  rotated: true</span></span></code></pre></td></tr></table></div></div><h2 id=去掉文章目录标题的自动编号>去掉文章目录标题的自动编号
+<a class=header-anchor href=#%e5%8e%bb%e6%8e%89%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98%e7%9a%84%e8%87%aa%e5%8a%a8%e7%bc%96%e5%8f%b7></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-32-1><a class=lnlinks href=#hl-32-1>1</a>
+</span><span class=lnt id=hl-32-2><a class=lnlinks href=#hl-32-2>2</a>
+</span><span class=lnt id=hl-32-3><a class=lnlinks href=#hl-32-3>3</a>
+</span><span class=lnt id=hl-32-4><a class=lnlinks href=#hl-32-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>toc:
+</span></span><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  # Automatically add list number to toc.
+</span></span><span class=line><span class=cl>  number: false</span></span></code></pre></td></tr></table></div></div><p>其它设置教程</p><p><a href=http://theme-next.iissnan.com/theme-settings.html title=http://theme-next.iissnan.com/theme-settings.html rel="noopener external nofollow noreferrer" target=_blank class=exturl>http://theme-next.iissnan.com/theme-settings.html
+<i class="fa fa-external-link-alt"></i></a></p><h2 id=加密>加密
+<a class=header-anchor href=#%e5%8a%a0%e5%af%86></a></h2><ul><li>在hexo目录下CMD <code>npm install hexo-blog-encrypt</code></li></ul><p>在主题下启动<code>/next/_config.yml</code>文件中添加内容</p><p>encrypt: enable:true</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-33-1><a class=lnlinks href=#hl-33-1>1</a>
+</span><span class=lnt id=hl-33-2><a class=lnlinks href=#hl-33-2>2</a>
+</span><span class=lnt id=hl-33-3><a class=lnlinks href=#hl-33-3>3</a>
+</span><span class=lnt id=hl-33-4><a class=lnlinks href=#hl-33-4>4</a>
+</span><span class=lnt id=hl-33-5><a class=lnlinks href=#hl-33-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>---     
+</span></span><span class=line><span class=cl>password: luobin   
+</span></span><span class=line><span class=cl>abstract: 输入密码访问 
+</span></span><span class=line><span class=cl>message: 限制访问
+</span></span><span class=line><span class=cl>---</span></span></code></pre></td></tr></table></div></div><h2 id=打赏>打赏
+<a class=header-anchor href=#%e6%89%93%e8%b5%8f></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-34-1><a class=lnlinks href=#hl-34-1>1</a>
+</span><span class=lnt id=hl-34-2><a class=lnlinks href=#hl-34-2>2</a>
+</span><span class=lnt id=hl-34-3><a class=lnlinks href=#hl-34-3>3</a>
+</span><span class=lnt id=hl-34-4><a class=lnlinks href=#hl-34-4>4</a>
+</span><span class=lnt id=hl-34-5><a class=lnlinks href=#hl-34-5>5</a>
+</span><span class=lnt id=hl-34-6><a class=lnlinks href=#hl-34-6>6</a>
+</span><span class=lnt id=hl-34-7><a class=lnlinks href=#hl-34-7>7</a>
+</span><span class=lnt id=hl-34-8><a class=lnlinks href=#hl-34-8>8</a>
+</span><span class=lnt id=hl-34-9><a class=lnlinks href=#hl-34-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  animation: true
+</span></span><span class=line><span class=cl>  #comment: 如果此文章对您有价值，您可以自由打赏。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>reward:
+</span></span><span class=line><span class=cl>  wechatpay: /images/wechatpay.jpg
+</span></span><span class=line><span class=cl>  alipay: /images/alipay.jpg
+</span></span><span class=line><span class=cl>  #paypal: /images/paypal.png
+</span></span><span class=line><span class=cl>  #bitcoin: /images/bitcoin.png</span></span></code></pre></td></tr></table></div></div><h2 id=永久链接>永久链接
+<a class=header-anchor href=#%e6%b0%b8%e4%b9%85%e9%93%be%e6%8e%a5></a></h2><p>安装插件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-35-1><a class=lnlinks href=#hl-35-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>npm</span> <span class=nx>install</span> <span class=nx>hexo</span><span class=o>-</span><span class=nx>abbrlink</span> <span class=o>--</span><span class=nx>save</span></span></span></code></pre></td></tr></table></div></div><blockquote><p>执行此命令可能会不成功，提示你缺少相应的依赖
+比如<code>babel-eslint</code>、<code>mini-css-extract-plugin</code>、<code>webpack-cli</code>&mldr;
+使用npm命令安装即可，比如<code>npm install eslint@4.x babel-eslint@8 --save-dev</code></p></blockquote><p>配置</p><p>安装</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-36-1><a class=lnlinks href=#hl-36-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install hexo-abbrlink --save</span></span></code></pre></td></tr></table></div></div><p>在<code>站点配置文件</code>中查找代码<code>permalink</code>，将其更改为:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-37-1><a class=lnlinks href=#hl-37-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>permalink: posts/:abbrlink/  # “posts/” 可自行更换</span></span></code></pre></td></tr></table></div></div><p>增加</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-38-1><a class=lnlinks href=#hl-38-1>1</a>
+</span><span class=lnt id=hl-38-2><a class=lnlinks href=#hl-38-2>2</a>
+</span><span class=lnt id=hl-38-3><a class=lnlinks href=#hl-38-3>3</a>
+</span><span class=lnt id=hl-38-4><a class=lnlinks href=#hl-38-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># abbrlink config
+</span></span><span class=line><span class=cl>abbrlink:
+</span></span><span class=line><span class=cl>  alg: crc32  # 算法：crc16(default) and crc32
+</span></span><span class=line><span class=cl>  rep: hex    # 进制：dec(default) and hex</span></span></code></pre></td></tr></table></div></div><h2 id=压缩>压缩
+<a class=header-anchor href=#%e5%8e%8b%e7%bc%a9></a></h2><p>hexo-neat使用起来非常方便，只需在站点根目录安装：CMD</p><p>npm install hexo-neat &ndash;save</p><p>卸载 npm uninstall hexo-neat &ndash;save</p><p>在站点配置文件_config.yml的末尾添加配置：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-39-1><a class=lnlinks href=#hl-39-1> 1</a>
+</span><span class=lnt id=hl-39-2><a class=lnlinks href=#hl-39-2> 2</a>
+</span><span class=lnt id=hl-39-3><a class=lnlinks href=#hl-39-3> 3</a>
+</span><span class=lnt id=hl-39-4><a class=lnlinks href=#hl-39-4> 4</a>
+</span><span class=lnt id=hl-39-5><a class=lnlinks href=#hl-39-5> 5</a>
+</span><span class=lnt id=hl-39-6><a class=lnlinks href=#hl-39-6> 6</a>
+</span><span class=lnt id=hl-39-7><a class=lnlinks href=#hl-39-7> 7</a>
+</span><span class=lnt id=hl-39-8><a class=lnlinks href=#hl-39-8> 8</a>
+</span><span class=lnt id=hl-39-9><a class=lnlinks href=#hl-39-9> 9</a>
+</span><span class=lnt id=hl-39-10><a class=lnlinks href=#hl-39-10>10</a>
+</span><span class=lnt id=hl-39-11><a class=lnlinks href=#hl-39-11>11</a>
+</span><span class=lnt id=hl-39-12><a class=lnlinks href=#hl-39-12>12</a>
+</span><span class=lnt id=hl-39-13><a class=lnlinks href=#hl-39-13>13</a>
+</span><span class=lnt id=hl-39-14><a class=lnlinks href=#hl-39-14>14</a>
+</span><span class=lnt id=hl-39-15><a class=lnlinks href=#hl-39-15>15</a>
+</span><span class=lnt id=hl-39-16><a class=lnlinks href=#hl-39-16>16</a>
+</span><span class=lnt id=hl-39-17><a class=lnlinks href=#hl-39-17>17</a>
+</span><span class=lnt id=hl-39-18><a class=lnlinks href=#hl-39-18>18</a>
+</span><span class=lnt id=hl-39-19><a class=lnlinks href=#hl-39-19>19</a>
+</span><span class=lnt id=hl-39-20><a class=lnlinks href=#hl-39-20>20</a>
+</span><span class=lnt id=hl-39-21><a class=lnlinks href=#hl-39-21>21</a>
+</span><span class=lnt id=hl-39-22><a class=lnlinks href=#hl-39-22>22</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># hexo-neat
+</span></span><span class=line><span class=cl># 博文压缩
+</span></span><span class=line><span class=cl>neat_enable: true
+</span></span><span class=line><span class=cl># 压缩html
+</span></span><span class=line><span class=cl>neat_html:
+</span></span><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  exclude:
+</span></span><span class=line><span class=cl># 压缩css  
+</span></span><span class=line><span class=cl>neat_css:
+</span></span><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  exclude:
+</span></span><span class=line><span class=cl>    - &#39;**/*.min.css&#39;
+</span></span><span class=line><span class=cl># 压缩js
+</span></span><span class=line><span class=cl>neat_js:
+</span></span><span class=line><span class=cl>  enable: true
+</span></span><span class=line><span class=cl>  mangle: true
+</span></span><span class=line><span class=cl>  output:
+</span></span><span class=line><span class=cl>  compress:
+</span></span><span class=line><span class=cl>  exclude:
+</span></span><span class=line><span class=cl>    - &#39;**/*.min.js&#39;
+</span></span><span class=line><span class=cl>    - &#39;**/jquery.fancybox.pack.js&#39;
+</span></span><span class=line><span class=cl>    - &#39;**/index.js&#39;  </span></span></code></pre></td></tr></table></div></div><p>hexo g会自动压缩</p><h2 id=去掉页脚>去掉页脚
+<a class=header-anchor href=#%e5%8e%bb%e6%8e%89%e9%a1%b5%e8%84%9a></a></h2><p>D:\文档\blog\themes\next\layout_partials footer.swig</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-40-1><a class=lnlinks href=#hl-40-1>1</a>
+</span><span class=lnt id=hl-40-2><a class=lnlinks href=#hl-40-2>2</a>
+</span><span class=lnt id=hl-40-3><a class=lnlinks href=#hl-40-3>3</a>
+</span><span class=lnt id=hl-40-4><a class=lnlinks href=#hl-40-4>4</a>
+</span><span class=lnt id=hl-40-5><a class=lnlinks href=#hl-40-5>5</a>
+</span><span class=lnt id=hl-40-6><a class=lnlinks href=#hl-40-6>6</a>
+</span><span class=lnt id=hl-40-7><a class=lnlinks href=#hl-40-7>7</a>
+</span><span class=lnt id=hl-40-8><a class=lnlinks href=#hl-40-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;div class=&#34;copyright&#34;&gt;
+</span></span><span class=line><span class=cl>  {% set copyright_year = date(null, &#39;YYYY&#39;) %}
+</span></span><span class=line><span class=cl>  {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} {% endif %}
+</span></span><span class=line><span class=cl>  &lt;span itemprop=&#34;copyrightYear&#34;&gt;
+</span></span><span class=line><span class=cl>  &lt;span class=&#34;with-love&#34;&gt;
+</span></span><span class=line><span class=cl>    &lt;i class=&#34;{{ theme.footer.icon.name }}&#34;&gt;&lt;/i&gt;
+</span></span><span class=line><span class=cl>  &lt;/span&gt;
+</span></span><span class=line><span class=cl>  &lt;span class=&#34;author&#34; itemprop=&#34;copyrightHolder&#34;&gt;{{ theme.footer.copyright or author }}&lt;/span&gt;</span></span></code></pre></td></tr></table></div></div><h3 id=音频>音频
+<a class=header-anchor href=#%e9%9f%b3%e9%a2%91></a></h3><ul><li>安装所依赖的插件，
+<a href=https://github.com/MoePlayer/hexo-tag-aplayer title="GitHub 地址" rel="noopener external nofollow noreferrer" target=_blank class=exturl>GitHub 地址
+<i class="fa fa-external-link-alt"></i>
+</a>：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-41-1><a class=lnlinks href=#hl-41-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install --no-optional --save hexo-tag-aplayer</span></span></code></pre></td></tr></table></div></div><ul><li>在 <code>MD</code> 的文章中插入如下代码即可，若想禁用自动播放，请去掉 <code>autoplay</code> 标签：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-42-1><a class=lnlinks href=#hl-42-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>{% aplayer &#34;{{音频名称}}&#34; &#34;{{音频作者}}&#34; &#34;{{音频链接}}&#34; &#34;{{音频缩略图}}&#34; &#34;autoplay&#34; %}</span></span></code></pre></td></tr></table></div></div><h3 id=视频>视频
+<a class=header-anchor href=#%e8%a7%86%e9%a2%91></a></h3><ul><li>安装所依赖的插件，
+<a href=https://github.com/MoePlayer/hexo-tag-dplayer title="GitHub 地址" rel="noopener external nofollow noreferrer" target=_blank class=exturl>GitHub 地址
+<i class="fa fa-external-link-alt"></i>
+</a>：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-43-1><a class=lnlinks href=#hl-43-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm install --no-optional --save hexo-tag-dplayer</span></span></code></pre></td></tr></table></div></div><ul><li>在 <code>MD</code> 的文章中插入如下代码即可，若想禁用自动播放，请去掉 <code>autoplay</code> 标签：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-44-1><a class=lnlinks href=#hl-44-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>{% dplayer &#34;url={{视频链接}}&#34; &#34;pic={{视频缩略图}}&#34; &#34;theme=#FADFA3&#34; &#34;autoplay=false&#34; %}</span></span></code></pre></td></tr></table></div></div><h2 id=hexo-all-minifier压缩使用>hexo-all-minifier压缩使用
+<a class=header-anchor href=#hexo-all-minifier%e5%8e%8b%e7%bc%a9%e4%bd%bf%e7%94%a8></a></h2><p>这款工具它兼顾了hexo-neat的易用性，和gulp的功能。</p><p>安装
+cnpm install hexo-all-minifier &ndash;save</p><p>配置
+在根目录_config.yml里添加:</p><p>all_minifier: true</p><h2 id=取消动画>取消动画
+<a class=header-anchor href=#%e5%8f%96%e6%b6%88%e5%8a%a8%e7%94%bb></a></h2><p>主题_config.yml将<code>motion</code>下的<code>enable</code>参数设置为<code>false</code>即可关闭页面动画</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-45-1><a class=lnlinks href=#hl-45-1>1</a>
+</span><span class=lnt id=hl-45-2><a class=lnlinks href=#hl-45-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>motion:
+</span></span><span class=line><span class=cl>  enable: false</span></span></code></pre></td></tr></table></div></div><h2 id=友链社交图标>友链社交图标
+<a class=header-anchor href=#%e5%8f%8b%e9%93%be%e7%a4%be%e4%ba%a4%e5%9b%be%e6%a0%87></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-46-1><a class=lnlinks href=#hl-46-1>1</a>
+</span><span class=lnt id=hl-46-2><a class=lnlinks href=#hl-46-2>2</a>
+</span><span class=lnt id=hl-46-3><a class=lnlinks href=#hl-46-3>3</a>
+</span><span class=lnt id=hl-46-4><a class=lnlinks href=#hl-46-4>4</a>
+</span><span class=lnt id=hl-46-5><a class=lnlinks href=#hl-46-5>5</a>
+</span><span class=lnt id=hl-46-6><a class=lnlinks href=#hl-46-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Blog rolls
+</span></span><span class=line><span class=cl>links_icon: link          # 友链的图标 参考上文
+</span></span><span class=line><span class=cl>links_title: Links        # 友链的title  比如你可以更改为 友情链接
+</span></span><span class=line><span class=cl>#links_layout: inline     # 友链摆放的样式：按线摆放（一行很多个），注意，同时只能一种样式
+</span></span><span class=line><span class=cl>links:
+</span></span><span class=line><span class=cl>  谷歌: http://www.google.com/  # 友链的地址</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-47-1><a class=lnlinks href=#hl-47-1>1</a>
+</span><span class=lnt id=hl-47-2><a class=lnlinks href=#hl-47-2>2</a>
+</span><span class=lnt id=hl-47-3><a class=lnlinks href=#hl-47-3>3</a>
+</span><span class=lnt id=hl-47-4><a class=lnlinks href=#hl-47-4>4</a>
+</span><span class=lnt id=hl-47-5><a class=lnlinks href=#hl-47-5>5</a>
+</span><span class=lnt id=hl-47-6><a class=lnlinks href=#hl-47-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>social:
+</span></span><span class=line><span class=cl>  #GitHub: https://github.com/loveyouluobin || fab fa-github
+</span></span><span class=line><span class=cl>  E-Mail: mailto:loveyouluobin@qq.com || fa fa-envelope
+</span></span><span class=line><span class=cl>  #Weibo: https://weibo.com/loveyouluobin || fab fa-weibo
+</span></span><span class=line><span class=cl>  #CSDN: https://blog.csdn.net/loveyouluobin || crosshairs
+</span></span><span class=line><span class=cl>  QQ: tencent://message/?uin=304967823 || fab fa-qq</span></span></code></pre></td></tr></table></div></div><h2 id=本地后台管理>本地后台管理
+<a class=header-anchor href=#%e6%9c%ac%e5%9c%b0%e5%90%8e%e5%8f%b0%e7%ae%a1%e7%90%86></a></h2><p>npm install hexo-admin &ndash;save</p><p>http://localhost:4000/admin</p><p>在hexo的“<code>_config.yml</code>”文件中还可以配置一些hexo-admin插件的参数，用于保证安全的。如果是部署到GitHub pages上的话就没必要设置这个，因为GitHub只支持静态，而且hexo-admin的管理界面并不会一起被部署上去。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-48-1><a class=lnlinks href=#hl-48-1>1</a>
+</span><span class=lnt id=hl-48-2><a class=lnlinks href=#hl-48-2>2</a>
+</span><span class=lnt id=hl-48-3><a class=lnlinks href=#hl-48-3>3</a>
+</span><span class=lnt id=hl-48-4><a class=lnlinks href=#hl-48-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>admin:
+</span></span><span class=line><span class=cl>  username: 用户名
+</span></span><span class=line><span class=cl>  password_hash: md5密码
+</span></span><span class=line><span class=cl>  secret:  用于加密cookie的密码</span></span></code></pre></td></tr></table></div></div><p>“<code>_config.yml</code>”的参数可以使用hexo-admin自动生成，打开hexo-admin界面，点击导航的“settings”选项，输入内容。</p><p>输入内容后下滑，找到生成的代码，复制到“<code>_config.yml</code>”中重启hexo，打来hexo-admin的界面</p><h2 id=重装hexo>重装hexo
+<a class=header-anchor href=#%e9%87%8d%e8%a3%85hexo></a></h2><h3 id=安装hexo>安装Hexo
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85hexo></a></h3><p>git bash 上 输入 <code>npm install hexo-cli -g</code></p><p>或cnpm install hexo-cli -g</p><h3 id=删掉原blog文件夹部分文件>删掉原blog文件夹部分文件
+<a class=header-anchor href=#%e5%88%a0%e6%8e%89%e5%8e%9fblog%e6%96%87%e4%bb%b6%e5%a4%b9%e9%83%a8%e5%88%86%e6%96%87%e4%bb%b6></a></h3><p>打开你原有的 blog文件夹，只需保留_config.yml，theme/，source/，scaffolds/，package.json，.gitignore 这些项目，删除其他的文件。</p><h3 id=安装依赖文件>安装依赖文件
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%e6%96%87%e4%bb%b6></a></h3><p>git bash 上 输入 <code>npm install</code> 失败就用 cnpm install</p><h3 id=安装部署插件>安装部署插件
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%e6%8f%92%e4%bb%b6></a></h3><p>git bash 上 输入 <code>npm install hexo-deployer-git --save</code></p><p>最后 运行 hexo clean && hexo g && hexo d 看看是否成功。</p><h2 id=升级>升级
+<a class=header-anchor href=#%e5%8d%87%e7%ba%a7></a></h2><h2 id=1自动更新>1.自动更新
+<a class=header-anchor href=#1%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0></a></h2><p>使用cd命令进入博客根目录</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-49-1><a class=lnlinks href=#hl-49-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>cnpm update</span></span></code></pre></td></tr></table></div></div><h2 id=2手动更新>2手动更新
+<a class=header-anchor href=#2%e6%89%8b%e5%8a%a8%e6%9b%b4%e6%96%b0></a></h2><h3 id=使用cd命令进入博客根目录>使用cd命令进入博客根目录
+<a class=header-anchor href=#%e4%bd%bf%e7%94%a8cd%e5%91%bd%e4%bb%a4%e8%bf%9b%e5%85%a5%e5%8d%9a%e5%ae%a2%e6%a0%b9%e7%9b%ae%e5%bd%95></a></h3><p>常规操作，不做解释</p><h3 id=检查插件更新>检查插件更新
+<a class=header-anchor href=#%e6%a3%80%e6%9f%a5%e6%8f%92%e4%bb%b6%e6%9b%b4%e6%96%b0></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-50-1><a class=lnlinks href=#hl-50-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>npm outdated</span></span></code></pre></td></tr></table></div></div><p>运行后可以检查Hexo和插件的最新版本</p><p>修改根目录的<code>package.json</code>文件，将对应插件名称所对应的版本号更改为要更新的版本号</p><p>npm install &ndash;save</p><p>1、全局升级hexo-cli，先hexo v查看当前版本，然后cnpm i hexo-cli -g，再次hexo v查看是否升级成功。</p><p>2、使用copy install -g npm-check和npm-check，检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</p><p>3、使用cnpm install -g npm-upgrade和npm-upgrade，升级系统中的插件</p><p>4、使用cnpm update -g和cnpm update &ndash;save<br>————————————————</p><h2 id=升级亲测有效>升级亲测有效
+<a class=header-anchor href=#%e5%8d%87%e7%ba%a7%e4%ba%b2%e6%b5%8b%e6%9c%89%e6%95%88></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-51-1><a class=lnlinks href=#hl-51-1> 1</a>
+</span><span class=lnt id=hl-51-2><a class=lnlinks href=#hl-51-2> 2</a>
+</span><span class=lnt id=hl-51-3><a class=lnlinks href=#hl-51-3> 3</a>
+</span><span class=lnt id=hl-51-4><a class=lnlinks href=#hl-51-4> 4</a>
+</span><span class=lnt id=hl-51-5><a class=lnlinks href=#hl-51-5> 5</a>
+</span><span class=lnt id=hl-51-6><a class=lnlinks href=#hl-51-6> 6</a>
+</span><span class=lnt id=hl-51-7><a class=lnlinks href=#hl-51-7> 7</a>
+</span><span class=lnt id=hl-51-8><a class=lnlinks href=#hl-51-8> 8</a>
+</span><span class=lnt id=hl-51-9><a class=lnlinks href=#hl-51-9> 9</a>
+</span><span class=lnt id=hl-51-10><a class=lnlinks href=#hl-51-10>10</a>
+</span><span class=lnt id=hl-51-11><a class=lnlinks href=#hl-51-11>11</a>
+</span><span class=lnt id=hl-51-12><a class=lnlinks href=#hl-51-12>12</a>
+</span><span class=lnt id=hl-51-13><a class=lnlinks href=#hl-51-13>13</a>
+</span><span class=lnt id=hl-51-14><a class=lnlinks href=#hl-51-14>14</a>
+</span><span class=lnt id=hl-51-15><a class=lnlinks href=#hl-51-15>15</a>
+</span><span class=lnt id=hl-51-16><a class=lnlinks href=#hl-51-16>16</a>
+</span><span class=lnt id=hl-51-17><a class=lnlinks href=#hl-51-17>17</a>
+</span><span class=lnt id=hl-51-18><a class=lnlinks href=#hl-51-18>18</a>
+</span><span class=lnt id=hl-51-19><a class=lnlinks href=#hl-51-19>19</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 使用淘宝源的 cnpm 替换 npm
+</span></span><span class=line><span class=cl>npm install -g cnpm --registry=https://registry.npm.taobao.org
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>cnpm install -g cnpm                 # 升级 npm
+</span></span><span class=line><span class=cl>cnpm cache clean -f                 # 清除 npm 缓存
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>===更新 hexo: 进入 blog 目录，执行如下命令=== 
+</span></span><span class=line><span class=cl># 更新 package.json 中的 hexo 及个插件版本
+</span></span><span class=line><span class=cl>cnpm install -g npm-check           # 检查之前安装的插件，都有哪些是可以升级的 
+</span></span><span class=line><span class=cl>cnpm install -g npm-upgrade         # 升级系统中的插件
+</span></span><span class=line><span class=cl>npm-check
+</span></span><span class=line><span class=cl>npm-upgrade
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 更新 hexo 及所有插件
+</span></span><span class=line><span class=cl>cnpm update
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 确认 hexo 已经更新
+</span></span><span class=line><span class=cl>hexo -v
+</span></span><span class=line><span class=cl>————————————————</span></span></code></pre></td></tr></table></div></div><h3 id=升级-1>升级
+<a class=header-anchor href=#%e5%8d%87%e7%ba%a7-1></a></h3><p>后期需要升级的化，进入 blog 目录，先检查更新:会列出要升级的版本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-52-1><a class=lnlinks href=#hl-52-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ npm outdated</span></span></code></pre></td></tr></table></div></div><p>修改 <code>package.json</code> 文件，基于 <code>Latest</code> 列内容更新版本号，然后更新并检查版本号：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-53-1><a class=lnlinks href=#hl-53-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ npm install --save</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-54-1><a class=lnlinks href=#hl-54-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>npm install</span></span></code></pre></td></tr></table></div></div><p><a href=https://www.techgrow.cn/posts/d1f06120.html title=https://www.techgrow.cn/posts/d1f06120.html rel="noopener external nofollow noreferrer" target=_blank class=exturl>https://www.techgrow.cn/posts/d1f06120.html
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=全局升级-hexo-版本>全局升级 Hexo 版本
+<a class=header-anchor href=#%e5%85%a8%e5%b1%80%e5%8d%87%e7%ba%a7-hexo-%e7%89%88%e6%9c%ac></a></h3><p>若曾经在系统里，直接使用过 <code>hexo</code> 的命令，才需要执行以下升级操作</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-55-1><a class=lnlinks href=#hl-55-1> 1</a>
+</span><span class=lnt id=hl-55-2><a class=lnlinks href=#hl-55-2> 2</a>
+</span><span class=lnt id=hl-55-3><a class=lnlinks href=#hl-55-3> 3</a>
+</span><span class=lnt id=hl-55-4><a class=lnlinks href=#hl-55-4> 4</a>
+</span><span class=lnt id=hl-55-5><a class=lnlinks href=#hl-55-5> 5</a>
+</span><span class=lnt id=hl-55-6><a class=lnlinks href=#hl-55-6> 6</a>
+</span><span class=lnt id=hl-55-7><a class=lnlinks href=#hl-55-7> 7</a>
+</span><span class=lnt id=hl-55-8><a class=lnlinks href=#hl-55-8> 8</a>
+</span><span class=lnt id=hl-55-9><a class=lnlinks href=#hl-55-9> 9</a>
+</span><span class=lnt id=hl-55-10><a class=lnlinks href=#hl-55-10>10</a>
+</span><span class=lnt id=hl-55-11><a class=lnlinks href=#hl-55-11>11</a>
+</span><span class=lnt id=hl-55-12><a class=lnlinks href=#hl-55-12>12</a>
+</span><span class=lnt id=hl-55-13><a class=lnlinks href=#hl-55-13>13</a>
+</span><span class=lnt id=hl-55-14><a class=lnlinks href=#hl-55-14>14</a>
+</span><span class=lnt id=hl-55-15><a class=lnlinks href=#hl-55-15>15</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 清理NPM缓存
+</span></span><span class=line><span class=cl>$ npm cache clean -f
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 全局安装版本检测、版本升级工具
+</span></span><span class=line><span class=cl>$ npm install -g npm-check
+</span></span><span class=line><span class=cl>$ npm install -g npm-upgrade
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 全局检测哪些模块可以升级，这里可以根据打印的提示信息，手动安装最新版本的模块
+</span></span><span class=line><span class=cl>$ npm-check -g
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 全局更新模块
+</span></span><span class=line><span class=cl>$ npm update -g
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 全局安装或更新Hexo的最新版本
+</span></span><span class=line><span class=cl>$ npm install --global hexo</span></span></code></pre></td></tr></table></div></div><h3 id=博客升级-hexo-版本>博客升级 Hexo 版本
+<a class=header-anchor href=#%e5%8d%9a%e5%ae%a2%e5%8d%87%e7%ba%a7-hexo-%e7%89%88%e6%9c%ac></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-56-1><a class=lnlinks href=#hl-56-1> 1</a>
+</span><span class=lnt id=hl-56-2><a class=lnlinks href=#hl-56-2> 2</a>
+</span><span class=lnt id=hl-56-3><a class=lnlinks href=#hl-56-3> 3</a>
+</span><span class=lnt id=hl-56-4><a class=lnlinks href=#hl-56-4> 4</a>
+</span><span class=lnt id=hl-56-5><a class=lnlinks href=#hl-56-5> 5</a>
+</span><span class=lnt id=hl-56-6><a class=lnlinks href=#hl-56-6> 6</a>
+</span><span class=lnt id=hl-56-7><a class=lnlinks href=#hl-56-7> 7</a>
+</span><span class=lnt id=hl-56-8><a class=lnlinks href=#hl-56-8> 8</a>
+</span><span class=lnt id=hl-56-9><a class=lnlinks href=#hl-56-9> 9</a>
+</span><span class=lnt id=hl-56-10><a class=lnlinks href=#hl-56-10>10</a>
+</span><span class=lnt id=hl-56-11><a class=lnlinks href=#hl-56-11>11</a>
+</span><span class=lnt id=hl-56-12><a class=lnlinks href=#hl-56-12>12</a>
+</span><span class=lnt id=hl-56-13><a class=lnlinks href=#hl-56-13>13</a>
+</span><span class=lnt id=hl-56-14><a class=lnlinks href=#hl-56-14>14</a>
+</span><span class=lnt id=hl-56-15><a class=lnlinks href=#hl-56-15>15</a>
+</span><span class=lnt id=hl-56-16><a class=lnlinks href=#hl-56-16>16</a>
+</span><span class=lnt id=hl-56-17><a class=lnlinks href=#hl-56-17>17</a>
+</span><span class=lnt id=hl-56-18><a class=lnlinks href=#hl-56-18>18</a>
+</span><span class=lnt id=hl-56-19><a class=lnlinks href=#hl-56-19>19</a>
+</span><span class=lnt id=hl-56-20><a class=lnlinks href=#hl-56-20>20</a>
+</span><span class=lnt id=hl-56-21><a class=lnlinks href=#hl-56-21>21</a>
+</span><span class=lnt id=hl-56-22><a class=lnlinks href=#hl-56-22>22</a>
+</span><span class=lnt id=hl-56-23><a class=lnlinks href=#hl-56-23>23</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 进入博客的根目录
+</span></span><span class=line><span class=cl>$ cd /blog-root
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 检测Hexo哪些模块可以升级
+</span></span><span class=line><span class=cl>$ npm-check
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 删除package-lock.json
+</span></span><span class=line><span class=cl># rm -rf package-lock.json
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 更新package.json
+</span></span><span class=line><span class=cl>$ npm-upgrade
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 删除整个模块目录，这样可以避免很多坑
+</span></span><span class=line><span class=cl>$ rm -rf node_modules
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 更新Hexo的模块
+</span></span><span class=line><span class=cl>$ npm update --save
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 若出现依赖的问题，用以下命令检查一下，然后把报错的统一修复一下即可
+</span></span><span class=line><span class=cl>$ npm audix
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 或者强制更新
+</span></span><span class=line><span class=cl>$ npm update --save --force</span></span></code></pre></td></tr></table></div></div><blockquote><p>由于新版的 Hexo 一般增加了不少新特性，因此需要使用新版 Hexo 默认的配置模版文件 <code>_config.yml</code>，同时还需要稍微更改旧版的 <code>package.json</code> 配置文件，否则容易出现各种兼容错误</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-57-1><a class=lnlinks href=#hl-57-1> 1</a>
+</span><span class=lnt id=hl-57-2><a class=lnlinks href=#hl-57-2> 2</a>
+</span><span class=lnt id=hl-57-3><a class=lnlinks href=#hl-57-3> 3</a>
+</span><span class=lnt id=hl-57-4><a class=lnlinks href=#hl-57-4> 4</a>
+</span><span class=lnt id=hl-57-5><a class=lnlinks href=#hl-57-5> 5</a>
+</span><span class=lnt id=hl-57-6><a class=lnlinks href=#hl-57-6> 6</a>
+</span><span class=lnt id=hl-57-7><a class=lnlinks href=#hl-57-7> 7</a>
+</span><span class=lnt id=hl-57-8><a class=lnlinks href=#hl-57-8> 8</a>
+</span><span class=lnt id=hl-57-9><a class=lnlinks href=#hl-57-9> 9</a>
+</span><span class=lnt id=hl-57-10><a class=lnlinks href=#hl-57-10>10</a>
+</span><span class=lnt id=hl-57-11><a class=lnlinks href=#hl-57-11>11</a>
+</span><span class=lnt id=hl-57-12><a class=lnlinks href=#hl-57-12>12</a>
+</span><span class=lnt id=hl-57-13><a class=lnlinks href=#hl-57-13>13</a>
+</span><span class=lnt id=hl-57-14><a class=lnlinks href=#hl-57-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 进入博客的根目录
+</span></span><span class=line><span class=cl>$ cd /blog-root
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 备份旧版的配置文件
+</span></span><span class=line><span class=cl>$ mv _config.yml _config.yml.bak
+</span></span><span class=line><span class=cl>$ mv package.json package.json.bak
+</span></span><span class=line><span class=cl>$ 单独初始化全新的Hexo博客目录
+</span></span><span class=line><span class=cl>$ hexo init hexo-upgrade
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ 拷贝新的配置模版文件到博客的根目录
+</span></span><span class=line><span class=cl>$ cp hexo-upgrade/_config.yml /blog-root/_config.yml
+</span></span><span class=line><span class=cl>$ cp hexo-upgrade/package.json /blog-root/package.json
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 最后在新的配置模版文件里，重新追加旧版的Hexo配置内容</span></span></code></pre></td></tr></table></div></div><h4 id=新增菜单栏选项>新增菜单栏选项
+<a class=header-anchor href=#%e6%96%b0%e5%a2%9e%e8%8f%9c%e5%8d%95%e6%a0%8f%e9%80%89%e9%a1%b9></a></h4><p>1、添加新页面：hexo new page &ldquo;xx&rdquo;
+2、在主题配置文件的menu中加上该页面
+3、在zh-CN.yml文件中加上中文意思</p><h4 id=新增草稿>新增草稿
+<a class=header-anchor href=#%e6%96%b0%e5%a2%9e%e8%8d%89%e7%a8%bf></a></h4><p>1、添加草稿：hexo new draft &ldquo;xx&rdquo;
+2、预览草稿：hexo server &ndash;draft
+3、发布草稿：hexo publish draft &ldquo;xx&rdquo;</p><h4 id=图片处理>图片处理
+<a class=header-anchor href=#%e5%9b%be%e7%89%87%e5%a4%84%e7%90%86></a></h4><p>1、配置文件中的post_asset_folder改成true
+2、npm install hexo-asset-image &ndash;save
+3、放到该文件夹下，按照md格式输入(文件名称/图片名.jpg)</p><h5 id=搜索-1>搜索
+<a class=header-anchor href=#%e6%90%9c%e7%b4%a2-1></a></h5><p>1、npm install hexo-generator-searchdb &ndash;save
+2、站点配置文件的扩展下添加</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-58-1><a class=lnlinks href=#hl-58-1>1</a>
+</span><span class=lnt id=hl-58-2><a class=lnlinks href=#hl-58-2>2</a>
+</span><span class=lnt id=hl-58-3><a class=lnlinks href=#hl-58-3>3</a>
+</span><span class=lnt id=hl-58-4><a class=lnlinks href=#hl-58-4>4</a>
+</span><span class=lnt id=hl-58-5><a class=lnlinks href=#hl-58-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>search:
+</span></span><span class=line><span class=cl>  path: search.xml
+</span></span><span class=line><span class=cl>  field: post
+</span></span><span class=line><span class=cl>  format: html
+</span></span><span class=line><span class=cl>  limit: <span class=m>10000</span></span></span></code></pre></td></tr></table></div></div><p>3、主题配置文件下，local_search改成true即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-59-1><a class=lnlinks href=#hl-59-1>1</a>
+</span><span class=lnt id=hl-59-2><a class=lnlinks href=#hl-59-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>local_search:
+</span></span><span class=line><span class=cl>  enable: true</span></span></code></pre></td></tr></table></div></div><h5 id=字数>字数
+<a class=header-anchor href=#%e5%ad%97%e6%95%b0></a></h5><p>1、npm install hexo-symbols-count-time &ndash;save
+2、站点配置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-60-1><a class=lnlinks href=#hl-60-1>1</a>
+</span><span class=lnt id=hl-60-2><a class=lnlinks href=#hl-60-2>2</a>
+</span><span class=lnt id=hl-60-3><a class=lnlinks href=#hl-60-3>3</a>
+</span><span class=lnt id=hl-60-4><a class=lnlinks href=#hl-60-4>4</a>
+</span><span class=lnt id=hl-60-5><a class=lnlinks href=#hl-60-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>symbols_count_time:
+</span></span><span class=line><span class=cl>  symbols: <span class=nb>true</span>
+</span></span><span class=line><span class=cl>  time: <span class=nb>true</span>
+</span></span><span class=line><span class=cl>  total_symbols: <span class=nb>true</span>
+</span></span><span class=line><span class=cl>  total_time: true</span></span></code></pre></td></tr></table></div></div><h5 id=宠物>宠物
+<a class=header-anchor href=#%e5%ae%a0%e7%89%a9></a></h5><p>1、npm install &ndash;save hexo-helper-live2d
+2、
+<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fhuaji8.top%2Fpost%2Flive2d-plugin-2.0%2F" title=live2d插件 rel="noopener external nofollow noreferrer" target=_blank class=exturl>live2d插件
+<i class="fa fa-external-link-alt"></i>
+</a>3、安装合适的宠物npm install live2d-widget-model-wanko
+4、在配置文件中添加即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-61-1><a class=lnlinks href=#hl-61-1> 1</a>
+</span><span class=lnt id=hl-61-2><a class=lnlinks href=#hl-61-2> 2</a>
+</span><span class=lnt id=hl-61-3><a class=lnlinks href=#hl-61-3> 3</a>
+</span><span class=lnt id=hl-61-4><a class=lnlinks href=#hl-61-4> 4</a>
+</span><span class=lnt id=hl-61-5><a class=lnlinks href=#hl-61-5> 5</a>
+</span><span class=lnt id=hl-61-6><a class=lnlinks href=#hl-61-6> 6</a>
+</span><span class=lnt id=hl-61-7><a class=lnlinks href=#hl-61-7> 7</a>
+</span><span class=lnt id=hl-61-8><a class=lnlinks href=#hl-61-8> 8</a>
+</span><span class=lnt id=hl-61-9><a class=lnlinks href=#hl-61-9> 9</a>
+</span><span class=lnt id=hl-61-10><a class=lnlinks href=#hl-61-10>10</a>
+</span><span class=lnt id=hl-61-11><a class=lnlinks href=#hl-61-11>11</a>
+</span><span class=lnt id=hl-61-12><a class=lnlinks href=#hl-61-12>12</a>
+</span><span class=lnt id=hl-61-13><a class=lnlinks href=#hl-61-13>13</a>
+</span><span class=lnt id=hl-61-14><a class=lnlinks href=#hl-61-14>14</a>
+</span><span class=lnt id=hl-61-15><a class=lnlinks href=#hl-61-15>15</a>
+</span><span class=lnt id=hl-61-16><a class=lnlinks href=#hl-61-16>16</a>
+</span><span class=lnt id=hl-61-17><a class=lnlinks href=#hl-61-17>17</a>
+</span><span class=lnt id=hl-61-18><a class=lnlinks href=#hl-61-18>18</a>
+</span><span class=lnt id=hl-61-19><a class=lnlinks href=#hl-61-19>19</a>
+</span><span class=lnt id=hl-61-20><a class=lnlinks href=#hl-61-20>20</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>live2d:
+</span></span><span class=line><span class=cl>  enable: <span class=nb>true</span>
+</span></span><span class=line><span class=cl>  scriptFrom: <span class=nb>local</span>
+</span></span><span class=line><span class=cl>  pluginRootPath: live2dw/
+</span></span><span class=line><span class=cl>  pluginJsPath: lib/
+</span></span><span class=line><span class=cl>  pluginModelPath: assets/
+</span></span><span class=line><span class=cl>  model:
+</span></span><span class=line><span class=cl><span class=c1>#    use: live2d-widget-model-tororo</span>
+</span></span><span class=line><span class=cl><span class=c1>#    use: live2d-widget-model-hijiki</span>
+</span></span><span class=line><span class=cl>    use: live2d-widget-model-wanko
+</span></span><span class=line><span class=cl>  display:
+</span></span><span class=line><span class=cl>    position: right
+</span></span><span class=line><span class=cl>    width: <span class=m>150</span>
+</span></span><span class=line><span class=cl>    height: <span class=m>300</span>
+</span></span><span class=line><span class=cl><span class=c1>#    水平位置</span>
+</span></span><span class=line><span class=cl><span class=c1>#    hOffset: 0</span>
+</span></span><span class=line><span class=cl><span class=c1>#    垂直位置</span>
+</span></span><span class=line><span class=cl><span class=c1>#    vOffset: -20</span>
+</span></span><span class=line><span class=cl>  mobile:
+</span></span><span class=line><span class=cl>    show: true</span></span></code></pre></td></tr></table></div></div><h5 id=点击弹爱心>点击弹爱心
+<a class=header-anchor href=#%e7%82%b9%e5%87%bb%e5%bc%b9%e7%88%b1%e5%bf%83></a></h5><p>1、在source->js目录下新建一个js文件为click-love.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-62-1><a class=lnlinks href=#hl-62-1> 1</a>
+</span><span class=lnt id=hl-62-2><a class=lnlinks href=#hl-62-2> 2</a>
+</span><span class=lnt id=hl-62-3><a class=lnlinks href=#hl-62-3> 3</a>
+</span><span class=lnt id=hl-62-4><a class=lnlinks href=#hl-62-4> 4</a>
+</span><span class=lnt id=hl-62-5><a class=lnlinks href=#hl-62-5> 5</a>
+</span><span class=lnt id=hl-62-6><a class=lnlinks href=#hl-62-6> 6</a>
+</span><span class=lnt id=hl-62-7><a class=lnlinks href=#hl-62-7> 7</a>
+</span><span class=lnt id=hl-62-8><a class=lnlinks href=#hl-62-8> 8</a>
+</span><span class=lnt id=hl-62-9><a class=lnlinks href=#hl-62-9> 9</a>
+</span><span class=lnt id=hl-62-10><a class=lnlinks href=#hl-62-10>10</a>
+</span><span class=lnt id=hl-62-11><a class=lnlinks href=#hl-62-11>11</a>
+</span><span class=lnt id=hl-62-12><a class=lnlinks href=#hl-62-12>12</a>
+</span><span class=lnt id=hl-62-13><a class=lnlinks href=#hl-62-13>13</a>
+</span><span class=lnt id=hl-62-14><a class=lnlinks href=#hl-62-14>14</a>
+</span><span class=lnt id=hl-62-15><a class=lnlinks href=#hl-62-15>15</a>
+</span><span class=lnt id=hl-62-16><a class=lnlinks href=#hl-62-16>16</a>
+</span><span class=lnt id=hl-62-17><a class=lnlinks href=#hl-62-17>17</a>
+</span><span class=lnt id=hl-62-18><a class=lnlinks href=#hl-62-18>18</a>
+</span><span class=lnt id=hl-62-19><a class=lnlinks href=#hl-62-19>19</a>
+</span><span class=lnt id=hl-62-20><a class=lnlinks href=#hl-62-20>20</a>
+</span><span class=lnt id=hl-62-21><a class=lnlinks href=#hl-62-21>21</a>
+</span><span class=lnt id=hl-62-22><a class=lnlinks href=#hl-62-22>22</a>
+</span><span class=lnt id=hl-62-23><a class=lnlinks href=#hl-62-23>23</a>
+</span><span class=lnt id=hl-62-24><a class=lnlinks href=#hl-62-24>24</a>
+</span><span class=lnt id=hl-62-25><a class=lnlinks href=#hl-62-25>25</a>
+</span><span class=lnt id=hl-62-26><a class=lnlinks href=#hl-62-26>26</a>
+</span><span class=lnt id=hl-62-27><a class=lnlinks href=#hl-62-27>27</a>
+</span><span class=lnt id=hl-62-28><a class=lnlinks href=#hl-62-28>28</a>
+</span><span class=lnt id=hl-62-29><a class=lnlinks href=#hl-62-29>29</a>
+</span><span class=lnt id=hl-62-30><a class=lnlinks href=#hl-62-30>30</a>
+</span><span class=lnt id=hl-62-31><a class=lnlinks href=#hl-62-31>31</a>
+</span><span class=lnt id=hl-62-32><a class=lnlinks href=#hl-62-32>32</a>
+</span><span class=lnt id=hl-62-33><a class=lnlinks href=#hl-62-33>33</a>
+</span><span class=lnt id=hl-62-34><a class=lnlinks href=#hl-62-34>34</a>
+</span><span class=lnt id=hl-62-35><a class=lnlinks href=#hl-62-35>35</a>
+</span><span class=lnt id=hl-62-36><a class=lnlinks href=#hl-62-36>36</a>
+</span><span class=lnt id=hl-62-37><a class=lnlinks href=#hl-62-37>37</a>
+</span><span class=lnt id=hl-62-38><a class=lnlinks href=#hl-62-38>38</a>
+</span><span class=lnt id=hl-62-39><a class=lnlinks href=#hl-62-39>39</a>
+</span><span class=lnt id=hl-62-40><a class=lnlinks href=#hl-62-40>40</a>
+</span><span class=lnt id=hl-62-41><a class=lnlinks href=#hl-62-41>41</a>
+</span><span class=lnt id=hl-62-42><a class=lnlinks href=#hl-62-42>42</a>
+</span><span class=lnt id=hl-62-43><a class=lnlinks href=#hl-62-43>43</a>
+</span><span class=lnt id=hl-62-44><a class=lnlinks href=#hl-62-44>44</a>
+</span><span class=lnt id=hl-62-45><a class=lnlinks href=#hl-62-45>45</a>
+</span><span class=lnt id=hl-62-46><a class=lnlinks href=#hl-62-46>46</a>
+</span><span class=lnt id=hl-62-47><a class=lnlinks href=#hl-62-47>47</a>
+</span><span class=lnt id=hl-62-48><a class=lnlinks href=#hl-62-48>48</a>
+</span><span class=lnt id=hl-62-49><a class=lnlinks href=#hl-62-49>49</a>
+</span><span class=lnt id=hl-62-50><a class=lnlinks href=#hl-62-50>50</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=o>!</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>,</span> <span class=nx>t</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>n</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>c</span><span class=p>(</span><span class=s2>&#34;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: &#39;&#39;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}&#34;</span><span class=p>),</span> <span class=nx>o</span><span class=p>(),</span> <span class=nx>r</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>r</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>e</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>e</span> <span class=o>&lt;</span> <span class=nx>d</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span> <span class=nx>e</span><span class=o>++</span><span class=p>)</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>alpha</span> <span class=o>&lt;=</span> <span class=mi>0</span> <span class=o>?</span> <span class=p>(</span><span class=nx>t</span><span class=p>.</span><span class=nx>body</span><span class=p>.</span><span class=nx>removeChild</span><span class=p>(</span><span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>el</span><span class=p>),</span> <span class=nx>d</span><span class=p>.</span><span class=nx>splice</span><span class=p>(</span><span class=nx>e</span><span class=p>,</span> <span class=mi>1</span><span class=p>))</span> <span class=o>:</span> <span class=p>(</span><span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>y</span><span class=o>--</span><span class=p>,</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>scale</span> <span class=o>+=</span> <span class=mf>.004</span><span class=p>,</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>alpha</span> <span class=o>-=</span> <span class=mf>.013</span><span class=p>,</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>el</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>cssText</span> <span class=o>=</span> <span class=s2>&#34;left:&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>x</span> <span class=o>+</span> <span class=s2>&#34;px;top:&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>y</span> <span class=o>+</span> <span class=s2>&#34;px;opacity:&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>alpha</span> <span class=o>+</span> <span class=s2>&#34;;transform:scale(&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>scale</span> <span class=o>+</span> <span class=s2>&#34;,&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>scale</span> <span class=o>+</span> <span class=s2>&#34;) rotate(45deg);background:&#34;</span> <span class=o>+</span> <span class=nx>d</span><span class=p>[</span><span class=nx>e</span><span class=p>].</span><span class=nx>color</span> <span class=o>+</span> <span class=s2>&#34;;z-index:99999&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>requestAnimationFrame</span><span class=p>(</span><span class=nx>r</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>o</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>t</span> <span class=o>=</span> <span class=s2>&#34;function&#34;</span> <span class=o>==</span> <span class=k>typeof</span> <span class=nx>e</span><span class=p>.</span><span class=nx>onclick</span> <span class=o>&amp;&amp;</span> <span class=nx>e</span><span class=p>.</span><span class=nx>onclick</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>e</span><span class=p>.</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>t</span> <span class=o>&amp;&amp;</span> <span class=nx>t</span><span class=p>(),</span> <span class=nx>i</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>i</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>a</span> <span class=o>=</span> <span class=nx>t</span><span class=p>.</span><span class=nx>createElement</span><span class=p>(</span><span class=s2>&#34;div&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>a</span><span class=p>.</span><span class=nx>className</span> <span class=o>=</span> <span class=s2>&#34;heart&#34;</span><span class=p>,</span> <span class=nx>d</span><span class=p>.</span><span class=nx>push</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>            <span class=nx>el</span><span class=o>:</span> <span class=nx>a</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>x</span><span class=o>:</span> <span class=nx>e</span><span class=p>.</span><span class=nx>clientX</span> <span class=o>-</span> <span class=mi>5</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>y</span><span class=o>:</span> <span class=nx>e</span><span class=p>.</span><span class=nx>clientY</span> <span class=o>-</span> <span class=mi>5</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>scale</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>alpha</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>color</span><span class=o>:</span> <span class=nx>s</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>}),</span> <span class=nx>t</span><span class=p>.</span><span class=nx>body</span><span class=p>.</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>c</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>a</span> <span class=o>=</span> <span class=nx>t</span><span class=p>.</span><span class=nx>createElement</span><span class=p>(</span><span class=s2>&#34;style&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>a</span><span class=p>.</span><span class=nx>type</span> <span class=o>=</span> <span class=s2>&#34;text/css&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>a</span><span class=p>.</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>t</span><span class=p>.</span><span class=nx>createTextNode</span><span class=p>(</span><span class=nx>e</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>t</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>a</span><span class=p>.</span><span class=nx>styleSheet</span><span class=p>.</span><span class=nx>cssText</span> <span class=o>=</span> <span class=nx>e</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=nx>t</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s2>&#34;head&#34;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>appendChild</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>s</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;rgb(&#34;</span> <span class=o>+</span> <span class=o>~~</span><span class=p>(</span><span class=mi>255</span> <span class=o>*</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>())</span> <span class=o>+</span> <span class=s2>&#34;,&#34;</span> <span class=o>+</span> <span class=o>~~</span><span class=p>(</span><span class=mi>255</span> <span class=o>*</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>())</span> <span class=o>+</span> <span class=s2>&#34;,&#34;</span> <span class=o>+</span> <span class=o>~~</span><span class=p>(</span><span class=mi>255</span> <span class=o>*</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>())</span> <span class=o>+</span> <span class=s2>&#34;)&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=nx>d</span> <span class=o>=</span> <span class=p>[];</span>
+</span></span><span class=line><span class=cl>    <span class=nx>e</span><span class=p>.</span><span class=nx>requestAnimationFrame</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nx>e</span><span class=p>.</span><span class=nx>requestAnimationFrame</span> <span class=o>||</span> <span class=nx>e</span><span class=p>.</span><span class=nx>webkitRequestAnimationFrame</span> <span class=o>||</span> <span class=nx>e</span><span class=p>.</span><span class=nx>mozRequestAnimationFrame</span> <span class=o>||</span> <span class=nx>e</span><span class=p>.</span><span class=nx>oRequestAnimationFrame</span> <span class=o>||</span> <span class=nx>e</span><span class=p>.</span><span class=nx>msRequestAnimationFrame</span> <span class=o>||</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>setTimeout</span><span class=p>(</span><span class=nx>e</span><span class=p>,</span> <span class=mi>1</span><span class=nx>e3</span> <span class=o>/</span> <span class=mi>60</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}(),</span> <span class=nx>n</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>}(</span><span class=nb>window</span><span class=p>,</span> <span class=nb>document</span><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><p>2、在主题theme->layout->_partials->footer文件中导入该js文件即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-63-1><a class=lnlinks href=#hl-63-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;script</span> <span class=na>type=</span><span class=s>&#34;text/javascript&#34;</span> <span class=na>src=</span><span class=s>&#34;/js/click-love.js&#34;</span><span class=nt>&gt;&lt;/script&gt;</span></span></span></code></pre></td></tr></table></div></div><h2 id=新增文章处理>新增文章处理
+<a class=header-anchor href=#%e6%96%b0%e5%a2%9e%e6%96%87%e7%ab%a0%e5%a4%84%e7%90%86></a></h2><p>然后按照指示<code>hexo n "标题"</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-64-1><a class=lnlinks href=#hl-64-1> 1</a>
+</span><span class=lnt id=hl-64-2><a class=lnlinks href=#hl-64-2> 2</a>
+</span><span class=lnt id=hl-64-3><a class=lnlinks href=#hl-64-3> 3</a>
+</span><span class=lnt id=hl-64-4><a class=lnlinks href=#hl-64-4> 4</a>
+</span><span class=lnt id=hl-64-5><a class=lnlinks href=#hl-64-5> 5</a>
+</span><span class=lnt id=hl-64-6><a class=lnlinks href=#hl-64-6> 6</a>
+</span><span class=lnt id=hl-64-7><a class=lnlinks href=#hl-64-7> 7</a>
+</span><span class=lnt id=hl-64-8><a class=lnlinks href=#hl-64-8> 8</a>
+</span><span class=lnt id=hl-64-9><a class=lnlinks href=#hl-64-9> 9</a>
+</span><span class=lnt id=hl-64-10><a class=lnlinks href=#hl-64-10>10</a>
+</span><span class=lnt id=hl-64-11><a class=lnlinks href=#hl-64-11>11</a>
+</span><span class=lnt id=hl-64-12><a class=lnlinks href=#hl-64-12>12</a>
+</span><span class=lnt id=hl-64-13><a class=lnlinks href=#hl-64-13>13</a>
+</span><span class=lnt id=hl-64-14><a class=lnlinks href=#hl-64-14>14</a>
+</span><span class=lnt id=hl-64-15><a class=lnlinks href=#hl-64-15>15</a>
+</span><span class=lnt id=hl-64-16><a class=lnlinks href=#hl-64-16>16</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: 标题
+</span></span><span class=line><span class=cl>date: 2020-10-23 18:40:49
+</span></span><span class=line><span class=cl>updated: 2020-10-24 18:40:49 //更新时间
+</span></span><span class=line><span class=cl>tags:
+</span></span><span class=line><span class=cl>- 标签1
+</span></span><span class=line><span class=cl>- 标签2 //标签
+</span></span><span class=line><span class=cl>categories:
+</span></span><span class=line><span class=cl>- [默认分类,其它分类] //布局
+</span></span><span class=line><span class=cl>layout: //指定布局
+</span></span><span class=line><span class=cl>permalink: //覆盖文章网址
+</span></span><span class=line><span class=cl>comments: true //是否评论
+</span></span><span class=line><span class=cl>img://特色图片
+</span></span><span class=line><span class=cl>top:false//是否置顶
+</span></span><span class=line><span class=cl>password:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+</span></span><span class=line><span class=cl>---</span></span></code></pre></td></tr></table></div></div><p><strong>hexo -c g s</strong> 新增处理</p><p>之后hexo g 生成 hexo s 再启动</p><p>npm install hexo -g #安装Hexo
+npm update hexo -g #升级
+hexo init #初始化博客</p><p>命令简写
+hexo n &ldquo;我的博客&rdquo; == hexo new &ldquo;我的博客&rdquo; #新建文章
+hexo g == hexo generate #生成
+hexo s == hexo server #启动服务预览
+hexo d == hexo deploy #部署</p><p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p><h2 id=发布到coding已失效>发布到coding(已失效)
+<a class=header-anchor href=#%e5%8f%91%e5%b8%83%e5%88%b0coding%e5%b7%b2%e5%a4%b1%e6%95%88></a></h2><ul><li><p>在电脑桌面右键，打开Git Bash Here，输入</p></li><li><p>则我们生成一个SSH，输入</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-65-1><a class=lnlinks href=#hl-65-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> ssh-keygen -t rsa -C &#34;loveyouluobin@qq.com&#34;</span></span></code></pre></td></tr></table></div></div><p><strong>不设置密码的可以直接按三次回车</strong></p><p>C:\Users\Administrator.ssh 复制id_rsa.pub到
+<a href=https://loveyouluobin.coding.net/user/account/setting/keys title="coding SSH公钥里" rel="noopener external nofollow noreferrer" target=_blank class=exturl>coding SSH公钥里
+<i class="fa fa-external-link-alt"></i></a></p><p>在Git Bash Here 中输入</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-66-1><a class=lnlinks href=#hl-66-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ssh -T git@git.coding.net</span></span></code></pre></td></tr></table></div></div><p>打开Coding新建的项目，找到这个地方，复制仓库地址</p><p>配置完，执行以下命令
+hexo clean
+hexo g
+hexo d</p><p>coding里设置持续部署—>静态网站->设置OK
+<a href=http://sq2frl.coding-pages.com/ title=http://sq2frl.coding-pages.com/ rel="noopener external nofollow noreferrer" target=_blank class=exturl>http://sq2frl.coding-pages.com/
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-tags><a href=/tags/hexo/>hexo</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/eclipset-idea%E9%85%8D%E7%BD%AE/ rel=next title="eclipset idea配置"><i class="fa fa-chevron-left"></i> eclipset idea配置</a></div><div class="post-nav-prev post-nav-item"><a href=/post/html5%E6%96%B0%E7%89%B9%E5%BE%81%E6%96%B0%E5%8A%9F%E8%83%BD/ rel=prev title=html5新特征新功能>html5新特征新功能
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4","permalink":"/post/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4/","title":"hexo博客安装与配置步骤","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.1","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1763982110" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1763982110" defer></script></body></html>

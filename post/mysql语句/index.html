@@ -1,0 +1,181 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.147.6"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="mysql"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="mysql"><meta property="og:type" content="article"><meta property="og:title" content="mysql"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/mysql%E8%AF%AD%E5%8F%A5/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2017-07-21 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2017-07-21 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1763982110"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1763982110"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>mysql - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E7%A7%91%E6%99%AE/ class=hvr-icon-pulse rel=section>科普</a></li><li class="menu-item menu-item-flinks"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section>归档</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#sql结构化查询语言structure-query-language>SQL结构化查询语言structure query language</a></li><li><a href=#增删改查数据行>增删改查数据(行):</a></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>3200</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank>QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank>Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank>E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank>知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17312441></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=36169></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2025-11-19 15:39:16 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/mysql%E8%AF%AD%E5%8F%A5/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="mysql"><meta itemprop=description content="SQL结构化查询语言structure query language
+
+从cmd 进入:cd d:\programmer\mysql5.5\bin  mysql  mysql -u root -p
+查数据库 show databases;创建create database s001;删除drop database s001;改只能改字符集 进数据库use s001;正在使用哪个select database();
+查全表show tables;查本表desc student;改表名rename table student to newstudent;增学生表create table student(id int primary key auto_increment,name varchar(30),sex int);删drop table student;
+改列 增grade列alter table student add grade int;删一列 alter table student drop grade;改列名alter table student grade newgrade int;"></span><header class=post-header><h1 class=post-title itemprop="name headline">mysql</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2017-07-21 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2017-07-21 15:39:16 +0000 UTC">2017-07-21
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E7%BC%96%E7%A8%8B/ itemprop=url rel=index><span itemprop=name>编程</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>4581</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>10分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/mysql%E8%AF%AD%E5%8F%A5/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h2 id=sql结构化查询语言structure-query-language>SQL结构化查询语言structure query language
+<a class=header-anchor href=#sql%e7%bb%93%e6%9e%84%e5%8c%96%e6%9f%a5%e8%af%a2%e8%af%ad%e8%a8%80structure-query-language></a></h2><p>从cmd 进入:cd d:\programmer\mysql5.5\bin mysql mysql -u root -p</p><p>查数据库 show databases;创建create database s001;删除drop database s001;改只能改字符集 进数据库use s001;正在使用哪个select database();</p><p>查全表show tables;查本表desc student;改表名rename table student to newstudent;增学生表create table student(id int primary key auto_increment,name varchar(30),sex int);删drop table student;</p><p>改列 增grade列alter table student add grade int;删一列 alter table student drop grade;改列名alter table student grade newgrade int;</p><a id=more></a><h2 id=增删改查数据行>增删改查数据(行):
+<a class=header-anchor href=#%e5%a2%9e%e5%88%a0%e6%94%b9%e6%9f%a5%e6%95%b0%e6%8d%ae%e8%a1%8c></a></h2><p>增INSERT INTO s_user VALUES(19,&rsquo;lb&rsquo;,&lsquo;小小&rsquo;,88,NULL,NULL)
+删DELETE FROM s_user WHERE uid=8
+改UPDATE s_user SET PASSWORD=68666 WHERE uid=6
+查SELECT*,uid FROM s_user WHERE uid>4</p><p>4、说明：创建新表
+create table tabname(col1 type1 [not null][primary key],col2 type2 [notnull],..)
+根据已有的表创建新表：
+A：create table tab_new like tab_old (使用旧表创建新表)
+B：create table tab_new as select col1,col2… fromtab_old definition only
+5、说明：
+删除新表：drop table tabname
+6、说明：
+增加一个列：Alter table tabname add column col type
+注：列增加后将不能删除。DB2中列加上后数据类型也不能改变，唯一能改变的是增加varchar类型的长度。
+7、说明：
+添加主键：Alter table tabname add primary key(col)
+说明：
+删除主键：Alter table tabname drop primary key(col)</p><p>8、说明：
+创建索引：create [unique] index idxname on tabname(col….)</p><p>CREATE INDEX sc_tb_address_index ON tb_address(user_id)</p><p>删除索引：drop index idxname
+注：索引是不可更改的，想更改必须删除重新建。
+9、说明：
+创建视图：create view viewname as select statement
+删除视图：drop view viewname</p><p>10、说明：几个简单的基本的sql语句
+选择：select * from table1 where 范围
+插入：insert into table1(field1,field2)values(value1,value2)
+删除：delete from table1 where 范围
+更新：update table1 set field1=value1 where 范围
+查找：select * from table1 where field1 like ’%value1%’—like的语法很精妙，查资料!
+排序：select * from table1 order by field1,field2 [desc]
+总数：select count * as totalcount from table1
+求和：select sum(field1) as sumvalue from table1
+平均：select avg(field1) as avgvalue from table1
+最大：select max(field1) as maxvalue from table1
+最小：select min(field1) as minvalue from table1
+11、说明：几个高级查询运算词
+A： UNION 运算符
+　　UNION 运算符通过组合其他两个结果表（例如TABLE1 和 TABLE2）并消去表中任何重复行而派生出一个结果表。当 ALL 随 UNION 一起使用时（即UNION ALL），不消除重复行。两种情况下，派生表的每一行不是来自 TABLE1 就是来自 TABLE2。
+B： EXCEPT 运算符
+　　EXCEPT 运算符通过包括所有在 TABLE1 中但不在 TABLE2 中的行并消除所有重复行而派生出一个结果表。当 ALL 随 EXCEPT 一起使用时 (EXCEPT ALL)，不消除重复行。
+C： INTERSECT 运算符
+　　INTERSECT 运算符通过只包括 TABLE1 和 TABLE2 中都有的行并消除所有重复行而派生出一个结果表。当 ALL 随 INTERSECT 一起使用时 (INTERSECT ALL)，不消除重复行。
+注：使用运算词的几个查询结果行必须是一致的。
+12、说明：使用外连接
+A、left outer join：
+　　左外连接（左连接）：结果集几包括连接表的匹配行，也包括左连接表的所有行。
+SQL: select a.a, a.b, a.c, b.c, b.d, b.f from a LEFT OUT JOIN b ON a.a = b.c
+B：right outer join:
+　　右外连接(右连接)：结果集既包括连接表的匹配连接行，也包括右连接表的所有行。
+C：full outer join：
+　　全外连接：不仅包括符号连接表的匹配行，还包括两个连接表中的所有记录。
+　　其次，大家来看一些不错的sql语句</p><p>1、说明：复制表(只复制结构,源表名：a 新表名：b) (Access可用)
+　　法一：select * into b from a where 1&lt;>1
+　　法二：select top 0 * into b from a
+2、说明：拷贝表(拷贝数据,源表名：a 目标表名：b) (Access可用)
+insert into b(a, b, c) select d,e,f from b;</p><p>3、说明：跨数据库之间表的拷贝(具体数据使用绝对路径) (Access可用)
+insert into b(a, b, c) select d,e,f from b in ‘具体数据库’ where 条件
+例子：..from b in ’”&amp;Server.MapPath(“.”)&”data.mdb” &”’ where..
+4、说明：子查询(表名1：a 表名2：b)
+select a,b,c from a where a IN (select d from b ) 或者: select a,b,c from a where a IN (1,2,3)
+5、说明：显示文章、提交人和最后回复时间
+select a.title,a.username,b.adddate from table a,(select max(adddate) adddate from table where table.title=a.title) b
+6、说明：外连接查询(表名1：a 表名2：b)
+select a.a, a.b, a.c, b.c, b.d, b.f from a LEFT OUT JOIN b ON a.a = b.c
+7、说明：在线视图查询(表名1：a )
+select * from (SELECT a,b,c FROM a) T where t.a > 1;</p><p>8、说明：between的用法,between限制查询数据范围时包括了边界值,not between不包括
+select * from table1 where time between time1 and time2
+select a,b,c, from table1 where a not between 数值1 and 数值2
+9、说明：in 的使用方法
+select * from table1 where a [not] in (‘值1’,’值2’,’值4’,’值6’)
+10、说明：两张关联表，删除主表中已经在副表中没有的信息
+delete from table1 where not exists ( select * from table2 wheretable1.field1=table2.field1 )
+11、说明：四表联查问题：
+select * from a left inner join b on a.a=b.b right inner join c on a.a=c.cinner join d on a.a=d.d where …..
+12、说明：日程安排提前五分钟提醒
+SQL: select * from 日程安排 where datediff(’minute’,f开始时间,getdate())>5
+13、说明：一条sql 语句搞定数据库分页
+select top 10 b.* from (select top 20 主键字段,排序字段 from 表名 order by 排序字段 desc) a,表名 b where b.主键字段 = a.主键字段 order by a.排序字段
+14、说明：前10条记录
+select top 10 * form table1 where 范围
+15、说明：选择在每一组b值相同的数据中对应的a最大的记录的所有信息(类似这样的用法可以用于论坛每月排行榜,每月热销产品分析,按科目成绩排名,等等.)
+select a,b,c from tablename ta where a=(select max(a) from tablename tb wheretb.b=ta.b)
+16、说明：包括所有在 TableA 中但不在 TableB和TableC 中的行并消除所有重复行而派生出一个结果表
+(select a from tableA ) except (select a from tableB) except (select a fromtableC)
+17、说明：随机取出10条数据
+select top 10 * from tablename order by newid()
+18、说明：随机选择记录
+select newid()
+19、说明：删除重复记录
+Delete from tablename where id not in (select max(id) from tablename group bycol1,col2,…)
+20、说明：列出数据库里所有的表名
+select name from sysobjects where type=’U’
+21、说明：列出表里的所有的
+select name from syscolumns where id=object_id(’TableName’)
+22、说明：列示type、vender、pcs字段，以type字段排列，case可以方便地实现多重选择，类似select 中的case。
+select type,sum(case vender when ’A’ then pcs else 0 end),sum(case vender when’C’ then pcs else 0 end),sum(case vender when ’B’ then pcs else 0 end) FROMtablename group by type
+显示结果：
+type vender pcs
+电脑 A 1
+电脑 A 1
+光盘 B 2
+光盘 A 2
+手机 B 3
+手机 C 3
+23、说明：初始化表table1
+TRUNCATE TABLE table1
+24、说明：选择从10到15的记录
+select top 5 * from (select top 15 * from table order by id asc) table_别名 order by id desc
+随机选择数据库记录的方法（使用Randomize函数，通过SQL语句实现）
+　　对存储在数据库中的数据来说，随机数特性能给出上面的效果，但它们可能太慢了些。你不能要求ASP“找个随机数”然后打印出来。实际上常见的解决方案是建立如下所示的循环：
+Randomize
+RNumber = Int(Rnd<em>499) +1
+While Not objRec.EOF
+If objRec(“ID”) = RNumber THEN
+… 这里是执行脚本 …
+end if
+objRec.MoveNext
+Wend
+　　这很容易理解。首先，你取出1到500范围之内的一个随机数（假设500就是数据库内记录的总数）。然后，你遍历每一记录来测试ID 的值、检查其是否匹配RNumber。满足条件的话就执行由THEN 关键字开始的那一块代码。假如你的RNumber 等于495，那么要循环一遍数据库花的时间可就长了。虽然500这个数字看起来大了些，但相比更为稳固的企业解决方案这还是个小型数据库了，后者通常在一个数据库内就包含了成千上万条记录。这时候不就死定了？
+　　采用SQL，你就可以很快地找出准确的记录并且打开一个只包含该记录的recordset，如下所示：
+Randomize
+RNumber = Int(Rnd</em>499) + 1
+SQL = “SELECT * FROM Customers WHERE ID = ” & RNumber
+set objRec = ObjConn.Execute(SQL)
+Response.WriteRNumber & ” = ” & objRec(“ID”) &” ” & objRec(“c_email”)</p><p>　　不必写出RNumber 和ID，你只需要检查匹配情况即可。只要你对以上代码的工作满意，你自可按需操作“随机”记录。Recordset没有包含其他内容，因此你很快就能找到你需要的记录这样就大大降低了处理时间。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>  再谈随机数 
+</span></span><span class=line><span class=cl>12</span></span></code></pre></td></tr></table></div></div><p>　　现在你下定决心要榨干Random 函数的最后一滴油，那么你可能会一次取出多条随机记录或者想采用一定随机范围内的记录。把上面的标准Random 示例扩展一下就可以用SQL应对上面两种情况了。</p><p>　　为了取出几条随机选择的记录并存放在同一recordset内，你可以存储三个随机数，然后查询数据库获得匹配这些数字的记录：</p><p>　　SQL = “SELECT * FROM Customers WHERE ID = “& RNumber & ” OR ID = ” & RNumber2 & ” OR ID =” & RNumber3</p><p>　　假如你想选出10条记录（也许是每次页面装载时的10条链接的列表），你可以用BETWEEN 或者数学等式选出第一条记录和适当数量的递增记录。这一操作可以通过好几种方式来完成，但是 SELECT 语句只显示一种可能（这里的ID 是自动生成的号码）：
+SQL = “SELECT * FROM Customers WHERE ID BETWEEN ” & RNumber &” AND ” & RNumber & “+ 9”</p><p>　　注意：以上代码的执行目的不是检查数据库内是否有9条并发记录。</p><p>　　随机读取若干条记录，测试过</p><p>Access语法：SELECT top 10 * From 表名 ORDER BY Rnd(id)
+Sql server:select top n * from 表名 order by newid()
+mysql select * From 表名 Order By rand() Limit n</p><p>　　Access左连接语法(最近开发要用左连接,Access帮助什么都没有,网上没有Access的SQL说明,只有自己测试, 现在记下以备后查)</p><p>　　语法 select table1.fd1,table1,fd2,table2.fd2 Fromtable1 left join table2 on table1.fd1,table2.fd1 where …</p><p>　　使用SQL语句 用…代替过长的字符串显示</p><p>　　语法：</p><p>　　SQL数据库：select case whenlen(field)>10 then left(field,10)+’…’ else field end as news_name,news_idfrom tablename
+　　Access数据库：SELECTiif(len(field)>2,left(field,2)+’…’,field) FROM tablename;</p><p>　　Conn.Execute说明</p><p>　　Execute方法</p><p>　　该方法用于执行SQL语句。根据SQL语句执行后是否返回记录集，该方法的使用格式分为以下两种：</p><p>　　1．执行SQL查询语句时，将返回查询得到的记录集。用法为：
+　　Set 对象变量名=连接对象.Execute(“SQL 查询语言”)
+　　Execute方法调用后，会自动创建记录集对象，并将查询结果存储在该记录对象中，通过Set方法，将记录集赋给指定的对象保存，以后对象变量就代表了该记录集对象。</p><p>　　2．执行SQL的操作性语言时，没有记录集的返回。此时用法为：
+　　连接对象.Execute “SQL 操作性语句”[, RecordAffected][, Option]
+·RecordAffected 为可选项，此出可放置一个变量，SQL语句执行后，所生效的记录数会自动保存到该变量中。通过访问该变量，就可知道SQL语句队多少条记录进行了操作。
+　　·Option 可选项，该参数的取值通常为adCMDText，它用于告诉ADO，应该将Execute方法之后的第一个字符解释为命令文本。通过指定该参数，可使执行更高效。
+　　·BeginTrans、RollbackTrans、CommitTrans方法
+　　这三个方法是连接对象提供的用于事务处理的方法。BeginTrans用于开始一个事物；RollbackTrans用于回滚事务；CommitTrans用于提交所有的事务处理结果，即确认事务的处理。</p><p>　　事务处理可以将一组操作视为一个整体，只有全部语句都成功执行后，事务处理才算成功；若其中有一个语句执行失败，则整个处理就算失败，并恢复到处里前的状态。
+　　BeginTrans和CommitTrans用于标记事务的开始和结束，在这两个之间的语句，就是作为事务处理的语句。判断事务处理是否成功，可通过连接对象的Error集合来实现，若Error集合的成员个数不为0，则说明有错误发生，事务处理失败。Error集合中的每一个Error对象，代表一个错误信息。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/mysql/>mysql</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E6%9C%80%E5%B8%B8%E7%94%A8%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/ rel=next title=java面试><i class="fa fa-chevron-left"></i> java面试</a></div><div class="post-nav-prev post-nav-item"><a href=/post/oracle/ rel=prev title=oracle>oracle
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/mysql%E8%AF%AD%E5%8F%A5/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"mysql%E8%AF%AD%E5%8F%A5","permalink":"/post/mysql%E8%AF%AD%E5%8F%A5/","title":"mysql","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.1","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1763982110" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1763982110" defer></script></body></html>

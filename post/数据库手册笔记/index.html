@@ -1,0 +1,996 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.147.6"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="数据库手册笔记"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="编程,数据库"><meta property="og:type" content="article"><meta property="og:title" content="数据库手册笔记"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2021-12-20 23:39:16 +0000 UTC"><meta property="article:modified_time" content="2021-12-20 23:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1763982112"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1763982112"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>数据库手册笔记 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E7%A7%91%E6%99%AE/ class=hvr-icon-pulse rel=section>科普</a></li><li class="menu-item menu-item-flinks"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section>归档</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><ul><li><a href=#数据库概述>数据库概述：</a></li><li><a href=#常用的数据库命令>常用的数据库命令</a></li><li><a href=#表table的理解>表(table)的理解</a></li><li><a href=#sql语句的分类>SQL语句的分类</a></li><li><a href=#导入数据>导入数据</a></li><li><a href=#查看表结构>查看表结构</a></li></ul></li><li><a href=#简单查询语句>简单查询语句</a><ul><li><a href=#查询一个字段>查询一个字段</a></li><li><a href=#查询多个字段>查询多个字段</a></li><li><a href=#查询所有字段>查询所有字段</a></li><li><a href=#给查询的列起别名>给查询的列起别名</a></li><li><a href=#列参与数学运算>列参与数学运算</a></li><li><a href=#条件查询>条件查询</a></li></ul></li><li><a href=#排序>排序</a><ul><li><a href=#查询所有员工薪资排序>查询所有员工薪资，排序</a></li><li><a href=#两个字段排序多个字段排序>两个字段排序，多个字段排序</a></li><li><a href=#根据字段的位置排列>根据字段的位置排列</a></li><li><a href=#综合案例>综合案例</a></li></ul></li><li><a href=#数据处理函数单行处理函数>数据处理函数（单行处理函数）</a><ul><li><a href=#数据处理函数又被称为单行处理函数>数据处理函数又被称为单行处理函数</a></li><li><a href=#常见的单行处理函数>常见的单行处理函数：</a></li></ul></li><li><a href=#分组函数多行处理函数>分组函数（多行处理函数）</a></li><li><a href=#分组查询>分组查询（<em><em><em>*</em>*</em>*</em>**）</a><ul><li><a href=#找出每个工作岗位的工资和>找出每个工作岗位的工资和</a></li><li><a href=#找出每个部门的最高薪资>找出每个部门的最高薪资</a></li><li><a href=#找出每个部门不同工作岗位的最高薪资>找出<u>每个部门，不同工作岗位</u>的最高薪资</a></li><li><a href=#找出每个部门的最高薪资要求显示最高薪资大于3000的使用having可以对分完组之后的数据进一步过滤>找出每个部门的最高薪资,要求显示最高薪资大于3000的。使用having可以对分完组之后的数据进一步过滤。</a></li><li><a href=#where没办法解决的>where没办法解决的？</a></li><li><a href=#总结单表查询结束>总结（单表查询结束)</a></li></ul></li><li><a href=#去除重复记录>去除重复记录</a></li><li><a href=#连接查询>连接查询</a><ul><li><a href=#概述>概述：</a></li><li><a href=#连接查询的分类>连接查询的分类</a></li><li><a href=#笛卡尔积现象>笛卡尔积现象</a></li><li><a href=#怎么避免笛卡尔积现象>怎么避免笛卡尔积现象</a></li><li><a href=#内连接>内连接</a><ul><li><a href=#内连接之等值连接>内连接之等值连接</a></li><li><a href=#内连接之非等值连接>内连接之非等值连接</a></li><li><a href=#内连接之自连接>内连接之自连接</a></li></ul></li></ul></li><li><a href=#外连接>外连接</a><ul><li><ul><li><a href=#右外连接右连接>右外连接(右连接)</a></li><li><a href=#左外连接左连接>左外连接(左连接)</a></li></ul></li><li><a href=#三张表或者四张表的连接方式>三张表或者四张表的连接方式</a></li></ul></li><li><a href=#子查询>子查询</a><ul><li><a href=#概述-1>概述：</a></li><li><a href=#where子句中的子查询>where子句中的子查询</a></li><li><a href=#from子句中的子查询>from子句中的子查询</a></li><li><a href=#select后面的子查询了解即可不常用>select后面的子查询（了解即可，不常用）</a></li></ul></li><li><a href=#union的用法>union的用法</a></li><li><a href=#limit>limit</a><ul><li><a href=#概述-2>概述：</a></li><li><a href=#limit的用法>limit的用法：</a></li><li><a href=#通用分页>通用分页</a></li></ul></li><li><a href=#关于dql语句的总结>关于DQL语句的总结：</a></li><li><a href=#表的创建及数据类型>表的创建及数据类型</a><ul><li><a href=#创建表>创建表</a></li><li><a href=#数据类型>数据类型</a></li><li><a href=#创建一个学生表>创建一个学生表</a></li><li><a href=#快速创建表了解>快速创建表（了解）</a></li><li><a href=#删除表>删除表</a></li><li><a href=#对表结构的增删改>对表结构的增删改</a></li><li><a href=#插入数据insert关键字dml>插入数据，insert关键字。（DML）</a></li><li><a href=#插入值>插入值</a></li><li><a href=#insert一次插入多条记录>insert一次插入多条记录</a></li><li><a href=#将查询结果插入到一张表当中了解>将查询结果插入到一张表当中（了解）</a></li><li><a href=#insert插入日期>insert插入日期</a><ul><li><a href=#str_to_date函数>str_to_date函数:</a></li><li><a href=#date_format函数>date_format函数。</a></li></ul></li></ul></li><li><a href=#date和datetime类型的区别>date和datetime类型的区别：</a></li><li><a href=#dml语句>DML语句</a><ul><li><a href=#修改update>修改update</a></li><li><a href=#删除delete语句>删除delete语句</a></li><li><a href=#快速删除表中的数据>快速删除表中的数据</a></li></ul></li><li><a href=#约束>约束</a><ul><li><a href=#约束概述>约束概述</a></li><li><a href=#约束包括那些>约束包括那些</a></li><li><a href=#非空约束>非空约束</a></li><li><a href=#sql脚本文件>SQL脚本文件</a></li><li><a href=#唯一性约束unique>唯一性约束，unique</a></li><li><a href=#两个字段联合唯一>两个字段联合唯一</a></li><li><a href=#unique和not-null可以联合吗>unique和not null可以联合吗</a></li><li><a href=#主键约束primary-key-简称pk->主键约束（primary key 简称PK ***<em>*</em>***）：</a><ul><li><a href=#主键约束的相关术语>主键约束的相关术语</a></li><li><a href=#主键是什么主键的作用>主键是什么，主键的作用</a></li><li><a href=#给一张表添加主键>给一张表添加主键：</a></li><li><a href=#主键数量>主键数量</a></li><li><a href=#主键值建议使用类型>主键值建议使用类型</a></li><li><a href=#主键分类>主键分类</a></li></ul></li><li><a href=#外键约束foreign-key-简称-fk->外键约束（foreign key 简称 FK ***<em>*</em>***）</a><ul><li><a href=#外键约束的相关术语>外键约束的相关术语</a></li><li><a href=#业务背景>业务背景</a></li></ul></li></ul></li><li><a href=#存储引擎了解内容>存储引擎（了解内容）</a><ul><li><a href=#存储引擎的作用>存储引擎的作用</a></li><li><a href=#给表指定存储引擎的方式>给表指定存储引擎的方式</a></li><li><a href=#mysql支持的存储引擎>mysql支持的存储引擎</a></li><li><a href=#mysql常用的存储引擎>mysql常用的存储引擎</a><ul><li><a href=#myisam存储引擎>MyISAM存储引擎</a></li><li><a href=#innodb存储引擎>InnoDB存储引擎</a></li><li><a href=#memory存储引擎>MEMORY存储引擎</a></li></ul></li></ul></li><li><a href=#事务理解掌握>事务（理解，掌握*****）</a><ul><li><a href=#概述-3>概述：</a></li><li><a href=#只有dml语句才会有事务这个说法其他语句没有>只有DML语句才会有事务这个说法，其他语句没有！</a></li><li><a href=#只要一条语句就能完成还有必要存在事务机制吗>只要一条语句就能完成，还有必要存在事务机制吗？</a></li><li><a href=#事务的实现方式>事务的实现方式</a></li><li><a href=#提交事务和回滚事务>提交事务和回滚事务</a></li><li><a href=#事务特性>事务特性</a></li><li><a href=#事务的4个隔离级别>事务的4个隔离级别：</a></li><li><a href=#演示隔离级别>演示隔离级别</a></li></ul></li><li><a href=#索引index>索引（index）</a><ul><li><a href=#概述-4>概述：</a></li><li><a href=#索引的实现原理>索引的实现原理</a></li><li><a href=#什么条件下会考虑给字段上添加索引>什么条件下，会考虑给字段上添加索引？</a></li><li><a href=#索引的创建和删除>索引的创建和删除</a></li><li><a href=#查看一个sql语句是否使用了索引进行检索>查看一个sql语句是否使用了索引进行检索。</a></li><li><a href=#索引失效>索引失效</a><ul><li><a href=#失效的第一种情况>失效的第一种情况</a></li><li><a href=#失效的第二种情况>失效的第二种情况</a></li><li><a href=#失效的第三种情况>失效的第三种情况</a></li><li><a href=#失效的第四种情况>失效的第四种情况</a></li><li><a href=#失效的第五种情况>失效的第五种情况</a></li></ul></li><li><a href=#索引的分类>索引的分类</a></li></ul></li><li><a href=#视图view>视图（view）</a><ul><li><a href=#概述-5>概述：</a></li><li><a href=#怎么创建视图对象怎么删除视图对象>怎么创建视图对象，怎么删除视图对象</a></li><li><a href=#视图的作用>视图的作用</a><ul><li><a href=#视图对象在实际开发中的作用>视图对象在实际开发中的作用</a></li></ul></li><li><a href=#增删改查又叫做crud>增删改查：又叫做CRUD</a></li></ul></li><li><a href=#dbadatabasesadministrator的命令不经常使用>DBA（DataBasesAdministrator）的命令（不经常使用）</a><ul><li><a href=#数据导出>数据导出：</a></li><li><a href=#数据导入>数据导入</a></li></ul></li><li><a href=#数据库设计三范式>数据库设计三范式</a><ul><li><a href=#概述-6>概述：</a></li><li><a href=#数据库设计范式共有>数据库设计范式共有？</a></li><li><a href=#第一范式>第一范式</a></li><li><a href=#第二范式>第二范式</a></li><li><a href=#第三范式>第三范式</a></li></ul></li><li><a href=#总结表的设计>总结表的设计</a><ul><li><a href=#一对多>一对多</a></li><li><a href=#多对多>多对多</a></li><li><a href=#一对一>一对一</a></li></ul></li><li><a href=#设计总结>设计总结</a></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>3200</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank>QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank>Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank>E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank>知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17312441></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=36169></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2025-11-19 15:39:16 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="数据库手册笔记"><meta itemprop=description content="
+数据库概述：
+
+
+  
+    数据库：
+英文单词DataBase，简称DB。按照一定格式存储数据的一些文件的组合或者集合
+数据可管理系统：
+DataBaseManagment, 简称DBMS。专门用来管理数据库的，对数据库中的数据进行增删改查。
+常见的数据库系统：MySQL，Oracle，MS SqlServer，DB2，sybase……
+SQL：结构化查询语言
+程序员通过编写SQL语句，然后DSMS负责执行SQL语句，完成数据库的增删改查操作。
+三者之间的关系：
+DBMS &ndash;> 执行 &ndash;> SQL &ndash;> 操作 &ndash;>DB
+  "></span><header class=post-header><h1 class=post-title itemprop="name headline">数据库手册笔记</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2021-12-20 23:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2021-12-20 23:39:16 +0000 UTC">2021-12-20
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E7%BC%96%E7%A8%8B/ itemprop=url rel=index><span itemprop=name>编程</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>18091</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>37分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><hr><h3 id=数据库概述>数据库概述：
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%ba%93%e6%a6%82%e8%bf%b0></a></h3><blockquote><p>数据库：</p><p>英文单词DataBase，简称DB。按照一定格式存储数据的一些文件的组合或者集合</p><p>数据可管理系统：</p><p>DataBaseManagment, 简称DBMS。专门用来管理数据库的，对数据库中的数据进行增删改查。</p><p>常见的数据库系统：MySQL，Oracle，MS SqlServer，DB2，sybase……</p><p>SQL：结构化查询语言</p><p>程序员通过编写SQL语句，然后DSMS负责执行SQL语句，完成数据库的增删改查操作。</p><p>三者之间的关系：</p><p>DBMS &ndash;> 执行 &ndash;> SQL &ndash;> 操作 &ndash;>DB</p></blockquote><a id=more></a><h3 id=常用的数据库命令>常用的数据库命令
+<a class=header-anchor href=#%e5%b8%b8%e7%94%a8%e7%9a%84%e6%95%b0%e6%8d%ae%e5%ba%93%e5%91%bd%e4%bb%a4></a></h3><p>退出MySQl</p><blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>exit</span></span></code></pre></td></tr></table></div></div></blockquote><p>显示所有的数据库 库文件</p><blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>show DataBases;</span></span></code></pre></td></tr></table></div></div><p>MySQL默认自带了四个数据库</p></blockquote><p>选择使用数据库</p><blockquote><p>use + &ldquo;库名&rdquo;;</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>use text;</span></span></code></pre></td></tr></table></div></div></blockquote><p>创建数据库</p><blockquote><p>create databases + &ldquo;数据库名&rdquo;；</p></blockquote><p>查看数据库中那些表</p><blockquote><p>show tables;</p></blockquote><p>查看数据库的版本号</p><blockquote><p>select version();</p></blockquote><p>查看当前使用的数据库</p><blockquote><p>select database();</p></blockquote><p>终止命令的输入</p><blockquote><p>/C 或者 ; 结束</p></blockquote><p>查看表中的记录和字段</p><blockquote><p>desc + 表名</p></blockquote><p><strong>注意：MySQL不见分号不执行，当输入分号时才执行语句。</strong></p><h3 id=表table的理解>表(table)的理解
+<a class=header-anchor href=#%e8%a1%a8table%e7%9a%84%e7%90%86%e8%a7%a3></a></h3><p>数据库中的最基本单元：表。</p><p>数据库当中是以表格的形式来表示数据。因为表比较直观。</p><p>任何一张表都有行和列</p><p>行（row）：被称为数据/ 记录</p><p>列（column）：被称为字段</p><h3 id=sql语句的分类>SQL语句的分类
+<a class=header-anchor href=#sql%e8%af%ad%e5%8f%a5%e7%9a%84%e5%88%86%e7%b1%bb></a></h3><blockquote><p>DQL:数据查询语言（凡是带有select关键字的语言）</p><p>select ……</p><p>DML:数据操作语言（凡是对<strong>表当中的数据进行增删改查的都是DML</strong>）</p><p>insert 增</p><p>delete 删</p><p>update 改</p><p>DDL:数据定义语言（凡是带有create，drop，alter的都是DDL）</p><p><strong>DDL主要操作的是表的结构。不是表中的数据</strong>。</p><p>create 新建</p><p>drop 删除</p><p>alter 修改</p><p>TCL:事务控制语言</p><p>事务提交：commit</p><p>事务回滚：rollback</p><p>DCL:是数据控制语言</p><p>例如：授权： grant。</p><p>​ 撤销权限：revoke。</p></blockquote><h3 id=导入数据>导入数据
+<a class=header-anchor href=#%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae></a></h3><blockquote><p>source + &ldquo;路径&rdquo;</p><p>路径中不能有中文</p></blockquote><h3 id=查看表结构>查看表结构
+<a class=header-anchor href=#%e6%9f%a5%e7%9c%8b%e8%a1%a8%e7%bb%93%e6%9e%84></a></h3><blockquote><p>查看表中的数据</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select * from 表名;  //统一执行这个SQL语句。</span></span></code></pre></td></tr></table></div></div><p>eg：select * from sys;</p><p>查看表的基本结构</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码describe缩写为desc。
+</span></span><span class=line><span class=cl>desc 表名;
+</span></span><span class=line><span class=cl>eg：desc sys;</span></span></code></pre></td></tr></table></div></div><p>查看表的详细结构</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码show create table 表名;
+</span></span><span class=line><span class=cl>eg：show create table emp_1;</span></span></code></pre></td></tr></table></div></div></blockquote><h2 id=简单查询语句>简单查询语句
+<a class=header-anchor href=#%e7%ae%80%e5%8d%95%e6%9f%a5%e8%af%a2%e8%af%ad%e5%8f%a5></a></h2><h3 id=查询一个字段>查询一个字段
+<a class=header-anchor href=#%e6%9f%a5%e8%af%a2%e4%b8%80%e4%b8%aa%e5%ad%97%e6%ae%b5></a></h3><p>select 字段名 from 表名;</p><p>其中：select和from都是关键字</p><p>​ 字段名和表名是标识符。</p><h3 id=查询多个字段>查询多个字段
+<a class=header-anchor href=#%e6%9f%a5%e8%af%a2%e5%a4%9a%e4%b8%aa%e5%ad%97%e6%ae%b5></a></h3><p>使用逗号隔开</p><p>select 字段名,字段名,字段名 from 表名;</p><h3 id=查询所有字段>查询所有字段
+<a class=header-anchor href=#%e6%9f%a5%e8%af%a2%e6%89%80%e6%9c%89%e5%ad%97%e6%ae%b5></a></h3><ol><li><p>写上每个字段</p><p>select a,b,c,d&mldr; from 表名;</p></li><li><p>可以使用*;</p><p>select * from 表名;</p><p>缺点：*会先转换称为所有的字段名。</p><p>​ 效率低；</p><p>​ 可读性差，</p><p>​ 不建议在实际开发中使用。</p></li></ol><h3 id=给查询的列起别名>给查询的列起别名
+<a class=header-anchor href=#%e7%bb%99%e6%9f%a5%e8%af%a2%e7%9a%84%e5%88%97%e8%b5%b7%e5%88%ab%e5%90%8d></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2>2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select 字段名,字段名 as 别名 from 表名;
+</span></span><span class=line><span class=cl>as关键字可以省略
+</span></span><span class=line><span class=cl>select 字段名,字段名 别名 from 表名;</span></span></code></pre></td></tr></table></div></div><p>注意：只是将显示的结果列名显示为别名，并不会改变表中的列名。</p><p>​ select语句只负责查询，永远不会进行修改操作。</p><p>起别名时，别名里面有空格的时候</p><p>select 字段名,字段名 as 别名(dept name) from 表名;</p><p>别名中有括号时，使用单引号或者*<u><strong>双引号括住</strong></u>*。</p><p><strong>注意：在所有的数据库中，字符串统一的用法是用单引号括起来，单引号是标准的用法，双引号在Oracle中用不了。但是在MySQL中可以使用。</strong></p><h3 id=列参与数学运算>列参与数学运算
+<a class=header-anchor href=#%e5%88%97%e5%8f%82%e4%b8%8e%e6%95%b0%e5%ad%a6%e8%bf%90%e7%ae%97></a></h3><p>字段可以使用数学表达式参与运算</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2>2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3>3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4>4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5>5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select ename, sal*12 from emp;
+</span></span><span class=line><span class=cl>select 字段名 字段名+数学运算 from 表名
+</span></span><span class=line><span class=cl>起别名
+</span></span><span class=line><span class=cl>select ename, sal*12 as yearsal from emp;
+</span></span><span class=line><span class=cl>别名是中文时用单引号括起来。
+</span></span><span class=line><span class=cl>select ename, sal*12 as &#39;年薪&#39; from emp;</span></span></code></pre></td></tr></table></div></div><h3 id=条件查询>条件查询
+<a class=header-anchor href=#%e6%9d%a1%e4%bb%b6%e6%9f%a5%e8%af%a2></a></h3><p>不查询表中的所有数据，只查询出来符合条件的数据。</p><p>语法格式：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span><span class=lnt id=hl-8-5><a class=lnlinks href=#hl-8-5>5</a>
+</span><span class=lnt id=hl-8-6><a class=lnlinks href=#hl-8-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select
+</span></span><span class=line><span class=cl>    字段1，字段2，字段3……
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    表名
+</span></span><span class=line><span class=cl>where
+</span></span><span class=line><span class=cl>    条件;</span></span></code></pre></td></tr></table></div></div><blockquote><p>条件：</p><p>= 等于</p><p><code>查询薪资等于800的员工姓名和编号：</code></p><p><code>select empno,ename from emp where sal = 800'</code></p><p>&lt;> 或 != 不等于</p><p><code>select empno,ename from emp where sal != 800;</code></p><p><code>select empno,ename from emp where sal &lt;> 800;</code></p><p>&lt; 小于</p><p>&lt;= 小于等于</p><blockquote><p>大于</p></blockquote><blockquote><p>= 大于等于</p></blockquote><p>between &mldr; and &mldr; 两个值之间，等同于>= and &lt;=</p><p>1,</p><p><code>查询薪资在2450到3000之间的员工信息？包括2450和3000</code></p><p><code>select empno, ename,sal from emp where sal >= 2450 and sal &lt;= 3000;</code></p><p>2,</p><p><code>select empno,ename,sal from emp where sal between 2450 and 3000;</code></p><p><strong>注意：使用between……and……的时候，必须左小右大，左大 有小查不出来值。</strong></p><p>is null 为 null (is not null不为空)</p><p><code>查询那些员工的薪资或者津贴为null</code></p><p><code>select empno,ename,sal from emp where comm is null;</code></p><p><strong>注意：在数据库中null不能使用等号进行衡量。需要使用is null。因为数据库中的null代表什么也没有，不是一个值，所以不饿能使用等号衡量。</strong></p><p><code>查询那些员工的薪资或者津贴不为null</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>select</span></span></code></pre></td></tr></table></div></div><p><code>empno,ename,sal</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>from</span></span></code></pre></td></tr></table></div></div><p><code>emp</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>where</span></span></code></pre></td></tr></table></div></div><p><code>comm is not null;</code></p><p>and 并且</p><p><code>查询工作岗位是MANAGE并且工资大于2500的员工信息</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>select</span></span></code></pre></td></tr></table></div></div><p><code>empuo,ename,job,sal</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>from</span></span></code></pre></td></tr></table></div></div><p><code>emp</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>where</span></span></code></pre></td></tr></table></div></div><p><code>job = 'MANAGER' and sal > 2500;</code></p><p>or 或者</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>select</span></span></code></pre></td></tr></table></div></div><p><code>empno,ename,job</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>from</span></span></code></pre></td></tr></table></div></div><p><code>emp</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>where</span></span></code></pre></td></tr></table></div></div><p><code>job = 'MANAGER'or'SALESMAN';</code></p><p><strong>and和or同时出现的时候有没有先后顺序的问题：and的优先级比or高,想要or先执行加小括号</strong></p><p><code>找出工资大于2500并且部门编号为10或者20的所有员工：</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>select</span></span></code></pre></td></tr></table></div></div><p><code>*</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>from</span></span></code></pre></td></tr></table></div></div><p><code>emp</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>where</span></span></code></pre></td></tr></table></div></div><p><code>sal > 2500 and (deptno = 10 or deptno = 20);</code></p><p>in 包含，相当于多个 or （not in不在这个范围中）</p><p><code>查询工作岗位是‘MANAGER’和‘SALESMAN’</code></p><p><code>select</code></p><p>​ <code>empno,ename,sal</code></p><p><code>from</code></p><p>​ <code>emp</code></p><p><code>where</code></p><p>​ <code>job = 'MANAGER' or job = 'SALESMAN'</code>;</p><p><code>select</code></p><p>​ <code>empno,ename,sal</code></p><p><code>from</code></p><p>​ <code>emp</code></p><p><code>where</code></p><p>​ <code>job in ('MANAGER','SALESMAN'); //这个不是表示800-5000，表示的是是800和5000的。</code></p><p>not 可以取反，主要用在is 或 in 中</p><p>​ is null;</p><p>​ is not null;</p><p>​ in;</p><p>​ not in;</p><p>like</p><p>​ 称为模糊查询，支持%和下划线匹配</p><p>​ % 匹配任意多个字符</p><p>​ 下划线：任意一个字符</p><p>​ %和__是两个特殊符号。</p><p><code>找出名字中含有o的：</code></p><p>​ <code>select ename from emp where ename like '%o%;'</code></p><p><code>找出名字中以t结尾的：</code></p><p>​ <code>select ename from emp where ename like '%t;'</code></p><p><code>找出名字中第一个是k的：</code></p><p>​ <code>select ename from emp where ename like 'k%;'</code></p><p><code>找出名字中第二个字母是A的：</code></p><p>​ <code>select ename from emp where ename like '_A%;'</code></p><p><code>找出名字中第三个字母是R的：</code></p><p>​ <code>select ename from emp where ename like '__R%;'</code></p><p><code>找出名字中有'_'的：//: \是转义字符。</code></p><p>​ <code>select ename from emp where ename like '%\_%;'</code></p></blockquote><h2 id=排序>排序
+<a class=header-anchor href=#%e6%8e%92%e5%ba%8f></a></h2><h3 id=查询所有员工薪资排序>查询所有员工薪资，排序
+<a class=header-anchor href=#%e6%9f%a5%e8%af%a2%e6%89%80%e6%9c%89%e5%91%98%e5%b7%a5%e8%96%aa%e8%b5%84%e6%8e%92%e5%ba%8f></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-21-1><a class=lnlinks href=#hl-21-1> 1</a>
+</span><span class=lnt id=hl-21-2><a class=lnlinks href=#hl-21-2> 2</a>
+</span><span class=lnt id=hl-21-3><a class=lnlinks href=#hl-21-3> 3</a>
+</span><span class=lnt id=hl-21-4><a class=lnlinks href=#hl-21-4> 4</a>
+</span><span class=lnt id=hl-21-5><a class=lnlinks href=#hl-21-5> 5</a>
+</span><span class=lnt id=hl-21-6><a class=lnlinks href=#hl-21-6> 6</a>
+</span><span class=lnt id=hl-21-7><a class=lnlinks href=#hl-21-7> 7</a>
+</span><span class=lnt id=hl-21-8><a class=lnlinks href=#hl-21-8> 8</a>
+</span><span class=lnt id=hl-21-9><a class=lnlinks href=#hl-21-9> 9</a>
+</span><span class=lnt id=hl-21-10><a class=lnlinks href=#hl-21-10>10</a>
+</span><span class=lnt id=hl-21-11><a class=lnlinks href=#hl-21-11>11</a>
+</span><span class=lnt id=hl-21-12><a class=lnlinks href=#hl-21-12>12</a>
+</span><span class=lnt id=hl-21-13><a class=lnlinks href=#hl-21-13>13</a>
+</span><span class=lnt id=hl-21-14><a class=lnlinks href=#hl-21-14>14</a>
+</span><span class=lnt id=hl-21-15><a class=lnlinks href=#hl-21-15>15</a>
+</span><span class=lnt id=hl-21-16><a class=lnlinks href=#hl-21-16>16</a>
+</span><span class=lnt id=hl-21-17><a class=lnlinks href=#hl-21-17>17</a>
+</span><span class=lnt id=hl-21-18><a class=lnlinks href=#hl-21-18>18</a>
+</span><span class=lnt id=hl-21-19><a class=lnlinks href=#hl-21-19>19</a>
+</span><span class=lnt id=hl-21-20><a class=lnlinks href=#hl-21-20>20</a>
+</span><span class=lnt id=hl-21-21><a class=lnlinks href=#hl-21-21>21</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select
+</span></span><span class=line><span class=cl>    ename,sal
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    emp
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    sal;
+</span></span><span class=line><span class=cl>//默认是升序排列。
+</span></span><span class=line><span class=cl>//指定降序
+</span></span><span class=line><span class=cl>select
+</span></span><span class=line><span class=cl>    ename,sal
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    emp
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    sal desc;
+</span></span><span class=line><span class=cl>//指定升序
+</span></span><span class=line><span class=cl>select
+</span></span><span class=line><span class=cl>    ename,sal
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    emp
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    sal asc;</span></span></code></pre></td></tr></table></div></div><h3 id=两个字段排序多个字段排序>两个字段排序，多个字段排序
+<a class=header-anchor href=#%e4%b8%a4%e4%b8%aa%e5%ad%97%e6%ae%b5%e6%8e%92%e5%ba%8f%e5%a4%9a%e4%b8%aa%e5%ad%97%e6%ae%b5%e6%8e%92%e5%ba%8f></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-22-1><a class=lnlinks href=#hl-22-1>1</a>
+</span><span class=lnt id=hl-22-2><a class=lnlinks href=#hl-22-2>2</a>
+</span><span class=lnt id=hl-22-3><a class=lnlinks href=#hl-22-3>3</a>
+</span><span class=lnt id=hl-22-4><a class=lnlinks href=#hl-22-4>4</a>
+</span><span class=lnt id=hl-22-5><a class=lnlinks href=#hl-22-5>5</a>
+</span><span class=lnt id=hl-22-6><a class=lnlinks href=#hl-22-6>6</a>
+</span><span class=lnt id=hl-22-7><a class=lnlinks href=#hl-22-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码//查询员工名字和薪资，要求按照薪资升序，如果薪资一样的话，再按照名字升序排列。
+</span></span><span class=line><span class=cl>select
+</span></span><span class=line><span class=cl>    ename,sal
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    emp
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    sal asc, ename asc;</span></span></code></pre></td></tr></table></div></div><h3 id=根据字段的位置排列>根据字段的位置排列
+<a class=header-anchor href=#%e6%a0%b9%e6%8d%ae%e5%ad%97%e6%ae%b5%e7%9a%84%e4%bd%8d%e7%bd%ae%e6%8e%92%e5%88%97></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-23-1><a class=lnlinks href=#hl-23-1>1</a>
+</span><span class=lnt id=hl-23-2><a class=lnlinks href=#hl-23-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select ename,sal from emp order by 2;
+</span></span><span class=line><span class=cl>//2表示第二列。是sal。不建在开发中这样写，因为程序不健壮。</span></span></code></pre></td></tr></table></div></div><h3 id=综合案例>综合案例
+<a class=header-anchor href=#%e7%bb%bc%e5%90%88%e6%a1%88%e4%be%8b></a></h3><p>找出工资在1250-3000之间的员工信息，要求按照薪资降序排列</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-24-1><a class=lnlinks href=#hl-24-1> 1</a>
+</span><span class=lnt id=hl-24-2><a class=lnlinks href=#hl-24-2> 2</a>
+</span><span class=lnt id=hl-24-3><a class=lnlinks href=#hl-24-3> 3</a>
+</span><span class=lnt id=hl-24-4><a class=lnlinks href=#hl-24-4> 4</a>
+</span><span class=lnt id=hl-24-5><a class=lnlinks href=#hl-24-5> 5</a>
+</span><span class=lnt id=hl-24-6><a class=lnlinks href=#hl-24-6> 6</a>
+</span><span class=lnt id=hl-24-7><a class=lnlinks href=#hl-24-7> 7</a>
+</span><span class=lnt id=hl-24-8><a class=lnlinks href=#hl-24-8> 8</a>
+</span><span class=lnt id=hl-24-9><a class=lnlinks href=#hl-24-9> 9</a>
+</span><span class=lnt id=hl-24-10><a class=lnlinks href=#hl-24-10>10</a>
+</span><span class=lnt id=hl-24-11><a class=lnlinks href=#hl-24-11>11</a>
+</span><span class=lnt id=hl-24-12><a class=lnlinks href=#hl-24-12>12</a>
+</span><span class=lnt id=hl-24-13><a class=lnlinks href=#hl-24-13>13</a>
+</span><span class=lnt id=hl-24-14><a class=lnlinks href=#hl-24-14>14</a>
+</span><span class=lnt id=hl-24-15><a class=lnlinks href=#hl-24-15>15</a>
+</span><span class=lnt id=hl-24-16><a class=lnlinks href=#hl-24-16>16</a>
+</span><span class=lnt id=hl-24-17><a class=lnlinks href=#hl-24-17>17</a>
+</span><span class=lnt id=hl-24-18><a class=lnlinks href=#hl-24-18>18</a>
+</span><span class=lnt id=hl-24-19><a class=lnlinks href=#hl-24-19>19</a>
+</span><span class=lnt id=hl-24-20><a class=lnlinks href=#hl-24-20>20</a>
+</span><span class=lnt id=hl-24-21><a class=lnlinks href=#hl-24-21>21</a>
+</span><span class=lnt id=hl-24-22><a class=lnlinks href=#hl-24-22>22</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select
+</span></span><span class=line><span class=cl>    ename,sal
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    emp;
+</span></span><span class=line><span class=cl>where
+</span></span><span class=line><span class=cl>    sal between 1250 and 3000
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    sal desc;
+</span></span><span class=line><span class=cl>//关键字顺序不能改变
+</span></span><span class=line><span class=cl>select
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>from
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>where
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>order by
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>程序的执行步骤：
+</span></span><span class=line><span class=cl>    第一步：执行from从table中查询
+</span></span><span class=line><span class=cl>    第二步：执行where筛选过滤
+</span></span><span class=line><span class=cl>    第三步：执行select输出数据
+</span></span><span class=line><span class=cl>    第四步：执行order by，排序总是在最后执行！</span></span></code></pre></td></tr></table></div></div><h2 id=数据处理函数单行处理函数>数据处理函数（单行处理函数）
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0%e5%8d%95%e8%a1%8c%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0></a></h2><h3 id=数据处理函数又被称为单行处理函数>数据处理函数又被称为单行处理函数
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0%e5%8f%88%e8%a2%ab%e7%a7%b0%e4%b8%ba%e5%8d%95%e8%a1%8c%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0></a></h3><p>单行处理函数的特点是：一个输入一个输出。</p><p>和单行处理函数对应的是：多行处理函数（多个输入，一个输出）。</p><h3 id=常见的单行处理函数>常见的单行处理函数：
+<a class=header-anchor href=#%e5%b8%b8%e8%a7%81%e7%9a%84%e5%8d%95%e8%a1%8c%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0></a></h3><blockquote><p>sum 求和</p><p>Lower 转换小写</p><p><code>将姓名转换成小写字母显示</code></p><p><code>select lower(ename) as ename from emp;</code></p><p>upper 转换大写</p><p>substr 取子串（substr（被截取的字符串，起始下标，截取的长度））</p><p><code>select substr(ename, 1, 1) as ename from emp;</code></p><p><strong>注意：起始下标从1开始，没有0。</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-25-1><a class=lnlinks href=#hl-25-1> 1</a>
+</span><span class=lnt id=hl-25-2><a class=lnlinks href=#hl-25-2> 2</a>
+</span><span class=lnt id=hl-25-3><a class=lnlinks href=#hl-25-3> 3</a>
+</span><span class=lnt id=hl-25-4><a class=lnlinks href=#hl-25-4> 4</a>
+</span><span class=lnt id=hl-25-5><a class=lnlinks href=#hl-25-5> 5</a>
+</span><span class=lnt id=hl-25-6><a class=lnlinks href=#hl-25-6> 6</a>
+</span><span class=lnt id=hl-25-7><a class=lnlinks href=#hl-25-7> 7</a>
+</span><span class=lnt id=hl-25-8><a class=lnlinks href=#hl-25-8> 8</a>
+</span><span class=lnt id=hl-25-9><a class=lnlinks href=#hl-25-9> 9</a>
+</span><span class=lnt id=hl-25-10><a class=lnlinks href=#hl-25-10>10</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码//找出员工名字第一个字母是A的员工信息？
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//第一种方式：模糊查询  
+</span></span><span class=line><span class=cl>select ename from emp where ename like &#39;A%&#39;;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//第二种方式：substr函数  
+</span></span><span class=line><span class=cl>select ename，from emp，where substr(ename, 1, 1) = &#39;A&#39;;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//首字母大写   
+</span></span><span class=line><span class=cl>select concat(upper(substr(name, 1, 1)), substr(name,2,length(name) - 1)) as result   from emp;</span></span></code></pre></td></tr></table></div></div><p>length 取长度</p><p><code>select length(ename) enamelength from emp;</code></p><p>trim 去空格</p><p><code>//去除查询条件的空格。</code></p><p><code>select * from emp where ename = trim(' KING');</code></p><p>str_to_date 将字符串转换成日期</p><p>date_format 格式化日期</p><p>format 设置千分位</p><p>case&mldr;when&mldr;then&mldr;when&mldr;then..else&mldr;end</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-26-1><a class=lnlinks href=#hl-26-1> 1</a>
+</span><span class=lnt id=hl-26-2><a class=lnlinks href=#hl-26-2> 2</a>
+</span><span class=lnt id=hl-26-3><a class=lnlinks href=#hl-26-3> 3</a>
+</span><span class=lnt id=hl-26-4><a class=lnlinks href=#hl-26-4> 4</a>
+</span><span class=lnt id=hl-26-5><a class=lnlinks href=#hl-26-5> 5</a>
+</span><span class=lnt id=hl-26-6><a class=lnlinks href=#hl-26-6> 6</a>
+</span><span class=lnt id=hl-26-7><a class=lnlinks href=#hl-26-7> 7</a>
+</span><span class=lnt id=hl-26-8><a class=lnlinks href=#hl-26-8> 8</a>
+</span><span class=lnt id=hl-26-9><a class=lnlinks href=#hl-26-9> 9</a>
+</span><span class=lnt id=hl-26-10><a class=lnlinks href=#hl-26-10>10</a>
+</span><span class=lnt id=hl-26-11><a class=lnlinks href=#hl-26-11>11</a>
+</span><span class=lnt id=hl-26-12><a class=lnlinks href=#hl-26-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码//当工作岗位是MANAGER的时候，工资上调10%，当工作岗位是SALESMAN的时候，工资上调50%
+</span></span><span class=line><span class=cl>//注意：不修改数据库，只是将查询结果显示为工资上调。
+</span></span><span class=line><span class=cl>select ename, job, sal as oldsal, 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>(case job 
+</span></span><span class=line><span class=cl>  when &#39;MANAGER&#39; 
+</span></span><span class=line><span class=cl>then sal * 1.1 
+</span></span><span class=line><span class=cl>  when &#39;SALSMAN&#39; 
+</span></span><span class=line><span class=cl>then sal * 1.5 
+</span></span><span class=line><span class=cl>  else sal 
+</span></span><span class=line><span class=cl>end) 
+</span></span><span class=line><span class=cl>as newsal from emp;</span></span></code></pre></td></tr></table></div></div><p>round 四舍五入</p><p><code>select 字段名 from 表名;</code></p><p><code>select 'abc'/1000 from emp;</code></p><p><strong>注意：select后面可以跟某个表的字段名（可以等同于变量名）， 也可以跟&rsquo;字面值/字面量&rsquo;（数据），</strong></p><p><code>select 21000 as num from dept;</code></p><p><code>select round(1234.6756, 0) as result from emp;</code></p><p><code>//四舍五入的结果是1234。0是不保留小数，1，保留一位小数.1234.5。-1保留到十位.1230.-2，保留到百位1200</code></p><p>rand() 生成随机数</p><p>ifnull 可以将null转换成一个具体值(如果是空的话，当作一个值来处理。)</p><p><strong>在所有的数据库当中，只要有null参与的数学运算的结果就是NULL。</strong></p><p><code>计算所有员工的年薪：</code></p><p><code>select ename, sal + comm as salcomm from emp;</code></p><p>为了避免出现NULL值。使用ifnull函数（如果是null，当作0来处理。）</p><p><code>select ename, (sal + ifnull(comm, 0)) * 12 as yearsal from emp;</code></p></blockquote><h2 id=分组函数多行处理函数>分组函数（多行处理函数）
+<a class=header-anchor href=#%e5%88%86%e7%bb%84%e5%87%bd%e6%95%b0%e5%a4%9a%e8%a1%8c%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0></a></h2><p>多行处理函数的特点：输入多行，最终输出一行</p><p>5个：</p><ol><li>count 计数</li><li>sum 求和</li><li>avg 平均值</li><li>max 最大值</li><li>min 最小值</li></ol><p><strong>注意：分组函数在使用的时候必须先进行分组，然后才能使用。如果你没有对数据进行分组，整张表默认为一组。</strong></p><blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-27-1><a class=lnlinks href=#hl-27-1> 1</a>
+</span><span class=lnt id=hl-27-2><a class=lnlinks href=#hl-27-2> 2</a>
+</span><span class=lnt id=hl-27-3><a class=lnlinks href=#hl-27-3> 3</a>
+</span><span class=lnt id=hl-27-4><a class=lnlinks href=#hl-27-4> 4</a>
+</span><span class=lnt id=hl-27-5><a class=lnlinks href=#hl-27-5> 5</a>
+</span><span class=lnt id=hl-27-6><a class=lnlinks href=#hl-27-6> 6</a>
+</span><span class=lnt id=hl-27-7><a class=lnlinks href=#hl-27-7> 7</a>
+</span><span class=lnt id=hl-27-8><a class=lnlinks href=#hl-27-8> 8</a>
+</span><span class=lnt id=hl-27-9><a class=lnlinks href=#hl-27-9> 9</a>
+</span><span class=lnt id=hl-27-10><a class=lnlinks href=#hl-27-10>10</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码找出最高工资
+</span></span><span class=line><span class=cl>select max(sal) from emp;
+</span></span><span class=line><span class=cl>找出最低工资
+</span></span><span class=line><span class=cl>select min(sal) from emp;
+</span></span><span class=line><span class=cl>计算工资和
+</span></span><span class=line><span class=cl>select sum(sal) from emp;
+</span></span><span class=line><span class=cl>计算平均工资
+</span></span><span class=line><span class=cl>select avg(sal) from emp;
+</span></span><span class=line><span class=cl>计算员工数量总和
+</span></span><span class=line><span class=cl>select count(ename) from emp;</span></span></code></pre></td></tr></table></div></div><p><strong>分组函数在使用时的注意事项：</strong></p><p>1，分组函数在使用的时候会自动忽略null；null不是一个值，是什么也没有。不用加null过滤。</p><p>2，分组函数中count(*)和count(具体字段)的区别：</p><p>count(*)：统计表当中的总行数。（只要有一行数据，count ++）</p><p>​ 因为每一行记录中数据不可能都为null。一行数据中有一列不为null，则这行数据就是有效的。</p><p>count(具体字段)：表示统计该字段下所有不为null的元素的总数。</p><p>3，分组程序不能够直接使用在where子句中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-28-1><a class=lnlinks href=#hl-28-1>1</a>
+</span><span class=lnt id=hl-28-2><a class=lnlinks href=#hl-28-2>2</a>
+</span><span class=lnt id=hl-28-3><a class=lnlinks href=#hl-28-3>3</a>
+</span><span class=lnt id=hl-28-4><a class=lnlinks href=#hl-28-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码//找出比最低工资高的员工的信息。
+</span></span><span class=line><span class=cl>select ename,sal from emp where sal &gt; min(sal);
+</span></span><span class=line><span class=cl>//表面没有问题，但运行时出现错误。
+</span></span><span class=line><span class=cl>//Invaild use of group function因为分组函数在使用的时候必须先分组，where执行的时候还没有分组。所以where后面不能出现分组函数</span></span></code></pre></td></tr></table></div></div><p>4，所有的分组函数可以组合在一起使用。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-29-1><a class=lnlinks href=#hl-29-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>select sum(sal),min(sal),max(sal),count(*),avg(sal) from emp;</span></span></code></pre></td></tr></table></div></div></blockquote><h2 id=分组查询>分组查询（<em><em><em>*</em>*</em>*</em>**）
+<a class=header-anchor href=#%e5%88%86%e7%bb%84%e6%9f%a5%e8%af%a2></a></h2><p>概述：在实际应用中，可能有这样的需求，需要先进行分组，然后对每一组的数据进行操作。这个时候需要分组查。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-30-1><a class=lnlinks href=#hl-30-1> 1</a>
+</span><span class=lnt id=hl-30-2><a class=lnlinks href=#hl-30-2> 2</a>
+</span><span class=lnt id=hl-30-3><a class=lnlinks href=#hl-30-3> 3</a>
+</span><span class=lnt id=hl-30-4><a class=lnlinks href=#hl-30-4> 4</a>
+</span><span class=lnt id=hl-30-5><a class=lnlinks href=#hl-30-5> 5</a>
+</span><span class=lnt id=hl-30-6><a class=lnlinks href=#hl-30-6> 6</a>
+</span><span class=lnt id=hl-30-7><a class=lnlinks href=#hl-30-7> 7</a>
+</span><span class=lnt id=hl-30-8><a class=lnlinks href=#hl-30-8> 8</a>
+</span><span class=lnt id=hl-30-9><a class=lnlinks href=#hl-30-9> 9</a>
+</span><span class=lnt id=hl-30-10><a class=lnlinks href=#hl-30-10>10</a>
+</span><span class=lnt id=hl-30-11><a class=lnlinks href=#hl-30-11>11</a>
+</span><span class=lnt id=hl-30-12><a class=lnlinks href=#hl-30-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码select  ...from ...group by ...
+</span></span><span class=line><span class=cl>//计算每个部门的工资和//计算每个工作岗位的平均薪资
+</span></span><span class=line><span class=cl>//找出每个工作岗位的最高薪资……组合之前的关键字，分析它们的执行顺序
+</span></span><span class=line><span class=cl>select  ...from ...group by ...order by ...
+</span></span><span class=line><span class=cl>以上关键字的顺序不能颠倒。执行顺序：  
+</span></span><span class=line><span class=cl>    1，from  
+</span></span><span class=line><span class=cl>    2，where 
+</span></span><span class=line><span class=cl>    3，group by  
+</span></span><span class=line><span class=cl>    4，select    
+</span></span><span class=line><span class=cl>    5，order by select sum(sal) from emp;
+</span></span><span class=line><span class=cl>这个没有分组，为什么可以执行
+</span></span><span class=line><span class=cl>因为select在group by后面执行。</span></span></code></pre></td></tr></table></div></div><h3 id=找出每个工作岗位的工资和>找出每个工作岗位的工资和
+<a class=header-anchor href=#%e6%89%be%e5%87%ba%e6%af%8f%e4%b8%aa%e5%b7%a5%e4%bd%9c%e5%b2%97%e4%bd%8d%e7%9a%84%e5%b7%a5%e8%b5%84%e5%92%8c></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-31-1><a class=lnlinks href=#hl-31-1>1</a>
+</span><span class=lnt id=hl-31-2><a class=lnlinks href=#hl-31-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>实现思路:按照工作岗位进行分组，对分组逐个求和。select  job,sum(sal)from    empgroup by job;以上语句的执行顺序   先从emp表中进行查询 根据job字段进行分组 然后对每一组的数据进行sum(sal);    select  ename.job.sum(sal);from empgroup by job;以上代码在oracle执行报错，在mysql中可以执行，但是毫无意义。Oracle的语法比MySQL严格</span></span></code></pre></td></tr></table></div></div><p><strong>结论：在一条select语句后面，如果有group by语句的话；select后面只能跟：参加分组的字段，以及分组函数。其他的一律不能跟。</strong></p><h3 id=找出每个部门的最高薪资>找出每个部门的最高薪资
+<a class=header-anchor href=#%e6%89%be%e5%87%ba%e6%af%8f%e4%b8%aa%e9%83%a8%e9%97%a8%e7%9a%84%e6%9c%80%e9%ab%98%e8%96%aa%e8%b5%84></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-32-1><a class=lnlinks href=#hl-32-1>1</a>
+</span><span class=lnt id=hl-32-2><a class=lnlinks href=#hl-32-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  ename,deptno,max(sal)from emp group by deptno;  select字段后面加ename没有意义，另外Oracle会报错。正确写法：select deptno,max(sal)from emp group by deptno;</span></span></code></pre></td></tr></table></div></div><h3 id=找出每个部门不同工作岗位的最高薪资>找出<u>每个部门，不同工作岗位</u>的最高薪资
+<a class=header-anchor href=#%e6%89%be%e5%87%ba%e6%af%8f%e4%b8%aa%e9%83%a8%e9%97%a8%e4%b8%8d%e5%90%8c%e5%b7%a5%e4%bd%9c%e5%b2%97%e4%bd%8d%e7%9a%84%e6%9c%80%e9%ab%98%e8%96%aa%e8%b5%84></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-33-1><a class=lnlinks href=#hl-33-1>1</a>
+</span><span class=lnt id=hl-33-2><a class=lnlinks href=#hl-33-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>/两个字段联合成一个字段看select deptno,job,max(sal)from emp group by job, deptno;   </span></span></code></pre></td></tr></table></div></div><h3 id=找出每个部门的最高薪资要求显示最高薪资大于3000的使用having可以对分完组之后的数据进一步过滤>找出每个部门的最高薪资,要求显示最高薪资大于3000的。使用having可以对分完组之后的数据进一步过滤。
+<a class=header-anchor href=#%e6%89%be%e5%87%ba%e6%af%8f%e4%b8%aa%e9%83%a8%e9%97%a8%e7%9a%84%e6%9c%80%e9%ab%98%e8%96%aa%e8%b5%84%e8%a6%81%e6%b1%82%e6%98%be%e7%a4%ba%e6%9c%80%e9%ab%98%e8%96%aa%e8%b5%84%e5%a4%a7%e4%ba%8e3000%e7%9a%84%e4%bd%bf%e7%94%a8having%e5%8f%af%e4%bb%a5%e5%af%b9%e5%88%86%e5%ae%8c%e7%bb%84%e4%b9%8b%e5%90%8e%e7%9a%84%e6%95%b0%e6%8d%ae%e8%bf%9b%e4%b8%80%e6%ad%a5%e8%bf%87%e6%bb%a4></a></h3><blockquote><p>*<strong>having不能单独使用，不能代替wheremhaving，必须和group by联合使用。*</strong></p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-34-1><a class=lnlinks href=#hl-34-1>1</a>
+</span><span class=lnt id=hl-34-2><a class=lnlinks href=#hl-34-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>第一步：select deptno,max(sal) from emp group by deptno;第二步：select  deptno,max(sal) from emp group by deptno having max(sal) &gt; 3000;以上的代码执行效率很低。可以这样考虑：先将大于3000的找出来，再分组select deptno,max(sal)from emp where sal &gt; 3000 group by   deptno;优化策略：where和having，优先选择where，where实在完成不了，再选择 having。 </span></span></code></pre></td></tr></table></div></div><h3 id=where没办法解决的>where没办法解决的？
+<a class=header-anchor href=#where%e6%b2%a1%e5%8a%9e%e6%b3%95%e8%a7%a3%e5%86%b3%e7%9a%84></a></h3><p>*<strong>找出每个部门的平均薪资，要求显示薪资高于2500的*</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-35-1><a class=lnlinks href=#hl-35-1>1</a>
+</span><span class=lnt id=hl-35-2><a class=lnlinks href=#hl-35-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//第一步：找出每个部门的平均薪资。select deptno,avg(sal)from    emp group by    deptno;//第二步：要求显示薪资高于2500的select    deptno,avg(sal)from empwhere        //where后面不能使用分组函数。  avg(sal) &gt; 2500group by  deptno; 改为：优化策略。select  deptno,avg(sal)from empgroup by deptnohaving    avg(sal) &gt; 2500;</span></span></code></pre></td></tr></table></div></div><h3 id=总结单表查询结束>总结（单表查询结束)
+<a class=header-anchor href=#%e6%80%bb%e7%bb%93%e5%8d%95%e8%a1%a8%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9d%9f></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-36-1><a class=lnlinks href=#hl-36-1>1</a>
+</span><span class=lnt id=hl-36-2><a class=lnlinks href=#hl-36-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  ...from ...where    ...group by ...having   ...order by ...执行顺序：不能颠倒    1，from 查询   2，where 过滤  3，group by 分组   4，having 接着过滤   5，select 查询 6，order by 排序输出 从某张表中查询数据先经过where条件筛选出有价值的数据对这些有价值的数据进行分组分组之后可以使用having继续筛选经过select查询出来最后排序输出。</span></span></code></pre></td></tr></table></div></div><blockquote><p>综合案例：</p><p>找出每个岗位的平均薪资，要求显示平均薪资大于1500的，出MANAGER之外，要求按照平均薪资降序排列。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-37-1><a class=lnlinks href=#hl-37-1>1</a>
+</span><span class=lnt id=hl-37-2><a class=lnlinks href=#hl-37-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  job,avg(sal) as avgsalfrom  empwhere    job &lt;&gt; &#39;MANAGER&#39;group by  jbohaving   avg(sal) &gt; 1500order by  avgsal desc;</span></span></code></pre></td></tr></table></div></div><h2 id=去除重复记录>去除重复记录
+<a class=header-anchor href=#%e5%8e%bb%e9%99%a4%e9%87%8d%e5%a4%8d%e8%ae%b0%e5%bd%95></a></h2><p>把查询结果去除重复记录</p><p><strong>注意：原表数据不会被修改，只是显示结果去重。去重需要一个关键字 distinct。</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-38-1><a class=lnlinks href=#hl-38-1>1</a>
+</span><span class=lnt id=hl-38-2><a class=lnlinks href=#hl-38-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select distinct job from emp;//select ename,distinct job from emp;//这样编写是错误的，distinct只出现在所有字段的前方。select distinct job,deptno from emp;//出现在job个deptno两个字段之前，联合两个字段去重。//统计工作岗位的数量select count(distinct job) from emp;</span></span></code></pre></td></tr></table></div></div><h2 id=连接查询>连接查询
+<a class=header-anchor href=#%e8%bf%9e%e6%8e%a5%e6%9f%a5%e8%af%a2></a></h2><h3 id=概述>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0></a></h3><blockquote><p>从emp表中取员工名字，从dept表中取部门名字。这种跨表查询，多张表联合起来查询数据，称为连接查询</p><p>从一张表中单独查询，称为单表查询。</p></blockquote><h3 id=连接查询的分类>连接查询的分类
+<a class=header-anchor href=#%e8%bf%9e%e6%8e%a5%e6%9f%a5%e8%af%a2%e7%9a%84%e5%88%86%e7%b1%bb></a></h3><blockquote><p>根据语法的种类进行分类</p><p>SQL92：1992年出现的语法。</p><p>SQL99：1999年出现的语法。</p><p>根据表的连接方式分类</p><p>内连接：</p><p>​ 等值连接</p><p>​ 非等值连接</p><p>​ 自连接</p><p>外连接：</p><p>​ 左外连接 （左连接）</p><p>​ 右外连接 （右连接）</p><p>全连接（不常用）</p></blockquote><h3 id=笛卡尔积现象>笛卡尔积现象
+<a class=header-anchor href=#%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%e7%8e%b0%e8%b1%a1></a></h3><p>当两张表进行连接查询时，没有任何的条件限制，会发生什么现象。</p><blockquote><p><strong>连接查询的原理：拿出一张表的记录和另一张表的所有记录进行对比。</strong></p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-39-1><a class=lnlinks href=#hl-39-1>1</a>
+</span><span class=lnt id=hl-39-2><a class=lnlinks href=#hl-39-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询每个员工所在的部门名称select ename, deptno from ename,deptno;</span></span></code></pre></td></tr></table></div></div><blockquote><p>笛卡尔积现象：当两张表进行连接查询时，没有任何的条件限制，会发生的现象是<strong>最*终的查询结果的条数是两张表条数的乘积。*</strong></p></blockquote><h3 id=怎么避免笛卡尔积现象>怎么避免笛卡尔积现象
+<a class=header-anchor href=#%e6%80%8e%e4%b9%88%e9%81%bf%e5%85%8d%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%e7%8e%b0%e8%b1%a1></a></h3><blockquote><p>连接时接入条件，满足这个条件的记录被筛选出来。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-40-1><a class=lnlinks href=#hl-40-1>1</a>
+</span><span class=lnt id=hl-40-2><a class=lnlinks href=#hl-40-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  ename,dname from emp,denptnowhere   emp.ename,deptno.dname;//最终查询结果条数减少，但是执行次数不会减少。//给表起别名，提高查询效率。select e.ename,d.dname;from emp e,denptno d where e.ename = d.dname;  //SQL92语法。</span></span></code></pre></td></tr></table></div></div><p>*<strong>减少表的连接次数，提高程序的执行效率*</strong></p><h3 id=内连接>内连接
+<a class=header-anchor href=#%e5%86%85%e8%bf%9e%e6%8e%a5></a></h3><p><strong>特点：将能够匹配上这个查询条件的数据查询出来</strong></p><p><strong>两张表中没有主次关系</strong></p><h4 id=内连接之等值连接>内连接之等值连接
+<a class=header-anchor href=#%e5%86%85%e8%bf%9e%e6%8e%a5%e4%b9%8b%e7%ad%89%e5%80%bc%e8%bf%9e%e6%8e%a5></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-41-1><a class=lnlinks href=#hl-41-1>1</a>
+</span><span class=lnt id=hl-41-2><a class=lnlinks href=#hl-41-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询每个员工所在部门的名称，显示员工和部门名//emp e,dept d表进行连接，条件是e.deptno = d.dpetnp;//SQL92语法select   e.ename,d.dnamefrom emp e, deptno dwhere    e.deptno = d.deptno;    //缺点：结构不清晰，表的连接条件和后期进一步筛选的条件，都放到了where的后面。//SQL99语法select   e.ename,d.dnamefrom emp e, (inner) join         //inner（内部的）可以省略。   dept don    e.deptno = d.deptno;    //条件是等值关系，所以为等值连接。  select  ...from a(inner) join   bon a和b的连接条件。where  筛选条件    //优点：表连接的条件是独立的，连接之后，如果还需要进一步筛选，再往后继续添加where条件即可。</span></span></code></pre></td></tr></table></div></div><h4 id=内连接之非等值连接>内连接之非等值连接
+<a class=header-anchor href=#%e5%86%85%e8%bf%9e%e6%8e%a5%e4%b9%8b%e9%9d%9e%e7%ad%89%e5%80%bc%e8%bf%9e%e6%8e%a5></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-42-1><a class=lnlinks href=#hl-42-1>1</a>
+</span><span class=lnt id=hl-42-2><a class=lnlinks href=#hl-42-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询每个员工的薪资等级，要求显示员工名，薪资，员工等级select  e.ename,e.sal,s.salgradefrom    emp ejoin           //inner（内部的）可以省略。   salgrade son    e.sal between s.local and s.hisal  //非等值连接，条件不是一个等量关系。</span></span></code></pre></td></tr></table></div></div><h4 id=内连接之自连接>内连接之自连接
+<a class=header-anchor href=#%e5%86%85%e8%bf%9e%e6%8e%a5%e4%b9%8b%e8%87%aa%e8%bf%9e%e6%8e%a5></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-43-1><a class=lnlinks href=#hl-43-1>1</a>
+</span><span class=lnt id=hl-43-2><a class=lnlinks href=#hl-43-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询每个员工的上级领导，要求显示员工名和对应的领导名。//技巧：一张表看作两张表select a.ename as &#39;员工名&#39;,b.ename as &#39;领导名&#39;from emp ajoin emp bon a.mgr = b.empno;  //自连接的技巧，一张表看作两张表。</span></span></code></pre></td></tr></table></div></div><h2 id=外连接>外连接
+<a class=header-anchor href=#%e5%a4%96%e8%bf%9e%e6%8e%a5></a></h2><blockquote><p>任何一个右连接都有左连接的写法</p><p>任何一个左连接都有右连接的写法</p><p>两种写法可以互换。</p></blockquote><h4 id=右外连接右连接>右外连接(右连接)
+<a class=header-anchor href=#%e5%8f%b3%e5%a4%96%e8%bf%9e%e6%8e%a5%e5%8f%b3%e8%bf%9e%e6%8e%a5></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-44-1><a class=lnlinks href=#hl-44-1>1</a>
+</span><span class=lnt id=hl-44-2><a class=lnlinks href=#hl-44-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  e.ename,d.dnamefrom emp e, right (outer) join   //outer可以省略，带着可读性强。 dept don    e.deptno = d.deptno;//right代表：表示将join关键字右边的这张表看成是主表，主要是为了将这张表的数据全部查询出来，捎带着关联查询左边的表。//在外连接中产生了主次关系</span></span></code></pre></td></tr></table></div></div><h4 id=左外连接左连接>左外连接(左连接)
+<a class=header-anchor href=#%e5%b7%a6%e5%a4%96%e8%bf%9e%e6%8e%a5%e5%b7%a6%e8%bf%9e%e6%8e%a5></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-45-1><a class=lnlinks href=#hl-45-1>1</a>
+</span><span class=lnt id=hl-45-2><a class=lnlinks href=#hl-45-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  e.ename,d.dnamefrom emp e, left (outer) join    //outer可以省略，带着可读性强。 dept don    e.deptno = d.deptno;</span></span></code></pre></td></tr></table></div></div><blockquote><p>外连接的查询结果的结果条数一定是 >= 内连接的查询结果的结果条数</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-46-1><a class=lnlinks href=#hl-46-1>1</a>
+</span><span class=lnt id=hl-46-2><a class=lnlinks href=#hl-46-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询每个员工的上级领导，要求显示所有的员工名字和领导名字。//外连接select   a.ename as &#39;员工名&#39;, b.ename as ‘领导名’from  emp aleft join  emp bon     a.mgr = b.empno;</span></span></code></pre></td></tr></table></div></div><h3 id=三张表或者四张表的连接方式>三张表或者四张表的连接方式
+<a class=header-anchor href=#%e4%b8%89%e5%bc%a0%e8%a1%a8%e6%88%96%e8%80%85%e5%9b%9b%e5%bc%a0%e8%a1%a8%e7%9a%84%e8%bf%9e%e6%8e%a5%e6%96%b9%e5%bc%8f></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-47-1><a class=lnlinks href=#hl-47-1>1</a>
+</span><span class=lnt id=hl-47-2><a class=lnlinks href=#hl-47-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//语法：select ...from ajoin   bon a和b的连接条件join    con a和c的连接条件right join  don a和d的连接条件    //一条SQL语句中，内连接和外连接可以混合出现。</span></span></code></pre></td></tr></table></div></div><h2 id=子查询>子查询
+<a class=header-anchor href=#%e5%ad%90%e6%9f%a5%e8%af%a2></a></h2><h3 id=概述-1>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-1></a></h3><blockquote><p>select语句中嵌套select语句。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-48-1><a class=lnlinks href=#hl-48-1>1</a>
+</span><span class=lnt id=hl-48-2><a class=lnlinks href=#hl-48-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//可以出现在以下位置select ..(select).from ..(select).where    ..(select).</span></span></code></pre></td></tr></table></div></div></blockquote><h3 id=where子句中的子查询>where子句中的子查询
+<a class=header-anchor href=#where%e5%ad%90%e5%8f%a5%e4%b8%ad%e7%9a%84%e5%ad%90%e6%9f%a5%e8%af%a2></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-49-1><a class=lnlinks href=#hl-49-1>1</a>
+</span><span class=lnt id=hl-49-2><a class=lnlinks href=#hl-49-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：找出比最低工资高的员工姓名和工资select ename,salfrom   empwhere    sal &gt; min(sal);//此方法不能实现，因为where子句中不能出现分组函数//实现思路：   第一步;查询最低工资  select min(sal) from emp;   第二步：    找出 &gt; 800的    第三步：合并  select      ename,sal   from        emp     where       sal &gt; (select min(sal) from emp);</span></span></code></pre></td></tr></table></div></div><h3 id=from子句中的子查询>from子句中的子查询
+<a class=header-anchor href=#from%e5%ad%90%e5%8f%a5%e4%b8%ad%e7%9a%84%e5%ad%90%e6%9f%a5%e8%af%a2></a></h3><p><strong>注意：from后面的子查询可以将子查询的结果当作一个临时表（技巧）</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-50-1><a class=lnlinks href=#hl-50-1>1</a>
+</span><span class=lnt id=hl-50-2><a class=lnlinks href=#hl-50-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：找出每个岗位的平均工资的薪资等级第一步：找出每个岗位的平均工资（按照岗位分组求平均值）select job,avg(sal) from emp group by;第二步：将第一步查询的表当作一张真实的表t，将t和salgrade进行表连接，条件：t表abg(sal) between s.losal and s.hisal;select   t.*,s.gradefrom (select job,avg(sal) as avgsal from emp group by job) tjoin salgrade son    t.avgsal between s.losal and s.hisal&#39;</span></span></code></pre></td></tr></table></div></div><h3 id=select后面的子查询了解即可不常用>select后面的子查询（了解即可，不常用）
+<a class=header-anchor href=#select%e5%90%8e%e9%9d%a2%e7%9a%84%e5%ad%90%e6%9f%a5%e8%af%a2%e4%ba%86%e8%a7%a3%e5%8d%b3%e5%8f%af%e4%b8%8d%e5%b8%b8%e7%94%a8></a></h3><p><strong>注意：这样的子查询结果不能多于1条，不然出错。</strong></p><h2 id=union的用法>union的用法
+<a class=header-anchor href=#union%e7%9a%84%e7%94%a8%e6%b3%95></a></h2><blockquote><p>*<strong>合并查询结果集*</strong></p><p>union的使用效率要高一些，对于表连接来说，每连接一次新表，则匹配的次数满足笛卡尔积，成倍翻。。。</p><p>但是union的效率可以减少匹配的次数。在减少匹配次数情况下，还可以完成两个结果集的拼接。</p><p>a连接b连接c</p><p>a 10条记录</p><p>b 10条记录</p><p>c 10条记录</p><p>匹配记录是：10 * 10 * 10 = 1000</p><p>a 连接 b 一个结果： 10 * 10 = 100;</p><p>a 连接 c 一个结果： 10 * 10 = 100;</p><p>使用union是 100 + 100 = 200次。（union把乘法变成了加法运算）</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-51-1><a class=lnlinks href=#hl-51-1>1</a>
+</span><span class=lnt id=hl-51-2><a class=lnlinks href=#hl-51-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：查询工作岗位是MANAGER和SALESMAN的员工 select ename,job from emp where job = &#39;MANAGER&#39; or job = &#39;SALESMAN&#39;;        select ename,job from emp where job in(&#39;MANAGER&#39;,&#39;SALESMAN&#39;);   union的使用：select ename,job from emp where job = &#39;MANAGER&#39;unionselect ename,job from emp where job = &#39;SALESMAN&#39;;</span></span></code></pre></td></tr></table></div></div><blockquote><p>union的使用注意事项：</p><p>union在进行结果集合并的时候，要求两个结果集的列数相同。</p><p>要求列数的数据类型也先相同。</p></blockquote><h2 id=limit>limit
+<a class=header-anchor href=#limit></a></h2><h3 id=概述-2>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-2></a></h3><p>将查询结果的一部分取出，通常在分页查询中。分页的作用是为了提高用户的体验，因为一次查询出来所有的结果，用户体验差。可以翻页看。</p><h3 id=limit的用法>limit的用法：
+<a class=header-anchor href=#limit%e7%9a%84%e7%94%a8%e6%b3%95></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-52-1><a class=lnlinks href=#hl-52-1>1</a>
+</span><span class=lnt id=hl-52-2><a class=lnlinks href=#hl-52-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：按照薪资降序，取出排名在前五名的员工？select  ename,salfrom   emporder by sal desclimit 5;    //去前五//limit的语法：完整用法：limit startIndex,length    startIndex是起始下标，length是长度。缺省用法：limit 5;</span></span></code></pre></td></tr></table></div></div><p>*<strong>注意：limit是在order by之后执行的。*</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-53-1><a class=lnlinks href=#hl-53-1>1</a>
+</span><span class=lnt id=hl-53-2><a class=lnlinks href=#hl-53-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>//案例：取出工资排名在[3-5]名的员工。select    ename,salfrom   emporder by sal desclimit   2, 3;//2表示起始位置从下标2开始，就是第三条记录。//3表示长度。</span></span></code></pre></td></tr></table></div></div><h3 id=通用分页>通用分页
+<a class=header-anchor href=#%e9%80%9a%e7%94%a8%e5%88%86%e9%a1%b5></a></h3><blockquote><p>每页显示3条记录</p><p>第一页：limit 0，3 [0 1 2]</p><p>第二页：limit 3，3 [3 4 5]</p><p>第三页：limt 6，3 [6 7 9]</p><p>第四页：limit 9，3 [9 10 11]</p><p>每页显示pageSize条记录</p><p>第pageNo页：limit （pageNo - 1 * pageSize)，pageSize</p></blockquote><h2 id=关于dql语句的总结>关于DQL语句的总结：
+<a class=header-anchor href=#%e5%85%b3%e4%ba%8edql%e8%af%ad%e5%8f%a5%e7%9a%84%e6%80%bb%e7%bb%93></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-54-1><a class=lnlinks href=#hl-54-1>1</a>
+</span><span class=lnt id=hl-54-2><a class=lnlinks href=#hl-54-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select  ...from ...where    ...group by ...having   ...order by ...limit    ...</span></span></code></pre></td></tr></table></div></div><h2 id=表的创建及数据类型>表的创建及数据类型
+<a class=header-anchor href=#%e8%a1%a8%e7%9a%84%e5%88%9b%e5%bb%ba%e5%8f%8a%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h2><h3 id=创建表>创建表
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e8%a1%a8></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-55-1><a class=lnlinks href=#hl-55-1>1</a>
+</span><span class=lnt id=hl-55-2><a class=lnlinks href=#hl-55-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码建表的语法格式：（建表属于DDL语句，DDL包括：create drop alter）
+</span></span><span class=line><span class=cl>create table 表名(字段名1 数据类型，字段名2 数据类型，字段名3 数据类型);</span></span></code></pre></td></tr></table></div></div><p>表名：建议以t_或者tbl_开始，可读性强。见名知义</p><p>字段名：见名知义</p><p>表名和字段名都属于标识符</p><h3 id=数据类型>数据类型
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h3><p>掌握一些常见的数据类型即可：</p><blockquote><p>varchar（长度255）：</p><p>可变长度的字符串，比较智能，根据实际的字符串动态 分配空间。</p><p>优点：节省空间</p><p>缺点：需要动态分配空间，速度慢</p><p>char（长度255）：</p><p>定长字符串，不管实际的字符串长度是多少，只分配固定长度的空间取存储数据。</p><p>优点：不需要动态分配空间，速度快</p><p>缺点：使用不恰当会导致空间的浪费。</p><p><strong>varchar和char的选择：性别字段：char。姓名字段：varchar。因为性别字段长度是固定的。</strong></p><p>int（长度11）：数字中的整型，等同于java的int</p><p>bigint：数字中的长整型，相当于java中的long</p><p>double：双精度浮点型数据</p><p>float：单精度浮点型数据</p><p>date：短日期类型</p><p>datetime：长日期类型</p><p>clob：字符大对象</p><p>最多可以存储4G的文章。</p><p>比如：存储一篇文章，存储一个说明。</p><p>超过255个字符都用CLOB字符存储。</p><p>Character Large OBject: CLOB</p><p>blob：</p><p>二进制大对象</p><p>Binary Large OBject：BLOB</p><p>专门用来存储图片，声音，视频等流媒体数据。</p><p>往blob类型的字段上插入数据的时候，需要使用IO流。</p></blockquote><h3 id=创建一个学生表>创建一个学生表
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%a6%e7%94%9f%e8%a1%a8></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-56-1><a class=lnlinks href=#hl-56-1>1</a>
+</span><span class=lnt id=hl-56-2><a class=lnlinks href=#hl-56-2>2</a>
+</span><span class=lnt id=hl-56-3><a class=lnlinks href=#hl-56-3>3</a>
+</span><span class=lnt id=hl-56-4><a class=lnlinks href=#hl-56-4>4</a>
+</span><span class=lnt id=hl-56-5><a class=lnlinks href=#hl-56-5>5</a>
+</span><span class=lnt id=hl-56-6><a class=lnlinks href=#hl-56-6>6</a>
+</span><span class=lnt id=hl-56-7><a class=lnlinks href=#hl-56-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>create</span> <span class=n>table</span> <span class=n>t_student</span><span class=p>(</span> 
+</span></span><span class=line><span class=cl>    <span class=n>no</span> <span class=ne>int</span><span class=p>,</span>    
+</span></span><span class=line><span class=cl>    <span class=n>sex</span> <span class=n>char</span><span class=p>(</span><span class=mi>1</span><span class=p>),</span>    
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>32</span><span class=p>),</span>    
+</span></span><span class=line><span class=cl>    <span class=n>age</span> <span class=ne>int</span><span class=p>(</span><span class=mi>3</span><span class=p>),</span>    
+</span></span><span class=line><span class=cl>    <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><h3 id=快速创建表了解>快速创建表（了解）
+<a class=header-anchor href=#%e5%bf%ab%e9%80%9f%e5%88%9b%e5%bb%ba%e8%a1%a8%e4%ba%86%e8%a7%a3></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-57-1><a class=lnlinks href=#hl-57-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>create table emp2 as select * from emp;</span></span></code></pre></td></tr></table></div></div><blockquote><p>原理：可以完成表的快速复制。</p><p>​ 把一个查询结果当成一张表新建。</p><p>​ 同时表中的数据也会存在。</p></blockquote><h3 id=删除表>删除表
+<a class=header-anchor href=#%e5%88%a0%e9%99%a4%e8%a1%a8></a></h3><p>如果这张表不存在会报错</p><p>drop table t_student;</p><p>如果这张表存在则删除。不会报错。</p><p>drop table t_student if exists;</p><h3 id=对表结构的增删改>对表结构的增删改
+<a class=header-anchor href=#%e5%af%b9%e8%a1%a8%e7%bb%93%e6%9e%84%e7%9a%84%e5%a2%9e%e5%88%a0%e6%94%b9></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-58-1><a class=lnlinks href=#hl-58-1>1</a>
+</span><span class=lnt id=hl-58-2><a class=lnlinks href=#hl-58-2>2</a>
+</span><span class=lnt id=hl-58-3><a class=lnlinks href=#hl-58-3>3</a>
+</span><span class=lnt id=hl-58-4><a class=lnlinks href=#hl-58-4>4</a>
+</span><span class=lnt id=hl-58-5><a class=lnlinks href=#hl-58-5>5</a>
+</span><span class=lnt id=hl-58-6><a class=lnlinks href=#hl-58-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码第一：在确定了表的结构之后，一般不会轻易的再次改动表，因为修改表的结构的代价比较大。修改表结构的时候，相对应的java代码也需要修改，成本是比较高的。
+</span></span><span class=line><span class=cl>第二：因为成本原因，这部分的责任由设计人员承担。不需要掌握。可以使用navicat工具修改。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>增加列
+</span></span><span class=line><span class=cl> alter table test add context_time datetime
+</span></span><span class=line><span class=cl> //向text表中加入context_time的列名，类型为datetime</span></span></code></pre></td></tr></table></div></div><h3 id=插入数据insert关键字dml>插入数据，insert关键字。（DML）
+<a class=header-anchor href=#%e6%8f%92%e5%85%a5%e6%95%b0%e6%8d%aeinsert%e5%85%b3%e9%94%ae%e5%ad%97dml></a></h3><h3 id=插入值>插入值
+<a class=header-anchor href=#%e6%8f%92%e5%85%a5%e5%80%bc></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-59-1><a class=lnlinks href=#hl-59-1> 1</a>
+</span><span class=lnt id=hl-59-2><a class=lnlinks href=#hl-59-2> 2</a>
+</span><span class=lnt id=hl-59-3><a class=lnlinks href=#hl-59-3> 3</a>
+</span><span class=lnt id=hl-59-4><a class=lnlinks href=#hl-59-4> 4</a>
+</span><span class=lnt id=hl-59-5><a class=lnlinks href=#hl-59-5> 5</a>
+</span><span class=lnt id=hl-59-6><a class=lnlinks href=#hl-59-6> 6</a>
+</span><span class=lnt id=hl-59-7><a class=lnlinks href=#hl-59-7> 7</a>
+</span><span class=lnt id=hl-59-8><a class=lnlinks href=#hl-59-8> 8</a>
+</span><span class=lnt id=hl-59-9><a class=lnlinks href=#hl-59-9> 9</a>
+</span><span class=lnt id=hl-59-10><a class=lnlinks href=#hl-59-10>10</a>
+</span><span class=lnt id=hl-59-11><a class=lnlinks href=#hl-59-11>11</a>
+</span><span class=lnt id=hl-59-12><a class=lnlinks href=#hl-59-12>12</a>
+</span><span class=lnt id=hl-59-13><a class=lnlinks href=#hl-59-13>13</a>
+</span><span class=lnt id=hl-59-14><a class=lnlinks href=#hl-59-14>14</a>
+</span><span class=lnt id=hl-59-15><a class=lnlinks href=#hl-59-15>15</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=o>//</span><span class=err>语法格式：</span> 
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=err>表名（字段名</span><span class=mi>1</span><span class=err>，字段名</span><span class=mi>2</span><span class=err>，字段名</span><span class=mi>3</span><span class=err>……）</span><span class=n>values</span><span class=err>（值</span><span class=mi>1</span><span class=err>，值</span><span class=mi>2</span><span class=err>，值</span><span class=mi>3</span><span class=err>）</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>注意：字段名和值要一一对应，即数据类型要对应，数量要对应。</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>no</span><span class=p>,</span><span class=n>name</span><span class=p>,</span><span class=n>sex</span><span class=p>,</span><span class=n>age</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=s1>&#39;m&#39;</span><span class=p>,</span><span class=mi>20</span><span class=p>,</span><span class=s1>&#39;zhangsan@123.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>no</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>没有给其他字段指定值的时候，其他位置为</span><span class=n>NULL</span><span class=err>；</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=n>insert语句只要执行成功了</span><span class=err>，必须会多一条记录。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>给某个字段指定默认值</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_student</span><span class=p>(</span> <span class=n>no</span> <span class=ne>int</span><span class=p>,</span> <span class=n>sex</span> <span class=n>char</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=n>defult</span> <span class=s1>&#39;f&#39;</span><span class=p>,</span> <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>32</span><span class=p>),</span> <span class=n>age</span> <span class=ne>int</span><span class=p>(</span><span class=mi>3</span><span class=p>),</span> <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=n>sex没有插入值时</span><span class=err>，默认值是‘</span><span class=n>f</span><span class=err>’。</span>    
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=n>insert语句中的字段名可以省略吗</span><span class=err>，可以</span><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span> <span class=n>values</span><span class=p>(</span><span class=err>和字段的数据类型，数量匹配的值</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>不写字段时，相当于全写。</span></span></span></code></pre></td></tr></table></div></div><h3 id=insert一次插入多条记录>insert一次插入多条记录
+<a class=header-anchor href=#insert%e4%b8%80%e6%ac%a1%e6%8f%92%e5%85%a5%e5%a4%9a%e6%9d%a1%e8%ae%b0%e5%bd%95></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-60-1><a class=lnlinks href=#hl-60-1>1</a>
+</span><span class=lnt id=hl-60-2><a class=lnlinks href=#hl-60-2>2</a>
+</span><span class=lnt id=hl-60-3><a class=lnlinks href=#hl-60-3>3</a>
+</span><span class=lnt id=hl-60-4><a class=lnlinks href=#hl-60-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码insert into t_user(id,name,birth, create_time) values (1,&#39;zhangsan&#39;,&#39;1980-01-01&#39;), (1,&#39;lisi&#39;,&#39;2000-01-01&#39;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//语法格式：
+</span></span><span class=line><span class=cl>insert into t_user(字段名1，字段名2) values(),(),(;</span></span></code></pre></td></tr></table></div></div><h3 id=将查询结果插入到一张表当中了解>将查询结果插入到一张表当中（了解）
+<a class=header-anchor href=#%e5%b0%86%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c%e6%8f%92%e5%85%a5%e5%88%b0%e4%b8%80%e5%bc%a0%e8%a1%a8%e5%bd%93%e4%b8%ad%e4%ba%86%e8%a7%a3></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-61-1><a class=lnlinks href=#hl-61-1>1</a>
+</span><span class=lnt id=hl-61-2><a class=lnlinks href=#hl-61-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>creat table dept_bak as select from dept;
+</span></span><span class=line><span class=cl>insert into dept_bak select * from dept_bak;</span></span></code></pre></td></tr></table></div></div><p>很少用这种方式。</p><h3 id=insert插入日期>insert插入日期
+<a class=header-anchor href=#insert%e6%8f%92%e5%85%a5%e6%97%a5%e6%9c%9f></a></h3><h4 id=str_to_date函数>str_to_date函数:
+<a class=header-anchor href=#str_to_date%e5%87%bd%e6%95%b0></a></h4><p><strong>将字符串varchar类型转换成date类型</strong></p><blockquote><p>语法格式：</p><p>str_to_date(&lsquo;字符串日期&rsquo;，‘日期格式’);</p></blockquote><p>date_format:将date类型转换成具有一定格式的varchar的字符串类型。</p><p>*<strong>注意：数据库中的一条命名规范，所有的标识符都是全小写，单词和单词之间使用下划线分隔开。*</strong></p><p>mysql的日期格式：</p><blockquote><p>%Y 年</p><p>%m 月</p><p>%d 日</p><p>%h 时</p><p>%i 分</p><p>% 秒</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-62-1><a class=lnlinks href=#hl-62-1>1</a>
+</span><span class=lnt id=hl-62-2><a class=lnlinks href=#hl-62-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>insert into t_user(id,name,birth) values(1,&#39;zhangsan&#39;,str_to_date(&#39;01-10-1990&#39;, &#39;%d-%m-%Y&#39;));</span></span></code></pre></td></tr></table></div></div><p>str_to_date函数可以把字符串varchar转换成date类型日期数据，</p><p>通常使用在插入insert方面，因为插入的时候需要一个日期类型的数据。需要通过函数将字符串转换成date。</p><p>如果提供的日期字符串是这个格式，str_to_date函数就不需要了，会自动做类型转换。</p><blockquote><p>%Y-%m-%d 1990-10-01</p></blockquote><h4 id=date_format函数>date_format函数。
+<a class=header-anchor href=#date_format%e5%87%bd%e6%95%b0></a></h4><p><strong>将日期类型转换成特定格式的字符串</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-63-1><a class=lnlinks href=#hl-63-1>1</a>
+</span><span class=lnt id=hl-63-2><a class=lnlinks href=#hl-63-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码
+</span></span><span class=line><span class=cl>select id name,date_format(birth,&#39;%m-%d&#39;) from t_user;date_fromat函数的使用语法格式：date_format(日期类型，‘日期格式’)</span></span></code></pre></td></tr></table></div></div><h2 id=date和datetime类型的区别>date和datetime类型的区别：
+<a class=header-anchor href=#date%e5%92%8cdatetime%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%8c%ba%e5%88%ab></a></h2><p>date是短日期，只包括年月日</p><p>datetime是长日期，包括年月日时分秒信息。</p><p>mysql短日期默认格式：%Y-%m-%d</p><p>mysql长日期默认格式：%Y-%m-%d %h : %i : %s;</p><p><strong>获取系统当前时间的函数</strong></p><p>now()函数并且获取的时间带有时分秒。</p><h2 id=dml语句>DML语句
+<a class=header-anchor href=#dml%e8%af%ad%e5%8f%a5></a></h2><h3 id=修改update>修改update
+<a class=header-anchor href=#%e4%bf%ae%e6%94%b9update></a></h3><p>语法格式：</p><p><code>update 表名 set 字段名1=值1，字段名2=值2，字段名3=值3…where 条件;</code></p><p><strong>注意：没有条件限制会导致左右数据全部更新</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-64-1><a class=lnlinks href=#hl-64-1>1</a>
+</span><span class=lnt id=hl-64-2><a class=lnlinks href=#hl-64-2>2</a>
+</span><span class=lnt id=hl-64-3><a class=lnlinks href=#hl-64-3>3</a>
+</span><span class=lnt id=hl-64-4><a class=lnlinks href=#hl-64-4>4</a>
+</span><span class=lnt id=hl-64-5><a class=lnlinks href=#hl-64-5>5</a>
+</span><span class=lnt id=hl-64-6><a class=lnlinks href=#hl-64-6>6</a>
+</span><span class=lnt id=hl-64-7><a class=lnlinks href=#hl-64-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码update t_user set name = &#39;jack&#39;,birth = &#39;2000-10-11&#39; where id = 2;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//修改创建时间
+</span></span><span class=line><span class=cl>update t_user set name = &#39;jack&#39;,birth = &#39;2000-10-11&#39;,create_time = now(); where id = 2;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//更新所有：
+</span></span><span class=line><span class=cl>update t_user set name = &#39;abc&#39;;</span></span></code></pre></td></tr></table></div></div><h3 id=删除delete语句>删除delete语句
+<a class=header-anchor href=#%e5%88%a0%e9%99%a4delete%e8%af%ad%e5%8f%a5></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-65-1><a class=lnlinks href=#hl-65-1> 1</a>
+</span><span class=lnt id=hl-65-2><a class=lnlinks href=#hl-65-2> 2</a>
+</span><span class=lnt id=hl-65-3><a class=lnlinks href=#hl-65-3> 3</a>
+</span><span class=lnt id=hl-65-4><a class=lnlinks href=#hl-65-4> 4</a>
+</span><span class=lnt id=hl-65-5><a class=lnlinks href=#hl-65-5> 5</a>
+</span><span class=lnt id=hl-65-6><a class=lnlinks href=#hl-65-6> 6</a>
+</span><span class=lnt id=hl-65-7><a class=lnlinks href=#hl-65-7> 7</a>
+</span><span class=lnt id=hl-65-8><a class=lnlinks href=#hl-65-8> 8</a>
+</span><span class=lnt id=hl-65-9><a class=lnlinks href=#hl-65-9> 9</a>
+</span><span class=lnt id=hl-65-10><a class=lnlinks href=#hl-65-10>10</a>
+</span><span class=lnt id=hl-65-11><a class=lnlinks href=#hl-65-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码语法格式：
+</span></span><span class=line><span class=cl>delete from 表名 where 条件
+</span></span><span class=line><span class=cl>注意：没有where条件时会删除整张表的数据。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>清空所有
+</span></span><span class=line><span class=cl>delete from t_user;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>delete语句的删除原理：（逻辑删除）
+</span></span><span class=line><span class=cl>删除表中的当前内容不会删除表中的数据空间。不会释放物理空间。
+</span></span><span class=line><span class=cl>缺点：删除效率低
+</span></span><span class=line><span class=cl>优点：删除之后可以回滚，恢复。</span></span></code></pre></td></tr></table></div></div><h3 id=快速删除表中的数据>快速删除表中的数据
+<a class=header-anchor href=#%e5%bf%ab%e9%80%9f%e5%88%a0%e9%99%a4%e8%a1%a8%e4%b8%ad%e7%9a%84%e6%95%b0%e6%8d%ae></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-66-1><a class=lnlinks href=#hl-66-1>1</a>
+</span><span class=lnt id=hl-66-2><a class=lnlinks href=#hl-66-2>2</a>
+</span><span class=lnt id=hl-66-3><a class=lnlinks href=#hl-66-3>3</a>
+</span><span class=lnt id=hl-66-4><a class=lnlinks href=#hl-66-4>4</a>
+</span><span class=lnt id=hl-66-5><a class=lnlinks href=#hl-66-5>5</a>
+</span><span class=lnt id=hl-66-6><a class=lnlinks href=#hl-66-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码truncate语句：快速删除表中的数据。表格式还在
+</span></span><span class=line><span class=cl>缺点：不支持回滚，
+</span></span><span class=line><span class=cl>优点：快速删除表，删除表的物理空间。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>用法：
+</span></span><span class=line><span class=cl>truncate table dept_bak;   （这种操作方式属于DDL操作）。</span></span></code></pre></td></tr></table></div></div><h2 id=约束>约束
+<a class=header-anchor href=#%e7%ba%a6%e6%9d%9f></a></h2><h3 id=约束概述>约束概述
+<a class=header-anchor href=#%e7%ba%a6%e6%9d%9f%e6%a6%82%e8%bf%b0></a></h3><p>约束对应的单词：constraint</p><p>在创建表的时候，我们可以给表的字段加上一些约束，来保证这个表中数据的完整性，有效性</p><p><strong>约束的作用是为了保证表中的数据有效。</strong></p><h3 id=约束包括那些>约束包括那些
+<a class=header-anchor href=#%e7%ba%a6%e6%9d%9f%e5%8c%85%e6%8b%ac%e9%82%a3%e4%ba%9b></a></h3><ol><li>非空约束 not null</li><li>唯一性约束 unique</li><li>主键约束 primary key (简称PK)</li><li>外键约束 foregin key （简称FK）</li><li>检查约束 check （mysql不支持，oracle支持）</li></ol><h3 id=非空约束>非空约束
+<a class=header-anchor href=#%e9%9d%9e%e7%a9%ba%e7%ba%a6%e6%9d%9f></a></h3><p>非空约束not null约束的字段不能为null</p><p><strong>not null只有列级约束，没有表级约束。</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-67-1><a class=lnlinks href=#hl-67-1>1</a>
+</span><span class=lnt id=hl-67-2><a class=lnlinks href=#hl-67-2>2</a>
+</span><span class=lnt id=hl-67-3><a class=lnlinks href=#hl-67-3>3</a>
+</span><span class=lnt id=hl-67-4><a class=lnlinks href=#hl-67-4>4</a>
+</span><span class=lnt id=hl-67-5><a class=lnlinks href=#hl-67-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> <span class=ow>not</span> <span class=n>null</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=err>限定了</span><span class=n>name字段不能为空</span><span class=err>。</span>
+</span></span><span class=line><span class=cl><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><h3 id=sql脚本文件>SQL脚本文件
+<a class=header-anchor href=#sql%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6></a></h3><blockquote><p>XXXX.sql 被称为sql脚本文件，SQL脚本文件中编写了大量的sql语句，</p><p>当我们执行sql脚本文件的时候，该文件中的所有sql语句都会执行。</p><p>当需要批量执行SQL语句，可以使用SQL脚本文件</p><p>执行SQL脚本文件的方式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-68-1><a class=lnlinks href=#hl-68-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>source + &#39;绝对路径&#39;;</span></span></code></pre></td></tr></table></div></div></blockquote><p>*<strong>source命令直接执行sql脚本文件。*</strong></p><h3 id=唯一性约束unique>唯一性约束，unique
+<a class=header-anchor href=#%e5%94%af%e4%b8%80%e6%80%a7%e7%ba%a6%e6%9d%9funique></a></h3><p>唯一性约束的字段不能重复，但是可以为null。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-69-1><a class=lnlinks href=#hl-69-1> 1</a>
+</span><span class=lnt id=hl-69-2><a class=lnlinks href=#hl-69-2> 2</a>
+</span><span class=lnt id=hl-69-3><a class=lnlinks href=#hl-69-3> 3</a>
+</span><span class=lnt id=hl-69-4><a class=lnlinks href=#hl-69-4> 4</a>
+</span><span class=lnt id=hl-69-5><a class=lnlinks href=#hl-69-5> 5</a>
+</span><span class=lnt id=hl-69-6><a class=lnlinks href=#hl-69-6> 6</a>
+</span><span class=lnt id=hl-69-7><a class=lnlinks href=#hl-69-7> 7</a>
+</span><span class=lnt id=hl-69-8><a class=lnlinks href=#hl-69-8> 8</a>
+</span><span class=lnt id=hl-69-9><a class=lnlinks href=#hl-69-9> 9</a>
+</span><span class=lnt id=hl-69-10><a class=lnlinks href=#hl-69-10>10</a>
+</span><span class=lnt id=hl-69-11><a class=lnlinks href=#hl-69-11>11</a>
+</span><span class=lnt id=hl-69-12><a class=lnlinks href=#hl-69-12>12</a>
+</span><span class=lnt id=hl-69-13><a class=lnlinks href=#hl-69-13>13</a>
+</span><span class=lnt id=hl-69-14><a class=lnlinks href=#hl-69-14>14</a>
+</span><span class=lnt id=hl-69-15><a class=lnlinks href=#hl-69-15>15</a>
+</span><span class=lnt id=hl-69-16><a class=lnlinks href=#hl-69-16>16</a>
+</span><span class=lnt id=hl-69-17><a class=lnlinks href=#hl-69-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> <span class=n>unique</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=err>限定了</span><span class=n>name字段不能重复</span><span class=err>。</span>
+</span></span><span class=line><span class=cl>    <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=s1>&#39;zhangsan@123.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>idmname</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>2</span><span class=p>,</span><span class=s1>&#39;lisi&#39;</span><span class=p>,</span><span class=s1>&#39;lisi@123.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=s1>&#39;zhangsan@qq.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>报错：</span><span class=n>Duplicate</span> <span class=n>entry</span> <span class=err>‘</span><span class=n>zhangsan</span><span class=err>’</span> <span class=k>for</span> <span class=n>key</span> <span class=err>‘</span><span class=n>name</span><span class=err>’</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>虽然</span><span class=n>naem被unique约束</span><span class=err>，但是可以同时插入</span><span class=n>NULL</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>4</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><h3 id=两个字段联合唯一>两个字段联合唯一
+<a class=header-anchor href=#%e4%b8%a4%e4%b8%aa%e5%ad%97%e6%ae%b5%e8%81%94%e5%90%88%e5%94%af%e4%b8%80></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-70-1><a class=lnlinks href=#hl-70-1> 1</a>
+</span><span class=lnt id=hl-70-2><a class=lnlinks href=#hl-70-2> 2</a>
+</span><span class=lnt id=hl-70-3><a class=lnlinks href=#hl-70-3> 3</a>
+</span><span class=lnt id=hl-70-4><a class=lnlinks href=#hl-70-4> 4</a>
+</span><span class=lnt id=hl-70-5><a class=lnlinks href=#hl-70-5> 5</a>
+</span><span class=lnt id=hl-70-6><a class=lnlinks href=#hl-70-6> 6</a>
+</span><span class=lnt id=hl-70-7><a class=lnlinks href=#hl-70-7> 7</a>
+</span><span class=lnt id=hl-70-8><a class=lnlinks href=#hl-70-8> 8</a>
+</span><span class=lnt id=hl-70-9><a class=lnlinks href=#hl-70-9> 9</a>
+</span><span class=lnt id=hl-70-10><a class=lnlinks href=#hl-70-10>10</a>
+</span><span class=lnt id=hl-70-11><a class=lnlinks href=#hl-70-11>11</a>
+</span><span class=lnt id=hl-70-12><a class=lnlinks href=#hl-70-12>12</a>
+</span><span class=lnt id=hl-70-13><a class=lnlinks href=#hl-70-13>13</a>
+</span><span class=lnt id=hl-70-14><a class=lnlinks href=#hl-70-14>14</a>
+</span><span class=lnt id=hl-70-15><a class=lnlinks href=#hl-70-15>15</a>
+</span><span class=lnt id=hl-70-16><a class=lnlinks href=#hl-70-16>16</a>
+</span><span class=lnt id=hl-70-17><a class=lnlinks href=#hl-70-17>17</a>
+</span><span class=lnt id=hl-70-18><a class=lnlinks href=#hl-70-18>18</a>
+</span><span class=lnt id=hl-70-19><a class=lnlinks href=#hl-70-19>19</a>
+</span><span class=lnt id=hl-70-20><a class=lnlinks href=#hl-70-20>20</a>
+</span><span class=lnt id=hl-70-21><a class=lnlinks href=#hl-70-21>21</a>
+</span><span class=lnt id=hl-70-22><a class=lnlinks href=#hl-70-22>22</a>
+</span><span class=lnt id=hl-70-23><a class=lnlinks href=#hl-70-23>23</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=o>//</span><span class=err>需求：</span><span class=n>name和email两个字段联合起来据哦于唯一性</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> <span class=n>unique</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> <span class=n>unique</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>这样编写代码不符合以上唯一性需求。</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>这样表示：</span><span class=n>name具有唯一性</span><span class=err>，</span><span class=n>email也具有唯一性</span><span class=err>。各自唯一。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>希望实现以下的效果：使用以上方式创建表，插入不了以下数据，因为‘</span><span class=n>zhangsan</span><span class=err>’重复了</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=s1>&#39;zhangsan@123.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>,</span><span class=n>email</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=s1>&#39;zhangsan@qq.com&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>使用以下方式创建</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>unique</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>email</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=n>name和email两个字段联合起来唯一</span><span class=err>。</span>
+</span></span><span class=line><span class=cl><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><p><strong>约束没有添加在列的后面，这种约束被称为表级约束。</strong></p><blockquote><p>需要给多个字段联合起来添加某一个约束的时候，需要使用表级约束</p></blockquote><p><strong>约束条件添加到列后面的，叫做列级约束。</strong></p><h3 id=unique和not-null可以联合吗>unique和not null可以联合吗
+<a class=header-anchor href=#unique%e5%92%8cnot-null%e5%8f%af%e4%bb%a5%e8%81%94%e5%90%88%e5%90%97></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-71-1><a class=lnlinks href=#hl-71-1> 1</a>
+</span><span class=lnt id=hl-71-2><a class=lnlinks href=#hl-71-2> 2</a>
+</span><span class=lnt id=hl-71-3><a class=lnlinks href=#hl-71-3> 3</a>
+</span><span class=lnt id=hl-71-4><a class=lnlinks href=#hl-71-4> 4</a>
+</span><span class=lnt id=hl-71-5><a class=lnlinks href=#hl-71-5> 5</a>
+</span><span class=lnt id=hl-71-6><a class=lnlinks href=#hl-71-6> 6</a>
+</span><span class=lnt id=hl-71-7><a class=lnlinks href=#hl-71-7> 7</a>
+</span><span class=lnt id=hl-71-8><a class=lnlinks href=#hl-71-8> 8</a>
+</span><span class=lnt id=hl-71-9><a class=lnlinks href=#hl-71-9> 9</a>
+</span><span class=lnt id=hl-71-10><a class=lnlinks href=#hl-71-10>10</a>
+</span><span class=lnt id=hl-71-11><a class=lnlinks href=#hl-71-11>11</a>
+</span><span class=lnt id=hl-71-12><a class=lnlinks href=#hl-71-12>12</a>
+</span><span class=lnt id=hl-71-13><a class=lnlinks href=#hl-71-13>13</a>
+</span><span class=lnt id=hl-71-14><a class=lnlinks href=#hl-71-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> <span class=ow>not</span> <span class=n>null</span> <span class=n>unique</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>被</span> <span class=ow>not</span> <span class=n>null</span> <span class=n>unique</span> <span class=err>同时约束的话，该字段会自动变成主键字段。（注意：</span><span class=n>oracle中不一样</span><span class=err>！）</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>2</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>错误：</span><span class=n>name</span><span class=s1>&#39;zhangsan&#39;</span><span class=err>重复。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>错误：</span><span class=n>name不能为空</span><span class=err>。</span></span></span></code></pre></td></tr></table></div></div><h3 id=主键约束primary-key-简称pk->主键约束（primary key 简称PK ***<em>*</em>***）：
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e7%ba%a6%e6%9d%9fprimary-key-%e7%ae%80%e7%a7%b0pk-></a></h3><h4 id=主键约束的相关术语>主键约束的相关术语
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e7%ba%a6%e6%9d%9f%e7%9a%84%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad></a></h4><p>主键约束：就是一种约束</p><p>主键字段：该字段上添加了主键约束，这样的字段叫做：主键字段</p><p>主键值：主键字段中的每一个值都叫做：主键值。</p><h4 id=主键是什么主键的作用>主键是什么，主键的作用
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e6%98%af%e4%bb%80%e4%b9%88%e4%b8%bb%e9%94%ae%e7%9a%84%e4%bd%9c%e7%94%a8></a></h4><p>主键值是每一行记录的唯一标识。</p><p>主键值是每一行记录的身份证号。</p><p><strong>任何一张表都应该有主键。没有主键，表无效。</strong></p><p><strong>主键不能有default</strong></p><blockquote><p>create table user(</p><p>id int(20) not null primary key ,</p><p>name varchar(30) not null</p><p>)engine=innodb default charset =utf8;</p></blockquote><p><strong>主键的特征：not null + unique（主键值不能是NULL，同时也不能重复！）</strong></p><h4 id=给一张表添加主键>给一张表添加主键：
+<a class=header-anchor href=#%e7%bb%99%e4%b8%80%e5%bc%a0%e8%a1%a8%e6%b7%bb%e5%8a%a0%e4%b8%bb%e9%94%ae></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-72-1><a class=lnlinks href=#hl-72-1> 1</a>
+</span><span class=lnt id=hl-72-2><a class=lnlinks href=#hl-72-2> 2</a>
+</span><span class=lnt id=hl-72-3><a class=lnlinks href=#hl-72-3> 3</a>
+</span><span class=lnt id=hl-72-4><a class=lnlinks href=#hl-72-4> 4</a>
+</span><span class=lnt id=hl-72-5><a class=lnlinks href=#hl-72-5> 5</a>
+</span><span class=lnt id=hl-72-6><a class=lnlinks href=#hl-72-6> 6</a>
+</span><span class=lnt id=hl-72-7><a class=lnlinks href=#hl-72-7> 7</a>
+</span><span class=lnt id=hl-72-8><a class=lnlinks href=#hl-72-8> 8</a>
+</span><span class=lnt id=hl-72-9><a class=lnlinks href=#hl-72-9> 9</a>
+</span><span class=lnt id=hl-72-10><a class=lnlinks href=#hl-72-10>10</a>
+</span><span class=lnt id=hl-72-11><a class=lnlinks href=#hl-72-11>11</a>
+</span><span class=lnt id=hl-72-12><a class=lnlinks href=#hl-72-12>12</a>
+</span><span class=lnt id=hl-72-13><a class=lnlinks href=#hl-72-13>13</a>
+</span><span class=lnt id=hl-72-14><a class=lnlinks href=#hl-72-14>14</a>
+</span><span class=lnt id=hl-72-15><a class=lnlinks href=#hl-72-15>15</a>
+</span><span class=lnt id=hl-72-16><a class=lnlinks href=#hl-72-16>16</a>
+</span><span class=lnt id=hl-72-17><a class=lnlinks href=#hl-72-17>17</a>
+</span><span class=lnt id=hl-72-18><a class=lnlinks href=#hl-72-18>18</a>
+</span><span class=lnt id=hl-72-19><a class=lnlinks href=#hl-72-19>19</a>
+</span><span class=lnt id=hl-72-20><a class=lnlinks href=#hl-72-20>20</a>
+</span><span class=lnt id=hl-72-21><a class=lnlinks href=#hl-72-21>21</a>
+</span><span class=lnt id=hl-72-22><a class=lnlinks href=#hl-72-22>22</a>
+</span><span class=lnt id=hl-72-23><a class=lnlinks href=#hl-72-23>23</a>
+</span><span class=lnt id=hl-72-24><a class=lnlinks href=#hl-72-24>24</a>
+</span><span class=lnt id=hl-72-25><a class=lnlinks href=#hl-72-25>25</a>
+</span><span class=lnt id=hl-72-26><a class=lnlinks href=#hl-72-26>26</a>
+</span><span class=lnt id=hl-72-27><a class=lnlinks href=#hl-72-27>27</a>
+</span><span class=lnt id=hl-72-28><a class=lnlinks href=#hl-72-28>28</a>
+</span><span class=lnt id=hl-72-29><a class=lnlinks href=#hl-72-29>29</a>
+</span><span class=lnt id=hl-72-30><a class=lnlinks href=#hl-72-30>30</a>
+</span><span class=lnt id=hl-72-31><a class=lnlinks href=#hl-72-31>31</a>
+</span><span class=lnt id=hl-72-32><a class=lnlinks href=#hl-72-32>32</a>
+</span><span class=lnt id=hl-72-33><a class=lnlinks href=#hl-72-33>33</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span> <span class=ow>not</span> <span class=n>null</span> <span class=n>unique</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span> <span class=p>,</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span> <span class=p>,</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;lisi&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>id</span> <span class=p>,</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=mi>2</span><span class=p>,</span><span class=s1>&#39;wangwu&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>错误：</span><span class=n>duplicate</span> <span class=n>entry</span> <span class=s1>&#39;2&#39;</span> <span class=k>for</span> <span class=n>key</span> <span class=s1>&#39;PRIMARY&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span> <span class=p>(</span><span class=s1>&#39;wangwu&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>错误：不能为</span><span class=n>NULL</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>使用表级约束</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>primary</span> <span class=n>key</span><span class=p>(</span><span class=n>id</span><span class=p>)</span>     <span class=o>//</span><span class=err>表级约束</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=err>一个字段做主键，叫做单一主键</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span><span class=err>表级约束主要是给多个字段联合起来添加约束。</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>email</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>primary</span> <span class=n>key</span><span class=p>(</span><span class=n>id</span><span class=p>,</span><span class=n>name</span><span class=p>)</span>        <span class=o>//</span><span class=err>表级约束</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=err>两个字段联合起来做主键，叫做复合主键！</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=err>在实际开发中不建议使用复合主键。</span>
+</span></span><span class=line><span class=cl><span class=p>);</span></span></span></code></pre></td></tr></table></div></div><h4 id=主键数量>主键数量
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e6%95%b0%e9%87%8f></a></h4><p>一个表中只能添加一个主键约束。</p><h4 id=主键值建议使用类型>主键值建议使用类型
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e5%80%bc%e5%bb%ba%e8%ae%ae%e4%bd%bf%e7%94%a8%e7%b1%bb%e5%9e%8b></a></h4><p>int</p><p>bigint</p><p>char</p><p>……</p><p>不建议使用：varchar来做主键，主键值一般都是数字，而且都是定长的。</p><h4 id=主键分类>主键分类
+<a class=header-anchor href=#%e4%b8%bb%e9%94%ae%e5%88%86%e7%b1%bb></a></h4><p>除了单一主键和复合主键之外，还可以分为自然主键和业务主键</p><p>自然主键：主键值是一个自然数，和业务没有关系</p><p>业务主键：主键值和业务紧密联系，例如拿银行卡账号做主键值，这就是业务主键！</p><p>在实际开发中：自然主键使用比较多，因为逐渐只要做到不重复就行，不需要有意义。</p><p>业务主键不好，因为主键一旦和业务挂钩，那么当业务发生变动时，可能会影响到主键值，所以不建议业务逐渐。尽量使用自然主键。</p><p>在musql当中，有一种机制，可以帮我们自动维护主键值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-73-1><a class=lnlinks href=#hl-73-1> 1</a>
+</span><span class=lnt id=hl-73-2><a class=lnlinks href=#hl-73-2> 2</a>
+</span><span class=lnt id=hl-73-3><a class=lnlinks href=#hl-73-3> 3</a>
+</span><span class=lnt id=hl-73-4><a class=lnlinks href=#hl-73-4> 4</a>
+</span><span class=lnt id=hl-73-5><a class=lnlinks href=#hl-73-5> 5</a>
+</span><span class=lnt id=hl-73-6><a class=lnlinks href=#hl-73-6> 6</a>
+</span><span class=lnt id=hl-73-7><a class=lnlinks href=#hl-73-7> 7</a>
+</span><span class=lnt id=hl-73-8><a class=lnlinks href=#hl-73-8> 8</a>
+</span><span class=lnt id=hl-73-9><a class=lnlinks href=#hl-73-9> 9</a>
+</span><span class=lnt id=hl-73-10><a class=lnlinks href=#hl-73-10>10</a>
+</span><span class=lnt id=hl-73-11><a class=lnlinks href=#hl-73-11>11</a>
+</span><span class=lnt id=hl-73-12><a class=lnlinks href=#hl-73-12>12</a>
+</span><span class=lnt id=hl-73-13><a class=lnlinks href=#hl-73-13>13</a>
+</span><span class=lnt id=hl-73-14><a class=lnlinks href=#hl-73-14>14</a>
+</span><span class=lnt id=hl-73-15><a class=lnlinks href=#hl-73-15>15</a>
+</span><span class=lnt id=hl-73-16><a class=lnlinks href=#hl-73-16>16</a>
+</span><span class=lnt id=hl-73-17><a class=lnlinks href=#hl-73-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_vip</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span> <span class=n>primary</span> <span class=n>key</span> <span class=n>auto_increment</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=o>//</span><span class=n>auto_increment从一开始</span><span class=err>，以一自增</span><span class=o>.</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_vip</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>select</span> <span class=o>*</span> <span class=n>from</span> <span class=n>t_vip</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>id会自增</span><span class=err>，</span></span></span></code></pre></td></tr></table></div></div><h3 id=外键约束foreign-key-简称-fk->外键约束（foreign key 简称 FK ***<em>*</em>***）
+<a class=header-anchor href=#%e5%a4%96%e9%94%ae%e7%ba%a6%e6%9d%9fforeign-key-%e7%ae%80%e7%a7%b0-fk-></a></h3><h4 id=外键约束的相关术语>外键约束的相关术语
+<a class=header-anchor href=#%e5%a4%96%e9%94%ae%e7%ba%a6%e6%9d%9f%e7%9a%84%e7%9b%b8%e5%85%b3%e6%9c%af%e8%af%ad></a></h4><p>外键约束：就是一种约束foreign key）</p><p>外键字段：该字段上添加了外键约束，这样的字段叫做：外键字段</p><p>外键值：外键字段中的每一个值都叫做：外键值。</p><h4 id=业务背景>业务背景
+<a class=header-anchor href=#%e4%b8%9a%e5%8a%a1%e8%83%8c%e6%99%af></a></h4><p>设计一张数据库表</p><p>第二种方案：班级一张表，学上一张表。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-74-1><a class=lnlinks href=#hl-74-1> 1</a>
+</span><span class=lnt id=hl-74-2><a class=lnlinks href=#hl-74-2> 2</a>
+</span><span class=lnt id=hl-74-3><a class=lnlinks href=#hl-74-3> 3</a>
+</span><span class=lnt id=hl-74-4><a class=lnlinks href=#hl-74-4> 4</a>
+</span><span class=lnt id=hl-74-5><a class=lnlinks href=#hl-74-5> 5</a>
+</span><span class=lnt id=hl-74-6><a class=lnlinks href=#hl-74-6> 6</a>
+</span><span class=lnt id=hl-74-7><a class=lnlinks href=#hl-74-7> 7</a>
+</span><span class=lnt id=hl-74-8><a class=lnlinks href=#hl-74-8> 8</a>
+</span><span class=lnt id=hl-74-9><a class=lnlinks href=#hl-74-9> 9</a>
+</span><span class=lnt id=hl-74-10><a class=lnlinks href=#hl-74-10>10</a>
+</span><span class=lnt id=hl-74-11><a class=lnlinks href=#hl-74-11>11</a>
+</span><span class=lnt id=hl-74-12><a class=lnlinks href=#hl-74-12>12</a>
+</span><span class=lnt id=hl-74-13><a class=lnlinks href=#hl-74-13>13</a>
+</span><span class=lnt id=hl-74-14><a class=lnlinks href=#hl-74-14>14</a>
+</span><span class=lnt id=hl-74-15><a class=lnlinks href=#hl-74-15>15</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码t_class班级表
+</span></span><span class=line><span class=cl>calssno(PK)     classname
+</span></span><span class=line><span class=cl>------------------------------
+</span></span><span class=line><span class=cl>100             甘肃省镇原县三岔镇高三3班
+</span></span><span class=line><span class=cl>101             甘肃省镇原县三岔镇高三6班
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>t_students
+</span></span><span class=line><span class=cl>no(PK)      name        cno(FK引用_class这张表中的classno)
+</span></span><span class=line><span class=cl>-----------------------------
+</span></span><span class=line><span class=cl>1           jack        100
+</span></span><span class=line><span class=cl>2           tom         100
+</span></span><span class=line><span class=cl>3           lucy        100
+</span></span><span class=line><span class=cl>4           jim         101
+</span></span><span class=line><span class=cl>5           lisi        101
+</span></span><span class=line><span class=cl>6           zhangsan    101</span></span></code></pre></td></tr></table></div></div><p>当cno字段没有任何约束的时候，可能会导致数据无效，可能出现一个102，但是103班级不存在，所以为了保证cno字段中的值都是100和101，需要给cno字段添加外键约束</p><p>那么：cno字段就是外键字段。cno字段中的每一个值都是外简值。</p><p><strong>注意：t_class 是父表。 t_students是子表。</strong></p><p><strong>删除表的顺序：先删子，再删父</strong></p><p><strong>创建表的顺序：先创建父，再创建子</strong></p><p><strong>删除数据的顺序：先删子，再删父</strong></p><p><strong>插入数据的顺序：先插入父，再插入子</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-75-1><a class=lnlinks href=#hl-75-1> 1</a>
+</span><span class=lnt id=hl-75-2><a class=lnlinks href=#hl-75-2> 2</a>
+</span><span class=lnt id=hl-75-3><a class=lnlinks href=#hl-75-3> 3</a>
+</span><span class=lnt id=hl-75-4><a class=lnlinks href=#hl-75-4> 4</a>
+</span><span class=lnt id=hl-75-5><a class=lnlinks href=#hl-75-5> 5</a>
+</span><span class=lnt id=hl-75-6><a class=lnlinks href=#hl-75-6> 6</a>
+</span><span class=lnt id=hl-75-7><a class=lnlinks href=#hl-75-7> 7</a>
+</span><span class=lnt id=hl-75-8><a class=lnlinks href=#hl-75-8> 8</a>
+</span><span class=lnt id=hl-75-9><a class=lnlinks href=#hl-75-9> 9</a>
+</span><span class=lnt id=hl-75-10><a class=lnlinks href=#hl-75-10>10</a>
+</span><span class=lnt id=hl-75-11><a class=lnlinks href=#hl-75-11>11</a>
+</span><span class=lnt id=hl-75-12><a class=lnlinks href=#hl-75-12>12</a>
+</span><span class=lnt id=hl-75-13><a class=lnlinks href=#hl-75-13>13</a>
+</span><span class=lnt id=hl-75-14><a class=lnlinks href=#hl-75-14>14</a>
+</span><span class=lnt id=hl-75-15><a class=lnlinks href=#hl-75-15>15</a>
+</span><span class=lnt id=hl-75-16><a class=lnlinks href=#hl-75-16>16</a>
+</span><span class=lnt id=hl-75-17><a class=lnlinks href=#hl-75-17>17</a>
+</span><span class=lnt id=hl-75-18><a class=lnlinks href=#hl-75-18>18</a>
+</span><span class=lnt id=hl-75-19><a class=lnlinks href=#hl-75-19>19</a>
+</span><span class=lnt id=hl-75-20><a class=lnlinks href=#hl-75-20>20</a>
+</span><span class=lnt id=hl-75-21><a class=lnlinks href=#hl-75-21>21</a>
+</span><span class=lnt id=hl-75-22><a class=lnlinks href=#hl-75-22>22</a>
+</span><span class=lnt id=hl-75-23><a class=lnlinks href=#hl-75-23>23</a>
+</span><span class=lnt id=hl-75-24><a class=lnlinks href=#hl-75-24>24</a>
+</span><span class=lnt id=hl-75-25><a class=lnlinks href=#hl-75-25>25</a>
+</span><span class=lnt id=hl-75-26><a class=lnlinks href=#hl-75-26>26</a>
+</span><span class=lnt id=hl-75-27><a class=lnlinks href=#hl-75-27>27</a>
+</span><span class=lnt id=hl-75-28><a class=lnlinks href=#hl-75-28>28</a>
+</span><span class=lnt id=hl-75-29><a class=lnlinks href=#hl-75-29>29</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码创建这张表的</span><span class=n>sql文件</span>
+</span></span><span class=line><span class=cl><span class=n>set</span> <span class=n>foreign_key_checks</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_student</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>drop</span> <span class=n>table</span> <span class=k>if</span> <span class=n>exists</span> <span class=n>t_class</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>set</span> <span class=n>foreign_key_checks</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_class</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>classno</span> <span class=ne>int</span> <span class=n>primary</span> <span class=n>key</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>classname</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>create</span> <span class=n>table</span> <span class=n>t_student</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>no</span> <span class=ne>int</span> <span class=n>primary</span> <span class=n>key</span> <span class=n>auto_increment</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>cno</span> <span class=ne>int</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>constraint</span> <span class=n>cforeign</span> <span class=n>key</span><span class=p>(</span><span class=n>cno</span><span class=p>)</span> <span class=n>references</span> <span class=n>t_class</span><span class=p>(</span><span class=n>classno</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_class</span><span class=p>(</span><span class=n>classno</span><span class=p>,</span><span class=n>classname</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>100</span><span class=p>,</span><span class=s1>&#39;甘肃省镇原县三岔镇高三3班&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_class</span><span class=p>(</span><span class=n>classno</span><span class=p>,</span><span class=n>classname</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=mi>101</span><span class=p>,</span><span class=s1>&#39;甘肃省镇原县三岔镇高三6班&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;jack&#39;</span><span class=p>,</span><span class=mi>100</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;tom&#39;</span><span class=p>,</span><span class=mi>100</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;lucy&#39;</span><span class=p>,</span><span class=mi>100</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;jim&#39;</span><span class=p>,</span><span class=mi>101</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;lisi&#39;</span><span class=p>,</span><span class=mi>101</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>insert</span> <span class=n>into</span> <span class=n>t_student</span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=n>cno</span><span class=p>)</span> <span class=n>values</span><span class=p>(</span><span class=s1>&#39;zhangsan&#39;</span><span class=p>,</span><span class=mi>101</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>select</span> <span class=o>*</span> <span class=n>from</span> <span class=n>t_student</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>select</span> <span class=o>*</span> <span class=n>from</span> <span class=n>t_class</span><span class=p>;</span></span></span></code></pre></td></tr></table></div></div><p>*<strong>创建数据库时要设置数据库的编码为utf-8编码。*</strong></p><p>外键值可以为NULL。</p><p>子表中的外键引用父表中的字段时，父表中的字段必须要主键吗？</p><p>不一定</p><h2 id=存储引擎了解内容>存储引擎（了解内容）
+<a class=header-anchor href=#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e4%ba%86%e8%a7%a3%e5%86%85%e5%ae%b9></a></h2><h3 id=存储引擎的作用>存储引擎的作用
+<a class=header-anchor href=#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e7%9a%84%e4%bd%9c%e7%94%a8></a></h3><p>存储引擎时mysql中特有的一个术语，其他数据库没有，（Oracle中有，但是不叫这个名字。）</p><p>实际上是一个表存储/组织数据的方式不同</p><p>不同的存储引擎，表存储数据的方式不同。</p><h3 id=给表指定存储引擎的方式>给表指定存储引擎的方式
+<a class=header-anchor href=#%e7%bb%99%e8%a1%a8%e6%8c%87%e5%ae%9a%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e7%9a%84%e6%96%b9%e5%bc%8f></a></h3><p>可以在建表的时候给表指定存储引擎</p><p>在见建表的时候可以在最后小括号的“）”的后面使用</p><p>ENGINE来指定存储引擎</p><p>CHARSET来指定这张表的字符编码方式</p><p>结论：</p><blockquote><p>mysql默认的存储引擎是：InnoDB</p><p>mysql默认的字符编码方式是：utf-8</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-76-1><a class=lnlinks href=#hl-76-1>1</a>
+</span><span class=lnt id=hl-76-2><a class=lnlinks href=#hl-76-2>2</a>
+</span><span class=lnt id=hl-76-3><a class=lnlinks href=#hl-76-3>3</a>
+</span><span class=lnt id=hl-76-4><a class=lnlinks href=#hl-76-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl> <span class=err>复制代码</span> <span class=err>隐藏代码</span><span class=n>create</span> <span class=n>table</span> <span class=n>t_product</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=ne>int</span> <span class=n>primary</span> <span class=n>key</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=n>varchar</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>)</span><span class=n>engine</span> <span class=o>=</span> <span class=n>InnoDB</span> <span class=n>default</span> <span class=n>charset</span><span class=o>=</span><span class=n>utf8</span><span class=p>;</span></span></span></code></pre></td></tr></table></div></div><h3 id=mysql支持的存储引擎>mysql支持的存储引擎
+<a class=header-anchor href=#mysql%e6%94%af%e6%8c%81%e7%9a%84%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-77-1><a class=lnlinks href=#hl-77-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>show engines \G;</span></span></code></pre></td></tr></table></div></div><p>一共支持9大存储引擎。版本不同支持情况不同。</p><h3 id=mysql常用的存储引擎>mysql常用的存储引擎
+<a class=header-anchor href=#mysql%e5%b8%b8%e7%94%a8%e7%9a%84%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e></a></h3><h4 id=myisam存储引擎>MyISAM存储引擎
+<a class=header-anchor href=#myisam%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e></a></h4><blockquote><p>它管理的表具有以下特征</p><p>使用以下三个文件表示每个表</p><p>​ 格式文件 - 存储表结构的定义（mytable.frm）</p><p>​ 数据文件 - 存储表行的内容（nytable.MYD）</p><p>​ 索引文件 - 存储表上的索引（mytable.MYI）</p><p>优势：可被转换为压缩，只读表来节省空间。</p></blockquote><h4 id=innodb存储引擎>InnoDB存储引擎
+<a class=header-anchor href=#innodb%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e></a></h4><blockquote><p>这是mysql默认的存储引擎，同时也是重量级的存储引擎。</p><p><strong>它支持事务，支持数据库崩溃之后的自动恢复机制</strong></p><p><strong>最重要的特点是：非常安全。</strong></p><p>效率不是很高，不能压缩，不能节省存储空间。</p><p><strong>它管理的表具有以下特征：</strong></p><p>1:支持事务(要么全成功、要么全失败);</p><p>2:行级锁定(更新数据时一般指锁定当前行)：通过索引实现、全表扫描忍让时表锁、注意间隙所的影响;
+3:读写阻塞与事务的隔离级别相关；
+4:具有非常高的缓存特性(既能缓存索引、也能缓存数据)；
+5:这个表和主键以组(Cluster)的方式存储、组成一颗平衡树；
+6:所有的辅助索引(secondary indexes)都会保存主键信息；
+7:支持分区、表空间（逻辑名称）tablespace类似与oracle 数据库；
+8:支持外键约束、不支持全文检索(5.5.5之前的MyISAM支持全文检索、5.5.5之后就不在支持);
+9:相对MyISAM而言、对硬件的要求比较高</p></blockquote><h4 id=memory存储引擎>MEMORY存储引擎
+<a class=header-anchor href=#memory%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e></a></h4><blockquote><p>使用MEMORY存储引擎存储的表，其数据存储在内存中，且行的长度固定。</p><p>查询效率最高，不需要和硬盘交互。</p><p>但是不安全。关机之后数据消失，因为数据和索引都是存储在内存当中。</p></blockquote><h2 id=事务理解掌握>事务（理解，掌握*****）
+<a class=header-anchor href=#%e4%ba%8b%e5%8a%a1%e7%90%86%e8%a7%a3%e6%8e%8c%e6%8f%a1></a></h2><h3 id=概述-3>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-3></a></h3><p>一个事务就是一个完整的业务逻辑。</p><p>完整的业务逻辑</p><p>假设转账：A转账1000给B</p><p>A账户减去1000；</p><p>B账户加上1000；</p><p>以上的操作就是一个最小的工作单元，要么同时成功，要么同时失败，不可再分。同时成功同时失败才能保证钱是安全的。</p><h3 id=只有dml语句才会有事务这个说法其他语句没有>只有DML语句才会有事务这个说法，其他语句没有！
+<a class=header-anchor href=#%e5%8f%aa%e6%9c%89dml%e8%af%ad%e5%8f%a5%e6%89%8d%e4%bc%9a%e6%9c%89%e4%ba%8b%e5%8a%a1%e8%bf%99%e4%b8%aa%e8%af%b4%e6%b3%95%e5%85%b6%e4%bb%96%e8%af%ad%e5%8f%a5%e6%b2%a1%e6%9c%89></a></h3><p>insert</p><p>update</p><p>delete</p><p>只有以上三个语句和事务有关，其他都没有关系、</p><p>因为只有以上的三个语句是数据库表中数据进行增删改查的。</p><p>只要你的操作涉及到了数据的增删改查，就一定要考虑，数据安全问题。数据安全第一位。</p><h3 id=只要一条语句就能完成还有必要存在事务机制吗>只要一条语句就能完成，还有必要存在事务机制吗？
+<a class=header-anchor href=#%e5%8f%aa%e8%a6%81%e4%b8%80%e6%9d%a1%e8%af%ad%e5%8f%a5%e5%b0%b1%e8%83%bd%e5%ae%8c%e6%88%90%e8%bf%98%e6%9c%89%e5%bf%85%e8%a6%81%e5%ad%98%e5%9c%a8%e4%ba%8b%e5%8a%a1%e6%9c%ba%e5%88%b6%e5%90%97></a></h3><p>因为所有的业务不能一条语句完成所以才需要事务的存在。</p><p>事务的本质就是要多条DML语句同时成功或者同时失败。</p><h3 id=事务的实现方式>事务的实现方式
+<a class=header-anchor href=#%e4%ba%8b%e5%8a%a1%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f></a></h3><p>InnoDB存储引擎：提供一组用来记录事务性活动的日志文件</p><p>在事务的执行过程中，每一条DML语句的操作都会记录到‘事务性活动的日志文件’中。在事务的执行过程中，我们可以提交事务，也可以回滚事务</p><p>提交事务：</p><p>清空事务性活动的日志文件，将数据全部彻底持久化到数据库表中。</p><p>提交事务之际，事务的结束，并且是一种全部成功的结束。</p><p>回滚事务：</p><p>将之前所有的DML操作全部撤销，并且清空事务性活动的日志文件。</p><p>回滚事务标志着，事物的结束，并且是一种全部失败的结束。</p><h3 id=提交事务和回滚事务>提交事务和回滚事务
+<a class=header-anchor href=#%e6%8f%90%e4%ba%a4%e4%ba%8b%e5%8a%a1%e5%92%8c%e5%9b%9e%e6%bb%9a%e4%ba%8b%e5%8a%a1></a></h3><p>transaction：事务。</p><blockquote><p>提交事务：commit; 语句</p><p>回滚事务：rollback; 语句 （永远只能回滚到最近的一个提交点）</p></blockquote><p>mysql默认的事务提交机制：</p><p>mysql默认情况下是支持自动提交事务的。</p><p>这种的自动提交机制不符合开发习惯，日常使用中我们需要关闭这个功能。</p><p>没执行一条DML语句，则提交一次。</p><p>关闭mysql的自动提交机制</p><p>先执行这个命令：<code>start transaction(开启事务);</code></p><h3 id=事务特性>事务特性
+<a class=header-anchor href=#%e4%ba%8b%e5%8a%a1%e7%89%b9%e6%80%a7></a></h3><p>一件事就是一个事务。</p><p>A：原子性</p><p>说明事务是最小的工作单元。不可再分</p><p>C：一致性</p><p>所有事务要求，在同一个事务中，所有的操作必须同时成功或者同时失败。以保证数据的一致性</p><p>I：隔离性</p><p>事务之间具有一定的隔离。</p><p>D：持久性</p><p>事务最终结束的保障。事务提交，就相当于将没有保存到硬盘上的数据保存到硬盘上。</p><h3 id=事务的4个隔离级别>事务的4个隔离级别：
+<a class=header-anchor href=#%e4%ba%8b%e5%8a%a1%e7%9a%844%e4%b8%aa%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab></a></h3><blockquote><p>读未提交：read uncommitted （最低的隔离级别）</p><p>事务A可以读取到事务B未提交的数据。</p><p>这种隔离级别存在的问题是：</p><p>​ 脏读现象！（Dirty Read）</p><p>​ 读到了脏数据。</p><p>这种隔离级别是理念上的，大多数的数据库都是二档起步。</p><p>读已提交：read commited</p><p>事务A之能读取到事务B提交之后的数据</p><p>这种隔离级别解决了脏读现象。</p><p>这种隔离级别存在的问题是：</p><p>​ 不可重复读取数据。</p><p>​ <strong>在事务开启的时候，第一次读到的数据是3条，第二次是4条。3不等于4.称为不可重复读取。</strong></p><p>这种隔离级别是比较真实的数据，每一次读到的数据都是绝对真实。</p><p>oracle数据库的默认级别是read commited。</p><p>可重复读：repeatable</p><p>事务A开启之后，不管是多久，每一次在事务A中读取到的数据都是一致的。即使事务B将数据修改了，已提交了，事务A读取到的数据还是没有改变。</p><p>这种隔离级别解决了不可重复读取的问题。</p><p>这种隔离级别存在的问题是：</p><p>​ 可能会出幻影读</p><p>​ 每一次读取到的数据都是幻象，不够真实</p><p>mysql中默认的事务隔离级别是这个！</p><p>序列化/串行化：serializable（ 最高的隔离级别）</p><p>这是最高的隔离级别，效率最低，解决了所有问题。</p></blockquote><h3 id=演示隔离级别>演示隔离级别
+<a class=header-anchor href=#%e6%bc%94%e7%a4%ba%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab></a></h3><p>查看隔离级别：select @@tx_isloation;</p><p>修改事务的隔离级别：set global transaction isolation read uncommitted;</p><h2 id=索引index>索引（index）
+<a class=header-anchor href=#%e7%b4%a2%e5%bc%95index></a></h2><h3 id=概述-4>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-4></a></h3><p>索引实在数据库表的字段上添加的，是为了提高查询效率存在的一种机制。</p><p>一张表的一个字段可以添加一个索引，多个字段联合起来也可以添加索引。</p><p>索引相当于一本书的目录，是为了缩小扫描范围而存在的一种机制。</p><p>MySQL在查询方面主要就是两种方式：</p><p>第一种：全表扫描</p><p>第二种：根据索引检索</p><p><strong>注意：</strong></p><blockquote><p>在实际中，汉语字典前面的索引也是需要排序的，并且这个索引的排序和TreeSet数据结构相同，TreeSet（TreeMap）底层是一个自平衡的二叉树！在mysql当中索引是一个B-Tree数据结构</p><p>遵循左小右大原则存放，采用中序遍历方式遍历取数据。</p></blockquote><h3 id=索引的实现原理>索引的实现原理
+<a class=header-anchor href=#%e7%b4%a2%e5%bc%95%e7%9a%84%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-78-1><a class=lnlinks href=#hl-78-1> 1</a>
+</span><span class=lnt id=hl-78-2><a class=lnlinks href=#hl-78-2> 2</a>
+</span><span class=lnt id=hl-78-3><a class=lnlinks href=#hl-78-3> 3</a>
+</span><span class=lnt id=hl-78-4><a class=lnlinks href=#hl-78-4> 4</a>
+</span><span class=lnt id=hl-78-5><a class=lnlinks href=#hl-78-5> 5</a>
+</span><span class=lnt id=hl-78-6><a class=lnlinks href=#hl-78-6> 6</a>
+</span><span class=lnt id=hl-78-7><a class=lnlinks href=#hl-78-7> 7</a>
+</span><span class=lnt id=hl-78-8><a class=lnlinks href=#hl-78-8> 8</a>
+</span><span class=lnt id=hl-78-9><a class=lnlinks href=#hl-78-9> 9</a>
+</span><span class=lnt id=hl-78-10><a class=lnlinks href=#hl-78-10>10</a>
+</span><span class=lnt id=hl-78-11><a class=lnlinks href=#hl-78-11>11</a>
+</span><span class=lnt id=hl-78-12><a class=lnlinks href=#hl-78-12>12</a>
+</span><span class=lnt id=hl-78-13><a class=lnlinks href=#hl-78-13>13</a>
+</span><span class=lnt id=hl-78-14><a class=lnlinks href=#hl-78-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码t_user
+</span></span><span class=line><span class=cl>id(PK)              name        每一行记录在硬盘上都有物理存储编号。
+</span></span><span class=line><span class=cl>--------------------------------------------------------------
+</span></span><span class=line><span class=cl>100                 zhangsan        0x1111
+</span></span><span class=line><span class=cl>120                 lisi            0x2222
+</span></span><span class=line><span class=cl>99                  wnagwu          0x3333
+</span></span><span class=line><span class=cl>88                  zhangliu        0x4444
+</span></span><span class=line><span class=cl>101                 jack            0x5555
+</span></span><span class=line><span class=cl>78                  lucy            0x6666
+</span></span><span class=line><span class=cl>130                 tom             ox7777
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>1,在任何数据库当中主键上都会自动添加索引对象，id字段上自动有索引，因为id是PK，另外在mysql中，一个字段如果有unique约束的话，id字段上也会自动创建索引对象。
+</span></span><span class=line><span class=cl>2，在任何数据库中，任何一张表的任何一条记录在硬盘存储上都有一个硬盘的物理存储编号。
+</span></span><span class=line><span class=cl>3，在mysql中，索引是一个单独的对象，不同的存储引擎以不同的形式存在。在MyISAM存储引擎中，索引存储在一个.MYT文件中，在InnoDB存储引擎中索引存储在一个逻辑名称叫做tablespace当中，在MEMORY存储引擎中索引被存在内存中，不管索引存储在哪里，索引在mysql中都是以一个树的形式存在。（自平衡二叉树：B-Tree）</span></span></code></pre></td></tr></table></div></div><p><img src=/imgs/img-lazy-loading.gif data-src=https://www.52pojie.cn/C%3A/Users/Administrator/Desktop/index.PNG alt=index></p><h3 id=什么条件下会考虑给字段上添加索引>什么条件下，会考虑给字段上添加索引？
+<a class=header-anchor href=#%e4%bb%80%e4%b9%88%e6%9d%a1%e4%bb%b6%e4%b8%8b%e4%bc%9a%e8%80%83%e8%99%91%e7%bb%99%e5%ad%97%e6%ae%b5%e4%b8%8a%e6%b7%bb%e5%8a%a0%e7%b4%a2%e5%bc%95></a></h3><p>条件1：数据量庞大。（庞大的程度需要测试，硬件环境不同）</p><p>条件2：该字段经常出现在where的后面，以条件的形式存在，也就是说这个字段总是被扫描</p><p>条件3：该字段很少的DML操作。（因为DML之后吗，索引需要重新排序）</p><p>建议不要随便添加索引，因为索引也是需要维护的，太多的话反而会降低系统的性能。建议通过主键查询，建议通过unique约束的字段进行查询，效率是比较高的。</p><h3 id=索引的创建和删除>索引的创建和删除
+<a class=header-anchor href=#%e7%b4%a2%e5%bc%95%e7%9a%84%e5%88%9b%e5%bb%ba%e5%92%8c%e5%88%a0%e9%99%a4></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-79-1><a class=lnlinks href=#hl-79-1>1</a>
+</span><span class=lnt id=hl-79-2><a class=lnlinks href=#hl-79-2>2</a>
+</span><span class=lnt id=hl-79-3><a class=lnlinks href=#hl-79-3>3</a>
+</span><span class=lnt id=hl-79-4><a class=lnlinks href=#hl-79-4>4</a>
+</span><span class=lnt id=hl-79-5><a class=lnlinks href=#hl-79-5>5</a>
+</span><span class=lnt id=hl-79-6><a class=lnlinks href=#hl-79-6>6</a>
+</span><span class=lnt id=hl-79-7><a class=lnlinks href=#hl-79-7>7</a>
+</span><span class=lnt id=hl-79-8><a class=lnlinks href=#hl-79-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码  //创建索引
+</span></span><span class=line><span class=cl>  create index emp_name_index on emp(ename)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  //给emp表中的ename字段添加索引，起名：emp_ename_index
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  //删除索引
+</span></span><span class=line><span class=cl>  drop index emp_ename_index on emp;
+</span></span><span class=line><span class=cl>  //将emp表上的emp_ename_index索引对象删除</span></span></code></pre></td></tr></table></div></div><h3 id=查看一个sql语句是否使用了索引进行检索>查看一个sql语句是否使用了索引进行检索。
+<a class=header-anchor href=#%e6%9f%a5%e7%9c%8b%e4%b8%80%e4%b8%aasql%e8%af%ad%e5%8f%a5%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e4%ba%86%e7%b4%a2%e5%bc%95%e8%bf%9b%e8%a1%8c%e6%a3%80%e7%b4%a2></a></h3><p>explain select * from emp where ename = &lsquo;KING&rsquo;;</p><p>explain: 解释。</p><h3 id=索引失效>索引失效
+<a class=header-anchor href=#%e7%b4%a2%e5%bc%95%e5%a4%b1%e6%95%88></a></h3><h4 id=失效的第一种情况>失效的第一种情况
+<a class=header-anchor href=#%e5%a4%b1%e6%95%88%e7%9a%84%e7%ac%ac%e4%b8%80%e7%a7%8d%e6%83%85%e5%86%b5></a></h4><p>select *from emp where ename like &lsquo;%T&rsquo;;</p><p>ename上即使添加了索引，也不会走索引。</p><p>因为模糊匹配当中以“‘%&ldquo;开头了</p><p>实际开发中，尽量避免以%开头。</p><p>这是一种优化的手段/策略</p><h4 id=失效的第二种情况>失效的第二种情况
+<a class=header-anchor href=#%e5%a4%b1%e6%95%88%e7%9a%84%e7%ac%ac%e4%ba%8c%e7%a7%8d%e6%83%85%e5%86%b5></a></h4><p>使用or的时候会失效，如果使用or那么要求or两边的条件字段都要有索引，才会有索引，如果其中一边有一个字段没有索引，那么另一个字段上的索引也会实现，所以这就是为什么不建议使用or的原因。</p><p>可以使用union！</p><h4 id=失效的第三种情况>失效的第三种情况
+<a class=header-anchor href=#%e5%a4%b1%e6%95%88%e7%9a%84%e7%ac%ac%e4%b8%89%e7%a7%8d%e6%83%85%e5%86%b5></a></h4><p>使用复合索引的时候，没有使用左侧的列查找，索引失效。</p><p>复合索引：</p><p>两个或者更多的字段联合起来添加一个索引。</p><h4 id=失效的第四种情况>失效的第四种情况
+<a class=header-anchor href=#%e5%a4%b1%e6%95%88%e7%9a%84%e7%ac%ac%e5%9b%9b%e7%a7%8d%e6%83%85%e5%86%b5></a></h4><p>在where当中索引列参加了运算，索引失效。</p><h4 id=失效的第五种情况>失效的第五种情况
+<a class=header-anchor href=#%e5%a4%b1%e6%95%88%e7%9a%84%e7%ac%ac%e4%ba%94%e7%a7%8d%e6%83%85%e5%86%b5></a></h4><p>在where当中索引列使用了函数</p><h3 id=索引的分类>索引的分类
+<a class=header-anchor href=#%e7%b4%a2%e5%bc%95%e7%9a%84%e5%88%86%e7%b1%bb></a></h3><p>索引是各种数据库进行优化的重要手段，优化的时候优先考虑的是索引。</p><blockquote><p>单一索引：一个字段上添加索引</p><p>复合索引：两个字段或者更多的字段上添加索引。</p><p>主键索引：主键上添加索引</p><p>唯一性索引：使用unique约束的字段上添加索引</p><p><strong>注意：在唯一性比较弱的字段上添加索引用处不大</strong></p></blockquote><h2 id=视图view>视图（view）
+<a class=header-anchor href=#%e8%a7%86%e5%9b%beview></a></h2><h3 id=概述-5>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-5></a></h3><p>站在不同的角度去看待同一份数据</p><h3 id=怎么创建视图对象怎么删除视图对象>怎么创建视图对象，怎么删除视图对象
+<a class=header-anchor href=#%e6%80%8e%e4%b9%88%e5%88%9b%e5%bb%ba%e8%a7%86%e5%9b%be%e5%af%b9%e8%b1%a1%e6%80%8e%e4%b9%88%e5%88%a0%e9%99%a4%e8%a7%86%e5%9b%be%e5%af%b9%e8%b1%a1></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-80-1><a class=lnlinks href=#hl-80-1>1</a>
+</span><span class=lnt id=hl-80-2><a class=lnlinks href=#hl-80-2>2</a>
+</span><span class=lnt id=hl-80-3><a class=lnlinks href=#hl-80-3>3</a>
+</span><span class=lnt id=hl-80-4><a class=lnlinks href=#hl-80-4>4</a>
+</span><span class=lnt id=hl-80-5><a class=lnlinks href=#hl-80-5>5</a>
+</span><span class=lnt id=hl-80-6><a class=lnlinks href=#hl-80-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> 复制代码 隐藏代码//创建视图对象
+</span></span><span class=line><span class=cl>create view dept2_view as select * from dept2;
+</span></span><span class=line><span class=cl>//将查询结果作为视图
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//删除
+</span></span><span class=line><span class=cl>drop view dept2_view;</span></span></code></pre></td></tr></table></div></div><p><strong>注意：只有DQL语句才能创建以view的形式创建。</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-81-1><a class=lnlinks href=#hl-81-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>create view view_name as 这里的语句必须是DQL语句;</span></span></code></pre></td></tr></table></div></div><h3 id=视图的作用>视图的作用
+<a class=header-anchor href=#%e8%a7%86%e5%9b%be%e7%9a%84%e4%bd%9c%e7%94%a8></a></h3><p>可以面向视图对象进行增删改查，对<strong>视图的增删改查，导致原表被修改。</strong></p><h4 id=视图对象在实际开发中的作用>视图对象在实际开发中的作用
+<a class=header-anchor href=#%e8%a7%86%e5%9b%be%e5%af%b9%e8%b1%a1%e5%9c%a8%e5%ae%9e%e9%99%85%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e4%bd%9c%e7%94%a8></a></h4><p>假设有一条非常复杂的sql语句，而这条sql语句需要在不同的位置上反复使用，每一次都压重新编写，很长，很麻烦。怎么办？</p><p>可以把这条复杂的sql语句以视图对象的形式创建</p><p>在需要编写这条sql语句的位置直接使用视图对象，可以大大简化开发。</p><p>并且利于后期的维护，因为修改的时候也只需要修改一个位置就行，只需要修改视图所映射的sql语句。</p><p><strong>视图对象也是一个文件</strong>，在数据库中是以文件形式存储在硬盘上的的。</p><h3 id=增删改查又叫做crud>增删改查：又叫做CRUD
+<a class=header-anchor href=#%e5%a2%9e%e5%88%a0%e6%94%b9%e6%9f%a5%e5%8f%88%e5%8f%ab%e5%81%9acrud></a></h3><p>CRUD是程序员之间沟通的术语，一般我们很少说增删改查</p><p>一般都说CRUD</p><blockquote><p>C: Create (增)</p><p>R: Retrive （查：检索）</p><p>U: Update （改）</p><p>D: Delete （删）</p></blockquote><h2 id=dbadatabasesadministrator的命令不经常使用>DBA（DataBasesAdministrator）的命令（不经常使用）
+<a class=header-anchor href=#dbadatabasesadministrator%e7%9a%84%e5%91%bd%e4%bb%a4%e4%b8%8d%e7%bb%8f%e5%b8%b8%e4%bd%bf%e7%94%a8></a></h2><h3 id=数据导出>数据导出：
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%af%bc%e5%87%ba></a></h3><p><strong>注意：在windows的命令行窗口中</strong></p><p>导出SQL文件</p><p><code>nysqldump bjpowernode>D:\bjpowernode.sql -uroot -p123456;</code></p><p>导出指定的表</p><p><code>mysqldump bjpowernode emp>D:\bjpowernode.sql -uroot -p123456;</code></p><h3 id=数据导入>数据导入
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%af%bc%e5%85%a5></a></h3><p><strong>注意：需要先登录到mysql数据库服务器上</strong></p><p>然后创建数据库：create database bipowernode;</p><p>使用数据库：use bjpowernode;</p><p>然后初始化数据库：surce D:\bipowernode.sql;</p><h2 id=数据库设计三范式>数据库设计三范式
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%ba%93%e8%ae%be%e8%ae%a1%e4%b8%89%e8%8c%83%e5%bc%8f></a></h2><h3 id=概述-6>概述：
+<a class=header-anchor href=#%e6%a6%82%e8%bf%b0-6></a></h3><p>数据库的设计依据，教你怎么设计数据库表</p><h3 id=数据库设计范式共有>数据库设计范式共有？
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e5%ba%93%e8%ae%be%e8%ae%a1%e8%8c%83%e5%bc%8f%e5%85%b1%e6%9c%89></a></h3><p>3个</p><ol><li><p>要求任何一张表必须有主键，每一个字段原子性不可再分</p></li><li><p>建立在第一范式的基础上，要求所有非主键字段完全依赖主键，不要产生部分依赖。</p></li><li><p>建立在第二范式的基础上，要求所有非主键字段直接依赖主键。不要产生传递依赖。</p><p>*<strong>声明：三范式是面试官经常问的，所以一定要熟记在心！*</strong></p><p>设计数据库表的时候，按照以上的范式进行，可以避免表中数据的冗余，空间的浪费。</p></li></ol><h3 id=第一范式>第一范式
+<a class=header-anchor href=#%e7%ac%ac%e4%b8%80%e8%8c%83%e5%bc%8f></a></h3><p>最核心，最重要的范式，所有表的设计都需要满足。</p><p>必须有主键，每一个字段原子性不可再分</p><h3 id=第二范式>第二范式
+<a class=header-anchor href=#%e7%ac%ac%e4%ba%8c%e8%8c%83%e5%bc%8f></a></h3><p>建立在第一范式的基础上，要求所有非主键字段完全依赖主键，不要产生部分依赖。</p><p>*<strong>多对多的设计方式：多对多，三张表，关系表两个外键！*</strong></p><h3 id=第三范式>第三范式
+<a class=header-anchor href=#%e7%ac%ac%e4%b8%89%e8%8c%83%e5%bc%8f></a></h3><p>建立在第二范式的基础上，要求所有非主键字段直接依赖主键。不要产生传递依赖。</p><p>*<strong>一对多，两张表，多的表加外键！*</strong></p><h2 id=总结表的设计>总结表的设计
+<a class=header-anchor href=#%e6%80%bb%e7%bb%93%e8%a1%a8%e7%9a%84%e8%ae%be%e8%ae%a1></a></h2><h3 id=一对多>一对多
+<a class=header-anchor href=#%e4%b8%80%e5%af%b9%e5%a4%9a></a></h3><p>一对多，两张表，多的表加外键！</p><h3 id=多对多>多对多
+<a class=header-anchor href=#%e5%a4%9a%e5%af%b9%e5%a4%9a></a></h3><p>多对多，三张表，关系表两个外键！</p><h3 id=一对一>一对一
+<a class=header-anchor href=#%e4%b8%80%e5%af%b9%e4%b8%80></a></h3><p>表中的字段太多，太庞大的时候需要拆分成两张表。</p><p>*<strong>一对一，外键唯一！*</strong></p><h2 id=设计总结>设计总结
+<a class=header-anchor href=#%e8%ae%be%e8%ae%a1%e6%80%bb%e7%bb%93></a></h2><p><strong>数据库是设计三范式是理论上的，最终的目的是为了客户需求，有时候会用冗余换取速度。因为在sql中，多张表的连接会降低效率。（笛卡尔积现象）同时会降低sql语句的编写难度！</strong></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E7%BC%96%E7%A8%8B/>编程
+</a><a href=/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/>数据库</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E7%A4%BE%E4%BC%9A%E7%8B%A0%E7%8B%A0%E7%9A%84%E6%95%99%E4%BC%9A%E8%BF%87%E4%BD%A0%E4%BB%80%E4%B9%88-658/ rel=next title=社会狠狠的教会过你什么？-658><i class="fa fa-chevron-left"></i> 社会狠狠的教会过你什么？-658</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E6%80%9D%E7%BB%B4%E9%83%BD%E8%A2%AB%E9%A2%84%E5%88%B6%E7%9A%84%E4%BA%BA%E8%BF%98%E5%AB%8C%E5%BC%83%E9%A2%84%E5%88%B6%E8%8F%9C/ rel=prev title=思维都被预制的人，还嫌弃预制菜？>思维都被预制的人，还嫌弃预制菜？
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0","permalink":"/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/","title":"数据库手册笔记","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.1","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1763982110" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1763982112" defer></script></body></html>

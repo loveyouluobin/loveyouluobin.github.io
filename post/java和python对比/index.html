@@ -1,0 +1,342 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.147.6"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="JAVA和PYTHON对比"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="JAVA,PYTHON"><meta property="og:type" content="article"><meta property="og:title" content="JAVA和PYTHON对比"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/java%E5%92%8Cpython%E5%AF%B9%E6%AF%94/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2017-07-21 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2017-07-21 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1763982110"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1763982110"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>JAVA和PYTHON对比 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E7%A7%91%E6%99%AE/ class=hvr-icon-pulse rel=section>科普</a></li><li class="menu-item menu-item-flinks"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section>归档</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#java和python对比>JAVA和PYTHON对比</a></li><li><a href=#一-基础语法>一、 基础语法</a><ul><li><a href=#1缩进>1、缩进</a></li><li><a href=#2注释>2、注释</a></li></ul></li><li><a href=#二-数据类型>二、 数据类型</a><ul><li><a href=#1变量的声明>1、变量的声明</a></li><li><a href=#2数据类型>2、数据类型</a><ul><li><a href=#1number>（1）Number</a></li><li><a href=#2string>（2）String：</a></li><li><a href=#3list列表>（3）List（列表）</a></li><li><a href=#4元组>（4）元组：</a></li><li><a href=#5集合set>（5）集合(set)</a></li><li><a href=#6dictionary字典>（6）Dictionary（字典）</a></li><li><a href=#7数据类型转换>（7）数据类型转换</a></li><li><a href=#8总结>（8）总结</a></li></ul></li></ul></li><li><a href=#三运算符>三、运算符</a><ul><li><a href=#1算数运算符>1、算数运算符</a></li><li><a href=#2比较运算符>2、比较运算符</a></li><li><a href=#3赋值运算符>3、赋值运算符</a></li><li><a href=#4位运算符>4、位运算符</a></li><li><a href=#5逻辑运算符>5、逻辑运算符</a></li><li><a href=#6成员运算符>6、成员运算符</a></li><li><a href=#7身份运算符>7、身份运算符</a></li><li><a href=#8优先级>8、优先级</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>3200</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank>QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank>Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank>E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank>知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17312441></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=36169></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2025-11-19 15:39:16 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/java%E5%92%8Cpython%E5%AF%B9%E6%AF%94/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="JAVA和PYTHON对比"><meta itemprop=description content="JAVA和PYTHON对比
+
+“Java只有一种，而Python语言有两种，2和3“。Python 3.0在设计的时候为了不带入过多的累赘，和Python2在一些方面有一些不同，下面也会详细说明。
+有了C++/Java基础的学习python还是很快的，我在看教程的时候很多东西都是跳过不看的，因为它和其他语言里的都一样。为了减少看那些冗余内容的时间，特此整理一下python和C++/Java在编码方面不一样的地方，方便自学python的人更快的学习。
+文末有python及其IDE资源哦。"></span><header class=post-header><h1 class=post-title itemprop="name headline">JAVA和PYTHON对比</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2017-07-21 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2017-07-21 15:39:16 +0000 UTC">2017-07-21
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E7%BC%96%E7%A8%8B/ itemprop=url rel=index><span itemprop=name>编程</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>7182</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>15分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/java%E5%92%8Cpython%E5%AF%B9%E6%AF%94/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h2 id=java和python对比>JAVA和PYTHON对比
+<a class=header-anchor href=#java%e5%92%8cpython%e5%af%b9%e6%af%94></a></h2><p>“Java只有一种，而Python语言有两种，2和3“。Python 3.0在设计的时候为了不带入过多的累赘，和Python2在一些方面有一些不同，下面也会详细说明。</p><p>有了C++/Java基础的学习python还是很快的，我在看教程的时候很多东西都是跳过不看的，因为它和其他语言里的都一样。为了减少看那些冗余内容的时间，特此整理一下python和C++/Java在编码方面不一样的地方，方便自学python的人更快的学习。</p><p>文末有python及其IDE资源哦。</p><a id=more></a><hr><h2 id=一-基础语法>一、 基础语法
+<a class=header-anchor href=#%e4%b8%80-%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95></a></h2><h3 id=1缩进>1、缩进
+<a class=header-anchor href=#1%e7%bc%a9%e8%bf%9b></a></h3><p>python与C++/Java最大的不同就是使用缩进来表示代码块，而不使用大括号({})。Python中一个模块的界限，是由这行前面有多少空格决定的，而C和Java用的是大括号{}。比如以下程序：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4>4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if True:
+</span></span><span class=line><span class=cl>    #可以在同一行中使用多条语句，语句之间使用分号(;)分割。
+</span></span><span class=line><span class=cl>    print (&#34;True&#34;);print (&#34;True&#34;)
+</span></span><span class=line><span class=cl>else:
+</span></span><span class=line><span class=cl>    print (&#34;False&#34;)12345</span></span></code></pre></td></tr></table></div></div><p>那如果这行代码比较长，一行放不下怎么办？我们可以使用反斜杠()来实现</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>total = item_one + \
+</span></span><span class=line><span class=cl>        item_two + \
+</span></span><span class=line><span class=cl>        item_three123</span></span></code></pre></td></tr></table></div></div><p>python的空行没有任何作用，加了也不会报错，用适当的空行隔开模块可以让你的代码层次更加清晰明了。</p><h3 id=2注释>2、注释
+<a class=header-anchor href=#2%e6%b3%a8%e9%87%8a></a></h3><p>Python中单行注释以 # 开头，多行注释使用三个单引号(”’)或三个双引号(“”“)。例如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1> 1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2> 2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3> 3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4> 4</a>
+</span><span class=lnt id=hl-2-5><a class=lnlinks href=#hl-2-5> 5</a>
+</span><span class=lnt id=hl-2-6><a class=lnlinks href=#hl-2-6> 6</a>
+</span><span class=lnt id=hl-2-7><a class=lnlinks href=#hl-2-7> 7</a>
+</span><span class=lnt id=hl-2-8><a class=lnlinks href=#hl-2-8> 8</a>
+</span><span class=lnt id=hl-2-9><a class=lnlinks href=#hl-2-9> 9</a>
+</span><span class=lnt id=hl-2-10><a class=lnlinks href=#hl-2-10>10</a>
+</span><span class=lnt id=hl-2-11><a class=lnlinks href=#hl-2-11>11</a>
+</span><span class=lnt id=hl-2-12><a class=lnlinks href=#hl-2-12>12</a>
+</span><span class=lnt id=hl-2-13><a class=lnlinks href=#hl-2-13>13</a>
+</span><span class=lnt id=hl-2-14><a class=lnlinks href=#hl-2-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#!/usr/bin/python
+</span></span><span class=line><span class=cl># -*- coding: UTF-8 -*-
+</span></span><span class=line><span class=cl># 文件名：test.py
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 第一个注释
+</span></span><span class=line><span class=cl>print (&#34;Hello, Python!&#34;)  # 第二个注释
+</span></span><span class=line><span class=cl>&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>这是多行注释，使用单引号。
+</span></span><span class=line><span class=cl>这是多行注释，使用单引号。
+</span></span><span class=line><span class=cl>&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>&#34;&#34;&#34;
+</span></span><span class=line><span class=cl>这是多行注释，使用双引号。
+</span></span><span class=line><span class=cl>这是多行注释，使用双引号。
+</span></span><span class=line><span class=cl>&#34;&#34;&#34;1234567891011121314</span></span></code></pre></td></tr></table></div></div><hr><h2 id=二-数据类型>二、 数据类型
+<a class=header-anchor href=#%e4%ba%8c-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h2><h3 id=1变量的声明>1、变量的声明
+<a class=header-anchor href=#1%e5%8f%98%e9%87%8f%e7%9a%84%e5%a3%b0%e6%98%8e></a></h3><p>在Python中定义变量的时候，不需要声明其数据类型，但是必须赋值，在赋值的时候会给它分配相应的数据类型。例如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3>3</a>
+</span><span class=lnt id=hl-3-4><a class=lnlinks href=#hl-3-4>4</a>
+</span><span class=lnt id=hl-3-5><a class=lnlinks href=#hl-3-5>5</a>
+</span><span class=lnt id=hl-3-6><a class=lnlinks href=#hl-3-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> counter = 100 # 整型变量
+</span></span><span class=line><span class=cl> miles = 1000.0 # 浮点型变量
+</span></span><span class=line><span class=cl> name = &#34;abcdefg&#34; # 字符串
+</span></span><span class=line><span class=cl> print (counter)
+</span></span><span class=line><span class=cl> print (miles)
+</span></span><span class=line><span class=cl> print (name)123456</span></span></code></pre></td></tr></table></div></div><p>在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型，变量只是对它的引用，可以用del counter删除。
+这里插一句，Python2和Python3的print有较大不同，而且print 默认输出是换行的。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4>4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>print counter #这是Python2
+</span></span><span class=line><span class=cl>print (counter) #这是Python3
+</span></span><span class=line><span class=cl>#如果要实现不换行：
+</span></span><span class=line><span class=cl>print counter , #Python2：在变量末尾加上逗号
+</span></span><span class=line><span class=cl>print (counter,end=&#34; &#34;)#Python3：在变量末尾加上 end=&#34;&#34;12345</span></span></code></pre></td></tr></table></div></div><h3 id=2数据类型>2、数据类型
+<a class=header-anchor href=#2%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h3><p>Python3 中有六个标准的数据类型：Number（数字）String（字符串）List（列表）Tuple（元组）Set（集合）Dictionary（字典）。
+Python中没有char，单字符也按字符串处理。
+Python2没有Set（集合）。</p><h4 id=1number>（1）Number
+<a class=header-anchor href=#1number></a></h4><p>int、float、bool、complex（复数）。
+在Python 3里，只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
+在 Python2 中是没有布尔型的，它用数字 0 表示 False，用 1 表示 True。到 Python3 中，把 True 和 False 定义成关键字了，但它们的值还是 1 和 0，可以和数字相加。</p><h4 id=2string>（2）String：
+<a class=header-anchor href=#2string></a></h4><p>Python中的字符串用单引号(‘)或双引号(“)括起来，同时使用反斜杠()转义特殊字符。
+字符串的截取的语法格式如下：变量[头下标,尾下标]
+索引值以 0 为开始值，-1 为从末尾的开始位置。
+加号 (+) 表示连接字符串， 星号 (*) 表示复制当前字符串，紧跟的数字为复制的次数。实例如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
+</span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4>4</a>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5>5</a>
+</span><span class=lnt id=hl-5-6><a class=lnlinks href=#hl-5-6>6</a>
+</span><span class=lnt id=hl-5-7><a class=lnlinks href=#hl-5-7>7</a>
+</span><span class=lnt id=hl-5-8><a class=lnlinks href=#hl-5-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>str = &#39;abcdef&#39; 
+</span></span><span class=line><span class=cl>print (str) # 输出字符串 
+</span></span><span class=line><span class=cl>print (str[0:-1]) # 输出第一个到倒数第二个的所有字符 
+</span></span><span class=line><span class=cl>print (str[0]) # 输出字符串第一个字符 
+</span></span><span class=line><span class=cl>print (str[2:5]) # 输出从第三个开始到第五个的字符 
+</span></span><span class=line><span class=cl>print (str[2:]) # 输出从第三个开始的后的所有字符 
+</span></span><span class=line><span class=cl>print (str * 2) # 输出字符串两次 
+</span></span><span class=line><span class=cl>print (str + &#34;ghi&#34;) # 连接字符串12345678</span></span></code></pre></td></tr></table></div></div><p>执行以上程序会输出如下结果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2>2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3>3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4>4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5>5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6>6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>abcdef
+</span></span><span class=line><span class=cl>abcde
+</span></span><span class=line><span class=cl>a
+</span></span><span class=line><span class=cl>cde
+</span></span><span class=line><span class=cl>cdef
+</span></span><span class=line><span class=cl>abcdefabcdef
+</span></span><span class=line><span class=cl>abcdefghi1234567</span></span></code></pre></td></tr></table></div></div><h4 id=3list列表>（3）List（列表）
+<a class=header-anchor href=#3list%e5%88%97%e8%a1%a8></a></h4><p>列表是Python 中使用最频繁的数据类型，和Java中的List比较像。
+但是Python的列表中的元素可以是不同类型，比如数字，字符串甚至可以包含列表。
+列表是写在方括号([])之间、用逗号分隔开的元素列表。
+和字符串一样，列表同样可以被索引和截取</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2>2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3>3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4>4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5>5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6>6</a>
+</span><span class=lnt id=hl-7-7><a class=lnlinks href=#hl-7-7>7</a>
+</span><span class=lnt id=hl-7-8><a class=lnlinks href=#hl-7-8>8</a>
+</span><span class=lnt id=hl-7-9><a class=lnlinks href=#hl-7-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#!/usr/bin/python3 
+</span></span><span class=line><span class=cl>list = [ &#39;abcd&#39;, 123 , 4.56, &#39;efghij&#39;, 78.9 ]
+</span></span><span class=line><span class=cl>tinylist = [123, &#39;efghij&#39;] 
+</span></span><span class=line><span class=cl>print (list) # 输出完整列表 
+</span></span><span class=line><span class=cl>print (list[0]) # 输出列表第一个元素
+</span></span><span class=line><span class=cl>print (list[1:3]) # 从第二个开始输出到第三个元素 
+</span></span><span class=line><span class=cl>print (list[2:]) # 输出从第三个元素开始的所有元素 
+</span></span><span class=line><span class=cl>print (tinylist * 2) # 输出两次列表 
+</span></span><span class=line><span class=cl>print (list + tinylist) # 连接列表123456789</span></span></code></pre></td></tr></table></div></div><p>输出结果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span><span class=lnt id=hl-8-5><a class=lnlinks href=#hl-8-5>5</a>
+</span><span class=lnt id=hl-8-6><a class=lnlinks href=#hl-8-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[&#39;abcd&#39;, 123, 4.56, &#39;efghij&#39;, 78.9]
+</span></span><span class=line><span class=cl>abcd
+</span></span><span class=line><span class=cl>[123, 4.56]
+</span></span><span class=line><span class=cl>[4.56, &#39;efghij&#39;, 78.9]
+</span></span><span class=line><span class=cl>[123, &#39;efghij&#39;, 123, &#39;efghij&#39;]
+</span></span><span class=line><span class=cl>[&#39;abcd&#39;, 123, 4.56, &#39;efghij&#39;, 78.9, 123, &#39;efghij&#39;]123456</span></span></code></pre></td></tr></table></div></div><h4 id=4元组>（4）元组：
+<a class=header-anchor href=#4%e5%85%83%e7%bb%84></a></h4><p>元组（tuple）与列表类似，不同之处在于元组的元素不能修改。元组写在小括号(())里，元素之间用逗号隔开。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span><span class=lnt id=hl-9-3><a class=lnlinks href=#hl-9-3>3</a>
+</span><span class=lnt id=hl-9-4><a class=lnlinks href=#hl-9-4>4</a>
+</span><span class=lnt id=hl-9-5><a class=lnlinks href=#hl-9-5>5</a>
+</span><span class=lnt id=hl-9-6><a class=lnlinks href=#hl-9-6>6</a>
+</span><span class=lnt id=hl-9-7><a class=lnlinks href=#hl-9-7>7</a>
+</span><span class=lnt id=hl-9-8><a class=lnlinks href=#hl-9-8>8</a>
+</span><span class=lnt id=hl-9-9><a class=lnlinks href=#hl-9-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#!/usr/bin/python3 
+</span></span><span class=line><span class=cl>tuple = ( &#39;abcd&#39;, 786 , 2.23, &#39;runoob&#39;, 70.2 ) 
+</span></span><span class=line><span class=cl>tinytuple = (123, &#39;runoob&#39;) 
+</span></span><span class=line><span class=cl>print (tuple) # 输出完整元组 
+</span></span><span class=line><span class=cl>print (tuple[0]) # 输出元组的第一个元素 
+</span></span><span class=line><span class=cl>print (tuple[1:3]) # 输出从第二个元素开始到第三个元素
+</span></span><span class=line><span class=cl>print (tuple[2:]) # 输出从第三个元素开始的所有元素 
+</span></span><span class=line><span class=cl>print (tinytuple * 2) # 输出两次元组 
+</span></span><span class=line><span class=cl>print (tuple + tinytuple) # 连接元组123456789</span></span></code></pre></td></tr></table></div></div><p>输出结果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2>2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3>3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4>4</a>
+</span><span class=lnt id=hl-10-5><a class=lnlinks href=#hl-10-5>5</a>
+</span><span class=lnt id=hl-10-6><a class=lnlinks href=#hl-10-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>(&#39;abcd&#39;, 786, 2.23, &#39;runoob&#39;, 70.2)
+</span></span><span class=line><span class=cl>abcd
+</span></span><span class=line><span class=cl>(786, 2.23)
+</span></span><span class=line><span class=cl>(2.23, &#39;runoob&#39;, 70.2)
+</span></span><span class=line><span class=cl>(123, &#39;runoob&#39;, 123, &#39;runoob&#39;)
+</span></span><span class=line><span class=cl>(&#39;abcd&#39;, 786, 2.23, &#39;runoob&#39;, 70.2, 123, &#39;runoob&#39;)123456</span></span></code></pre></td></tr></table></div></div><h4 id=5集合set>（5）集合(set)
+<a class=header-anchor href=#5%e9%9b%86%e5%90%88set></a></h4><p>集合（set）是一个无序不重复元素的序列，和java里的set一样。
+基本功能是进行成员关系测试和删除重复元素。
+可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1> 1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2> 2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3> 3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4> 4</a>
+</span><span class=lnt id=hl-11-5><a class=lnlinks href=#hl-11-5> 5</a>
+</span><span class=lnt id=hl-11-6><a class=lnlinks href=#hl-11-6> 6</a>
+</span><span class=lnt id=hl-11-7><a class=lnlinks href=#hl-11-7> 7</a>
+</span><span class=lnt id=hl-11-8><a class=lnlinks href=#hl-11-8> 8</a>
+</span><span class=lnt id=hl-11-9><a class=lnlinks href=#hl-11-9> 9</a>
+</span><span class=lnt id=hl-11-10><a class=lnlinks href=#hl-11-10>10</a>
+</span><span class=lnt id=hl-11-11><a class=lnlinks href=#hl-11-11>11</a>
+</span><span class=lnt id=hl-11-12><a class=lnlinks href=#hl-11-12>12</a>
+</span><span class=lnt id=hl-11-13><a class=lnlinks href=#hl-11-13>13</a>
+</span><span class=lnt id=hl-11-14><a class=lnlinks href=#hl-11-14>14</a>
+</span><span class=lnt id=hl-11-15><a class=lnlinks href=#hl-11-15>15</a>
+</span><span class=lnt id=hl-11-16><a class=lnlinks href=#hl-11-16>16</a>
+</span><span class=lnt id=hl-11-17><a class=lnlinks href=#hl-11-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#!/usr/bin/python3 
+</span></span><span class=line><span class=cl>student = {&#39;Tom&#39;, &#39;Jim&#39;, &#39;Mary&#39;, &#39;Tom&#39;, &#39;Jack&#39;, &#39;Rose&#39;} 
+</span></span><span class=line><span class=cl>print(student) # 输出集合，重复的元素被自动去掉 
+</span></span><span class=line><span class=cl># 成员测试 
+</span></span><span class=line><span class=cl>if(&#39;Rose&#39; in student) : 
+</span></span><span class=line><span class=cl>    print(&#39;Rose 在集合中&#39;) 
+</span></span><span class=line><span class=cl>else : 
+</span></span><span class=line><span class=cl>    print(&#39;Rose 不在集合中&#39;) 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># set可以进行集合运算
+</span></span><span class=line><span class=cl>a = set(&#39;abracadabra&#39;) 
+</span></span><span class=line><span class=cl>b = set(&#39;alacazam&#39;) 
+</span></span><span class=line><span class=cl>print(a) 
+</span></span><span class=line><span class=cl>print(a - b) # a和b的差集 
+</span></span><span class=line><span class=cl>print(a | b) # a和b的并集 
+</span></span><span class=line><span class=cl>print(a &amp; b) # a和b的交集 
+</span></span><span class=line><span class=cl>print(a ^ b) # a和b中不同时存在的元素1234567891011121314151617</span></span></code></pre></td></tr></table></div></div><p>输出结果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2>2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3>3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4>4</a>
+</span><span class=lnt id=hl-12-5><a class=lnlinks href=#hl-12-5>5</a>
+</span><span class=lnt id=hl-12-6><a class=lnlinks href=#hl-12-6>6</a>
+</span><span class=lnt id=hl-12-7><a class=lnlinks href=#hl-12-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>{&#39;Mary&#39;, &#39;Jim&#39;, &#39;Rose&#39;, &#39;Jack&#39;, &#39;Tom&#39;}
+</span></span><span class=line><span class=cl>Rose 在集合中
+</span></span><span class=line><span class=cl>{&#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;r&#39;, &#39;d&#39;}
+</span></span><span class=line><span class=cl>{&#39;b&#39;, &#39;d&#39;, &#39;r&#39;}
+</span></span><span class=line><span class=cl>{&#39;l&#39;, &#39;r&#39;, &#39;a&#39;, &#39;c&#39;, &#39;z&#39;, &#39;m&#39;, &#39;b&#39;, &#39;d&#39;}
+</span></span><span class=line><span class=cl>{&#39;a&#39;, &#39;c&#39;}
+</span></span><span class=line><span class=cl>{&#39;l&#39;, &#39;r&#39;, &#39;z&#39;, &#39;m&#39;, &#39;b&#39;, &#39;d&#39;}1234567</span></span></code></pre></td></tr></table></div></div><p>注：python2中没有set</p><h4 id=6dictionary字典>（6）Dictionary（字典）
+<a class=header-anchor href=#6dictionary%e5%ad%97%e5%85%b8></a></h4><p>Python中的字典（dictionary）相当于Java中的Map，用”{ }”创建，是一个无序的键(key) : 值(value)对集合。
+键(key)必须使用不可变类型，且在同一个字典中，键必须是唯一的。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1> 1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2> 2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3> 3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4> 4</a>
+</span><span class=lnt id=hl-13-5><a class=lnlinks href=#hl-13-5> 5</a>
+</span><span class=lnt id=hl-13-6><a class=lnlinks href=#hl-13-6> 6</a>
+</span><span class=lnt id=hl-13-7><a class=lnlinks href=#hl-13-7> 7</a>
+</span><span class=lnt id=hl-13-8><a class=lnlinks href=#hl-13-8> 8</a>
+</span><span class=lnt id=hl-13-9><a class=lnlinks href=#hl-13-9> 9</a>
+</span><span class=lnt id=hl-13-10><a class=lnlinks href=#hl-13-10>10</a>
+</span><span class=lnt id=hl-13-11><a class=lnlinks href=#hl-13-11>11</a>
+</span><span class=lnt id=hl-13-12><a class=lnlinks href=#hl-13-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>dict = {}
+</span></span><span class=line><span class=cl>dict[&#39;one&#39;] = &#34;1 - ABCD&#34;
+</span></span><span class=line><span class=cl>dict[&#39;one&#39;] = &#34;1 - abcd&#34; #相当于java中Map的put，可以通过赋值添加或修改字典元素
+</span></span><span class=line><span class=cl>dict[2]     = &#34;2 - efgh&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>tinydict = {&#39;name&#39;: &#39;Tom&#39;,&#39;age&#39;:18}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>print (dict[&#39;one&#39;])       # 输出键为 &#39;one&#39; 的值
+</span></span><span class=line><span class=cl>print (dict[2])           # 输出键为 2 的值
+</span></span><span class=line><span class=cl>print (tinydict)          # 输出完整的字典
+</span></span><span class=line><span class=cl>print (tinydict.keys())   # 输出所有键
+</span></span><span class=line><span class=cl>print (tinydict.values()) # 输出所有值123456789101112</span></span></code></pre></td></tr></table></div></div><p>输出结果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3>3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4>4</a>
+</span><span class=lnt id=hl-14-5><a class=lnlinks href=#hl-14-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>1 - abcd
+</span></span><span class=line><span class=cl>2 - efgh
+</span></span><span class=line><span class=cl>{&#39;name&#39;: &#39;Tom&#39;, &#39;age&#39;: 18}
+</span></span><span class=line><span class=cl>dict_keys([&#39;name&#39;, &#39;age&#39;])
+</span></span><span class=line><span class=cl>dict_values([&#39;Tom&#39;, 18])12345</span></span></code></pre></td></tr></table></div></div><h4 id=7数据类型转换>（7）数据类型转换
+<a class=header-anchor href=#7%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2></a></h4><p>直接将数据类型作为函数名即可，十分方便。如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2>2</a>
+</span><span class=lnt id=hl-15-3><a class=lnlinks href=#hl-15-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>a=”12345”
+</span></span><span class=line><span class=cl>b=int(a)
+</span></span><span class=line><span class=cl>print (b)123</span></span></code></pre></td></tr></table></div></div><h4 id=8总结>（8）总结
+<a class=header-anchor href=#8%e6%80%bb%e7%bb%93></a></h4><p>数据类型 分为数字型和非数字型。
+数字型包括整型，长整型，浮点型，复数型；
+非数字型包括字符串，列表，元组和字典 ；
+列表用 “[ ]” 标识类似 C 语言中的数组；
+元组用 “( )” 标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表；
+字典用 “{ }” 标识。字典由索引 key 和它对应的值 value 组成，相当于Java里的Map。
+非数字型的共同点：都可以使用切片、链接（+）、重复（*）、取值（a[]）等相关运算;
+非数字型的不同点：列表 可以直接赋值，元组不可以赋值，字典按照 dict[k]=v 的方式赋值。</p><hr><h2 id=三运算符>三、运算符
+<a class=header-anchor href=#%e4%b8%89%e8%bf%90%e7%ae%97%e7%ac%a6></a></h2><h3 id=1算数运算符>1、算数运算符
+<a class=header-anchor href=#1%e7%ae%97%e6%95%b0%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python和Java都有：
++-*/(加减乘除)%(取模)
+Python新加：
+**(幂)//(取整除)
+注：Python2中除法（/）和java,C++中一样，整数/整数=整数
+Python3中除法（/）总是返回一个浮点数，要获取整数使用（//）操作符</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2>2</a>
+</span><span class=lnt id=hl-16-3><a class=lnlinks href=#hl-16-3>3</a>
+</span><span class=lnt id=hl-16-4><a class=lnlinks href=#hl-16-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>print (2/4) # 除法，得到一个浮点数（Python3） 
+</span></span><span class=line><span class=cl>0.5 
+</span></span><span class=line><span class=cl>print (2//4) # 除法，得到一个整数 
+</span></span><span class=line><span class=cl>01234</span></span></code></pre></td></tr></table></div></div><h3 id=2比较运算符>2、比较运算符
+<a class=header-anchor href=#2%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python和Java都有：
+==(等于)!=(不等于)>(大于)&lt;(小于)>=(大于等于)&lt;=(小于等于)
+注：Python2中有&lt;>(不等于)，Python3中没有</p><h3 id=3赋值运算符>3、赋值运算符
+<a class=header-anchor href=#3%e8%b5%8b%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python和Java都有：
+=(赋值)+=(加法赋值)-=(减法赋值)*=(乘法赋值)/=(除法赋值)%=(取模赋值)
+Python新加：
+**=(幂赋值)//=(取整除赋值)
+Python移除：
+++(自增运算符)—(自减运算符)</p><h3 id=4位运算符>4、位运算符
+<a class=header-anchor href=#4%e4%bd%8d%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python和Java都有：
+&(按位与)|(按位或)^(按位异或)~(按位取反)&#171;(左移)&#187;(右移)</p><h3 id=5逻辑运算符>5、逻辑运算符
+<a class=header-anchor href=#5%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python自成一体：
+and(布尔与)or(布尔或)not(布尔非)</p><h3 id=6成员运算符>6、成员运算符
+<a class=header-anchor href=#6%e6%88%90%e5%91%98%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python自成一体：
+in(如果在指定的序列中找到值返回 True，否则返回 False)
+not in(如果在指定的序列中没有找到值返回 True，否则返回 False)</p><h3 id=7身份运算符>7、身份运算符
+<a class=header-anchor href=#7%e8%ba%ab%e4%bb%bd%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><p>Python自成一体：
+is (判断两个标识符是不是引用自一个对象)
+is not (是判断两个标识符是不是引用自不同对象)
+注：is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。</p><h3 id=8优先级>8、优先级
+<a class=header-anchor href=#8%e4%bc%98%e5%85%88%e7%ba%a7></a></h3><p>与Java基本相同：
+[幂]>[按位取反]>[*,/,%,//]>[+ -]>[&#187;,&#171;]>[&]>[^,|]>[&lt;=,&lt;,>,>=]>[&lt;>,==,!=]>[赋值运算符]>[身份运算符]>[成员运算符]>[逻辑运算符]</p><p>未完待续…</p><p>C、C++、Python和Java四种是通用编程语言，JavaScript和PHP算是Web环境的专用编程语言。C语言由于其底层操作特性和历史的积累，在嵌入式领域是当之无愧的王者；C++是一种支持最广泛编程范式的复杂语言，这些年来发展不太好，目前在服务器后台和游戏领域还有其一席之地；Python作为一种灵活的轻便的通用型脚本语言，使用范围比较广，从应用软件到Web开发都有它的身影，由于其解释语言的特点，比较适合轻量级或原型开发；JavaScript语言由于其是浏览器内置的脚本语言，是Web前端开发的主流，近年来由于google的V8引擎开源，出现了Node.js之类JavaScript后台开发框架，把JavaScript的应用领域扩展到了Web后台；PHP作为一种简单的Web服务器后台脚本语言，在全世界范围内的网站上有最大的使用率；Java由于其跨平台可移植性，在Web开发领域大放异彩，特别是在企业级Web开发，同时由于Android系统采用Java来开发应用程序，所以也随着Android的发展而应用越发广泛。</p><p>​ 理清不同语言间主要语法特性的差异，才能更好的在合适的领域或场景下去应用合适的编程语言，以满足我们所面对的需求。这六种语言都是从C语言发展而来，所以它们的语法都比较像C语言，下面我就主要语法特性对各个语言做一个对比。</p><p>1、常量定义</p><p>C：#define TEST 0</p><p>C++：#define TEST 0</p><p>或者</p><p>const test = 0;</p><p>Python：test = 0</p><p>JavaScript：不支持</p><p>PHP：define(&rsquo;test&rsquo;, 1);</p><p>Java：final int test = 0;</p><p>分析：JavaScript不支持常量，C、C++都用特有的预定义宏，PHP用特殊的define语法，其它的都用定义不变变量的方式。</p><p>2、变量定义</p><p>C：int test = 0;</p><p>C++：int test = 0;</p><p>Python：test = 0</p><p>JavaScript：val test = 0;</p><p>PHP：$test = 0;</p><p>Java：int test = 0;</p><p>分析：这个最基本的都支持了。</p><p>3、函数定义</p><p>C：int test(int param){}</p><p>C++：int test(int param){}</p><p>Python：def test(param):</p><p>JavaScript：function test(param){}</p><p>PHP：function test($param){}</p><p>Java：public class test{</p><p>public int test(int param){} }</p><p>分析：这个也是最基本的了，只是Java比较特殊，不支持定义类之外的函数。</p><p>4、类定义（含继承）</p><p>C：不支持</p><p>C++：class test2: public test1{}</p><p>Python：class test2(test1):</p><p>JavaScript：function test2(){}</p><p>test2.prototype =inherit(test1.prototype){}</p><p>PHP：class test2 extend test1{}</p><p>Java：class test2 extends test1{}</p><p>分析：C由于是传统面向过程的语言不支持类，其他的都支持了，只是JavaScript的类模型比较特殊，把函数作为类来使用。</p><p>5、对象定义</p><p>C：不支持</p><p>C++：test2 obj = new test2();</p><p>Python：obj = test2()</p><p>JavaScript：var obj = new test2();</p><p>PHP：$obj = new test2();</p><p>Java：test2 obj = new test2();</p><p>分析：除了C外其它语言都是通过new一个对象。</p><p>6、数组定义</p><p>C：int a[] = {1, 2, 3};</p><p>C++：int a[] = {1, 2, 3};</p><p>Python：a = [1, 2, 3]</p><p>JavaScript：var a = [1, 2, 3];</p><p>PHP：$a = array(&ldquo;1&rdquo;, &ldquo;2&rdquo;, &ldquo;3&rdquo;);</p><p>Java：int a[] = {1, 2, 3};</p><p>分析：数组是语言的基本特性，都支持了，只是PHP通过类似函数调用的语法来完成。</p><p>7、条件语句</p><p>C：if (test > 0){}</p><p>else if (test &lt; 0){}</p><p>else{}</p><p>C++：if (test > 0){}</p><p>else if (test &lt; 0){}</p><p>else{}</p><p>Python：if test > 0:</p><p>elif test &lt; 0:</p><p>else:</p><p>JavaScript：if (test > 0){}</p><p>else if (test &lt; 0){}</p><p>else{}</p><p>PHP：if ($test > 0){}</p><p>elseif ($test &lt; 0){}</p><p>else{}</p><p>Java：if (test > 0){}</p><p>else if (test &lt; 0){}</p><p>else{}</p><p>分析：这是最基本的语句，都支持了。</p><p>8、循环语句</p><p>C：for (idx=0; idx&lt;num; idx++){}</p><p>C++：for (idx=0; idx&lt;num; idx++){}</p><p>Python：for idx in range(1,10):</p><p>JavaScript：for (var idx=0; idx&lt;num; idx++){}</p><p>PHP：for ($idx=0; $idx&lt;$num; $idx++){}</p><p>Java：for (idx=0; idx&lt;num; idx++){}</p><p>分析：这个也是基本的语句，都支持了。</p><p>9、foreach语句</p><p>C：不支持</p><p>C++：不支持</p><p>Python：for i in a:</p><p>或者</p><p>for key in d:</p><p>d[key]</p><p>JavaScript：for(i in a){}</p><p>PHP：foreach($a as $i){}</p><p>Java：for(int i : a){}</p><p>分析：foreach算是循环语句的一个变种，在操作顺序容器的时候非常有用，可以看到C和C++不支持，其它的都语言内置支持了。</p><p>10、打印语句</p><p>C：printf(&ldquo;test: %d&rdquo;, val);</p><p>C++：cout&#171;&ldquo;test: &ldquo;&#171;val&#171;endl;</p><p>Python：print &ldquo;test: &ldquo;+val</p><p>JavaScript：不支持</p><p>PHP：echo &ldquo;test: $val&rdquo;;</p><p>Java：System.out.println(&ldquo;test :"+val);</p><p>分析：打印算是语言所运行环境的支持库功能，除了JavaScript外都支持了，因为JavaScript主要使用来操控DOM树的，没有自己的输出窗口所以也没必要支持。</p><p>11、字符串定义</p><p>C：char test[] = {&ldquo;helloworld&rdquo;};</p><p>C++：String test = &ldquo;helloworld&rdquo;;</p><p>Python：test = &ldquo;helloworld&rdquo;</p><p>JavaScript：var test = &ldquo;helloworld&rdquo;;</p><p>PHP：$test = &ldquo;helloworld&rdquo;;</p><p>Java：String test = &ldquo;helloworld&rdquo;;</p><p>分析：这个都支持了，其中C++、Java都是用标准库来现实的。</p><p>12、字符串串接</p><p>C：test = strcat(test1, test2);</p><p>C++：test = test1 + test2;（STL库）</p><p>Python：test = test1 + test2</p><p>JavaScript：var test = test1 + test2;</p><p>PHP：$test = $test1 .= $test2;</p><p>Java：test = test1 + test2;</p><p>分析：很有用的功能，除了C是用标准库函数来实现，其它都是语言内置支持了。</p><p>13、字符串分割</p><p>C：不支持</p><p>C++：test.substr(3, 8);</p><p>Python：test[3:8]</p><p>JavaScript：test.slice(3, 5);</p><p>PHP：substr($test, 3, 5);</p><p>Java：test.substring(3, 8);</p><p>分析：常用的功能，C不支持，Python是语言内置支持，其他的都依靠库来完成。</p><p>14、字符串正则表达式</p><p>C：不支持</p><p>C++：不支持</p><p>Python：test.replace(&ldquo;test1&rdquo;, &ldquo;test2&rdquo;)</p><p>JavaScript：test.replace(/test1/gi, &ldquo;test2&rdquo;);</p><p>PHP：str_replace($test, &ldquo;test1&rdquo;, &ldquo;test2&rdquo;);</p><p>Java：test.replaceAll(&ldquo;test1&rdquo;, &ldquo;test2&rdquo;);</p><p>分析：常用的功能，可惜C、C++不支持，其他都有标准库来支持。</p><p>15、内置容器类型</p><p>C：数组</p><p>C++：数组</p><p>顺序容器 Vector</p><p>关联容器 Pair MapSet</p><p>Python：列表/元组</p><p>字典</p><p>JavaScript：数组</p><p>对象</p><p>PHP：数组（含关联数组）</p><p>Java：数组</p><p>序列 Collection</p><p>映射表 Map</p><p>分析：C最简单只支持数组，其他都支持容器，不过主要还是顺序容器和关联容器两大类。</p><p>16、注释方式</p><p>C：/* */</p><p>C++：//</p><p>Python：#</p><p>JavaScript：/* */</p><p>//</p><p>PHP：/* */</p><p>//</p><p>#</p><p>Java：/* */</p><p>//</p><p>分析：大概就/**/、//、#三种方式，各自支持情况不一。</p><p>17、多线程支持</p><p>C：支持</p><p>C++：支持</p><p>Python：支持</p><p>JavaScript：不支持</p><p>PHP：不支持</p><p>Java：支持</p><p>分析：四种通用编程语言都支持了，两种专用编程语言都不支持。</p><p>18、socket支持</p><p>C：支持</p><p>C++：支持</p><p>Python：支持</p><p>JavaScript：不支持</p><p>PHP：支持</p><p>Java：支持</p><p>分析：除了JavaScript以外都支持，这也是JavaScript的应用领域限制所决定的。</p><p>19、垃圾回收机制</p><p>C：不支持</p><p>C++：不支持</p><p>Python：支持</p><p>JavaScript：支持</p><p>PHP：支持</p><p>Java：支持</p><p>分析：这是现代语言的重要机制，C和C++不支持，其他的都支持了。</p><p>20、引入其他文件中的函数</p><p>C：export int test();</p><p>C++：export int test();</p><p>Python：from test import *</p><p>JavaScript：&lt;script language=&lsquo;javascript&rsquo; src=&ldquo;test.js"charset=&ldquo;utf-8&rdquo;></script></p><p>PHP：require_once(&rsquo;test.php&rsquo;);</p><p>或者</p><p>include_once(&rsquo;test.php&rsquo;);</p><p>Java：import java.util.test.*;</p><p>分析：都支持，C和C++用export，Python和Java用import，JavaScript依靠HTML脚本，PHP用自己的函数调用。</p><p>21、将字符串作为指令执行</p><p>C：不支持</p><p>C++：不支持</p><p>Python：eval(&ldquo;port=5060&rdquo;)</p><p>JavaScript：eval(&ldquo;port=5060;&rdquo;);</p><p>PHP：eval(&ldquo;port=5060;&rdquo;);</p><p>Java：Porcess proc = new ProcessBuilder(“test”).start();</p><p>分析：很有用的一个动态语言特性，C和C++都不支持，Java要类库来支持，其它的语言内置eval关键字来支持。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/java/>JAVA
+</a><a href=/tags/python/>PYTHON</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E8%BF%99%E9%87%8C%E5%8F%AA%E6%9C%89%E6%97%A9%E6%B3%84%E7%9A%84%E7%A7%91%E5%AD%A6%E7%AD%94%E6%A1%88/ rel=next title=关于早泄的科学答案><i class="fa fa-chevron-left"></i> 关于早泄的科学答案</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E6%9C%80%E5%B8%B8%E7%94%A8%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/ rel=prev title=java面试>java面试
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/java%E5%92%8Cpython%E5%AF%B9%E6%AF%94/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"java%E5%92%8Cpython%E5%AF%B9%E6%AF%94","permalink":"/post/java%E5%92%8Cpython%E5%AF%B9%E6%AF%94/","title":"JAVA和PYTHON对比","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.1","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1763982110" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1763982110" defer></script></body></html>

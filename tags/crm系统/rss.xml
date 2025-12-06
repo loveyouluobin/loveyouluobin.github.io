@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CRM系统 on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/crm%E7%B3%BB%E7%BB%9F/</link><description>Recent content in CRM系统 on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 22 Jul 2019 15:32:20 +0000</lastBuildDate><atom:link href="/tags/crm%E7%B3%BB%E7%BB%9F/rss.xml" rel="self" type="application/rss+xml"/><item><title>CRM系统</title><link>/post/crm%E9%A1%B9%E7%9B%AE-ssh/</link><pubDate>Mon, 22 Jul 2019 15:32:20 +0000</pubDate><guid>/post/crm%E9%A1%B9%E7%9B%AE-ssh/</guid><description>&lt;h2 id="注册">注册
-&lt;a class="header-anchor" href="#%e6%b3%a8%e5%86%8c">&lt;/a>
-&lt;/h2>&lt;p>bean包下 建用户类 User.java 提供set/get/tostring方法&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CRM系统 on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/crm%E7%B3%BB%E7%BB%9F/</link><description>Recent content in CRM系统 on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 22 Jul 2019 15:32:20 +0000</lastBuildDate><atom:link href="/tags/crm%E7%B3%BB%E7%BB%9F/rss.xml" rel="self" type="application/rss+xml"/><item><title>CRM系统</title><link>/post/crm%E9%A1%B9%E7%9B%AE-ssh/</link><pubDate>Mon, 22 Jul 2019 15:32:20 +0000</pubDate><guid>/post/crm%E9%A1%B9%E7%9B%AE-ssh/</guid><description>&lt;h2 id="注册"&gt;注册
+&lt;a class="header-anchor" href="#%e6%b3%a8%e5%86%8c"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;bean包下 建用户类 User.java 提供set/get/tostring方法&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">private Long user_id;//用户id
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">private String user_code; //用户账号
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">private String user_name; //用户昵称
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">private String user_password;//用户密码
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">private char user_state; //用户状态 ： 1 ： 可用 ，0 ： 暂停使用&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-5"&gt;&lt;a class="lnlinks" href="#hl-0-5"&gt;5&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;private Long user_id;//用户id
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;private String user_code; //用户账号
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;private String user_name; //用户昵称
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;private String user_password;//用户密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;private char user_state; //用户状态 ： 1 ： 可用 ，0 ： 暂停使用&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

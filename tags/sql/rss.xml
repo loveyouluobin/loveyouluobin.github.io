@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQL on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/sql/</link><description>Recent content in SQL on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 10 Jul 2023 23:39:16 +0000</lastBuildDate><atom:link href="/tags/sql/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sqlserver 双机热备份_主数据库发布（主从备份）</title><link>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</link><pubDate>Mon, 10 Jul 2023 23:39:16 +0000</pubDate><guid>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</guid><description>&lt;h1 id="sqlserver-双机热备份_主数据库发布主从备份">Sqlserver 双机热备份_主数据库发布（主从备份）
-&lt;a class="header-anchor" href="#sqlserver-%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87%e4%bb%bd_%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93%e5%8f%91%e5%b8%83%e4%b8%bb%e4%bb%8e%e5%a4%87%e4%bb%bd">&lt;/a>
-&lt;/h1>&lt;h1 id="设置主数据库">设置主数据库
-&lt;a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93">&lt;/a>
-&lt;/h1>&lt;p>俩台电脑上的Sqlserver数据库 实现 一台电脑数据库更新后 另一台电脑数据库同步&lt;/p>
-&lt;p>这一篇设置主数据库 怎么发布&lt;/p>
-&lt;p>按步骤设置主数据库&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQL on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/sql/</link><description>Recent content in SQL on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 10 Jul 2023 23:39:16 +0000</lastBuildDate><atom:link href="/tags/sql/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sqlserver 双机热备份_主数据库发布（主从备份）</title><link>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</link><pubDate>Mon, 10 Jul 2023 23:39:16 +0000</pubDate><guid>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</guid><description>&lt;h1 id="sqlserver-双机热备份_主数据库发布主从备份"&gt;Sqlserver 双机热备份_主数据库发布（主从备份）
+&lt;a class="header-anchor" href="#sqlserver-%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87%e4%bb%bd_%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93%e5%8f%91%e5%b8%83%e4%b8%bb%e4%bb%8e%e5%a4%87%e4%bb%bd"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;h1 id="设置主数据库"&gt;设置主数据库
+&lt;a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;p&gt;俩台电脑上的Sqlserver数据库 实现 一台电脑数据库更新后 另一台电脑数据库同步&lt;/p&gt;
+&lt;p&gt;这一篇设置主数据库 怎么发布&lt;/p&gt;
+&lt;p&gt;按步骤设置主数据库&lt;/p&gt;</description></item></channel></rss>

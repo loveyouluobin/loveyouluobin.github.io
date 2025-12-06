@@ -2428,7 +2428,13 @@ header.header {
   -moz-transition: top .3s;
   -webkit-transition: top .3s;
   -o-transition: top .3s;
-  left: 30px;
+  right: 30px;
+}
+
+@media (max-width: 991px) {
+  .book-mark-link {
+    right: 16px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -2448,47 +2454,6 @@ header.header {
 
 .book-mark-link:hover, .book-mark-link-fixed {
   top: -2px;
-}
-
-@keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-
-.github-corner :hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-
-.github-corner svg {
-  color: white;
-  fill: var(--theme-color);
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 5;
-}
-
-@media (max-width: 991px) {
-  .github-corner {
-    display: none;
-  }
-  .github-corner svg {
-    color: var(--theme-color);
-    fill: white;
-  }
-  .github-corner .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
 }
 
 .sidebar-inner, .sidebar-card-widget {
@@ -3335,41 +3300,18 @@ header.header {
 }
 
 .back-to-top {
-  bottom: -100px;
-  box-sizing: border-box;
-  color: white;
-  padding: 0 6px;
-  transition: bottom 0.2s ease-in-out;
-  background: #222;
-  cursor: pointer;
-  opacity: 0.6;
-  position: fixed;
-  z-index: 30;
-  right: 30px;
-}
-
-@media (max-width: 991px) {
-  .back-to-top {
-    right: 16px;
-  }
-}
-
-.back-to-top:hover {
-  opacity: 0.8;
-}
-
-@media (max-width: 991px) {
-  .back-to-top {
-    opacity: 0.8;
-  }
-}
-
-.back-to-top:hover {
-  color: #fc6423;
+  margin: -22px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .back-to-top.back-to-top-on {
-  bottom: 30px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.back-to-top.back-to-top-on:hover {
+  opacity: 0.8;
 }
 
 .reading-progress-bar {
@@ -3816,25 +3758,6 @@ header.header {
   font-weight: normal;
   margin: initial;
   overflow-wrap: break-word;
-}
-
-.posts-expand .post-title .post-edit-link {
-  border-bottom: 0;
-  color: #bbb;
-  float: right;
-  font-size: 1.25em;
-  margin-left: -1.2em;
-  transition: color 0.2s ease-in;
-}
-
-@media (max-width: 567px) {
-  .posts-expand .post-title .post-edit-link {
-    margin-left: initial;
-  }
-}
-
-.posts-expand .post-title .post-edit-link:hover {
-  color: #fc6423;
 }
 
 .posts-expand .post-title-link {
@@ -4432,6 +4355,53 @@ ul.breadcrumb li:last-child {
   font-size: 1.35em;
 }
 
+@media (prefers-color-scheme: dark) {
+  .tag-cloud-0 {
+    border-bottom-color: #555555;
+    color: #555555;
+  }
+  .tag-cloud-1 {
+    border-bottom-color: #646464;
+    color: #646464;
+  }
+  .tag-cloud-2 {
+    border-bottom-color: #747474;
+    color: #747474;
+  }
+  .tag-cloud-3 {
+    border-bottom-color: #838383;
+    color: #838383;
+  }
+  .tag-cloud-4 {
+    border-bottom-color: #929292;
+    color: #929292;
+  }
+  .tag-cloud-5 {
+    border-bottom-color: #a2a2a2;
+    color: #a2a2a2;
+  }
+  .tag-cloud-6 {
+    border-bottom-color: #b1b1b1;
+    color: #b1b1b1;
+  }
+  .tag-cloud-7 {
+    border-bottom-color: silver;
+    color: silver;
+  }
+  .tag-cloud-8 {
+    border-bottom-color: #cfcfcf;
+    color: #cfcfcf;
+  }
+  .tag-cloud-9 {
+    border-bottom-color: #dfdfdf;
+    color: #dfdfdf;
+  }
+  .tag-cloud-10 {
+    border-bottom-color: #eeeeee;
+    color: #eeeeee;
+  }
+}
+
 .flinks-block .flinks-header {
   text-align: center;
   font-weight: bold;
@@ -4903,6 +4873,18 @@ mark.search-keyword {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
+.main-menu .menu-item-active::after {
+  background: #bbb;
+  border-radius: 50%;
+  content: ' ';
+  height: 6px;
+  margin-top: -3px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 6px;
+}
+
 .sub-menu {
   margin: 0;
   padding: 6px 0;
@@ -5016,6 +4998,15 @@ mark.search-keyword {
   display: inline-block;
   max-width: 100%;
   margin: 5px;
+}
+
+.back-to-top {
+  background: var(--body-bg-color);
+  margin: 8px -12px --8px;
+}
+
+.back-to-top.back-to-top-on {
+  margin-top: 16px;
 }
 
 .main-inner > .sub-menu, .main-inner > .post-block, .main-inner > .flinks-block, .main-inner > .tabs-comment, .main-inner > .comments, .main-inner > .post-comments, .main-inner > .pagination {

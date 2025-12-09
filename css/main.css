@@ -3147,6 +3147,7 @@ header.header {
   color: #ff0000;
   display: inline-block;
   margin: 0 5px;
+  animation: beat 1.33s ease-in-out infinite;
 }
 
 /*
@@ -4355,53 +4356,6 @@ ul.breadcrumb li:last-child {
   font-size: 1.35em;
 }
 
-@media (prefers-color-scheme: dark) {
-  .tag-cloud-0 {
-    border-bottom-color: #555555;
-    color: #555555;
-  }
-  .tag-cloud-1 {
-    border-bottom-color: #646464;
-    color: #646464;
-  }
-  .tag-cloud-2 {
-    border-bottom-color: #747474;
-    color: #747474;
-  }
-  .tag-cloud-3 {
-    border-bottom-color: #838383;
-    color: #838383;
-  }
-  .tag-cloud-4 {
-    border-bottom-color: #929292;
-    color: #929292;
-  }
-  .tag-cloud-5 {
-    border-bottom-color: #a2a2a2;
-    color: #a2a2a2;
-  }
-  .tag-cloud-6 {
-    border-bottom-color: #b1b1b1;
-    color: #b1b1b1;
-  }
-  .tag-cloud-7 {
-    border-bottom-color: silver;
-    color: silver;
-  }
-  .tag-cloud-8 {
-    border-bottom-color: #cfcfcf;
-    color: #cfcfcf;
-  }
-  .tag-cloud-9 {
-    border-bottom-color: #dfdfdf;
-    color: #dfdfdf;
-  }
-  .tag-cloud-10 {
-    border-bottom-color: #eeeeee;
-    color: #eeeeee;
-  }
-}
-
 .flinks-block .flinks-header {
   text-align: center;
   font-weight: bold;
@@ -4871,18 +4825,6 @@ mark.search-keyword {
   float: right;
   padding: 2px 5px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-.main-menu .menu-item-active::after {
-  background: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
 }
 
 .sub-menu {

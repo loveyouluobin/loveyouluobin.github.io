@@ -15,11 +15,11 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt; &lt;span class="c1"&gt;//php开始
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//造一个盒子贴上标签(变量名)age 放一个值(变量值)28
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//通过标签(变量名)找到盒子(内存值)，重新放一个值29
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//通过变量名找到变量的值+1运算，再赋值给age
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//取值
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;//php结束
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//造一个盒子贴上标签(变量名)age 放一个值(变量值)28
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//通过标签(变量名)找到盒子(内存值)，重新放一个值29
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//通过变量名找到变量的值+1运算，再赋值给age
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;//取值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;//php结束
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;

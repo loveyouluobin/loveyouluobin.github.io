@@ -1,0 +1,384 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.160.1"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="计算机,网络"><meta property="og:type" content="article"><meta property="og:title" content="PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2026-06-10 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2026-06-10 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1781174836"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1781174836"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？每次想到有你与我同行，路，必须走下去</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-"><a href=/ class="menus-parent hvr-icon-pulse" rel=section>玩客集
+<span class=menu-item-shrink-icon><i class="fa fa-angle-right"></i></span></a><ul class=menu-children><li class=menu-child-item><a href=/categories/%E7%BC%96%E7%A8%8B/ class=hvr-icon-pulse rel=section><i class="fa hvr-icon"></i>编程</a></li></ul></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#pve基本设置>PVE基本设置</a><ul><li><a href=#更换系统源>更换系统源</a></li><li><a href=#更换企业源>更换企业源</a></li><li><a href=#修复源401错误>修复源401错误</a></li><li><a href=#执行更新软件源>执行更新软件源</a></li><li><a href=#lxc容器更源>LXC容器更源</a></li></ul></li><li><a href=#intel-11-15代开启sriov核显虚拟化>intel 11-15代开启SRIOV核显虚拟化</a><ul><li><a href=#安装headers头文件>安装headers头文件</a></li><li><a href=#安装构建工具>安装构建工具</a></li><li><a href=#开启直通和i915-sriov>开启直通和i915 sriov</a></li><li><a href=#加载内核模块>加载内核模块</a></li><li><a href=#执行更新initramfs>执行更新initramfs</a></li><li><a href=#验证是否开启直通>验证是否开启直通</a></li><li><a href=#下载i915-sriov驱动>下载i915-sriov驱动</a></li><li><a href=#安装i915-sriov驱动>安装i915-sriov驱动</a></li><li><a href=#如何安装68内核>如何安装6.8内核？</a></li><li><a href=#安装sysfsutils>安装sysfsutils</a></li><li><a href=#添加vfs核显数量>添加VFs核显数量</a></li><li><a href=#验证是否开启核显sriov>验证是否开启核显SRIOV</a></li><li><a href=#温馨提示>温馨提示</a></li><li><a href=#创建核显sr-iov的win虚拟机参数>创建核显SR-IOV的Win虚拟机参数</a></li><li><a href=#创建核显sr-iov的飞牛os虚拟机参数>创建核显SR-IOV的飞牛OS虚拟机参数</a></li></ul></li><li><a href=#intel-6-10代开启gvt-g核显虚拟化>intel 6-10代开启GVT-g核显虚拟化</a><ul><li><a href=#开启硬件直通和gvt-g>开启硬件直通和GVT-g</a></li><li><a href=#加载内核模块-1>加载内核模块</a></li><li><a href=#执行更新initramfs-1>执行更新initramfs</a></li><li><a href=#验证是否开启核显gvt-g>验证是否开启核显GVT-g</a></li><li><a href=#创建核显gvt-g的win虚拟机参数>创建核显GVT-g的Win虚拟机参数</a></li><li><a href=#资源驱动下载>资源驱动下载</a></li><li><a href=#创建核显gvt-g的飞牛os虚拟机参数>创建核显GVT-g的飞牛OS虚拟机参数</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>4296</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank><i class="fa fa-quora fa-fw"></i>
+QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank><i class="fab fa-github fa-fw"></i>
+Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank><i class="fa fa-envelope fa-fw"></i>
+E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank><i class="fa fa-book fa-fw"></i>
+知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://xiaodu114.github.io/p/fav/imageSite/ title=https://xiaodu114.github.io/p/fav/imageSite/ target=_blank>谷歌搜索</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom><span></span></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=21685135></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=45461></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2026-06-10 15:39:16 +0000 UTC"></div></div></div></div><div class="sidebar-card-widget back-to-top-card"><div class="back-to-top animated" role=button aria-label><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景"><meta itemprop=description content></span><header class=post-header><h1 class=post-title itemprop="name headline">PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2026-06-10 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2026-06-10 15:39:16 +0000 UTC">2026-06-10
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/nas/ itemprop=url rel=index><span itemprop=name>NAS</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>4246</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>9分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><a id=more></a><h1 id=pve8开启6-15代intel核显虚拟化sriovgvt-g技术应用于fnoswinos场景>PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术&ndash;应用于fnOS/WinOS场景
+<a class=header-anchor href=#pve8%e5%bc%80%e5%90%af6-15%e4%bb%a3intel%e6%a0%b8%e6%98%be%e8%99%9a%e6%8b%9f%e5%8c%96sriovgvt-g%e6%8a%80%e6%9c%af%e5%ba%94%e7%94%a8%e4%ba%8efnoswinos%e5%9c%ba%e6%99%af></a></h1><p>英特尔持续推动英特尔®图形处理器上的图形虚拟化技术。这些技术中的最新技术是单根 IO 虚拟化 （SR-IOV），它取代了之前的 英特尔® Graphics Virtualization Technology –g （GVT-g）要了解每个
+<a href=https://www.intel.cn/content/www/cn/zh/support/articles/000093216/graphics/processor-graphics.html title=英特尔®显卡家族支持哪种显卡 rel="noopener external nofollow noreferrer" target=_blank class=exturl>英特尔®显卡家族支持哪种显卡
+<i class="fa fa-external-link-alt"></i>
+</a>虚拟化技术，请参阅下表：
+<code>注意，代号为 Battlemage | Lunar Lake | Meteor Lake | Alchemist | Tiger Lake 这5款图形处理器并不支持SR-IOV，也不支持GVT-g</code>
+<a href=https://yangwenqing.com/usr/uploads/2025/05/1571088372.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/05/1571088372.png alt=支持列表>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2025/05/1571088372.png title=支持列表 rel="noopener external nofollow noreferrer" target=_blank class=exturl>支持列表
+<i class="fa fa-external-link-alt"></i></a></p><h2 id=pve基本设置>PVE基本设置
+<a class=header-anchor href=#pve%e5%9f%ba%e6%9c%ac%e8%ae%be%e7%bd%ae></a></h2><p>安装PVE过程略过，提前将pve安装好，推荐安装PVE8版本，如要正常使用11-15代核显SR-IOV，需要将内核更新到<code>6.8</code>及以上。并在BIOS提前开启<code>VT-d（必须）</code>,<code>SR-IOV(如有可以开)</code>,<code>Above 4GB(如有可以开)</code>,和<code>关闭安全模式Secure Boot</code></p><p>本篇文章将大量使用<code>nano</code>文本编辑命令，至于怎么使用自行百度，这里不重复造轮子了。 知道如何保存就行<code>Ctrl +X</code> 输入“<code>Y</code>”回车保存</p><h3 id=更换系统源>更换系统源
+<a class=header-anchor href=#%e6%9b%b4%e6%8d%a2%e7%b3%bb%e7%bb%9f%e6%ba%90></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4>4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5>5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6>6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7>7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>国内清华源
+</span></span><span class=line><span class=cl># 编辑sources.list
+</span></span><span class=line><span class=cl>nano /etc/apt/sources.list
+</span></span><span class=line><span class=cl># 将原有的源链接在句首加 # 注释掉，更换以下清华源信息
+</span></span><span class=line><span class=cl>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+</span></span><span class=line><span class=cl>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+</span></span><span class=line><span class=cl>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+</span></span><span class=line><span class=cl>deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware</span></span></code></pre></td></tr></table></div></div><h3 id=更换企业源>更换企业源
+<a class=header-anchor href=#%e6%9b%b4%e6%8d%a2%e4%bc%81%e4%b8%9a%e6%ba%90></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4>4</a>
+</span><span class=lnt id=hl-1-5><a class=lnlinks href=#hl-1-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>国内清华源
+</span></span><span class=line><span class=cl># 编辑pve-enterprise.list
+</span></span><span class=line><span class=cl>nano /etc/apt/sources.list.d/pve-enterprise.list
+</span></span><span class=line><span class=cl># 将原有的源链接在句首加 # 注释掉，更换以下清华源信息
+</span></span><span class=line><span class=cl>deb https://mirrors.tuna.tsinghua.edu.cn/proxmox/debian bookworm pve-no-subscription</span></span></code></pre></td></tr></table></div></div><h3 id=修复源401错误>修复源401错误
+<a class=header-anchor href=#%e4%bf%ae%e5%a4%8d%e6%ba%90401%e9%94%99%e8%af%af></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2>2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3>3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 编辑ceph.list</span>
+</span></span><span class=line><span class=cl>nano /etc/apt/sources.list.d/ceph.list
+</span></span><span class=line><span class=cl><span class=c1># 将原有的源链接在句首加 # 注释掉，添加中科大ceph源</span>
+</span></span><span class=line><span class=cl>deb https://mirrors.ustc.edu.cn/proxmox/debian/ceph-quincy bookworm no-subscription</span></span></code></pre></td></tr></table></div></div><h3 id=执行更新软件源>执行更新软件源
+<a class=header-anchor href=#%e6%89%a7%e8%a1%8c%e6%9b%b4%e6%96%b0%e8%bd%af%e4%bb%b6%e6%ba%90></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt update </span></span></code></pre></td></tr></table></div></div><h3 id=lxc容器更源>LXC容器更源
+<a class=header-anchor href=#lxc%e5%ae%b9%e5%99%a8%e6%9b%b4%e6%ba%90></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4>4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5>5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6>6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=err>国内清华源</span>
+</span></span><span class=line><span class=cl><span class=c1># 备份APLInfo.pm</span>
+</span></span><span class=line><span class=cl><span class=n>cp</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm_back</span>
+</span></span><span class=line><span class=cl><span class=c1># 替换为清华源：</span>
+</span></span><span class=line><span class=cl><span class=n>sed</span> <span class=o>-</span><span class=n>i</span> <span class=s1>&#39;s|http://download.proxmox.com|https://mirrors.tuna.tsinghua.edu.cn/proxmox|g&#39;</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm</span>
+</span></span><span class=line><span class=cl><span class=c1># 重启服务后生效</span>
+</span></span><span class=line><span class=cl><span class=n>systemctl</span> <span class=n>restart</span> <span class=n>pvedaemon</span><span class=o>.</span><span class=n>service</span></span></span></code></pre></td></tr></table></div></div><h2 id=intel-11-15代开启sriov核显虚拟化>intel 11-15代开启SRIOV核显虚拟化
+<a class=header-anchor href=#intel-11-15%e4%bb%a3%e5%bc%80%e5%90%afsriov%e6%a0%b8%e6%98%be%e8%99%9a%e6%8b%9f%e5%8c%96></a></h2><p>以下设置是<code>11-15代</code>开启SRIOV核显虚拟化的设置，以PVE<code>6.8.12-10内核</code>为例。<code>6-10代的GVT-g核显虚拟化技术往下翻</code></p><h3 id=安装headers头文件>安装headers头文件
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85headers%e5%a4%b4%e6%96%87%e4%bb%b6></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt install pve-headers-<span class=k>$(</span>uname -r<span class=k>)</span></span></span></code></pre></td></tr></table></div></div><h3 id=安装构建工具>安装构建工具
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt install build-* dkms</span></span></code></pre></td></tr></table></div></div><h3 id=开启直通和i915-sriov>开启直通和i915 sriov
+<a class=header-anchor href=#%e5%bc%80%e5%90%af%e7%9b%b4%e9%80%9a%e5%92%8ci915-sriov></a></h3><p>需要提前在主板BIOS开启虚拟化功能，才能开启硬件直通。在BIOS开启<code>vt-d</code>,<code>SR-IOV(如有可以开)</code>,<code>Above 4GB(如有可以开)</code>,和<code>关闭安全模式Secure Boot</code>。
+使用<code>nano</code>命令编辑<code>/etc/default/grub</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2>2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3>3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4>4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5>5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 编辑grub文件</span>
+</span></span><span class=line><span class=cl>nano /etc/default/grub 
+</span></span><span class=line><span class=cl><span class=c1># 开启iommu分组和i915guc，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet intel_iommu=on iommu=pt i915.enable_guc=3 i915.max_vfs=7 module_blacklist=xe&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub</span></span></code></pre></td></tr></table></div></div><h3 id=加载内核模块>加载内核模块
+<a class=header-anchor href=#%e5%8a%a0%e8%bd%bd%e5%86%85%e6%a0%b8%e6%a8%a1%e5%9d%97></a></h3><p>编辑<code>nano /etc/modules</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vfio
+</span></span><span class=line><span class=cl>vfio_iommu_type1
+</span></span><span class=line><span class=cl>vfio_pci
+</span></span><span class=line><span class=cl>vfio_virqfd</span></span></code></pre></td></tr></table></div></div><h3 id=执行更新initramfs>执行更新initramfs
+<a class=header-anchor href=#%e6%89%a7%e8%a1%8c%e6%9b%b4%e6%96%b0initramfs></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span><span class=lnt id=hl-9-3><a class=lnlinks href=#hl-9-3>3</a>
+</span><span class=lnt id=hl-9-4><a class=lnlinks href=#hl-9-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新initramfs</span>
+</span></span><span class=line><span class=cl>update-initramfs -u -k all
+</span></span><span class=line><span class=cl><span class=c1># 重启</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h3 id=验证是否开启直通>验证是否开启直通
+<a class=header-anchor href=#%e9%aa%8c%e8%af%81%e6%98%af%e5%90%a6%e5%bc%80%e5%90%af%e7%9b%b4%e9%80%9a></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2>2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3>3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 验证是否开启iommu</span>
+</span></span><span class=line><span class=cl>dmesg <span class=p>|</span> grep iommu
+</span></span><span class=line><span class=cl>或者
+</span></span><span class=line><span class=cl>dmesg <span class=p>|</span> grep -e DMAR -e IOMMU -e AMD-Vi</span></span></code></pre></td></tr></table></div></div><p>出现如下例子。则代表成功</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1>1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2>2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3>3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4>4</a>
+</span><span class=lnt id=hl-11-5><a class=lnlinks href=#hl-11-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span> 1.341100<span class=o>]</span> pci 0000:00:00.0: Adding to iommu group <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341116<span class=o>]</span> pci 0000:00:01.0: Adding to iommu group <span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341126<span class=o>]</span> pci 0000:00:02.0: Adding to iommu group <span class=m>2</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341137<span class=o>]</span> pci 0000:00:14.0: Adding to iommu group <span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341146<span class=o>]</span> pci 0000:00:17.0: Adding to iommu group <span class=m>4</span></span></span></code></pre></td></tr></table></div></div><p>此时输入命令</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1> 1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2> 2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3> 3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4> 4</a>
+</span><span class=lnt id=hl-12-5><a class=lnlinks href=#hl-12-5> 5</a>
+</span><span class=lnt id=hl-12-6><a class=lnlinks href=#hl-12-6> 6</a>
+</span><span class=lnt id=hl-12-7><a class=lnlinks href=#hl-12-7> 7</a>
+</span><span class=lnt id=hl-12-8><a class=lnlinks href=#hl-12-8> 8</a>
+</span><span class=lnt id=hl-12-9><a class=lnlinks href=#hl-12-9> 9</a>
+</span><span class=lnt id=hl-12-10><a class=lnlinks href=#hl-12-10>10</a>
+</span><span class=lnt id=hl-12-11><a class=lnlinks href=#hl-12-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>find /sys/kernel/iommu_groups/ -type l 
+</span></span><span class=line><span class=cl><span class=c1>#出现很多直通组，就代表成功了。如果没有任何东西，就是没有开启</span>
+</span></span><span class=line><span class=cl>lsmod <span class=p>|</span> grep vfio
+</span></span><span class=line><span class=cl><span class=c1># 检测模块是否加载</span>
+</span></span><span class=line><span class=cl>vfio_pci               <span class=m>16384</span>  <span class=m>4</span>
+</span></span><span class=line><span class=cl>vfio_pci_core          <span class=m>94208</span>  <span class=m>1</span> vfio_pci
+</span></span><span class=line><span class=cl>vfio_iommu_type1       <span class=m>49152</span>  <span class=m>2</span>
+</span></span><span class=line><span class=cl>vfio                   <span class=m>57344</span>  <span class=m>17</span> vfio_pci_core,vfio_iommu_type1,vfio_pci
+</span></span><span class=line><span class=cl>iommufd                <span class=m>73728</span>  <span class=m>1</span> vfio
+</span></span><span class=line><span class=cl>irqbypass              <span class=m>16384</span>  <span class=m>41</span> vfio_pci_core,kvm
+</span></span><span class=line><span class=cl><span class=c1>#出现这类信息，就代表成功了。</span></span></span></code></pre></td></tr></table></div></div><h3 id=下载i915-sriov驱动>下载i915-sriov驱动
+<a class=header-anchor href=#%e4%b8%8b%e8%bd%bdi915-sriov%e9%a9%b1%e5%8a%a8></a></h3><p><code>国内访问github很慢，建议给PVE挂上代理再下载，或者手动到github下载下来再上传到PVE</code>
+<a href=https://github.com/strongtz/i915-sriov-dkms/releases title=i915-sriov版本发布页 rel="noopener external nofollow noreferrer" target=_blank class=exturl>i915-sriov版本发布页
+<i class="fa fa-external-link-alt"></i></a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2>2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3>3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 适用于6.8 ~ 6.16内核的i915-sriov驱动，下载到临时目录/tmp/</span>
+</span></span><span class=line><span class=cl>wget -O /tmp/i915-sriov-dkms_2025.07.22_amd64.deb <span class=s2>&#34;http://dl.yangwenqing.com/webos/link/8f592d04d4be4194a8fe5a2fff6446f6/i915-sriov-dkms_2025.07.22_amd64.deb&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 适用于6.17 ~ 7.0内核的i915-sriov驱动，下载到临时目录/tmp/</span>
+</span></span><span class=line><span class=cl>wget -O /tmp/i915-sriov-dkms_2026.05.03_amd64.deb <span class=s2>&#34;https://dl.yangwenqing.com/webos/link/00a1844f9ee340eb84c3a6920775d840/i915-sriov-dkms_2026.05.03_amd64.deb&#34;</span></span></span></code></pre></td></tr></table></div></div><h3 id=安装i915-sriov驱动>安装i915-sriov驱动
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85i915-sriov%e9%a9%b1%e5%8a%a8></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>如果你的PVE内核是Linux6.8 ~ 6.16的版本则安装i915-sriov-dkms_2025.07.22_amd64.deb；如果你的PVE内核是Linux6.12 ~ 6.19的版本则安装i915-sriov-dkms_2026.02.04_amd64.deb；
+</span></span><span class=line><span class=cl>dpkg -i /tmp/i915-sriov-dkms*.deb</span></span></code></pre></td></tr></table></div></div><h3 id=如何安装68内核>如何安装6.8内核？
+<a class=header-anchor href=#%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%8568%e5%86%85%e6%a0%b8></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2>2</a>
+</span><span class=lnt id=hl-15-3><a class=lnlinks href=#hl-15-3>3</a>
+</span><span class=lnt id=hl-15-4><a class=lnlinks href=#hl-15-4>4</a>
+</span><span class=lnt id=hl-15-5><a class=lnlinks href=#hl-15-5>5</a>
+</span><span class=lnt id=hl-15-6><a class=lnlinks href=#hl-15-6>6</a>
+</span><span class=lnt id=hl-15-7><a class=lnlinks href=#hl-15-7>7</a>
+</span><span class=lnt id=hl-15-8><a class=lnlinks href=#hl-15-8>8</a>
+</span><span class=lnt id=hl-15-9><a class=lnlinks href=#hl-15-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 安装6.8.12-10-pve内核</span>
+</span></span><span class=line><span class=cl>apt install pve-kernel-6.8.12-10-pve
+</span></span><span class=line><span class=cl><span class=c1># 查看当前安装的内核</span>
+</span></span><span class=line><span class=cl>proxmox-boot-tool kernel list
+</span></span><span class=line><span class=cl><span class=c1># 如 6.8.12-10-pve</span>
+</span></span><span class=line><span class=cl><span class=c1># 将装好的6.8内核设置成第一启动项，重启PVE即可进到新内核</span>
+</span></span><span class=line><span class=cl>proxmox-boot-tool kernel pin 6.8.12-10-pve
+</span></span><span class=line><span class=cl><span class=c1># 别忘了更新内核后给内核安装头文件再打驱动</span>
+</span></span><span class=line><span class=cl>apt install pve-headers-<span class=k>$(</span>uname -r<span class=k>)</span></span></span></code></pre></td></tr></table></div></div><p>经过漫长等待完成后，检查安装是否成功，运行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2>2</a>
+</span><span class=lnt id=hl-16-3><a class=lnlinks href=#hl-16-3>3</a>
+</span><span class=lnt id=hl-16-4><a class=lnlinks href=#hl-16-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>modinfo i915<span class=p>|</span>grep vf 
+</span></span><span class=line><span class=cl><span class=c1># 反馈如下表示成功：</span>
+</span></span><span class=line><span class=cl>parm:           max_vfs:Limit number of virtual functions to allocate. <span class=o>(</span><span class=nv>0</span> <span class=o>=</span> no VFs <span class=o>[</span>default<span class=o>]</span><span class=p>;</span> <span class=nv>N</span> <span class=o>=</span> allow up to N VFs<span class=o>)</span> <span class=o>(</span>uint<span class=o>)</span>
+</span></span><span class=line><span class=cl>如安装不成功建议删除无用的旧内核和头文件再进行安装，直至有以上成功反馈信息。</span></span></code></pre></td></tr></table></div></div><h3 id=安装sysfsutils>安装sysfsutils
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85sysfsutils></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt install -y sysfsutils</span></span></code></pre></td></tr></table></div></div><h3 id=添加vfs核显数量>添加VFs核显数量
+<a class=header-anchor href=#%e6%b7%bb%e5%8a%a0vfs%e6%a0%b8%e6%98%be%e6%95%b0%e9%87%8f></a></h3><p>按需设置最高7个，设置1个时性能最强。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 开启3个VFs核显数量</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;devices/pci0000:00/0000:00:02.0/sriov_numvfs = 3&#34;</span> &gt; /etc/sysfs.conf 
+</span></span><span class=line><span class=cl><span class=c1># 重启</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h3 id=验证是否开启核显sriov>验证是否开启核显SRIOV
+<a class=header-anchor href=#%e9%aa%8c%e8%af%81%e6%98%af%e5%90%a6%e5%bc%80%e5%90%af%e6%a0%b8%e6%98%besriov></a></h3><p>使用lspci命令查看核显信息，有如下内容则成功开启核显
+<code>注意：物理核显02.0不能直通，否则所有虚拟核显消失</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1>1</a>
+</span><span class=lnt id=hl-19-2><a class=lnlinks href=#hl-19-2>2</a>
+</span><span class=lnt id=hl-19-3><a class=lnlinks href=#hl-19-3>3</a>
+</span><span class=lnt id=hl-19-4><a class=lnlinks href=#hl-19-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>00:02.0 VGA compatible controller: Intel Corporation Alder Lake-S GT1 <span class=o>[</span>UHD Graphics 770<span class=o>]</span>（物理核显）
+</span></span><span class=line><span class=cl>00:02.1 VGA compatible controller: Intel Corporation Alder Lake-S GT1 <span class=o>[</span>UHD Graphics 770<span class=o>]</span> （虚拟核显1）
+</span></span><span class=line><span class=cl>00:02.2 VGA compatible controller: Intel Corporation Alder Lake-S GT1 <span class=o>[</span>UHD Graphics 770<span class=o>]</span> （虚拟核显2）
+</span></span><span class=line><span class=cl>00:02.3 VGA compatible controller: Intel Corporation Alder Lake-S GT1 <span class=o>[</span>UHD Graphics 770<span class=o>]</span> （虚拟核显3）</span></span></code></pre></td></tr></table></div></div><h3 id=温馨提示>温馨提示
+<a class=header-anchor href=#%e6%b8%a9%e9%a6%a8%e6%8f%90%e7%a4%ba></a></h3><p>如果你的处理器是最新的<code>Arrow Lake</code>架构，安装了<code>i915-sriov-dkms</code>，没法看到<code>7个VF</code>。可以另外加上<code>i915.force_probe=7d67</code>参数到grub。
+使用<code>nano</code>命令编辑<code>/etc/default/grub</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1>1</a>
+</span><span class=lnt id=hl-20-2><a class=lnlinks href=#hl-20-2>2</a>
+</span><span class=lnt id=hl-20-3><a class=lnlinks href=#hl-20-3>3</a>
+</span><span class=lnt id=hl-20-4><a class=lnlinks href=#hl-20-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 开启iommu分组和i915guc，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet intel_iommu=on iommu=pt i915.enable_guc=3 i915.max_vfs=7 i915.force_probe=7d67 module_blacklist=xe&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub</span></span></code></pre></td></tr></table></div></div><h3 id=创建核显sr-iov的win虚拟机参数>创建核显SR-IOV的Win虚拟机参数
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e6%a0%b8%e6%98%besr-iov%e7%9a%84win%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%8f%82%e6%95%b0></a></h3><p>按以下虚拟机参数模板建立好虚拟机，打上核显驱动就能正常使用核显了。</p><p>创建win10虚拟机（22H2）
+名称：自定义
+光驱0挂载：Win安装ISO镜像
+光驱1挂载：virtIO驱动ISO镜像
+显示：VirtIO-GPU
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘：SCSI 大小200G（按需设置，或硬盘直通）
+CPU：host 核心数量6（按需设置）
+内存：8G
+网络：virtIO（半虚拟化或网卡直通）网卡
+添加PCI设备：核显SR-IOV（勾选ROM-Bar和PCIE）
+音频设备：ich9-intel-hda/后端驱动器：无</p><p><a href=https://yangwenqing.com/usr/uploads/2024/05/3175206401.png title=SR-IOV的Win虚拟机参数 rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/05/3175206401.png alt=SR-IOV的Win虚拟机参数>SR-IOV的Win虚拟机参数
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://yangwenqing.com/usr/uploads/2024/05/566400418.png title=i5-12500T核显SR-IOV驱动正常 rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/05/566400418.png alt=i5-12500T核显SR-IOV驱动正常>i5-12500T核显SR-IOV驱动正常
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=创建核显sr-iov的飞牛os虚拟机参数>创建核显SR-IOV的飞牛OS虚拟机参数
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e6%a0%b8%e6%98%besr-iov%e7%9a%84%e9%a3%9e%e7%89%9bos%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%8f%82%e6%95%b0></a></h3><p>按以下虚拟机参数模板建立好虚拟机，打上核显驱动就能正常使用核显给飞牛影视硬解。</p><p>创建飞牛虚拟机（fnOS）
+名称：自定义
+光驱0挂载：fnOS安装ISO镜像
+显示：默认
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘1：SCSI 大小64G（系统盘，或硬盘直通）
+磁盘2：SCSI 大小100G（数据盘，或硬盘直通）
+CPU：host 核心数量6（按需设置）
+内存：8G
+网络：virtIO（半虚拟化或网卡直通）网卡
+添加PCI设备：核显SR-IOV（勾选ROM-Bar和PCIE）</p><p><code>由于采用UEFI模式安装需要关闭Secure Boot 才能正常安装飞牛，开机时按esc键即可进虚拟机BIOS，将安全启动关闭</code>
+<a href=https://yangwenqing.com/usr/uploads/2025/03/3512203717.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/03/3512203717.png alt=img>
+<i class="fa fa-external-link-alt"></i>
+</a>飞牛已经将intel-i915-sriov驱动上传到应用商店，直接到商店下载安装即可。
+<a href=https://yangwenqing.com/usr/uploads/2025/05/226717934.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/05/226717934.png alt=img>
+<i class="fa fa-external-link-alt"></i>
+</a>打开飞牛影视开启硬件加速就能正常硬解了。
+<a href=https://yangwenqing.com/usr/uploads/2025/03/2230786090.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/03/2230786090.png alt=img>
+<i class="fa fa-external-link-alt"></i>
+</a>正常转码
+<a href=https://yangwenqing.com/usr/uploads/2025/05/453526768.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/05/453526768.png alt=img>
+<i class="fa fa-external-link-alt"></i></a></p><h2 id=intel-6-10代开启gvt-g核显虚拟化>intel 6-10代开启GVT-g核显虚拟化
+<a class=header-anchor href=#intel-6-10%e4%bb%a3%e5%bc%80%e5%90%afgvt-g%e6%a0%b8%e6%98%be%e8%99%9a%e6%8b%9f%e5%8c%96></a></h2><h3 id=开启硬件直通和gvt-g>开启硬件直通和GVT-g
+<a class=header-anchor href=#%e5%bc%80%e5%90%af%e7%a1%ac%e4%bb%b6%e7%9b%b4%e9%80%9a%e5%92%8cgvt-g></a></h3><p>需要提前在主板BIOS开启虚拟化功能，才能开启硬件直通。在BIOS开启<code>vt-d</code>,<code>SR-IOV(如有可以开)</code>,<code>Above 4GB(如有可以开)</code>,和<code>关闭安全模式Secure Boot</code>。
+使用<code>nano</code>命令编辑<code>/etc/default/grub</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-21-1><a class=lnlinks href=#hl-21-1>1</a>
+</span><span class=lnt id=hl-21-2><a class=lnlinks href=#hl-21-2>2</a>
+</span><span class=lnt id=hl-21-3><a class=lnlinks href=#hl-21-3>3</a>
+</span><span class=lnt id=hl-21-4><a class=lnlinks href=#hl-21-4>4</a>
+</span><span class=lnt id=hl-21-5><a class=lnlinks href=#hl-21-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/default/grub 
+</span></span><span class=line><span class=cl><span class=c1># 开启iommu分组和GVT-g，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet intel_iommu=on iommu=pt i915.enable_gvt=1 pcie_acs_override=downstream,multifunction&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub</span></span></code></pre></td></tr></table></div></div><h3 id=加载内核模块-1>加载内核模块
+<a class=header-anchor href=#%e5%8a%a0%e8%bd%bd%e5%86%85%e6%a0%b8%e6%a8%a1%e5%9d%97-1></a></h3><p>编辑<code>nano /etc/modules</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-22-1><a class=lnlinks href=#hl-22-1>1</a>
+</span><span class=lnt id=hl-22-2><a class=lnlinks href=#hl-22-2>2</a>
+</span><span class=lnt id=hl-22-3><a class=lnlinks href=#hl-22-3>3</a>
+</span><span class=lnt id=hl-22-4><a class=lnlinks href=#hl-22-4>4</a>
+</span><span class=lnt id=hl-22-5><a class=lnlinks href=#hl-22-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vfio
+</span></span><span class=line><span class=cl>vfio_iommu_type1
+</span></span><span class=line><span class=cl>vfio_pci
+</span></span><span class=line><span class=cl>vfio_virqfd
+</span></span><span class=line><span class=cl>kvmgt</span></span></code></pre></td></tr></table></div></div><h3 id=执行更新initramfs-1>执行更新initramfs
+<a class=header-anchor href=#%e6%89%a7%e8%a1%8c%e6%9b%b4%e6%96%b0initramfs-1></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-23-1><a class=lnlinks href=#hl-23-1>1</a>
+</span><span class=lnt id=hl-23-2><a class=lnlinks href=#hl-23-2>2</a>
+</span><span class=lnt id=hl-23-3><a class=lnlinks href=#hl-23-3>3</a>
+</span><span class=lnt id=hl-23-4><a class=lnlinks href=#hl-23-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新initramfs</span>
+</span></span><span class=line><span class=cl>update-initramfs -u -k all
+</span></span><span class=line><span class=cl><span class=c1># 重启</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h3 id=验证是否开启核显gvt-g>验证是否开启核显GVT-g
+<a class=header-anchor href=#%e9%aa%8c%e8%af%81%e6%98%af%e5%90%a6%e5%bc%80%e5%90%af%e6%a0%b8%e6%98%begvt-g></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-24-1><a class=lnlinks href=#hl-24-1>1</a>
+</span><span class=lnt id=hl-24-2><a class=lnlinks href=#hl-24-2>2</a>
+</span><span class=lnt id=hl-24-3><a class=lnlinks href=#hl-24-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ls /sys/bus/pci/devices/0000:00:02.0/mdev_supported_types
+</span></span><span class=line><span class=cl><span class=c1># 显示有2个或者更多即成功，UHD630核显最多可以开2个</span>
+</span></span><span class=line><span class=cl>i915-GVTg_V5_4  i915-GVTg_V5_8</span></span></code></pre></td></tr></table></div></div><h3 id=创建核显gvt-g的win虚拟机参数>创建核显GVT-g的Win虚拟机参数
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e6%a0%b8%e6%98%begvt-g%e7%9a%84win%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%8f%82%e6%95%b0></a></h3><p>按以下虚拟机参数模板建立好虚拟机，打上核显驱动就能正常使用核显了。</p><p>创建win10虚拟机（22H2）
+名称：自定义
+光驱0挂载：Win安装ISO镜像
+光驱1挂载：virtIO驱动ISO镜像
+显示：VirtIO-GPU
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘：SCSI 大小60G（按需设置，或硬盘直通）
+CPU：host 核心数量4（按需设置）
+内存：4G及以上
+网络：virtIO（半虚拟化或网卡直通）网卡
+添加PCI设备：核显GVT-g（勾选ROM-Bar和PCIE在Mdev类型中选择vgpu设备i915-GVTg_V5_8）
+音频设备：ich9-intel-hda/后端驱动器：无</p><p><a href=https://yangwenqing.com/usr/uploads/2024/05/1580184855.png title=GVT-g的Win虚拟机参数 rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/05/1580184855.png alt=GVT-g的Win虚拟机参数>GVT-g的Win虚拟机参数
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://yangwenqing.com/usr/uploads/2024/05/3943219954.png title=i3-9100核显GVT-g驱动正常 rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/05/3943219954.png alt=i3-9100核显GVT-g驱动正常>i3-9100核显GVT-g驱动正常
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=资源驱动下载>资源驱动下载
+<a class=header-anchor href=#%e8%b5%84%e6%ba%90%e9%a9%b1%e5%8a%a8%e4%b8%8b%e8%bd%bd></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-25-1><a class=lnlinks href=#hl-25-1>1</a>
+</span><span class=lnt id=hl-25-2><a class=lnlinks href=#hl-25-2>2</a>
+</span><span class=lnt id=hl-25-3><a class=lnlinks href=#hl-25-3>3</a>
+</span><span class=lnt id=hl-25-4><a class=lnlinks href=#hl-25-4>4</a>
+</span><span class=lnt id=hl-25-5><a class=lnlinks href=#hl-25-5>5</a>
+</span><span class=lnt id=hl-25-6><a class=lnlinks href=#hl-25-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># virtIO驱动ISO：</span>
+</span></span><span class=line><span class=cl>https://yun.yangwenqing.com/Proxmox/Windows/VirtIO_Drivers/virtio-win-0.1.240.iso
+</span></span><span class=line><span class=cl><span class=c1># 7-10代核显驱动：</span>
+</span></span><span class=line><span class=cl>https://www.intel.cn/content/www/cn/zh/download/776137/intel-7th-10th-gen-processor-graphics-windows.html
+</span></span><span class=line><span class=cl><span class=c1># 11-13代核显驱动：</span>
+</span></span><span class=line><span class=cl>https://www.intel.cn/content/www/cn/zh/download/785597/intel-arc-iris-xe-graphics-windows.html</span></span></code></pre></td></tr></table></div></div><h3 id=创建核显gvt-g的飞牛os虚拟机参数>创建核显GVT-g的飞牛OS虚拟机参数
+<a class=header-anchor href=#%e5%88%9b%e5%bb%ba%e6%a0%b8%e6%98%begvt-g%e7%9a%84%e9%a3%9e%e7%89%9bos%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%8f%82%e6%95%b0></a></h3><p>按以下虚拟机参数模板建立好虚拟机，进飞牛ssh配置核显就能正常使用核显给飞牛影视硬解。</p><p>创建飞牛虚拟机（fnOS）
+名称：自定义
+光驱0挂载：fnOS安装ISO镜像
+显示：默认
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘1：SCSI 大小64G（系统盘，或硬盘直通）
+磁盘2：SCSI 大小100G（数据盘，或硬盘直通）
+CPU：host 核心数量6（按需设置）
+内存：8G
+网络：virtIO（半虚拟化或网卡直通）网卡
+添加PCI设备：核显GVT-g（勾选ROM-Bar和PCIE在Mdev类型中选择vgpu设备i915-GVTg_V5_8）</p><p><code>由于采用UEFI模式安装需要关闭Secure Boot 才能正常安装飞牛，开机时按esc键即可进虚拟机BIOS，将安全启动关闭</code>
+<a href=https://yangwenqing.com/usr/uploads/2025/03/3512203717.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/03/3512203717.png alt=img>
+<i class="fa fa-external-link-alt"></i>
+</a>飞牛安装好后在系统开启ssh，登录到飞牛ssh终端来屏蔽英特尔核显，飞牛影视就能正常硬解了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-26-1><a class=lnlinks href=#hl-26-1>1</a>
+</span><span class=lnt id=hl-26-2><a class=lnlinks href=#hl-26-2>2</a>
+</span><span class=lnt id=hl-26-3><a class=lnlinks href=#hl-26-3>3</a>
+</span><span class=lnt id=hl-26-4><a class=lnlinks href=#hl-26-4>4</a>
+</span><span class=lnt id=hl-26-5><a class=lnlinks href=#hl-26-5>5</a>
+</span><span class=lnt id=hl-26-6><a class=lnlinks href=#hl-26-6>6</a>
+</span><span class=lnt id=hl-26-7><a class=lnlinks href=#hl-26-7>7</a>
+</span><span class=lnt id=hl-26-8><a class=lnlinks href=#hl-26-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 切换root权限</span>
+</span></span><span class=line><span class=cl>sudo -i
+</span></span><span class=line><span class=cl><span class=c1># 编辑i915.conf，（nano命令： Ctrl+X保存）</span>
+</span></span><span class=line><span class=cl>nano /etc/modprobe.d/i915.conf
+</span></span><span class=line><span class=cl><span class=c1># 把里面的options i915 enable_guc=3，改为0即可。</span>
+</span></span><span class=line><span class=cl>options i915 <span class=nv>enable_guc</span><span class=o>=</span><span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新initramfs，然后重启飞牛</span>
+</span></span><span class=line><span class=cl>update-initramfs -u -k all</span></span></code></pre></td></tr></table></div></div><p>重启飞牛后重新打开影视就能开启GPU进行硬件解码了。
+<a href=https://yangwenqing.com/usr/uploads/2025/03/2230786090.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/03/2230786090.png alt=img>
+<i class="fa fa-external-link-alt"></i></a></p><p>正常转码
+<a href=https://yangwenqing.com/usr/uploads/2025/03/1586116895.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2025/03/1586116895.png alt=img>
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/>计算机
+</a><a href=/tags/%E7%BD%91%E7%BB%9C/>网络</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/images/wechat_channel.jpg><span class=icon><i class="fab fa-weixin"></i>
+</span><span class=label>WeChat</span></a></div><div class=social-item><a target=_blank class=social-link href=/rss.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E9%AA%82%E5%A5%A5%E6%B4%BE%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E8%BF%87%E5%8E%BB%E7%9A%84%E8%87%AA%E5%B7%B1-%E7%BD%AE%E9%A1%B679/ rel=next title=骂奥派的人，就是过去的自己><i class="fa fa-chevron-left"></i> 骂奥派的人，就是过去的自己</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E5%A5%A5%E5%9C%B0%E5%88%A9%E5%AD%A6%E6%B4%BE%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%8F%A4%E4%BB%A3%E4%B8%AD%E5%9B%BD%E9%81%93%E5%AE%B6%E5%AD%A6%E8%AF%B4/ rel=prev title=奥地利学派视角下的古代中国道家学说>奥地利学派视角下的古代中国道家学说
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2026
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF","permalink":"/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/","title":"PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1781174836" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1781174836" defer></script></body></html>

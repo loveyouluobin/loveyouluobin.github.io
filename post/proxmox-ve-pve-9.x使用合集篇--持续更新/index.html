@@ -1,0 +1,635 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.160.1"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="Proxmox VE PVE 9.X使用合集篇--持续更新"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="计算机,网络"><meta property="og:type" content="article"><meta property="og:title" content="Proxmox VE PVE 9.X使用合集篇--持续更新"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2026-06-10 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2026-06-10 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1781525250"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1781525250"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>Proxmox VE PVE 9.X使用合集篇--持续更新 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？每次想到有你与我同行，路，必须走下去</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-"><a href=/ class="menus-parent hvr-icon-pulse" rel=section>玩客集
+<span class=menu-item-shrink-icon><i class="fa fa-angle-right"></i></span></a><ul class=menu-children><li class=menu-child-item><a href=/categories/%E7%BC%96%E7%A8%8B/ class=hvr-icon-pulse rel=section><i class="fa hvr-icon"></i>编程</a></li></ul></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#proxmox-ve-pve-9x使用合集篇持续更新>Proxmox VE PVE 9.X使用合集篇&ndash;持续更新</a><ul><li><a href=#pve换源>PVE换源</a><ul><li><a href=#更换系统源>更换系统源</a></li><li><a href=#更换企业源>更换企业源</a></li><li><a href=#更换ceph源>更换Ceph源</a></li><li><a href=#执行更新>执行更新</a></li><li><a href=#lxc容器更源>LXC容器更源</a></li></ul></li><li><a href=#pve常用优化脚本>PVE常用优化脚本</a></li><li><a href=#删除local-lvm将空间合并到local>删除local-lvm将空间合并到local</a></li><li><a href=#禁止pve修改网卡名称>禁止PVE修改网卡名称</a></li><li><a href=#为pve开启ipv6>为PVE开启IPv6</a></li><li><a href=#开启硬件直通>开启硬件直通</a><ul><li><a href=#intel-cpu>Intel CPU</a></li><li><a href=#grub启动>GRUB启动</a></li><li><a href=#systemd启动>Systemd启动</a></li><li><a href=#amd-cpu>AMD CPU</a></li><li><a href=#grub启动-1>GRUB启动</a></li><li><a href=#systemd启动-1>Systemd启动</a></li><li><a href=#验证是否开启直通>验证是否开启直通</a></li></ul></li></ul></li><li><a href=#显卡直通>显卡直通</a><ul><li><a href=#屏蔽设备>屏蔽设备</a><ul><li><a href=#屏蔽显卡黑名单>屏蔽显卡黑名单</a></li><li><a href=#屏蔽蓝牙黑名单>屏蔽蓝牙黑名单</a></li></ul></li><li><a href=#执行更新initramfs>执行更新initramfs</a></li><li><a href=#rom文件下载>ROM文件下载</a></li></ul></li><li><a href=#intel核显直通win10>Intel核显直通Win10</a><ul><li><a href=#查看设备id>查看设备ID</a></li><li><a href=#win虚拟机建立及环境设置>Win虚拟机建立及环境设置</a></li><li><a href=#配置虚拟机启动文件>配置虚拟机启动文件</a></li><li><a href=#驱动资源下载>驱动资源下载</a></li></ul></li><li><a href=#amd核显直通win10>AMD核显直通Win10</a><ul><li><a href=#屏蔽amd核显>屏蔽AMD核显</a></li><li><a href=#查看设备id-1>查看设备ID</a></li><li><a href=#win虚拟机建立及环境设置-1>Win虚拟机建立及环境设置</a></li><li><a href=#配置虚拟机启动文件-1>配置虚拟机启动文件</a></li><li><a href=#解决amd核显resetbug问题>解决AMD核显resetbug问题</a><ul><li><a href=#温馨提示>温馨提示：</a></li></ul></li></ul></li><li><a href=#硬盘直通>硬盘直通</a><ul><li><a href=#硬盘直通-1>硬盘直通</a><ul><li><a href=#rdm-裸磁盘映射>RDM (裸磁盘映射)</a></li><li><a href=#磁盘控制器直通>磁盘控制器直通</a></li></ul></li><li><a href=#配置qemu-guest-agent>配置QEMU Guest Agent</a><ul><li><a href=#debianubuntu>Debian/Ubuntu</a></li><li><a href=#redhatcentos>Redhat/CentOS</a></li><li><a href=#arch-linux>Arch Linux</a></li><li><a href=#openwrt>OpenWrt</a></li><li><a href=#windows>Windows</a></li><li><a href=#群辉-synology-dsm>群辉 Synology DSM</a></li></ul></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>4311</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank><i class="fa fa-quora fa-fw"></i>
+QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank><i class="fab fa-github fa-fw"></i>
+Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank><i class="fa fa-envelope fa-fw"></i>
+E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank><i class="fa fa-book fa-fw"></i>
+知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://xiaodu114.github.io/p/fav/imageSite/ title=https://xiaodu114.github.io/p/fav/imageSite/ target=_blank>谷歌搜索</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom><span></span></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=21736455></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=45572></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2026-06-14 15:39:16 +0000 UTC"></div></div></div></div><div class="sidebar-card-widget back-to-top-card"><div class="back-to-top animated" role=button aria-label><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="Proxmox VE PVE 9.X使用合集篇--持续更新"><meta itemprop=description content></span><header class=post-header><h1 class=post-title itemprop="name headline">Proxmox VE PVE 9.X使用合集篇--持续更新</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2026-06-10 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2026-06-10 15:39:16 +0000 UTC">2026-06-10
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/nas/ itemprop=url rel=index><span itemprop=name>NAS</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>6253</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>13分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><a id=more></a><h2 id=proxmox-ve-pve-9x使用合集篇持续更新>Proxmox VE PVE 9.X使用合集篇&ndash;持续更新
+<a class=header-anchor href=#proxmox-ve-pve-9x%e4%bd%bf%e7%94%a8%e5%90%88%e9%9b%86%e7%af%87%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0></a></h2><p>注意，本篇文章仅记录Proxmox VE 9.X版本日常的使用设置，低于9.0版本的可能不适用。</p><h3 id=pve换源>PVE换源
+<a class=header-anchor href=#pve%e6%8d%a2%e6%ba%90></a></h3><p>更换国内源主要是为了解决网络访问问题、提升下载速度、确保系统更新的可靠性，同时避免付费订阅的要求。</p><h4 id=更换系统源>更换系统源
+<a class=header-anchor href=#%e6%9b%b4%e6%8d%a2%e7%b3%bb%e7%bb%9f%e6%ba%90></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>中科大源
+</span></span><span class=line><span class=cl># 替换 Debian 官方源和安全源为中科大源
+</span></span><span class=line><span class=cl>sed -i &#39;s/deb.debian.org/mirrors.ustc.edu.cn/g&#39; /etc/apt/sources.list.d/debian.sources
+</span></span><span class=line><span class=cl>sed -i &#39;s/security.debian.org/mirrors.ustc.edu.cn/g&#39; /etc/apt/sources.list.d/debian.sources</span></span></code></pre></td></tr></table></div></div><h4 id=更换企业源>更换企业源
+<a class=header-anchor href=#%e6%9b%b4%e6%8d%a2%e4%bc%81%e4%b8%9a%e6%ba%90></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1> 1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2> 2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3> 3</a>
+</span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4> 4</a>
+</span><span class=lnt id=hl-1-5><a class=lnlinks href=#hl-1-5> 5</a>
+</span><span class=lnt id=hl-1-6><a class=lnlinks href=#hl-1-6> 6</a>
+</span><span class=lnt id=hl-1-7><a class=lnlinks href=#hl-1-7> 7</a>
+</span><span class=lnt id=hl-1-8><a class=lnlinks href=#hl-1-8> 8</a>
+</span><span class=lnt id=hl-1-9><a class=lnlinks href=#hl-1-9> 9</a>
+</span><span class=lnt id=hl-1-10><a class=lnlinks href=#hl-1-10>10</a>
+</span><span class=lnt id=hl-1-11><a class=lnlinks href=#hl-1-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>中科大源
+</span></span><span class=line><span class=cl># 关闭官方订阅企业源
+</span></span><span class=line><span class=cl>sed -i &#39;/Types:/a Enabled: false&#39; /etc/apt/sources.list.d/pve-enterprise.sources
+</span></span><span class=line><span class=cl># 新增无订阅企业源为中科大源
+</span></span><span class=line><span class=cl>cat &gt; /etc/apt/sources.list.d/pve-no-subscription.sources &lt;&lt;EOF
+</span></span><span class=line><span class=cl>Types: deb
+</span></span><span class=line><span class=cl>URIs: https://mirrors.ustc.edu.cn/proxmox/debian/pve
+</span></span><span class=line><span class=cl>Suites: trixie
+</span></span><span class=line><span class=cl>Components: pve-no-subscription
+</span></span><span class=line><span class=cl>Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+</span></span><span class=line><span class=cl>EOF</span></span></code></pre></td></tr></table></div></div><h4 id=更换ceph源>更换Ceph源
+<a class=header-anchor href=#%e6%9b%b4%e6%8d%a2ceph%e6%ba%90></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1> 1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2> 2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3> 3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4> 4</a>
+</span><span class=lnt id=hl-2-5><a class=lnlinks href=#hl-2-5> 5</a>
+</span><span class=lnt id=hl-2-6><a class=lnlinks href=#hl-2-6> 6</a>
+</span><span class=lnt id=hl-2-7><a class=lnlinks href=#hl-2-7> 7</a>
+</span><span class=lnt id=hl-2-8><a class=lnlinks href=#hl-2-8> 8</a>
+</span><span class=lnt id=hl-2-9><a class=lnlinks href=#hl-2-9> 9</a>
+</span><span class=lnt id=hl-2-10><a class=lnlinks href=#hl-2-10>10</a>
+</span><span class=lnt id=hl-2-11><a class=lnlinks href=#hl-2-11>11</a>
+</span><span class=lnt id=hl-2-12><a class=lnlinks href=#hl-2-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 匹配当前Ceph版本和系统版本并更换为社区无订阅的中科大源</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> -f /etc/apt/sources.list.d/ceph.sources <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>  <span class=nv>CEPH_CODENAME</span><span class=o>=</span><span class=sb>`</span>ceph -v <span class=p>|</span> grep ceph <span class=p>|</span> awk <span class=s1>&#39;{print $(NF-1)}&#39;</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>  <span class=nb>source</span> /etc/os-release
+</span></span><span class=line><span class=cl>  cat &gt; /etc/apt/sources.list.d/ceph.sources <span class=s>&lt;&lt;EOF
+</span></span></span><span class=line><span class=cl><span class=s>Types: deb
+</span></span></span><span class=line><span class=cl><span class=s>URIs: https://mirrors.ustc.edu.cn/proxmox/debian/ceph-$CEPH_CODENAME
+</span></span></span><span class=line><span class=cl><span class=s>Suites: $VERSION_CODENAME
+</span></span></span><span class=line><span class=cl><span class=s>Components: no-subscription
+</span></span></span><span class=line><span class=cl><span class=s>Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span></span></span></code></pre></td></tr></table></div></div><h4 id=执行更新>执行更新
+<a class=header-anchor href=#%e6%89%a7%e8%a1%8c%e6%9b%b4%e6%96%b0></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新软件包并将系统升级到最新</span>
+</span></span><span class=line><span class=cl>apt update <span class=o>&amp;&amp;</span> apt dist-upgrade -y</span></span></code></pre></td></tr></table></div></div><h4 id=lxc容器更源>LXC容器更源
+<a class=header-anchor href=#lxc%e5%ae%b9%e5%99%a8%e6%9b%b4%e6%ba%90></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4>4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5>5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6>6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=err>中科大源</span>
+</span></span><span class=line><span class=cl><span class=c1># 备份APLInfo.pm</span>
+</span></span><span class=line><span class=cl><span class=n>cp</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm_back</span>
+</span></span><span class=line><span class=cl><span class=c1># 替换为中科大源：</span>
+</span></span><span class=line><span class=cl><span class=n>sed</span> <span class=o>-</span><span class=n>i</span> <span class=s1>&#39;s|http://download.proxmox.com|https://mirrors.ustc.edu.cn/proxmox|g&#39;</span> <span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>share</span><span class=o>/</span><span class=n>perl5</span><span class=o>/</span><span class=n>PVE</span><span class=o>/</span><span class=n>APLInfo</span><span class=o>.</span><span class=n>pm</span>
+</span></span><span class=line><span class=cl><span class=c1># 重启服务后生效</span>
+</span></span><span class=line><span class=cl><span class=n>systemctl</span> <span class=n>restart</span> <span class=n>pvedaemon</span><span class=o>.</span><span class=n>service</span></span></span></code></pre></td></tr></table></div></div><h3 id=pve常用优化脚本>PVE常用优化脚本
+<a class=header-anchor href=#pve%e5%b8%b8%e7%94%a8%e4%bc%98%e5%8c%96%e8%84%9a%e6%9c%ac></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 一键给PVE增加温度和CPU频率显示；硬盘信息；取消弹窗订阅；</span>
+</span></span><span class=line><span class=cl><span class=o>(</span>curl -Lf -o /tmp/temp.sh https://raw.githubusercontent.com/a904055262/PVE-manager-status/main/showtempcpufreq.sh <span class=o>||</span> curl -Lf -o /tmp/temp.sh https://mirror.g hproxy.com/https://raw.githubusercontent.com/a904055262/PVE-manager-status/main/showtempcpufreq.sh<span class=o>)</span> <span class=o>&amp;&amp;</span> chmod +x /tmp/temp.sh <span class=o>&amp;&amp;</span> /tmp/temp.sh remod</span></span></code></pre></td></tr></table></div></div><h3 id=删除local-lvm将空间合并到local>删除local-lvm将空间合并到local
+<a class=header-anchor href=#%e5%88%a0%e9%99%a4local-lvm%e5%b0%86%e7%a9%ba%e9%97%b4%e5%90%88%e5%b9%b6%e5%88%b0local></a></h3><p>删除local-lvm将空间合并到local目录池让空间最大化。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1> 1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2> 2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3> 3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4> 4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5> 5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6> 6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7> 7</a>
+</span><span class=lnt id=hl-6-8><a class=lnlinks href=#hl-6-8> 8</a>
+</span><span class=lnt id=hl-6-9><a class=lnlinks href=#hl-6-9> 9</a>
+</span><span class=lnt id=hl-6-10><a class=lnlinks href=#hl-6-10>10</a>
+</span><span class=lnt id=hl-6-11><a class=lnlinks href=#hl-6-11>11</a>
+</span><span class=lnt id=hl-6-12><a class=lnlinks href=#hl-6-12>12</a>
+</span><span class=lnt id=hl-6-13><a class=lnlinks href=#hl-6-13>13</a>
+</span><span class=lnt id=hl-6-14><a class=lnlinks href=#hl-6-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 使用命令删除local-lvm</span>
+</span></span><span class=line><span class=cl>lvremove /dev/pve/data
+</span></span><span class=line><span class=cl><span class=c1># 输入y，确认，输出以下信息即成功</span>
+</span></span><span class=line><span class=cl>Do you really want to remove active logical volume pve/data? <span class=o>[</span>y/n<span class=o>]</span>: y
+</span></span><span class=line><span class=cl>  Logical volume <span class=s2>&#34;data&#34;</span> successfully removed.
+</span></span><span class=line><span class=cl><span class=c1># 再将local-lvm的空间转移到pve-root</span>
+</span></span><span class=line><span class=cl>lvextend -rl +100%FREE /dev/pve/root
+</span></span><span class=line><span class=cl><span class=c1># 输出以下信息即合并local分区成功</span>
+</span></span><span class=line><span class=cl>Size of logical volume pve/root changed from &lt;9.75 GiB <span class=o>(</span><span class=m>2495</span> extents<span class=o>)</span> to &lt;19.50 GiB <span class=o>(</span><span class=m>4991</span> extents<span class=o>)</span>.
+</span></span><span class=line><span class=cl>  Logical volume pve/root successfully resized.
+</span></span><span class=line><span class=cl>resize2fs 1.47.0 <span class=o>(</span>5-Feb-2023<span class=o>)</span>
+</span></span><span class=line><span class=cl>Filesystem at /dev/mapper/pve-root is mounted on /<span class=p>;</span> on-line resizing required
+</span></span><span class=line><span class=cl><span class=nv>old_desc_blocks</span> <span class=o>=</span> 2, <span class=nv>new_desc_blocks</span> <span class=o>=</span> <span class=m>3</span>
+</span></span><span class=line><span class=cl>The filesystem on /dev/mapper/pve-root is now <span class=m>5110784</span> <span class=o>(</span>4k<span class=o>)</span> blocks long.</span></span></code></pre></td></tr></table></div></div><p>删除了<code>lvm-thin</code>之后，还需要在Web删除<code>local-lvm</code>才算完成。
+<a href=https://yangwenqing.com/usr/uploads/2024/10/3014783409.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/10/3014783409.png alt=img>
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=禁止pve修改网卡名称>禁止PVE修改网卡名称
+<a class=header-anchor href=#%e7%a6%81%e6%ad%a2pve%e4%bf%ae%e6%94%b9%e7%bd%91%e5%8d%a1%e5%90%8d%e7%a7%b0></a></h3><p>如果你有经常移除或更换PCI-E设备的需求，如增加个显卡，硬盘转接卡，网卡之类的 PCIe 设备，PVE都会自动修改网卡名，导致访问不了PVE后台，网卡灯不亮的原因。（<code>9.1版本后pve将网卡名统一命名为nicX，如果不是可以使用以下方法绑定网卡和网卡名的对应关系</code>）
+使用绑定网卡名和mac地址对应关系，这样即使拔除pcie设备也不会对网卡名发生变动。
+使用<code>ip -c a</code>来查看自己设备的网卡名和mac地址。以下是执行信息：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1> 1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2> 2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3> 3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4> 4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5> 5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6> 6</a>
+</span><span class=lnt id=hl-7-7><a class=lnlinks href=#hl-7-7> 7</a>
+</span><span class=lnt id=hl-7-8><a class=lnlinks href=#hl-7-8> 8</a>
+</span><span class=lnt id=hl-7-9><a class=lnlinks href=#hl-7-9> 9</a>
+</span><span class=lnt id=hl-7-10><a class=lnlinks href=#hl-7-10>10</a>
+</span><span class=lnt id=hl-7-11><a class=lnlinks href=#hl-7-11>11</a>
+</span><span class=lnt id=hl-7-12><a class=lnlinks href=#hl-7-12>12</a>
+</span><span class=lnt id=hl-7-13><a class=lnlinks href=#hl-7-13>13</a>
+</span><span class=lnt id=hl-7-14><a class=lnlinks href=#hl-7-14>14</a>
+</span><span class=lnt id=hl-7-15><a class=lnlinks href=#hl-7-15>15</a>
+</span><span class=lnt id=hl-7-16><a class=lnlinks href=#hl-7-16>16</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@pve9:~# ip -c a
+</span></span><span class=line><span class=cl>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class=m>65536</span> qdisc noqueue state UNKNOWN group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span><span class=line><span class=cl>    inet 127.0.0.1/8 scope host lo
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>    inet6 ::1/128 scope host noprefixroute 
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>2: nic0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class=m>1500</span> qdisc mq master vmbr0 state UP group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/ether a0:36:9f:0f:e4:fb brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    altname enxa0369f0fe4fb
+</span></span><span class=line><span class=cl>3: vmbr0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class=m>1500</span> qdisc noqueue state UP group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/ether a0:36:9f:0f:e4:fb brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    inet 10.10.10.253/24 scope global vmbr0
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>    inet6 fe80::a236:9fff:fe0f:e4fb/64 scope link proto kernel_ll 
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever</span></span></code></pre></td></tr></table></div></div><p>使用nano命令创建一个网卡和mac地址的绑定关系<code>nano /usr/lib/systemd/network/10-custom-nic0.link</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span><span class=lnt id=hl-8-5><a class=lnlinks href=#hl-8-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>Match<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=nv>MACAddress</span><span class=o>=</span>a0:36:9f:0f:e4:fb
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>[</span>Link<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=nv>Name</span><span class=o>=</span>nic0</span></span></code></pre></td></tr></table></div></div><p>改完后记得改下网卡配置信息可以在<code>Web网页的网络</code>上修改，也可以手动编辑<code>/etc/network/interfaces</code>网络配置，替换绑定的网卡名。</p><h3 id=为pve开启ipv6>为PVE开启IPv6
+<a class=header-anchor href=#%e4%b8%bapve%e5%bc%80%e5%90%afipv6></a></h3><p>使用nano命令编辑网络配置文件
+<code>nano /etc/network/interfaces</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 在你的vmbr虚拟网桥底下加入以下参数，如虚拟网桥vmbr0</span>
+</span></span><span class=line><span class=cl>post-up <span class=nb>echo</span> <span class=s2>&#34;2&#34;</span> &gt; /proc/sys/net/ipv6/conf/vmbr0/accept_ra</span></span></code></pre></td></tr></table></div></div><p>修改后效果：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1> 1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2> 2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3> 3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4> 4</a>
+</span><span class=lnt id=hl-10-5><a class=lnlinks href=#hl-10-5> 5</a>
+</span><span class=lnt id=hl-10-6><a class=lnlinks href=#hl-10-6> 6</a>
+</span><span class=lnt id=hl-10-7><a class=lnlinks href=#hl-10-7> 7</a>
+</span><span class=lnt id=hl-10-8><a class=lnlinks href=#hl-10-8> 8</a>
+</span><span class=lnt id=hl-10-9><a class=lnlinks href=#hl-10-9> 9</a>
+</span><span class=lnt id=hl-10-10><a class=lnlinks href=#hl-10-10>10</a>
+</span><span class=lnt id=hl-10-11><a class=lnlinks href=#hl-10-11>11</a>
+</span><span class=lnt id=hl-10-12><a class=lnlinks href=#hl-10-12>12</a>
+</span><span class=lnt id=hl-10-13><a class=lnlinks href=#hl-10-13>13</a>
+</span><span class=lnt id=hl-10-14><a class=lnlinks href=#hl-10-14>14</a>
+</span><span class=lnt id=hl-10-15><a class=lnlinks href=#hl-10-15>15</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>auto lo
+</span></span><span class=line><span class=cl>iface lo inet loopback
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>iface nic0 inet manual
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>auto vmbr0
+</span></span><span class=line><span class=cl>iface vmbr0 inet static
+</span></span><span class=line><span class=cl>        address 10.10.10.250/24
+</span></span><span class=line><span class=cl>        gateway 10.10.10.10
+</span></span><span class=line><span class=cl>        bridge-ports nic0
+</span></span><span class=line><span class=cl>        bridge-stp off
+</span></span><span class=line><span class=cl>        bridge-fd <span class=m>0</span>
+</span></span><span class=line><span class=cl>        post-up <span class=nb>echo</span> <span class=s2>&#34;2&#34;</span> &gt; /proc/sys/net/ipv6/conf/vmbr0/accept_ra
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>source</span> /etc/network/interfaces.d/*</span></span></code></pre></td></tr></table></div></div><p>重启PVE，输入ip -c a就能查看获取的ipv6地址</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1> 1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2> 2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3> 3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4> 4</a>
+</span><span class=lnt id=hl-11-5><a class=lnlinks href=#hl-11-5> 5</a>
+</span><span class=lnt id=hl-11-6><a class=lnlinks href=#hl-11-6> 6</a>
+</span><span class=lnt id=hl-11-7><a class=lnlinks href=#hl-11-7> 7</a>
+</span><span class=lnt id=hl-11-8><a class=lnlinks href=#hl-11-8> 8</a>
+</span><span class=lnt id=hl-11-9><a class=lnlinks href=#hl-11-9> 9</a>
+</span><span class=lnt id=hl-11-10><a class=lnlinks href=#hl-11-10>10</a>
+</span><span class=lnt id=hl-11-11><a class=lnlinks href=#hl-11-11>11</a>
+</span><span class=lnt id=hl-11-12><a class=lnlinks href=#hl-11-12>12</a>
+</span><span class=lnt id=hl-11-13><a class=lnlinks href=#hl-11-13>13</a>
+</span><span class=lnt id=hl-11-14><a class=lnlinks href=#hl-11-14>14</a>
+</span><span class=lnt id=hl-11-15><a class=lnlinks href=#hl-11-15>15</a>
+</span><span class=lnt id=hl-11-16><a class=lnlinks href=#hl-11-16>16</a>
+</span><span class=lnt id=hl-11-17><a class=lnlinks href=#hl-11-17>17</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@pve9:~# ip -c a
+</span></span><span class=line><span class=cl>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class=m>65536</span> qdisc noqueue state UNKNOWN group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span><span class=line><span class=cl>    inet 127.0.0.1/8 scope host lo
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>    inet6 ::1/128 scope host noprefixroute 
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>2: nic0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class=m>1500</span> qdisc pfifo_fast master vmbr0 state UP group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/ether e0:d5:5e:a8:2c:c4 brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    altname enp0s31f6
+</span></span><span class=line><span class=cl>3: vmbr0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class=m>1500</span> qdisc noqueue state UP group default qlen <span class=m>1000</span>
+</span></span><span class=line><span class=cl>    link/ether e0:d5:5e:a8:2c:c4 brd ff:ff:ff:ff:ff:ff
+</span></span><span class=line><span class=cl>    inet 10.10.10.250/24 scope global vmbr0
+</span></span><span class=line><span class=cl>       valid_lft forever preferred_lft forever
+</span></span><span class=line><span class=cl>    inet6 2408:8256:f183:5cb:e1d5:8eff:fea8:2cc4/64 scope global dynamic mngtmpaddr 
+</span></span><span class=line><span class=cl>       valid_lft 255773sec preferred_lft 169373sec
+</span></span><span class=line><span class=cl>    inet6 fe80::e2d5:5eff:fea8:2cc4/64 scope link </span></span></code></pre></td></tr></table></div></div><p>最后再配置一下ipv6的DNS即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2>2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3>3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4>4</a>
+</span><span class=lnt id=hl-12-5><a class=lnlinks href=#hl-12-5>5</a>
+</span><span class=lnt id=hl-12-6><a class=lnlinks href=#hl-12-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>    cat <span class=s>&lt;&lt;EOF &gt; /etc/resolv.conf
+</span></span></span><span class=line><span class=cl><span class=s>search pve9
+</span></span></span><span class=line><span class=cl><span class=s>nameserver 223.5.5.5
+</span></span></span><span class=line><span class=cl><span class=s>nameserver 8.8.8.8
+</span></span></span><span class=line><span class=cl><span class=s>nameserver 2400:3200::1
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span></span></span></code></pre></td></tr></table></div></div><p>如果要固定IPv6地址，在网页上固定就行
+<a href=https://yangwenqing.com/usr/uploads/2026/06/283954477.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2026/06/283954477.png alt=img>
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=开启硬件直通>开启硬件直通
+<a class=header-anchor href=#%e5%bc%80%e5%90%af%e7%a1%ac%e4%bb%b6%e7%9b%b4%e9%80%9a></a></h3><p>从Proxmox VE 8.0 开始，系统在检测到CPU和芯片组支持 IOMMU 的情况下，会自动启用内核参数，用户通常无需手动在 GRUB 中添加 intel_iommu=on 参数。只需要在主板BIOS开启IO虚拟化功能就能正常直通了。<code>英特尔为vt-d，AMD平台是iommu</code>。</p><h4 id=intel-cpu>Intel CPU
+<a class=header-anchor href=#intel-cpu></a></h4><p>如你的PVE是用GRUB启动则修改<code>/etc/default/grub </code>，如你的PVE是用Systemd启动则修改<code>/etc/kernel/cmdline</code></p><h4 id=grub启动>GRUB启动
+<a class=header-anchor href=#grub%e5%90%af%e5%8a%a8></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2>2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3>3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4>4</a>
+</span><span class=lnt id=hl-13-5><a class=lnlinks href=#hl-13-5>5</a>
+</span><span class=lnt id=hl-13-6><a class=lnlinks href=#hl-13-6>6</a>
+</span><span class=lnt id=hl-13-7><a class=lnlinks href=#hl-13-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/default/grub 
+</span></span><span class=line><span class=cl><span class=c1># 开启iommu分组，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub
+</span></span><span class=line><span class=cl><span class=c1># 更新后重启PVE</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h4 id=systemd启动>Systemd启动
+<a class=header-anchor href=#systemd%e5%90%af%e5%8a%a8></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3>3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4>4</a>
+</span><span class=lnt id=hl-14-5><a class=lnlinks href=#hl-14-5>5</a>
+</span><span class=lnt id=hl-14-6><a class=lnlinks href=#hl-14-6>6</a>
+</span><span class=lnt id=hl-14-7><a class=lnlinks href=#hl-14-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/kernel/cmdline
+</span></span><span class=line><span class=cl><span class=c1># 注释掉原来的，替换以下参数即可</span>
+</span></span><span class=line><span class=cl><span class=nv>root</span><span class=o>=</span><span class=nv>ZFS</span><span class=o>=</span>rpool/ROOT/pve-1 <span class=nv>boot</span><span class=o>=</span>zfs <span class=nv>intel_iommu</span><span class=o>=</span>on <span class=nv>iommu</span><span class=o>=</span>pt <span class=nv>pcie_acs_override</span><span class=o>=</span>downstream,multifunction
+</span></span><span class=line><span class=cl><span class=c1># 更新Systemd</span>
+</span></span><span class=line><span class=cl>proxmox-boot-tool refresh
+</span></span><span class=line><span class=cl><span class=c1># 更新后重启PVE</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h4 id=amd-cpu>AMD CPU
+<a class=header-anchor href=#amd-cpu></a></h4><p>如你的PVE是用GRUB启动则修改<code>/etc/default/grub </code>，如你的PVE是用Systemd启动则修改<code>/etc/kernel/cmdline</code></p><h4 id=grub启动-1>GRUB启动
+<a class=header-anchor href=#grub%e5%90%af%e5%8a%a8-1></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2>2</a>
+</span><span class=lnt id=hl-15-3><a class=lnlinks href=#hl-15-3>3</a>
+</span><span class=lnt id=hl-15-4><a class=lnlinks href=#hl-15-4>4</a>
+</span><span class=lnt id=hl-15-5><a class=lnlinks href=#hl-15-5>5</a>
+</span><span class=lnt id=hl-15-6><a class=lnlinks href=#hl-15-6>6</a>
+</span><span class=lnt id=hl-15-7><a class=lnlinks href=#hl-15-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/default/grub 
+</span></span><span class=line><span class=cl><span class=c1># 开启iommu分组，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet amd_iommu=on iommu=pt pcie_acs_override=downstream,multifunction&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub
+</span></span><span class=line><span class=cl><span class=c1># 更新后重启PVE</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h4 id=systemd启动-1>Systemd启动
+<a class=header-anchor href=#systemd%e5%90%af%e5%8a%a8-1></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2>2</a>
+</span><span class=lnt id=hl-16-3><a class=lnlinks href=#hl-16-3>3</a>
+</span><span class=lnt id=hl-16-4><a class=lnlinks href=#hl-16-4>4</a>
+</span><span class=lnt id=hl-16-5><a class=lnlinks href=#hl-16-5>5</a>
+</span><span class=lnt id=hl-16-6><a class=lnlinks href=#hl-16-6>6</a>
+</span><span class=lnt id=hl-16-7><a class=lnlinks href=#hl-16-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/kernel/cmdline
+</span></span><span class=line><span class=cl><span class=c1># 注释掉原来的，替换以下参数即可</span>
+</span></span><span class=line><span class=cl><span class=nv>root</span><span class=o>=</span><span class=nv>ZFS</span><span class=o>=</span>rpool/ROOT/pve-1 <span class=nv>boot</span><span class=o>=</span>zfs <span class=nv>amd_iommu</span><span class=o>=</span>on <span class=nv>iommu</span><span class=o>=</span>pt <span class=nv>pcie_acs_override</span><span class=o>=</span>downstream,multifunction
+</span></span><span class=line><span class=cl><span class=c1># 更新Systemd</span>
+</span></span><span class=line><span class=cl>proxmox-boot-tool refresh
+</span></span><span class=line><span class=cl><span class=c1># 更新后重启PVE</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><p><code>intel_iommu=on iommu=pt</code>: 为 Intel 平台启用 IOMMU 并设置为透传模式。
+<code>pcie_acs_override=downstream,multifunction</code>: 绕过 PCIe 访问控制服务 (ACS) 的检查，用于解决某些硬件组无法单独直通的问题</p><h4 id=验证是否开启直通>验证是否开启直通
+<a class=header-anchor href=#%e9%aa%8c%e8%af%81%e6%98%af%e5%90%a6%e5%bc%80%e5%90%af%e7%9b%b4%e9%80%9a></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span><span class=lnt id=hl-17-2><a class=lnlinks href=#hl-17-2>2</a>
+</span><span class=lnt id=hl-17-3><a class=lnlinks href=#hl-17-3>3</a>
+</span><span class=lnt id=hl-17-4><a class=lnlinks href=#hl-17-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 验证是否开启iommu</span>
+</span></span><span class=line><span class=cl>dmesg <span class=p>|</span> grep iommu
+</span></span><span class=line><span class=cl>或者
+</span></span><span class=line><span class=cl>dmesg <span class=p>|</span> grep -e DMAR -e IOMMU -e AMD-Vi</span></span></code></pre></td></tr></table></div></div><p>出现如下例子。则代表成功</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span><span class=lnt id=hl-18-5><a class=lnlinks href=#hl-18-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span> 1.341100<span class=o>]</span> pci 0000:00:00.0: Adding to iommu group <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341116<span class=o>]</span> pci 0000:00:01.0: Adding to iommu group <span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341126<span class=o>]</span> pci 0000:00:02.0: Adding to iommu group <span class=m>2</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341137<span class=o>]</span> pci 0000:00:14.0: Adding to iommu group <span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=o>[</span> 1.341146<span class=o>]</span> pci 0000:00:17.0: Adding to iommu group <span class=m>4</span></span></span></code></pre></td></tr></table></div></div><p>此时输入命令</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1>1</a>
+</span><span class=lnt id=hl-19-2><a class=lnlinks href=#hl-19-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>find /sys/kernel/iommu_groups/ -type l 
+</span></span><span class=line><span class=cl><span class=c1>#出现很多直通组，就代表成功了。如果没有任何东西，就是没有开启</span></span></span></code></pre></td></tr></table></div></div><h2 id=显卡直通>显卡直通
+<a class=header-anchor href=#%e6%98%be%e5%8d%a1%e7%9b%b4%e9%80%9a></a></h2><p>理论上AMD RADEON 5xxx, 6xxx, 7xxx, Navi 5XXX(XT), NVIDIA GEFORCE 7, 8, GTX 4xx, 5xx, 6xx, 7xx, 9xx, 10xx and RTX 16xx/20xx/30xx都可以成功直通</p><h3 id=屏蔽设备>屏蔽设备
+<a class=header-anchor href=#%e5%b1%8f%e8%94%bd%e8%ae%be%e5%a4%87></a></h3><p>因为要直通显卡设备给虚拟机，这里需要将显卡设备添加到黑名单列表<code>pve-blacklist.conf</code></p><h4 id=屏蔽显卡黑名单>屏蔽显卡黑名单
+<a class=header-anchor href=#%e5%b1%8f%e8%94%bd%e6%98%be%e5%8d%a1%e9%bb%91%e5%90%8d%e5%8d%95></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1> 1</a>
+</span><span class=lnt id=hl-20-2><a class=lnlinks href=#hl-20-2> 2</a>
+</span><span class=lnt id=hl-20-3><a class=lnlinks href=#hl-20-3> 3</a>
+</span><span class=lnt id=hl-20-4><a class=lnlinks href=#hl-20-4> 4</a>
+</span><span class=lnt id=hl-20-5><a class=lnlinks href=#hl-20-5> 5</a>
+</span><span class=lnt id=hl-20-6><a class=lnlinks href=#hl-20-6> 6</a>
+</span><span class=lnt id=hl-20-7><a class=lnlinks href=#hl-20-7> 7</a>
+</span><span class=lnt id=hl-20-8><a class=lnlinks href=#hl-20-8> 8</a>
+</span><span class=lnt id=hl-20-9><a class=lnlinks href=#hl-20-9> 9</a>
+</span><span class=lnt id=hl-20-10><a class=lnlinks href=#hl-20-10>10</a>
+</span><span class=lnt id=hl-20-11><a class=lnlinks href=#hl-20-11>11</a>
+</span><span class=lnt id=hl-20-12><a class=lnlinks href=#hl-20-12>12</a>
+</span><span class=lnt id=hl-20-13><a class=lnlinks href=#hl-20-13>13</a>
+</span><span class=lnt id=hl-20-14><a class=lnlinks href=#hl-20-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>nano /etc/modprobe.d/pve-blacklist.conf
+</span></span><span class=line><span class=cl># 直通AMD显卡，请使用下面命令
+</span></span><span class=line><span class=cl>blacklist radeon
+</span></span><span class=line><span class=cl>blacklist amdgpu 
+</span></span><span class=line><span class=cl># 直通NVIDIA显卡，请使用下面命令
+</span></span><span class=line><span class=cl>blacklist nouveau
+</span></span><span class=line><span class=cl>blacklist nvidia
+</span></span><span class=line><span class=cl>blacklist nvidiafb
+</span></span><span class=line><span class=cl># 直通INTEL核显，请使用下面命令
+</span></span><span class=line><span class=cl>blacklist i915
+</span></span><span class=line><span class=cl>blacklist snd_hda_intel
+</span></span><span class=line><span class=cl>blacklist snd_hda_codec_hdmi
+</span></span><span class=line><span class=cl># 允许不安全的设备中断
+</span></span><span class=line><span class=cl>options vfio_iommu_type1 allow_unsafe_interrupts=1</span></span></code></pre></td></tr></table></div></div><h4 id=屏蔽蓝牙黑名单>屏蔽蓝牙黑名单
+<a class=header-anchor href=#%e5%b1%8f%e8%94%bd%e8%93%9d%e7%89%99%e9%bb%91%e5%90%8d%e5%8d%95></a></h4><p>蓝牙走USB控制器，如果需要将蓝牙给虚拟机使用，则做下屏蔽</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-21-1><a class=lnlinks href=#hl-21-1>1</a>
+</span><span class=lnt id=hl-21-2><a class=lnlinks href=#hl-21-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;blacklist btusb&#34;</span> &gt;&gt; /etc/modprobe.d/bluetooth-blacklist.conf
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;blacklist bluetooth&#34;</span> &gt;&gt; /etc/modprobe.d/bluetooth-blacklist.conf</span></span></code></pre></td></tr></table></div></div><h3 id=执行更新initramfs>执行更新initramfs
+<a class=header-anchor href=#%e6%89%a7%e8%a1%8c%e6%9b%b4%e6%96%b0initramfs></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-22-1><a class=lnlinks href=#hl-22-1>1</a>
+</span><span class=lnt id=hl-22-2><a class=lnlinks href=#hl-22-2>2</a>
+</span><span class=lnt id=hl-22-3><a class=lnlinks href=#hl-22-3>3</a>
+</span><span class=lnt id=hl-22-4><a class=lnlinks href=#hl-22-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新initramfs</span>
+</span></span><span class=line><span class=cl>update-initramfs -u -k all
+</span></span><span class=line><span class=cl><span class=c1># 重启</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h3 id=rom文件下载>ROM文件下载
+<a class=header-anchor href=#rom%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd></a></h3><p>如出现显卡直通后黑屏无法显示，可以尝试自行提取vbios.bin或者从以下网站下载对应显卡的rom文件进行加载。将<code>rom</code>文件放到<code>/usr/share/kvm目录下</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-23-1><a class=lnlinks href=#hl-23-1> 1</a>
+</span><span class=lnt id=hl-23-2><a class=lnlinks href=#hl-23-2> 2</a>
+</span><span class=lnt id=hl-23-3><a class=lnlinks href=#hl-23-3> 3</a>
+</span><span class=lnt id=hl-23-4><a class=lnlinks href=#hl-23-4> 4</a>
+</span><span class=lnt id=hl-23-5><a class=lnlinks href=#hl-23-5> 5</a>
+</span><span class=lnt id=hl-23-6><a class=lnlinks href=#hl-23-6> 6</a>
+</span><span class=lnt id=hl-23-7><a class=lnlinks href=#hl-23-7> 7</a>
+</span><span class=lnt id=hl-23-8><a class=lnlinks href=#hl-23-8> 8</a>
+</span><span class=lnt id=hl-23-9><a class=lnlinks href=#hl-23-9> 9</a>
+</span><span class=lnt id=hl-23-10><a class=lnlinks href=#hl-23-10>10</a>
+</span><span class=lnt id=hl-23-11><a class=lnlinks href=#hl-23-11>11</a>
+</span><span class=lnt id=hl-23-12><a class=lnlinks href=#hl-23-12>12</a>
+</span><span class=lnt id=hl-23-13><a class=lnlinks href=#hl-23-13>13</a>
+</span><span class=lnt id=hl-23-14><a class=lnlinks href=#hl-23-14>14</a>
+</span><span class=lnt id=hl-23-15><a class=lnlinks href=#hl-23-15>15</a>
+</span><span class=lnt id=hl-23-16><a class=lnlinks href=#hl-23-16>16</a>
+</span><span class=lnt id=hl-23-17><a class=lnlinks href=#hl-23-17>17</a>
+</span><span class=lnt id=hl-23-18><a class=lnlinks href=#hl-23-18>18</a>
+</span><span class=lnt id=hl-23-19><a class=lnlinks href=#hl-23-19>19</a>
+</span><span class=lnt id=hl-23-20><a class=lnlinks href=#hl-23-20>20</a>
+</span><span class=lnt id=hl-23-21><a class=lnlinks href=#hl-23-21>21</a>
+</span><span class=lnt id=hl-23-22><a class=lnlinks href=#hl-23-22>22</a>
+</span><span class=lnt id=hl-23-23><a class=lnlinks href=#hl-23-23>23</a>
+</span><span class=lnt id=hl-23-24><a class=lnlinks href=#hl-23-24>24</a>
+</span><span class=lnt id=hl-23-25><a class=lnlinks href=#hl-23-25>25</a>
+</span><span class=lnt id=hl-23-26><a class=lnlinks href=#hl-23-26>26</a>
+</span><span class=lnt id=hl-23-27><a class=lnlinks href=#hl-23-27>27</a>
+</span><span class=lnt id=hl-23-28><a class=lnlinks href=#hl-23-28>28</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># AMD/ATI/NVIDIA显卡vbios.bin下载路径</span>
+</span></span><span class=line><span class=cl>https://techpowerup.com/vgabios
+</span></span><span class=line><span class=cl><span class=c1># 来着B站李晓流提供的Intel核显6-14代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/6-14.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站李晓流提供的Intel核显11-14代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_11-14th.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站大大帅666提供的Intel核显6-13代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_6-13th.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站李晓流提供的AMD核显3000-7000系列通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O amd3k-7k.rom https://yangwenqing.com/files/pve/rom/AMD_3k-7k.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站爱折腾的老高提供的Intel核显10-13代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_10-13th.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站大大帅666提供的Intel核显10-13代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_13500h-10600.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站大大帅666提供的Intel核显6-10代通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_6-10th.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站大大帅666提供的Intel核显10-12代（不花屏）通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/intel_10-12th.rom
+</span></span><span class=line><span class=cl><span class=c1># 来着B站爱折腾的老高提供的Intel核显12代奔腾8505 rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/8505_gop.rom
+</span></span><span class=line><span class=cl><span class=c1># AMD 5500U核显通用vbios.bin文件</span>
+</span></span><span class=line><span class=cl>wget -O 5500Uvbios.bin https://yangwenqing.com/files/pve/rom/amd_5500u_vbios.bin
+</span></span><span class=line><span class=cl><span class=c1># AMD 5600U-5800U核显通用vbios.bin文件</span>
+</span></span><span class=line><span class=cl>wget -O 5600U-5800Uvbios.bin https://yangwenqing.com/files/pve/rom/amd_5600u_5800u_vbios.bin
+</span></span><span class=line><span class=cl><span class=c1># AMD 5825U核显通用vbios.bin文件</span>
+</span></span><span class=line><span class=cl>wget -O 5825Uvbios.bin https://yangwenqing.com/files/pve/rom/amd_5825u_vbios.bin
+</span></span><span class=line><span class=cl><span class=c1># 来着B站爱折腾的老高提供的Intel核显N95_100_200_300通用rom文件</span>
+</span></span><span class=line><span class=cl>wget -O igd.rom https://yangwenqing.com/files/pve/rom/N95_100_200_300_gop.rom</span></span></code></pre></td></tr></table></div></div><h2 id=intel核显直通win10>Intel核显直通Win10
+<a class=header-anchor href=#intel%e6%a0%b8%e6%98%be%e7%9b%b4%e9%80%9awin10></a></h2><h3 id=查看设备id>查看设备ID
+<a class=header-anchor href=#%e6%9f%a5%e7%9c%8b%e8%ae%be%e5%a4%87id></a></h3><p>在<code>PVE Shell</code> 执行
+更新pci设备信息</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-24-1><a class=lnlinks href=#hl-24-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>update-pciids</span></span></code></pre></td></tr></table></div></div><p>查看核显及声卡</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-25-1><a class=lnlinks href=#hl-25-1>1</a>
+</span><span class=lnt id=hl-25-2><a class=lnlinks href=#hl-25-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>lspci -D -nnk <span class=p>|</span> grep VGA
+</span></span><span class=line><span class=cl>lspci -D -nnk <span class=p>|</span> grep Audio</span></span></code></pre></td></tr></table></div></div><p>Intel的核显和声卡ID通常为：<code>0000:00:02.0</code>和<code>0000:00:1f.3</code></p><h3 id=win虚拟机建立及环境设置>Win虚拟机建立及环境设置
+<a class=header-anchor href=#win%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%bb%ba%e7%ab%8b%e5%8f%8a%e7%8e%af%e5%a2%83%e8%ae%be%e7%bd%ae></a></h3><p>创建win10虚拟机
+名称：自定义
+光驱挂载：Win安装ISO镜像
+系统中显卡：默认
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘：SCSI 大小100G（按需设置，或硬盘直通）
+CPU：host 核心数量4（如N5105共4核，按需设置）
+内存：4G及以上（核显直通建议）
+网络：virtIO（半虚拟化或网卡直通）网卡
+建立好虚拟机后
+添加CD/DVD设备1个，挂载virtIO驱动ISO镜像
+添加PCI设备：
+添加显卡（0000:00:02.0）
+添加声卡（0000:00:1f.3）
+添加USB键鼠</p><h3 id=配置虚拟机启动文件>配置虚拟机启动文件
+<a class=header-anchor href=#%e9%85%8d%e7%bd%ae%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%90%af%e5%8a%a8%e6%96%87%e4%bb%b6></a></h3><p>配置虚拟机conf文件，添加ROM文件指向：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-26-1><a class=lnlinks href=#hl-26-1>1</a>
+</span><span class=lnt id=hl-26-2><a class=lnlinks href=#hl-26-2>2</a>
+</span><span class=lnt id=hl-26-3><a class=lnlinks href=#hl-26-3>3</a>
+</span><span class=lnt id=hl-26-4><a class=lnlinks href=#hl-26-4>4</a>
+</span><span class=lnt id=hl-26-5><a class=lnlinks href=#hl-26-5>5</a>
+</span><span class=lnt id=hl-26-6><a class=lnlinks href=#hl-26-6>6</a>
+</span><span class=lnt id=hl-26-7><a class=lnlinks href=#hl-26-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/pve/qemu-server/虚拟机序号.conf
+</span></span><span class=line><span class=cl><span class=c1># 在顶部添加以下参数</span>
+</span></span><span class=line><span class=cl>args: -set device.hostpci0.x-igd-gms<span class=o>=</span>0x2
+</span></span><span class=line><span class=cl><span class=c1># 上方参数没画面可以换以下这个参数，如黑屏闪屏将参数x-igd-gms=0x2改为0x8</span>
+</span></span><span class=line><span class=cl>args: -set device.hostpci0.bus<span class=o>=</span>pcie.0 -set device.hostpci0.addr<span class=o>=</span>0x02.0 -set device.hostpci0.x-igd-gms<span class=o>=</span>0x2 -set device.hostpci0.x-igd-opregion<span class=o>=</span>on
+</span></span><span class=line><span class=cl><span class=c1># 同时将核显pci设备添加一个vbios的rom文件</span>
+</span></span><span class=line><span class=cl>hostpci0: 0000:00:02.0,romfile<span class=o>=</span>igd.rom</span></span></code></pre></td></tr></table></div></div><p>ctrl+x，y，回车保存退出</p><h3 id=驱动资源下载>驱动资源下载
+<a class=header-anchor href=#%e9%a9%b1%e5%8a%a8%e8%b5%84%e6%ba%90%e4%b8%8b%e8%bd%bd></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-27-1><a class=lnlinks href=#hl-27-1>1</a>
+</span><span class=lnt id=hl-27-2><a class=lnlinks href=#hl-27-2>2</a>
+</span><span class=lnt id=hl-27-3><a class=lnlinks href=#hl-27-3>3</a>
+</span><span class=lnt id=hl-27-4><a class=lnlinks href=#hl-27-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 7~10代核显驱动：</span>
+</span></span><span class=line><span class=cl>https://www.intel.cn/content/www/cn/zh/download/776137/intel-7th-10th-gen-processor-graphics-windows.html
+</span></span><span class=line><span class=cl><span class=c1># 11~13代核显驱动：</span>
+</span></span><span class=line><span class=cl>https://www.intel.cn/content/www/cn/zh/download/785597/intel-arc-iris-xe-graphics-windows.html</span></span></code></pre></td></tr></table></div></div><h2 id=amd核显直通win10>AMD核显直通Win10
+<a class=header-anchor href=#amd%e6%a0%b8%e6%98%be%e7%9b%b4%e9%80%9awin10></a></h2><p>提前在BIOS开启以下设置
+<a href=https://yangwenqing.com/usr/uploads/2024/07/3454653572.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/07/3454653572.png alt=AMD核显直通BIOS设置>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2024/07/3454653572.png title=AMD核显直通BIOS设置 rel="noopener external nofollow noreferrer" target=_blank class=exturl>AMD核显直通BIOS设置
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=屏蔽amd核显>屏蔽AMD核显
+<a class=header-anchor href=#%e5%b1%8f%e8%94%bdamd%e6%a0%b8%e6%98%be></a></h3><p>在grub引导参数加上<code>initcall_blacklist=sysfb_init</code>启动时自动屏蔽黑名单设备，加上该参数进系统后PVE的显示器会卡住，web浏览器能访问PVE就行。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-28-1><a class=lnlinks href=#hl-28-1>1</a>
+</span><span class=lnt id=hl-28-2><a class=lnlinks href=#hl-28-2>2</a>
+</span><span class=lnt id=hl-28-3><a class=lnlinks href=#hl-28-3>3</a>
+</span><span class=lnt id=hl-28-4><a class=lnlinks href=#hl-28-4>4</a>
+</span><span class=lnt id=hl-28-5><a class=lnlinks href=#hl-28-5>5</a>
+</span><span class=lnt id=hl-28-6><a class=lnlinks href=#hl-28-6>6</a>
+</span><span class=lnt id=hl-28-7><a class=lnlinks href=#hl-28-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/default/grub 
+</span></span><span class=line><span class=cl><span class=c1># 开启iommu分组，在里面找到：GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;项将其修改为</span>
+</span></span><span class=line><span class=cl><span class=nv>GRUB_CMDLINE_LINUX_DEFAULT</span><span class=o>=</span><span class=s2>&#34;quiet amd_iommu=on iommu=pt initcall_blacklist=sysfb_init pcie_acs_override=downstream,multifunction&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 更新grub</span>
+</span></span><span class=line><span class=cl>update-grub
+</span></span><span class=line><span class=cl><span class=c1># 更新后重启PVE</span>
+</span></span><span class=line><span class=cl>reboot</span></span></code></pre></td></tr></table></div></div><h3 id=查看设备id-1>查看设备ID
+<a class=header-anchor href=#%e6%9f%a5%e7%9c%8b%e8%ae%be%e5%a4%87id-1></a></h3><p>在<code>PVE Shell</code> 执行
+更新pci设备信息</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-29-1><a class=lnlinks href=#hl-29-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>update-pciids</span></span></code></pre></td></tr></table></div></div><p>查看核显及声卡</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-30-1><a class=lnlinks href=#hl-30-1>1</a>
+</span><span class=lnt id=hl-30-2><a class=lnlinks href=#hl-30-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>lspci -D -nnk <span class=p>|</span> grep VGA
+</span></span><span class=line><span class=cl>lspci -D -nnk <span class=p>|</span> grep Audio</span></span></code></pre></td></tr></table></div></div><p>AMD 5500U的核显和声卡ID通常为：<code>0000:04:00.0</code>和<code>0000:04:00.1</code></p><h3 id=win虚拟机建立及环境设置-1>Win虚拟机建立及环境设置
+<a class=header-anchor href=#win%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%bb%ba%e7%ab%8b%e5%8f%8a%e7%8e%af%e5%a2%83%e8%ae%be%e7%bd%ae-1></a></h3><p>创建win10虚拟机
+名称：自定义
+光驱挂载：Win安装ISO镜像
+系统中显卡：无
+机型：q35
+BIOS：OVMF
+EFI分区：UEFI（OVMF）需要
+磁盘：SCSI 大小100G（按需设置）
+CPU：host 核心数量6（5500U共6核，按需设置）
+内存：8G及以上（核显应用建议内存大些，按需设置）
+网络：virtIO（半虚拟化）网卡
+建立好虚拟机后
+添加CD/DVD设备1个，挂载virtIO驱动ISO镜像
+添加PCI设备：
+添加显卡（0000:04:00.0）pcie设备里面勾选：主gpu，rom-bar，pcie-express这三个选项，所有功能：不勾选
+添加声卡（0000:04:00.1）
+添加USB键鼠</p><h3 id=配置虚拟机启动文件-1>配置虚拟机启动文件
+<a class=header-anchor href=#%e9%85%8d%e7%bd%ae%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%90%af%e5%8a%a8%e6%96%87%e4%bb%b6-1></a></h3><p>配置虚拟机conf文件，添加ROM文件指向：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-31-1><a class=lnlinks href=#hl-31-1>1</a>
+</span><span class=lnt id=hl-31-2><a class=lnlinks href=#hl-31-2>2</a>
+</span><span class=lnt id=hl-31-3><a class=lnlinks href=#hl-31-3>3</a>
+</span><span class=lnt id=hl-31-4><a class=lnlinks href=#hl-31-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nano /etc/pve/qemu-server/虚拟机序号.conf
+</span></span><span class=line><span class=cl><span class=c1># 将核显pci设备添加一个vbios的rom文件</span>
+</span></span><span class=line><span class=cl>hostpci0: 0000:04:00.0,pcie<span class=o>=</span>1,romfile<span class=o>=</span>5500Uvbios.bin,x-vga<span class=o>=</span><span class=m>1</span>
+</span></span><span class=line><span class=cl>hostpci1: 0000:04:00.1</span></span></code></pre></td></tr></table></div></div><h3 id=解决amd核显resetbug问题>解决AMD核显resetbug问题
+<a class=header-anchor href=#%e8%a7%a3%e5%86%b3amd%e6%a0%b8%e6%98%beresetbug%e9%97%ae%e9%a2%98></a></h3><p>已知AMD核显一直存在resetbug的问题：直通核显的虚拟机关机或重启后，核显无法正常启动需要重启整个PVE。触发这个问题可以安装RadeonResetBugFixService这个服务来解决这个问题。（PVE启动之后，第一次启动虚拟Win11可显示引导画面和进入win的画面，之后的重启则是黑屏。请等待2分钟左右RadeonResetBugFixService服务启动，核显会成功加载并工作。关机时RadeonResetBugFixService服务会自动卸载核显，避免下次重启时核显不工作无法进入系统，它会在下次重启时重复上面先开机再启动核显流程，保证每次重启核显都可以正常，且不需要重启PVE，仅需要耐心等它2分钟。）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-32-1><a class=lnlinks href=#hl-32-1>1</a>
+</span><span class=lnt id=hl-32-2><a class=lnlinks href=#hl-32-2>2</a>
+</span><span class=lnt id=hl-32-3><a class=lnlinks href=#hl-32-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 下载 RadeonResetBugFixService</span>
+</span></span><span class=line><span class=cl>https://yangwenqing.com/files/pve/RadeonResetBugFixService.exe
+</span></span><span class=line><span class=cl><span class=c1># 下载放在c盘根目录，cmd管理员模式下运行RadeonResetBugFixService.exe install即可</span></span></span></code></pre></td></tr></table></div></div><h4 id=温馨提示>温馨提示：
+<a class=header-anchor href=#%e6%b8%a9%e9%a6%a8%e6%8f%90%e7%a4%ba></a></h4><ul><li>不要打开Win系统设置的休眠和睡眠功能以及PVE管理界面的休眠、关机和停止功能，否则核显恢复不回来只能重启PVE；</li><li>不要做任何有关触发核显ResetBug的操作，如更新系统补丁、更新核显驱动及其相关核显的操作；</li><li>按照正常流程点击Win里面的关机或者重启，非正常流程关机或重启Win，都会触发ResetBug；</li></ul><h2 id=硬盘直通>硬盘直通
+<a class=header-anchor href=#%e7%a1%ac%e7%9b%98%e7%9b%b4%e9%80%9a></a></h2><p>Proxmox VE直通硬盘相对简单。有2种方式的实现
+<a href=https://yangwenqing.com/usr/uploads/2023/10/603255004.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2023/10/603255004.png alt=硬盘直通.png>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2023/10/603255004.png title=硬盘直通.png rel="noopener external nofollow noreferrer" target=_blank class=exturl>硬盘直通.png
+<i class="fa fa-external-link-alt"></i></a></p><h3 id=硬盘直通-1>硬盘直通
+<a class=header-anchor href=#%e7%a1%ac%e7%9b%98%e7%9b%b4%e9%80%9a-1></a></h3><p>Proxmox VE直通硬盘相对简单。有2种方式的实现
+<a href=https://yangwenqing.com/usr/uploads/2023/10/603255004.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2023/10/603255004.png alt=硬盘直通.png>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2023/10/603255004.png title=硬盘直通.png rel="noopener external nofollow noreferrer" target=_blank class=exturl>硬盘直通.png
+<i class="fa fa-external-link-alt"></i></a></p><h4 id=rdm-裸磁盘映射>RDM (裸磁盘映射)
+<a class=header-anchor href=#rdm-%e8%a3%b8%e7%a3%81%e7%9b%98%e6%98%a0%e5%b0%84></a></h4><p>RDM是引用于VMware的裸磁盘映射。将单个硬盘或者分区，通过qemu进行映射到虚拟机。在KVM上没有找到类似技术的名词，所以用RDM代名。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-33-1><a class=lnlinks href=#hl-33-1> 1</a>
+</span><span class=lnt id=hl-33-2><a class=lnlinks href=#hl-33-2> 2</a>
+</span><span class=lnt id=hl-33-3><a class=lnlinks href=#hl-33-3> 3</a>
+</span><span class=lnt id=hl-33-4><a class=lnlinks href=#hl-33-4> 4</a>
+</span><span class=lnt id=hl-33-5><a class=lnlinks href=#hl-33-5> 5</a>
+</span><span class=lnt id=hl-33-6><a class=lnlinks href=#hl-33-6> 6</a>
+</span><span class=lnt id=hl-33-7><a class=lnlinks href=#hl-33-7> 7</a>
+</span><span class=lnt id=hl-33-8><a class=lnlinks href=#hl-33-8> 8</a>
+</span><span class=lnt id=hl-33-9><a class=lnlinks href=#hl-33-9> 9</a>
+</span><span class=lnt id=hl-33-10><a class=lnlinks href=#hl-33-10>10</a>
+</span><span class=lnt id=hl-33-11><a class=lnlinks href=#hl-33-11>11</a>
+</span><span class=lnt id=hl-33-12><a class=lnlinks href=#hl-33-12>12</a>
+</span><span class=lnt id=hl-33-13><a class=lnlinks href=#hl-33-13>13</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>列出磁盘ID
+</span></span><span class=line><span class=cl>ls -l /dev/disk/by-id
+</span></span><span class=line><span class=cl>列出的ID信息带有part的是分区，不带part是整改硬盘ID
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root  9 Oct  5 10:57 ata-LITEON_CV5-CQ128_002709100P6R -&gt; ../../sda
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 10 Oct  5 10:57 ata-LITEON_CV5-CQ128_002709100P6R-part1 -&gt; ../../sda1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 10 Oct  5 10:57 ata-LITEON_CV5-CQ128_002709100P6R-part2 -&gt; ../../sda2
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 10 Oct  5 10:57 ata-LITEON_CV5-CQ128_002709100P6R-part3 -&gt; ../../sda3
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 13 Oct  5 10:57 nvme-eui.e8238fa6bf530001001b444a48b10235 -&gt; ../../nvme0n1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 15 Oct  5 10:57 nvme-eui.e8238fa6bf530001001b444a48b10235-part1 -&gt; ../../nvme0n1p1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 13 Oct  5 10:57 nvme-WDC_WDS240G2G0C-00AJM0_22478A460803 -&gt; ../../nvme0n1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 13 Oct  5 10:57 nvme-WDC_WDS240G2G0C-00AJM0_22478A460803_1 -&gt; ../../nvme0n1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 15 Oct  5 10:57 nvme-WDC_WDS240G2G0C-00AJM0_22478A460803_1-part1 -&gt; ../../nvme0n1p1
+</span></span><span class=line><span class=cl>lrwxrwxrwx 1 root root 15 Oct  5 10:57 nvme-WDC_WDS240G2G0C-00AJM0_22478A460803-part1 -&gt; ../../nvme0n1p1</span></span></code></pre></td></tr></table></div></div><p><code>nvme</code>开头的是nvme硬盘，<code>ata</code>开头是走sata或者ata通道的设备。，<code>scsi</code>是scsi设备-阵列卡raid或者是直通卡上的硬盘
+可以通过<code>qm set &lt;vmid> --scsiX /dev/disk/by-id/xxxxxxx</code> 进行RDM直通</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-34-1><a class=lnlinks href=#hl-34-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>qm <span class=nb>set</span> <span class=m>100</span> --scsi0 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b444a48b10235</span></span></code></pre></td></tr></table></div></div><p>当然，你也可以使用ide或者sata形式直通硬盘，如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-35-1><a class=lnlinks href=#hl-35-1>1</a>
+</span><span class=lnt id=hl-35-2><a class=lnlinks href=#hl-35-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>qm <span class=nb>set</span> <span class=m>100</span> --sata1 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b444a48b10235
+</span></span><span class=line><span class=cl>qm <span class=nb>set</span> <span class=m>100</span> --ide1 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b444a48b10235</span></span></code></pre></td></tr></table></div></div><p>\1) 建议为scsi设备，这样性能理论上是最优秀的。
+\2) 需要注意的是，scsi会有序号，如scsi1，scsi0。在操作之前，应该要知道哪些scsi号是空的。
+\3) 对于pve来说，sata最多有6个设备。如果要使用sata类型直通，请勿超过sata5。</p><p>如果需要取消直通，可以使用命令<code>qm set &lt;vmid> --delete scsiX</code>
+如上面的例子，你应该输入</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-36-1><a class=lnlinks href=#hl-36-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>qm <span class=nb>set</span> <span class=m>100</span> --delete scsi0</span></span></code></pre></td></tr></table></div></div><p>出现<code>update</code>即代表成功。可返回网页上查看。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-37-1><a class=lnlinks href=#hl-37-1>1</a>
+</span><span class=lnt id=hl-37-2><a class=lnlinks href=#hl-37-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@pve:~# qm <span class=nb>set</span> <span class=m>101</span> --delete scsi1
+</span></span><span class=line><span class=cl>update VM 101: -delete scsi1</span></span></code></pre></td></tr></table></div></div><h4 id=磁盘控制器直通>磁盘控制器直通
+<a class=header-anchor href=#%e7%a3%81%e7%9b%98%e6%8e%a7%e5%88%b6%e5%99%a8%e7%9b%b4%e9%80%9a></a></h4><p>在DAS架构中，硬盘都是连接到硬盘控制器（Nvme除外），由硬盘控制器管理。因此直通了磁盘控制器，就会让磁盘控制器下的所有硬盘间接直通到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个物理磁盘，具有smart属性。</p><h3 id=配置qemu-guest-agent>配置QEMU Guest Agent
+<a class=header-anchor href=#%e9%85%8d%e7%bd%aeqemu-guest-agent></a></h3><p>VMware平台有VMwareTools，KVM平台有qemu-guest-agent。PVE下给虚拟机安装qemu-guest-agent可解决虚拟机无法关机和内存不同步IP不显示等问题。以下是各个虚拟机平台安装qemu-guest-agent方法：
+<code>在PVE先给虚拟机开启qemu-guest-agent再安装qemu-guest-agent</code>
+<a href=https://yangwenqing.com/usr/uploads/2024/09/3006427488.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/09/3006427488.png alt=qemu-guest-agent>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2024/09/3006427488.png title=qemu-guest-agent rel="noopener external nofollow noreferrer" target=_blank class=exturl>qemu-guest-agent
+<i class="fa fa-external-link-alt"></i></a></p><h4 id=debianubuntu>Debian/Ubuntu
+<a class=header-anchor href=#debianubuntu></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-38-1><a class=lnlinks href=#hl-38-1>1</a>
+</span><span class=lnt id=hl-38-2><a class=lnlinks href=#hl-38-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt-get install qemu-guest-agent
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> --now qemu-guest-agent</span></span></code></pre></td></tr></table></div></div><h4 id=redhatcentos>Redhat/CentOS
+<a class=header-anchor href=#redhatcentos></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-39-1><a class=lnlinks href=#hl-39-1>1</a>
+</span><span class=lnt id=hl-39-2><a class=lnlinks href=#hl-39-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yum install qemu-guest-agent
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> --now qemu-guest-agent</span></span></code></pre></td></tr></table></div></div><h4 id=arch-linux>Arch Linux
+<a class=header-anchor href=#arch-linux></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-40-1><a class=lnlinks href=#hl-40-1>1</a>
+</span><span class=lnt id=hl-40-2><a class=lnlinks href=#hl-40-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pacman -S qemu-guest-agent
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> --now qemu-guest-agent</span></span></code></pre></td></tr></table></div></div><h4 id=openwrt>OpenWrt
+<a class=header-anchor href=#openwrt></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-41-1><a class=lnlinks href=#hl-41-1>1</a>
+</span><span class=lnt id=hl-41-2><a class=lnlinks href=#hl-41-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>opkg update
+</span></span><span class=line><span class=cl>opkg install qemu-ga</span></span></code></pre></td></tr></table></div></div><h4 id=windows>Windows
+<a class=header-anchor href=#windows></a></h4><p>访问网站
+<a href=https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/ title=Virtio驱动下载页 rel="noopener external nofollow noreferrer" target=_blank class=exturl>Virtio驱动下载页
+<i class="fa fa-external-link-alt"></i>
+</a>下载 Virtio 驱动，例如 virtio-win-0.1.240.iso，上传到虚拟机。加载镜像文件后安装 <code>virtio-win-gt-x64.msi</code>和<code>virtio-win-guest-tools.exe</code>，然后重启系统。
+<a href=https://yangwenqing.com/usr/uploads/2024/09/3214917419.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/09/3214917419.png alt=qemu-ga-x86_64.exe>
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2024/09/3214917419.png title=qemu-ga-x86_64.exe rel="noopener external nofollow noreferrer" target=_blank class=exturl>qemu-ga-x86_64.exe
+<i class="fa fa-external-link-alt"></i></a></p><h4 id=群辉-synology-dsm>群辉 Synology DSM
+<a class=header-anchor href=#%e7%be%a4%e8%be%89-synology-dsm></a></h4><p>在套件中心添加DSM7.x矿神SPK套件源地址：https://spk7.imnks.com/ 下载QEMU Guest Agent驱动即可
+<a href=https://yangwenqing.com/usr/uploads/2024/09/1001569512.png title rel="noopener external nofollow noreferrer" target=_blank class=exturl><img src=/imgs/img-lazy-loading.gif data-src=https://yangwenqing.com/usr/uploads/2024/09/1001569512.png alt="QEMU Guest Agent">
+<i class="fa fa-external-link-alt"></i></a></p><p><a href=https://yangwenqing.com/usr/uploads/2024/09/1001569512.png title="QEMU Guest Agent" rel="noopener external nofollow noreferrer" target=_blank class=exturl>QEMU Guest Agent
+<i class="fa fa-external-link-alt"></i></a></p><p><code>开启QEMU Guest Agent，且：虚拟机内存 ≥ 4GB （特别是SA6400，否则virtio-ports加载失败）</code></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/>计算机
+</a><a href=/tags/%E7%BD%91%E7%BB%9C/>网络</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/images/wechat_channel.jpg><span class=icon><i class="fab fa-weixin"></i>
+</span><span class=label>WeChat</span></a></div><div class=social-item><a target=_blank class=social-link href=/rss.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E5%8F%88%E8%A6%81%E5%A4%8D%E8%80%95%E6%92%82%E8%8D%92%E5%9C%B0%E7%BA%AF%E5%B1%9E%E5%90%83%E9%A5%B1%E4%BA%86%E6%92%91%E7%9A%84/ rel=next title=又要复耕撂荒地，纯属吃饱了撑的><i class="fa fa-chevron-left"></i> 又要复耕撂荒地，纯属吃饱了撑的</a></div><div class="post-nav-prev post-nav-item"><a href=/post/pve8%E5%BC%80%E5%90%AF6-15%E4%BB%A3intel%E6%A0%B8%E6%98%BE%E8%99%9A%E6%8B%9F%E5%8C%96sriov-gvt-g%E6%8A%80%E6%9C%AF--%E5%BA%94%E7%94%A8%E4%BA%8Efnos-winos%E5%9C%BA%E6%99%AF/ rel=prev title=PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景>PVE8开启6-15代Intel核显虚拟化SRIOV/GVT-g技术--应用于fnOS/WinOS场景
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2026
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0","permalink":"/post/proxmox-ve-pve-9.x%E4%BD%BF%E7%94%A8%E5%90%88%E9%9B%86%E7%AF%87--%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/","title":"Proxmox VE PVE 9.X使用合集篇--持续更新","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1781525250" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1781525250" defer></script></body></html>

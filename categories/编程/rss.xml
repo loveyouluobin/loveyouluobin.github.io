@@ -1,24 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>编程 on 你永远无法说服猴子说有一个上帝存在</title><link>/categories/%E7%BC%96%E7%A8%8B/</link><description>Recent content in 编程 on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 10 Jul 2023 23:39:16 +0000</lastBuildDate><atom:link href="/categories/%E7%BC%96%E7%A8%8B/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sqlserver 双机热备份_主数据库发布（主从备份）</title><link>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</link><pubDate>Mon, 10 Jul 2023 23:39:16 +0000</pubDate><guid>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</guid><description>&lt;h1 id="sqlserver-双机热备份_主数据库发布主从备份"&gt;Sqlserver 双机热备份_主数据库发布（主从备份）
-&lt;a class="header-anchor" href="#sqlserver-%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87%e4%bb%bd_%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93%e5%8f%91%e5%b8%83%e4%b8%bb%e4%bb%8e%e5%a4%87%e4%bb%bd"&gt;&lt;/a&gt;
-&lt;/h1&gt;&lt;h1 id="设置主数据库"&gt;设置主数据库
-&lt;a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93"&gt;&lt;/a&gt;
-&lt;/h1&gt;&lt;p&gt;俩台电脑上的Sqlserver数据库 实现 一台电脑数据库更新后 另一台电脑数据库同步&lt;/p&gt;
-&lt;p&gt;这一篇设置主数据库 怎么发布&lt;/p&gt;
-&lt;p&gt;按步骤设置主数据库&lt;/p&gt;</description></item><item><title>external-link示范</title><link>/post/external-link%E7%A4%BA%E8%8C%83/</link><pubDate>Wed, 01 Jun 2022 15:59:41 +0800</pubDate><guid>/post/external-link%E7%A4%BA%E8%8C%83/</guid><description>&lt;p&gt;欢迎来到 &lt;code&gt;Hugo NexT&lt;/code&gt; 文档站点！ 它是从 
-&lt;a href="https://theme-next.js.org/" title="Theme NexT" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
- Theme NexT
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>编程 on 你永远无法说服猴子说有一个上帝存在</title><link>/categories/%E7%BC%96%E7%A8%8B/</link><description>Recent content in 编程 on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Jul 2026 23:39:16 +0000</lastBuildDate><atom:link href="/categories/%E7%BC%96%E7%A8%8B/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux常用命令</title><link>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 20 Jul 2026 23:39:16 +0000</pubDate><guid>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;p&gt;ssh 
+&lt;a href="mailto:root@192.168.1.105" title="root@192.168.1.105" &gt;
+ root@192.168.1.105
  
- &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
- 
-&lt;/a&gt; 移植过来的为 
-&lt;a href="https://gohugo.io/" title="Hugo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
- Hugo
- 
- &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
- 
-&lt;/a&gt;打造的高品质优雅主题，保持简单易用的特性和强大的功能。&lt;/p&gt;
-&lt;p&gt;用户指南&lt;/p&gt;
-&lt;p&gt;设置 NexT 主题很容易。只需遵循文档，就可快速创建您的个人网站！&lt;/p&gt;</description></item><item><title>Linux常用命令</title><link>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="一说明"&gt;一、说明
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo passwd root 设置ubuntu root密码 切换 su root&lt;/p&gt;
+&lt;p&gt;reboot重启&lt;/p&gt;
+&lt;p&gt;shutdown -h now 五秒后关机 shutdown -h now 5&lt;/p&gt;
+&lt;p&gt;ifconfig IP地址&lt;/p&gt;
+&lt;p&gt;cd ~ 返回根 cd /&lt;/p&gt;
+&lt;p&gt;ls 列出本目录命令&lt;/p&gt;
+&lt;p&gt;lsblk列出硬盘&lt;/p&gt;
+&lt;p&gt;df -h硬盘&lt;/p&gt;
+&lt;p&gt;sudo apt update &amp;amp;&amp;amp; sudo apt full-upgrade 更新下载安装到最新&lt;/p&gt;
+&lt;p&gt;# 重启确保新内核应用更改&lt;/p&gt;
+&lt;p&gt;reboot&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;一键换源工具 bash &amp;lt;(curl -sSL https://linuxmirrors.cn/main.sh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;科技Lion的Shell脚本工具 bash &amp;lt;(curl -sL kejilion.sh)&lt;/p&gt;
+&lt;p&gt;虚拟机面板&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-1-1"&gt;&lt;a class="lnlinks" href="#hl-1-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget -O kvm-console-linux-amd64.tar.gz https://download.xiaozhuhouses.asia/download/v1/links/YsxWkWgFPiZFrc8I0r2F8SpdLbhBA_O7PMnD0TDS0wM&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-2-1"&gt;&lt;a class="lnlinks" href="#hl-2-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash install.sh 执行部署&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id="一说明"&gt;一、说明
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%af%b4%e6%98%8e"&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;记录在Linux中经常会用到的命令，持续更新。更多命令详解可参考：&lt;/p&gt;
 &lt;ul&gt;
@@ -53,7 +81,27 @@
 &lt;/ul&gt;
 &lt;h3 id="1shell选择与切换"&gt;1、Shell选择与切换
 &lt;a class="header-anchor" href="#1shell%e9%80%89%e6%8b%a9%e4%b8%8e%e5%88%87%e6%8d%a2"&gt;&lt;/a&gt;
-&lt;/h3&gt;&lt;p&gt;在现代的 Linux 上，sh 已经被 bash 代替，&lt;code&gt;/bin/sh&lt;/code&gt;往往是指向&lt;code&gt;/bin/bash&lt;/code&gt;的符号链接。早期macos系统默认使用bash解释器，在macos10.15系统中官方推荐使用zsh解释器。bash和zsh均是shell的一种，由于bash或zsh本质上都是解释器，他们所共同服务的是shell语言，因此在命令语法上基本相同，zsh能基本完美兼容bash的命令，并且使用起来更加优雅。&lt;/p&gt;</description></item><item><title>WordPress网站搬家迁移教程</title><link>/post/wordpress%E7%BD%91%E7%AB%99%E6%90%AC%E5%AE%B6%E8%BF%81%E7%A7%BB%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/wordpress%E7%BD%91%E7%AB%99%E6%90%AC%E5%AE%B6%E8%BF%81%E7%A7%BB%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;搬家分为三步：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;在现代的 Linux 上，sh 已经被 bash 代替，&lt;code&gt;/bin/sh&lt;/code&gt;往往是指向&lt;code&gt;/bin/bash&lt;/code&gt;的符号链接。早期macos系统默认使用bash解释器，在macos10.15系统中官方推荐使用zsh解释器。bash和zsh均是shell的一种，由于bash或zsh本质上都是解释器，他们所共同服务的是shell语言，因此在命令语法上基本相同，zsh能基本完美兼容bash的命令，并且使用起来更加优雅。&lt;/p&gt;</description></item><item><title>Sqlserver 双机热备份_主数据库发布（主从备份）</title><link>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</link><pubDate>Mon, 10 Jul 2023 23:39:16 +0000</pubDate><guid>/post/sqlserver-%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E4%BB%BD_%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B8%83%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD/</guid><description>&lt;h1 id="sqlserver-双机热备份_主数据库发布主从备份"&gt;Sqlserver 双机热备份_主数据库发布（主从备份）
+&lt;a class="header-anchor" href="#sqlserver-%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87%e4%bb%bd_%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93%e5%8f%91%e5%b8%83%e4%b8%bb%e4%bb%8e%e5%a4%87%e4%bb%bd"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;h1 id="设置主数据库"&gt;设置主数据库
+&lt;a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e6%95%b0%e6%8d%ae%e5%ba%93"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;p&gt;俩台电脑上的Sqlserver数据库 实现 一台电脑数据库更新后 另一台电脑数据库同步&lt;/p&gt;
+&lt;p&gt;这一篇设置主数据库 怎么发布&lt;/p&gt;
+&lt;p&gt;按步骤设置主数据库&lt;/p&gt;</description></item><item><title>external-link示范</title><link>/post/external-link%E7%A4%BA%E8%8C%83/</link><pubDate>Wed, 01 Jun 2022 15:59:41 +0800</pubDate><guid>/post/external-link%E7%A4%BA%E8%8C%83/</guid><description>&lt;p&gt;欢迎来到 &lt;code&gt;Hugo NexT&lt;/code&gt; 文档站点！ 它是从 
+&lt;a href="https://theme-next.js.org/" title="Theme NexT" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ Theme NexT
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt; 移植过来的为 
+&lt;a href="https://gohugo.io/" title="Hugo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ Hugo
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt;打造的高品质优雅主题，保持简单易用的特性和强大的功能。&lt;/p&gt;
+&lt;p&gt;用户指南&lt;/p&gt;
+&lt;p&gt;设置 NexT 主题很容易。只需遵循文档，就可快速创建您的个人网站！&lt;/p&gt;</description></item><item><title>WordPress网站搬家迁移教程</title><link>/post/wordpress%E7%BD%91%E7%AB%99%E6%90%AC%E5%AE%B6%E8%BF%81%E7%A7%BB%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/wordpress%E7%BD%91%E7%AB%99%E6%90%AC%E5%AE%B6%E8%BF%81%E7%A7%BB%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;搬家分为三步：&lt;/p&gt;
 &lt;p&gt;一、备份博客网站文件和数据库；&lt;/p&gt;
 &lt;p&gt;二、把网站文件传到新空间，在新空间导入数据库；&lt;/p&gt;
 &lt;p&gt;三、修改网站配置和数据库；&lt;/p&gt;</description></item><item><title>解谜计算机科学</title><link>/post/%E8%A7%A3%E8%B0%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/%E8%A7%A3%E8%B0%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</guid><description>&lt;p&gt;要掌握一个学科的精髓，不能从细枝末节开始。人脑的能力很大程度上受限于信念。一个人不相信自己的时候，他就做不到本来可能的事。信心是很重要的，信心却容易被挫败。如果只见树木不见森林，人会失去信心，以为要到猴年马月才能掌握一个学科。&lt;/p&gt;</description></item><item><title>数据库手册笔记</title><link>/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/</guid><description>&lt;hr&gt;

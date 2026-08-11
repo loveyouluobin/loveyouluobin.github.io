@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/linux/</link><description>Recent content in Linux on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Dec 2021 23:39:16 +0000</lastBuildDate><atom:link href="/tags/linux/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux常用命令</title><link>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 20 Dec 2021 23:39:16 +0000</pubDate><guid>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="一说明"&gt;一、说明
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 你永远无法说服猴子说有一个上帝存在</title><link>/tags/linux/</link><description>Recent content in Linux on 你永远无法说服猴子说有一个上帝存在</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Jul 2026 23:39:16 +0000</lastBuildDate><atom:link href="/tags/linux/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux常用命令</title><link>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 20 Jul 2026 23:39:16 +0000</pubDate><guid>/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;p&gt;ssh 
+&lt;a href="mailto:root@192.168.1.105" title="root@192.168.1.105" &gt;
+ root@192.168.1.105
+ 
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo passwd root 设置ubuntu root密码 切换 su root&lt;/p&gt;
+&lt;p&gt;reboot重启&lt;/p&gt;
+&lt;p&gt;shutdown -h now 五秒后关机 shutdown -h now 5&lt;/p&gt;
+&lt;p&gt;ifconfig IP地址&lt;/p&gt;
+&lt;p&gt;cd ~ 返回根 cd /&lt;/p&gt;
+&lt;p&gt;ls 列出本目录命令&lt;/p&gt;
+&lt;p&gt;lsblk列出硬盘&lt;/p&gt;
+&lt;p&gt;df -h硬盘&lt;/p&gt;
+&lt;p&gt;sudo apt update &amp;amp;&amp;amp; sudo apt full-upgrade 更新下载安装到最新&lt;/p&gt;
+&lt;p&gt;# 重启确保新内核应用更改&lt;/p&gt;
+&lt;p&gt;reboot&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;一键换源工具 bash &amp;lt;(curl -sSL https://linuxmirrors.cn/main.sh)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;科技Lion的Shell脚本工具 bash &amp;lt;(curl -sL kejilion.sh)&lt;/p&gt;
+&lt;p&gt;虚拟机面板&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-1-1"&gt;&lt;a class="lnlinks" href="#hl-1-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget -O kvm-console-linux-amd64.tar.gz https://download.xiaozhuhouses.asia/download/v1/links/YsxWkWgFPiZFrc8I0r2F8SpdLbhBA_O7PMnD0TDS0wM&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-2-1"&gt;&lt;a class="lnlinks" href="#hl-2-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash install.sh 执行部署&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id="一说明"&gt;一、说明
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%af%b4%e6%98%8e"&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;记录在Linux中经常会用到的命令，持续更新。更多命令详解可参考：&lt;/p&gt;
 &lt;ul&gt;

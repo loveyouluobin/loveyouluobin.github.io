@@ -118,6 +118,33 @@
 &lt;/div&gt;
 
 &lt;p&gt;sudo localectl set-locale LANG=en_US.UTF-8 设置语言&lt;/p&gt;
+&lt;p&gt;lucky linux安装&lt;/p&gt;
+&lt;p&gt;#fastgit.org加速
+wget -O /tmp/install.sh 
+&lt;a href="https://raw.fastgit.org/gdy666/lucky-files/main/golucky.sh" title="https://raw.fastgit.org/gdy666/lucky-files/main/golucky.sh" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ https://raw.fastgit.org/gdy666/lucky-files/main/golucky.sh
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt; &amp;amp;&amp;amp; sh /tmp/install.sh 
+&lt;a href="https://raw.fastgit.org/gdy666/lucky-files/main/" title="https://raw.fastgit.org/gdy666/lucky-files/main/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ https://raw.fastgit.org/gdy666/lucky-files/main/
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt; 2.15.7&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-5-1"&gt;&lt;a class="lnlinks" href="#hl-5-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-5-2"&gt;&lt;a class="lnlinks" href="#hl-5-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#jsDelivrCDN源&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget -O /tmp/install.sh https://fastly.jsdelivr.net/gh/gdy666/lucky-files@main/golucky.sh &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sh /tmp/install.sh https://fastly.jsdelivr.net/gh/gdy666/lucky-files@main 2.15.7&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h2 id="一说明"&gt;一、说明
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%af%b4%e6%98%8e"&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;记录在Linux中经常会用到的命令，持续更新。更多命令详解可参考：&lt;/p&gt;

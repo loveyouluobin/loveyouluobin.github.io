@@ -1,0 +1,256 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.163.3"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能"><meta itemprop=description content="总有一些人先看到未来"><meta name=description content="总有一些人先看到未来"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="计算机,网络"><meta property="og:type" content="article"><meta property="og:title" content="没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能"><meta property="og:description" content="总有一些人先看到未来"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="/post/%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8/"><meta property="og:site_name" content="你永远无法说服猴子说有一个上帝存在"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="你永远无法说服猴子说有一个上帝存在"><meta property="article:published_time" content="2026-08-26 15:39:16 +0000 UTC"><meta property="article:modified_time" content="2026-08-26 15:39:16 +0000 UTC"><link type=text/css rel=stylesheet href=/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1788434580"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1788434580"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能 - 你永远无法说服猴子说有一个上帝存在</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>你永远无法说服猴子说有一个上帝存在</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>一生一次的人生该如何度过呢？每次想到有你与我同行，路，必须走下去</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories/ class=hvr-icon-pulse rel=section>分类</a></li><li class="menu-item menu-item-commonweal"><a href=/categories/%E4%BB%B7%E5%80%BC/ class=hvr-icon-pulse rel=section>价值</a></li><li class="menu-item menu-item-about"><a href=/categories/%E5%A6%B9%E5%AD%90/ class=hvr-icon-pulse rel=section>妹子</a></li><li class="menu-item menu-item-"><a href=/ class="menus-parent hvr-icon-pulse" rel=section>玩客集
+<span class=menu-item-shrink-icon><i class="fa fa-angle-right"></i></span></a><ul class=menu-children><li class=menu-child-item><a href=/categories/%E7%BC%96%E7%A8%8B/ class=hvr-icon-pulse rel=section><i class="fa hvr-icon"></i>编程</a></li></ul></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse">搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><ul><li><a href=#摘要>摘要</a></li><li><a href=#前言>前言</a></li><li><a href=#前置条件>前置条件</a></li><li><a href=#安装>安装</a></li><li><a href=#可视化>可视化</a></li><li><a href=#使用>使用</a></li><li><a href=#结尾>结尾</a></li></ul></li></ul><ul><li><ul><li><a href=#摘要-1>摘要</a></li><li><a href=#前言-1>前言</a></li><li><a href=#安装实操>安装实操</a><ul><li><a href=#前置条件-1>前置条件</a></li><li><a href=#step-1更新-wsl-到预览版>Step 1：更新 WSL 到预览版</a></li><li><a href=#step-2关闭所有-wsl-实例>Step 2：关闭所有 WSL 实例</a></li><li><a href=#step-3重新开一个新终端>Step 3：重新开一个新终端</a></li><li><a href=#step-4校验-wsl-版本>Step 4：校验 WSL 版本</a></li><li><a href=#step-5校验-wslc>Step 5：校验 wslc</a></li></ul></li><li><a href=#核心命令速查docker-用户秒上手>核心命令速查（Docker 用户秒上手）</a><ul><li><a href=#镜像管理>镜像管理</a></li><li><a href=#容器生命周期>容器生命周期</a></li><li><a href=#辅助运维>辅助运维</a></li></ul></li><li><a href=#杀手锏gpu-直通>杀手锏：GPU 直通</a></li><li><a href=#3-个不踩坑实操建议>3 个不踩坑实操建议</a><ul><li><a href=#建议-1安装后必须重启终端>建议 1：安装后必须重启终端</a></li><li><a href=#建议-2多工具共存不冲突>建议 2：多工具共存，不冲突</a></li><li><a href=#建议-3了解当前限制别盲目替换>建议 3：了解当前限制，别盲目替换</a></li></ul></li><li><a href=#wslc-vs-docker-desktop-vs-podman-对比>WSLC vs Docker Desktop vs Podman 对比</a></li><li><a href=#完整实操示例>完整实操示例</a><ul><li><a href=#示例-1快速搭建-nginx-网页服务>示例 1：快速搭建 Nginx 网页服务</a></li><li><a href=#示例-2交互式-ubuntu-开发环境>示例 2：交互式 Ubuntu 开发环境</a></li><li><a href=#示例-3跑一个-linux-桌面环境>示例 3：跑一个 Linux 桌面环境</a></li></ul></li><li><a href=#总结>总结</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=你永远无法说服猴子说有一个上帝存在 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>你永远无法说服猴子说有一个上帝存在</p><div class=site-description itemprop=description>总有一些人先看到未来</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>4701</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>469</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=#ZgotmplZ title="QQ → tencent://Message/?Uin=304967823&amp;websiteName=www.tcioc.com&amp;Menu=yes" rel=noopener target=_blank><i class="fa fa-quora fa-fw"></i>
+QQ
+</a></span><span class=links-of-social-item><a href=https://github.com/loveyouluobin title="Github → https://github.com/loveyouluobin" rel=noopener target=_blank><i class="fab fa-github fa-fw"></i>
+Github
+</a></span><span class=links-of-social-item><a href=mailto:304967823@qq.com title="E-Mail → mailto:304967823@qq.com" rel=noopener target=_blank><i class="fa fa-envelope fa-fw"></i>
+E-Mail
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/loveyouluobin title="知乎 → https://www.zhihu.com/people/loveyouluobin" rel=noopener target=_blank><i class="fa fa-book fa-fw"></i>
+知乎</a></span></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.zaobao.com/ title=https://www.zaobao.com/ target=_blank>联合早报</a></li><li class=links-of-blogroll-item><a href=https://xiaodu114.github.io/p/fav/imageSite/ title=https://xiaodu114.github.io/p/fav/imageSite/ target=_blank>谷歌搜索</a></li><li class=links-of-blogroll-item><a href=https://yandex.com/ title=https://yandex.com/ target=_blank>懂你的搜索</a></li></ul></div><div class="mydefined animated" itemprop=custom><span></span></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=23120771></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=48531></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2026-09-02 15:39:16 +0000 UTC"></div></div></div></div><div class="sidebar-card-widget back-to-top-card"><div class="back-to-top animated" role=button aria-label><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=/post/%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="你永远无法说服猴子说有一个上帝存在"><meta itemprop=description content="总有一些人先看到未来"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能"><meta itemprop=description content></span><header class=post-header><h1 class=post-title itemprop="name headline">没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2026-08-26 15:39:16 +00:00" itemprop="dateCreated datePublished" datetime="2026-08-26 15:39:16 +0000 UTC">2026-08-26
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/nas/ itemprop=url rel=index><span itemprop=name>NAS</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>3443</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>7分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/post/%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><a id=more></a><h3 id=摘要>摘要
+<a class=header-anchor href=#%e6%91%98%e8%a6%81></a></h3><p>本文介绍了在 Windows 11 上安装并配置 WSL 的全过程。首先检查虚拟化并安装 Debian 系统。针对 WSL 命令繁琐的问题，推荐使用 WSL Dashboard 进行可视化管理。随后详细配置了系统环境，包括安装 Docker、国内源、SSH 服务及面板（如 KPanel），并调整网络模式。最后通过防火墙设置实现局域网访问，适合无 NAS/VPS 用户搭建本地服务器。</p><h3 id=前言>前言
+<a class=header-anchor href=#%e5%89%8d%e8%a8%80></a></h3><p>前两天试用了一下微软新发布的 WSLC 跑 docker 容器，解决了内存占用的问题。但是这个应用还处在初级阶段，比如只能装在 Windows 11 上，不支持可视化面板，不支持 docker compose，对于我来说还不太可用，所以装回了原版WSL。WSL 本质是 Hyper-V 虚拟机，所以可以跑完整的 Linux 系统，功能没有阉割。</p><h3 id=前置条件>前置条件
+<a class=header-anchor href=#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6></a></h3><ol><li>检查是否开启了虚拟化，任务管理器中，虚拟化应该显示已开启，否则去 BIOS 中查看对应设置进行开启</li><li>网络，我看到很多人有这个问题，但只能自己想办法解决了</li></ol><h3 id=安装>安装
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85></a></h3><ol><li>安装 WSL 和对应的 Linux 虚拟机，以 Debian 为例</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wsl --install -d Debian --name debian --location c:/wsl/debian</span></span></code></pre></td></tr></table></div></div><p>运行命令后会先安装 WSL，中途会要求输入新建用户名和密码，完成后就进入 docker 内</p><ol start=2><li><p>退出虚拟机 <code>exit</code></p></li><li><p>查看当前虚拟机 <code>wsl -l</code></p></li><li><p>查看能够安装的 linux 系统 <code>wsl -l -o</code>，也可以装 Ubuntu 等其他系统</p></li><li><p>如果想要启动后直接进入用户目录，直接输入 <code>wsl ~</code></p></li><li><p>关闭虚拟机 <code>wsl --shutdown</code></p></li><li><p>设置虚拟机，打开 wsl settings， 设置 CPU 数量，内存，硬盘大小，</p></li><li><p>重点网络模式，修改成镜像 mirrored，同时勾选主机地址环回，这样就能用本机地址来访问 docker 容器了。</p></li><li><p>删除虚拟机 wsl &ndash;unregister U 3</p></li><li><p>删除 WSL wsl &ndash;uninstall</p></li></ol><h3 id=可视化>可视化
+<a class=header-anchor href=#%e5%8f%af%e8%a7%86%e5%8c%96></a></h3><p>WSL 需要记很多命令，尤其是多个系统的情况下，管理起来有点麻烦，备份、自启动等功能都需要复杂指令，不想记的话可以安装这个开源项目 <code>WSL Dashboard</code>
+项目地址：https://github.com/owu/wsl-dashboard/</p><p>可以一键安装、列出、启动、停止、取消注册，并从一个地方配置你的 WSL 发行版。</p><h3 id=使用>使用
+<a class=header-anchor href=#%e4%bd%bf%e7%94%a8></a></h3><p>WSL 本质是虚拟机下的 Linux 系统，所以按照服务器的配置方法设置就可以了，列举一些必备设置，也可以参考我之前安装本地服务器的文章。</p><ol><li>安装 curl 工具</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4>4</a>
+</span><span class=lnt id=hl-1-5><a class=lnlinks href=#hl-1-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo -i
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>apt update
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>apt install curl -y</span></span></code></pre></td></tr></table></div></div><ol><li>换国内源</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh)</span></span></code></pre></td></tr></table></div></div><ol><li>安装 docker</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bash &lt;(curl -sSL https://linuxmirrors.cn/docker.sh)</span></span></code></pre></td></tr></table></div></div><ol><li>开启 ssh</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1>1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2>2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>apt update
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>apt install openssh-server -y</span></span></code></pre></td></tr></table></div></div><ol><li>安装 panel，为了方便操作 Linux，安装一个顺手的面板。1panel、宝塔都可以，我自己安装了 KPanel。</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>bash &lt;(curl -sL kejilion.sh) app kpanel</span></span></code></pre></td></tr></table></div></div><ol><li>如果应用无法打开，修改 HyperV 虚拟机防火墙设置，保证局域网其他设备可以访问。
+使用 powershell 管理员权限运行</li></ol><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Set-NetFirewallHyperVVMSetting -Name &#39;{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}&#39; -DefaultInboundAction Allow</span></span></code></pre></td></tr></table></div></div><h3 id=结尾>结尾
+<a class=header-anchor href=#%e7%bb%93%e5%b0%be></a></h3><p>此时服务器就基本设置完成，功能齐全，安装 WSL Dashboard 后也非常轻松的解决了开机自启，目录访问等很麻烦的操作，也可以通过内网穿透在公网访问本地应用，非常适合没有 NAS 或 VPS 的小伙伴学习体验。</p><h1 id=别再开虚拟机了微软原生-wslc-容器才是-windows-跑容器的终极答案>别再开虚拟机了！微软原生 WSLC 容器，才是 Windows 跑容器的终极答案！
+<a class=header-anchor href=#%e5%88%ab%e5%86%8d%e5%bc%80%e8%99%9a%e6%8b%9f%e6%9c%ba%e4%ba%86%e5%be%ae%e8%bd%af%e5%8e%9f%e7%94%9f-wslc-%e5%ae%b9%e5%99%a8%e6%89%8d%e6%98%af-windows-%e8%b7%91%e5%ae%b9%e5%99%a8%e7%9a%84%e7%bb%88%e6%9e%81%e7%ad%94%e6%a1%88></a></h1><h3 id=摘要-1>摘要
+<a class=header-anchor href=#%e6%91%98%e8%a6%81-1></a></h3><p>微软全新原生方案 WSL Container（wslc），一条命令替代 Docker，免费开源、无守护进程、支持 GPU 直通。本文手把手带你安装、上手核心命令，并对比 Docker Desktop 与 Podman。</p><h3 id=前言-1>前言
+<a class=header-anchor href=#%e5%89%8d%e8%a8%80-1></a></h3><p>之前如果需要在 Windows 上跑 docker 容器的话，一般会选择 Docker Desktop，优点是操作方便、兼容性强，但是问题也很多，比如我的笔记本跑起来就很吃内存，启动也慢。 微软刚刚发布了全新的原生方案——<strong>WSL Container（wslc）</strong>，一条命令替代 Docker，零成本平替，免费开源，无守护进程，还有 GPU 直通，好用多了。</p><h3 id=安装实操>安装实操
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e5%ae%9e%e6%93%8d></a></h3><h4 id=前置条件-1>前置条件
+<a class=header-anchor href=#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6-1></a></h4><ul><li>CPU 开启硬件虚拟化（BIOS 里开 Intel VT-x 或 AMD-V）</li><li>Windows 10 2004+ 或 Windows 11</li><li>已启用「适用于 Linux 的 Windows 子系统」和「虚拟机平台」</li><li>WSL 版本 ≥ 2.9.3（wslc 最低支持基线）</li></ul><h4 id=step-1更新-wsl-到预览版>Step 1：更新 WSL 到预览版
+<a class=header-anchor href=#step-1%e6%9b%b4%e6%96%b0-wsl-%e5%88%b0%e9%a2%84%e8%a7%88%e7%89%88></a></h4><p>稳定版 WSL 不含 wslc，必须拉取预发布版本。打开<strong>管理员权限的 PowerShell</strong>：</p><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wsl --update --pre-release</span></span></code></pre></td></tr></table></div></div><p>看到类似「正在更新适用于 Linux 的 Windows 子系统: 2.9.4」就说明成功了。</p><h4 id=step-2关闭所有-wsl-实例>Step 2：关闭所有 WSL 实例
+<a class=header-anchor href=#step-2%e5%85%b3%e9%97%ad%e6%89%80%e6%9c%89-wsl-%e5%ae%9e%e4%be%8b></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wsl --shutdown</span></span></code></pre></td></tr></table></div></div><p>彻底释放正在运行的 WSL 内核进程，保证新版本内核完整加载。</p><h4 id=step-3重新开一个新终端>Step 3：重新开一个新终端
+<a class=header-anchor href=#step-3%e9%87%8d%e6%96%b0%e5%bc%80%e4%b8%80%e4%b8%aa%e6%96%b0%e7%bb%88%e7%ab%af></a></h4><p>这是<strong>最容易踩坑的一步</strong>！更新后旧终端无法识别 <code>wslc</code> 命令，因为旧终端进程启动时加载的 PATH 缓存里还没有 <code>wslc.exe</code>。必须<strong>关掉所有已打开的 PowerShell / Windows Terminal 窗口</strong>，重新新开一个管理员终端。</p><p>仅执行 <code>wsl --shutdown</code> 是不够的——它只关闭 Linux 内核，不会刷新 Windows 终端的可执行文件缓存。</p><h4 id=step-4校验-wsl-版本>Step 4：校验 WSL 版本
+<a class=header-anchor href=#step-4%e6%a0%a1%e9%aa%8c-wsl-%e7%89%88%e6%9c%ac></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wsl --version</span></span></code></pre></td></tr></table></div></div><p>确认输出中 WSL 版本 ≥ 2.9.3：</p><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1>1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2>2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>WSL 版本: 2.9.4.0
+</span></span><span class=line><span class=cl>内核版本: 6.18.35.2-1
+</span></span><span class=line><span class=cl>WSLg 版本: 1.0.79</span></span></code></pre></td></tr></table></div></div><h4 id=step-5校验-wslc>Step 5：校验 wslc
+<a class=header-anchor href=#step-5%e6%a0%a1%e9%aa%8c-wslc></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wslc version</span></span></code></pre></td></tr></table></div></div><p>正常返回 <code>wslc 2.9.4.0</code> 就说明安装成功了！</p><h3 id=核心命令速查docker-用户秒上手>核心命令速查（Docker 用户秒上手）
+<a class=header-anchor href=#%e6%a0%b8%e5%bf%83%e5%91%bd%e4%bb%a4%e9%80%9f%e6%9f%a5docker-%e7%94%a8%e6%88%b7%e7%a7%92%e4%b8%8a%e6%89%8b></a></h3><p>wslc 的语法几乎完全对齐 Docker，原有的肌肉记忆可以直接迁移：</p><h4 id=镜像管理>镜像管理
+<a class=header-anchor href=#%e9%95%9c%e5%83%8f%e7%ae%a1%e7%90%86></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1> 1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2> 2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3> 3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4> 4</a>
+</span><span class=lnt id=hl-12-5><a class=lnlinks href=#hl-12-5> 5</a>
+</span><span class=lnt id=hl-12-6><a class=lnlinks href=#hl-12-6> 6</a>
+</span><span class=lnt id=hl-12-7><a class=lnlinks href=#hl-12-7> 7</a>
+</span><span class=lnt id=hl-12-8><a class=lnlinks href=#hl-12-8> 8</a>
+</span><span class=lnt id=hl-12-9><a class=lnlinks href=#hl-12-9> 9</a>
+</span><span class=lnt id=hl-12-10><a class=lnlinks href=#hl-12-10>10</a>
+</span><span class=lnt id=hl-12-11><a class=lnlinks href=#hl-12-11>11</a>
+</span><span class=lnt id=hl-12-12><a class=lnlinks href=#hl-12-12>12</a>
+</span><span class=lnt id=hl-12-13><a class=lnlinks href=#hl-12-13>13</a>
+</span><span class=lnt id=hl-12-14><a class=lnlinks href=#hl-12-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 拉取 OCI 镜像（和 Docker Hub 兼容）
+</span></span><span class=line><span class=cl>wslc pull ubuntu
+</span></span><span class=line><span class=cl>wslc pull nginx
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 列出本地镜像
+</span></span><span class=line><span class=cl>wslc image ls
+</span></span><span class=line><span class=cl># 等价写法
+</span></span><span class=line><span class=cl>wslc images
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 删除镜像
+</span></span><span class=line><span class=cl>wslc image rm ubuntu
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 清理无标签冗余镜像
+</span></span><span class=line><span class=cl>wslc image prune</span></span></code></pre></td></tr></table></div></div><h4 id=容器生命周期>容器生命周期
+<a class=header-anchor href=#%e5%ae%b9%e5%99%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1> 1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2> 2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3> 3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4> 4</a>
+</span><span class=lnt id=hl-13-5><a class=lnlinks href=#hl-13-5> 5</a>
+</span><span class=lnt id=hl-13-6><a class=lnlinks href=#hl-13-6> 6</a>
+</span><span class=lnt id=hl-13-7><a class=lnlinks href=#hl-13-7> 7</a>
+</span><span class=lnt id=hl-13-8><a class=lnlinks href=#hl-13-8> 8</a>
+</span><span class=lnt id=hl-13-9><a class=lnlinks href=#hl-13-9> 9</a>
+</span><span class=lnt id=hl-13-10><a class=lnlinks href=#hl-13-10>10</a>
+</span><span class=lnt id=hl-13-11><a class=lnlinks href=#hl-13-11>11</a>
+</span><span class=lnt id=hl-13-12><a class=lnlinks href=#hl-13-12>12</a>
+</span><span class=lnt id=hl-13-13><a class=lnlinks href=#hl-13-13>13</a>
+</span><span class=lnt id=hl-13-14><a class=lnlinks href=#hl-13-14>14</a>
+</span><span class=lnt id=hl-13-15><a class=lnlinks href=#hl-13-15>15</a>
+</span><span class=lnt id=hl-13-16><a class=lnlinks href=#hl-13-16>16</a>
+</span><span class=lnt id=hl-13-17><a class=lnlinks href=#hl-13-17>17</a>
+</span><span class=lnt id=hl-13-18><a class=lnlinks href=#hl-13-18>18</a>
+</span><span class=lnt id=hl-13-19><a class=lnlinks href=#hl-13-19>19</a>
+</span><span class=lnt id=hl-13-20><a class=lnlinks href=#hl-13-20>20</a>
+</span><span class=lnt id=hl-13-21><a class=lnlinks href=#hl-13-21>21</a>
+</span><span class=lnt id=hl-13-22><a class=lnlinks href=#hl-13-22>22</a>
+</span><span class=lnt id=hl-13-23><a class=lnlinks href=#hl-13-23>23</a>
+</span><span class=lnt id=hl-13-24><a class=lnlinks href=#hl-13-24>24</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 临时测试容器，退出自动销毁
+</span></span><span class=line><span class=cl>wslc run --rm hello-world
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 交互式进入 Ubuntu
+</span></span><span class=line><span class=cl>wslc run --rm -it ubuntu bash
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 后台启动 Nginx，端口映射 8080:80
+</span></span><span class=line><span class=cl>wslc run -d --name web -p 8080:80 nginx
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看运行中的容器
+</span></span><span class=line><span class=cl>wslc container ps
+</span></span><span class=line><span class=cl># 等价写法
+</span></span><span class=line><span class=cl>wslc ps
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看全部容器（含已停止）
+</span></span><span class=line><span class=cl>wslc ps -a
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 停止 / 启动 / 删除
+</span></span><span class=line><span class=cl>wslc stop web
+</span></span><span class=line><span class=cl>wslc start web
+</span></span><span class=line><span class=cl>wslc rm web
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 一键清理所有已停止容器
+</span></span><span class=line><span class=cl>wslc container prune</span></span></code></pre></td></tr></table></div></div><p>显示更多</p><h4 id=辅助运维>辅助运维
+<a class=header-anchor href=#%e8%be%85%e5%8a%a9%e8%bf%90%e7%bb%b4></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1> 1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2> 2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3> 3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4> 4</a>
+</span><span class=lnt id=hl-14-5><a class=lnlinks href=#hl-14-5> 5</a>
+</span><span class=lnt id=hl-14-6><a class=lnlinks href=#hl-14-6> 6</a>
+</span><span class=lnt id=hl-14-7><a class=lnlinks href=#hl-14-7> 7</a>
+</span><span class=lnt id=hl-14-8><a class=lnlinks href=#hl-14-8> 8</a>
+</span><span class=lnt id=hl-14-9><a class=lnlinks href=#hl-14-9> 9</a>
+</span><span class=lnt id=hl-14-10><a class=lnlinks href=#hl-14-10>10</a>
+</span><span class=lnt id=hl-14-11><a class=lnlinks href=#hl-14-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 实时查看容器资源占用
+</span></span><span class=line><span class=cl>wslc stats
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看容器日志
+</span></span><span class=line><span class=cl>wslc logs web
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 构建自定义镜像
+</span></span><span class=line><span class=cl>wslc build -t myapp:latest .
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看帮助
+</span></span><span class=line><span class=cl>wslc --help</span></span></code></pre></td></tr></table></div></div><p><strong>实测体验</strong>：容器启动基本秒开，比 Docker Desktop 冷启动快不少。微软用了新的 virtiofs 文件系统，宿主机和容器之间的文件读写性能大约提升了 <strong>2 倍</strong>。以前挂载目录跑前端热重载的卡顿感明显改善。</p><h3 id=杀手锏gpu-直通>杀手锏：GPU 直通
+<a class=header-anchor href=#%e6%9d%80%e6%89%8b%e9%94%8fgpu-%e7%9b%b4%e9%80%9a></a></h3><p>对于 AI/ML 开发者来说，这是最兴奋的功能。wslc 通过 CDI（Container Device Interface）直接暴露宿主机 GPU，不需要 Docker daemon 中转：</p><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 测试 CUDA 是否可用
+</span></span><span class=line><span class=cl>wslc run --rm --gpus all pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime python -c &#34;import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0))&#34;</span></span></code></pre></td></tr></table></div></div><p>输出你的显卡型号：</p><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2>2</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>True
+</span></span><span class=line><span class=cl>NVIDIA GeForce MX450</span></span></code></pre></td></tr></table></div></div><p>一个命令拉起 CUDA 容器，跑 PyTorch 推理，GPU 直通开箱即用。不需要装 nvidia-container-toolkit，不需要配 Docker GPU 运行时。</p><h3 id=3-个不踩坑实操建议>3 个不踩坑实操建议
+<a class=header-anchor href=#3-%e4%b8%aa%e4%b8%8d%e8%b8%a9%e5%9d%91%e5%ae%9e%e6%93%8d%e5%bb%ba%e8%ae%ae></a></h3><h4 id=建议-1安装后必须重启终端>建议 1：安装后必须重启终端
+<a class=header-anchor href=#%e5%bb%ba%e8%ae%ae-1%e5%ae%89%e8%a3%85%e5%90%8e%e5%bf%85%e9%a1%bb%e9%87%8d%e5%90%af%e7%bb%88%e7%ab%af></a></h4><p><strong>最高频踩坑点</strong>。执行 <code>wsl --update --pre-release</code> 后，旧终端进程的 PATH 缓存里还没有 <code>wslc.exe</code>。
+正确流程：<strong>更新 → shutdown → 关闭所有终端 → 重新新开管理员终端 → 验证版本</strong>。
+如果新开终端还不行，用 <code>Test-Path C:\Windows\System32\wslc.exe</code> 检查二进制文件是否存在，不存在就重新更新。终极兜底：重启电脑。</p><h4 id=建议-2多工具共存不冲突>建议 2：多工具共存，不冲突
+<a class=header-anchor href=#%e5%bb%ba%e8%ae%ae-2%e5%a4%9a%e5%b7%a5%e5%85%b7%e5%85%b1%e5%ad%98%e4%b8%8d%e5%86%b2%e7%aa%81></a></h4><p>Windows 上可以同时保留传统 WSL 发行版（Ubuntu、Debian 等）、Podman machine、wslc 三套环境。三者内核运行层隔离，互不抢占资源。日常开发用 wslc 跑轻量容器，需要 Docker Compose 或 K 8 s 时切回 Docker Desktop 或 Podman，按需切换即可。</p><h4 id=建议-3了解当前限制别盲目替换>建议 3：了解当前限制，别盲目替换
+<a class=header-anchor href=#%e5%bb%ba%e8%ae%ae-3%e4%ba%86%e8%a7%a3%e5%bd%93%e5%89%8d%e9%99%90%e5%88%b6%e5%88%ab%e7%9b%b2%e7%9b%ae%e6%9b%bf%e6%8d%a2></a></h4><p>WSLC 目前处于<strong>公开预览阶段</strong>，以下功能暂不支持：
+❌ Docker Compose（多容器编排）
+❌ 自定义复杂网桥网络
+❌ 持久卷高级挂载
+❌ 可视化管理面板（纯 CLI）
+❌ K8s 集群</p><p>如果你的工作流强依赖 <code>docker-compose.yml</code>，现阶段不建议完全卸载 Docker Desktop。把 wslc 当作轻量替代 + 补充工具使用更稳妥。</p><h3 id=wslc-vs-docker-desktop-vs-podman-对比>WSLC vs Docker Desktop vs Podman 对比
+<a class=header-anchor href=#wslc-vs-docker-desktop-vs-podman-%e5%af%b9%e6%af%94></a></h3><table><thead><tr><th>对比维度</th><th>WSLC</th><th>Docker Desktop</th><th>Podman (WSL)</th></tr></thead><tbody><tr><td>安装方式</td><td>WSL 预发布更新，无独立程序</td><td>完整客户端安装包</td><td>单独下载安装</td></tr><tr><td>常驻后台进程</td><td>无守护程序，随容器启停</td><td>常驻 dockerd + 托盘 GUI</td><td>无根架构，无常驻守护</td></tr><tr><td>闲置内存占用</td><td><strong>最低</strong>，复用现有 WSL 2</td><td>高，空闲 1 GB+</td><td>中等</td></tr><tr><td>命令语法</td><td>90% 兼容 Docker</td><td>原生 Docker 标准</td><td>100% 兼容 Docker</td></tr><tr><td>GPU/CUDA</td><td>原生 WSL 2 显卡直通</td><td>支持但需额外配置</td><td>原生支持</td></tr><tr><td>Compose / K8s</td><td>暂不支持</td><td>完整支持</td><td>支持 Compose（插件）</td></tr><tr><td>可视化界面</td><td>纯 CLI</td><td>完整 GUI 面板</td><td>可选第三方 GUI</td></tr><tr><td>企业费用</td><td><strong>免费</strong></td><td>$9~$24/人/月（商用）</td><td>免费</td></tr></tbody></table><h3 id=完整实操示例>完整实操示例
+<a class=header-anchor href=#%e5%ae%8c%e6%95%b4%e5%ae%9e%e6%93%8d%e7%a4%ba%e4%be%8b></a></h3><h4 id=示例-1快速搭建-nginx-网页服务>示例 1：快速搭建 Nginx 网页服务
+<a class=header-anchor href=#%e7%a4%ba%e4%be%8b-1%e5%bf%ab%e9%80%9f%e6%90%ad%e5%bb%ba-nginx-%e7%bd%91%e9%a1%b5%e6%9c%8d%e5%8a%a1></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1> 1</a>
+</span><span class=lnt id=hl-17-2><a class=lnlinks href=#hl-17-2> 2</a>
+</span><span class=lnt id=hl-17-3><a class=lnlinks href=#hl-17-3> 3</a>
+</span><span class=lnt id=hl-17-4><a class=lnlinks href=#hl-17-4> 4</a>
+</span><span class=lnt id=hl-17-5><a class=lnlinks href=#hl-17-5> 5</a>
+</span><span class=lnt id=hl-17-6><a class=lnlinks href=#hl-17-6> 6</a>
+</span><span class=lnt id=hl-17-7><a class=lnlinks href=#hl-17-7> 7</a>
+</span><span class=lnt id=hl-17-8><a class=lnlinks href=#hl-17-8> 8</a>
+</span><span class=lnt id=hl-17-9><a class=lnlinks href=#hl-17-9> 9</a>
+</span><span class=lnt id=hl-17-10><a class=lnlinks href=#hl-17-10>10</a>
+</span><span class=lnt id=hl-17-11><a class=lnlinks href=#hl-17-11>11</a>
+</span><span class=lnt id=hl-17-12><a class=lnlinks href=#hl-17-12>12</a>
+</span><span class=lnt id=hl-17-13><a class=lnlinks href=#hl-17-13>13</a>
+</span><span class=lnt id=hl-17-14><a class=lnlinks href=#hl-17-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 拉取官方 Nginx 镜像
+</span></span><span class=line><span class=cl>wslc pull nginx
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 后台启动容器，端口映射 8080
+</span></span><span class=line><span class=cl>wslc run -d --name demo-nginx -p 8080:80 nginx
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Windows 浏览器访问 http://localhost:8080
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看运行状态
+</span></span><span class=line><span class=cl>wslc ps
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 停止并清理
+</span></span><span class=line><span class=cl>wslc stop demo-nginx
+</span></span><span class=line><span class=cl>wslc rm demo-nginx</span></span></code></pre></td></tr></table></div></div><h4 id=示例-2交互式-ubuntu-开发环境>示例 2：交互式 Ubuntu 开发环境
+<a class=header-anchor href=#%e7%a4%ba%e4%be%8b-2%e4%ba%a4%e4%ba%92%e5%bc%8f-ubuntu-%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span><span class=lnt id=hl-18-5><a class=lnlinks href=#hl-18-5>5</a>
+</span><span class=lnt id=hl-18-6><a class=lnlinks href=#hl-18-6>6</a>
+</span><span class=lnt id=hl-18-7><a class=lnlinks href=#hl-18-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 拉取 22.04 稳定版
+</span></span><span class=line><span class=cl>wslc pull ubuntu:22.04
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 进入交互式终端，退出后容器自动销毁
+</span></span><span class=line><span class=cl>wslc run --rm -it ubuntu:22.04 bash
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 容器内可执行 apt、Python、CUDA 推理等操作</span></span></code></pre></td></tr></table></div></div><h4 id=示例-3跑一个-linux-桌面环境>示例 3：跑一个 Linux 桌面环境
+<a class=header-anchor href=#%e7%a4%ba%e4%be%8b-3%e8%b7%91%e4%b8%80%e4%b8%aa-linux-%e6%a1%8c%e9%9d%a2%e7%8e%af%e5%a2%83></a></h4><p>纯文本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wslc run -d --name=webtop -e PUID=1000 -e PGID=1000 -e TZ=Etc/UTC -p 3000:3000 -p 3001:3001 lscr.io/linuxserver/webtop:ubuntu-kde</span></span></code></pre></td></tr></table></div></div><p>浏览器打开 <code>http://localhost:3000</code>，一个完整的 Linux KDE 桌面就跑起来了！</p><h3 id=总结>总结
+<a class=header-anchor href=#%e6%80%bb%e7%bb%93></a></h3><p><strong>WSLC 是什么</strong>：微软把容器运行时直接做进了 WSL 2 内核，无需 Docker Desktop 即可在 Windows 上构建、运行、管理 Linux 容器。</p><p><strong>核心优势</strong>：免费、零额外安装、命令兼容 Docker、GPU 直通、资源占用低、文件 IO 性能翻倍。</p><p><strong>适合谁</strong>：本地轻量开发、临时数据库/中间件容器、AI 推理环境、不想装重型容器客户端的用户。</p><p><strong>不适合谁</strong>：需要 Docker Compose、K8s、可视化面板、企业集群管理的生产环境。</p><p><strong>最佳实践</strong>：wslc + Docker Desktop 双工具共存，轻量任务用 wslc，复杂编排用 Docker，按需切换。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/>计算机
+</a><a href=/tags/%E7%BD%91%E7%BB%9C/>网络</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>有价值，请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="你永远无法说服猴子说有一个上帝存在 - 微信">
+<span>微信</span></div></div></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/images/wechat_channel.jpg><span class=icon><i class="fab fa-weixin"></i>
+</span><span class=label>WeChat</span></a></div><div class=social-item><a target=_blank class=social-link href=/rss.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E7%BD%97%E6%B0%B8%E6%B5%A9%E6%AD%A3%E5%9C%A8%E9%AD%94%E5%8C%96/ rel=next title=罗永浩，正在魔化><i class="fa fa-chevron-left"></i> 罗永浩，正在魔化</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E4%B8%8B%E5%B2%97%E5%B7%A5%E4%BA%BA%E5%88%98%E7%BF%94%E5%BE%97%E4%BA%86%E4%BE%BF%E5%AE%9C%E8%BF%98%E5%8D%96%E4%B9%96/ rel=prev title=下岗工人刘翔，得了便宜还卖乖>下岗工人刘翔，得了便宜还卖乖
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2026
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>你永远无法说服猴子说有一个上帝存在</span></div><div class=custom-footer><meta name=referrer content="no-referrer"></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8","permalink":"/post/%E6%B2%A1%E6%9C%89nas%E4%B8%8D%E8%A6%81%E6%84%81windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8%E4%BD%93%E9%AA%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8A%9F%E8%83%BDwslc%E5%AE%B9%E5%99%A8/","title":"没有NAS不要愁！Windows使用WSL安装docker容器体验服务器功能","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"hostname":"/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":false,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"/js/3rd"}},"version":"4.8.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1788434577" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1788434580" defer></script></body></html>

@@ -128,6 +128,22 @@
   .placeholder { padding: 36px 0; text-align: center; }
   .placeholder .icon { font-size: 30px; margin-bottom: 10px; color: #C9CDD4; }
   .placeholder p { font-size: 13px; color: var(--text-3); line-height: 1.8; }
+  .gate { padding: 30px 0 18px; text-align: center; }
+  .gate .gate-icon { font-size: 36px; margin-bottom: 12px; }
+  .gate .gate-tip { font-size: 14px; color: var(--text-2); margin-bottom: 16px; }
+  .gate .gate-row { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+  .gate .gate-row input {
+    flex: 1; height: 42px; padding: 0 12px; font-size: 14px;
+    border: 1px solid var(--border); border-radius: 8px; outline: none; background: #fff;
+  }
+  .gate .gate-row input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(51, 112, 255, .12); }
+  .gate .gate-row button {
+    flex: none; height: 42px; padding: 0 20px; border: none; border-radius: 8px;
+    background: var(--primary); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: background .15s; -webkit-tap-highlight-color: transparent;
+  }
+  .gate .gate-row button:hover { background: var(--primary-dark); }
+  .gate .gate-err { color: #F54A45; font-size: 12.5px; margin-top: 10px; }
   .footer {
     text-align: center; font-size: 12px; color: #A9AEB8; margin-top: 18px; line-height: 1.8;
     white-space: pre-line;
@@ -159,6 +175,15 @@
     <h1 class="title" id="pageTitle"></h1>
     <p class="desc" id="pageDesc"></p>
     <div class="divider"></div>
+    <div class="gate" id="gate" hidden>
+      <div class="gate-icon">&#128274;</div>
+      <p class="gate-tip">本查询系统已开启密码保护，请输入密码后查询</p>
+      <div class="gate-row">
+        <input type="password" id="gateInput" placeholder="请输入密码" autocomplete="off">
+        <button id="gateBtn">进入查询</button>
+      </div>
+      <p class="gate-err" id="gateErr" hidden>密码错误，请重试</p>
+    </div>
     <div class="filter-grid" id="filterGrid"></div>
     <div class="query-row">
       <button class="query" id="queryBtn">
@@ -199,6 +224,8 @@
     return t && t.columns && t.columns.length && Array.isArray(t.rows);
   });
   var themeColor = DATA.themeColor || '#3370FF';
+  var PASS = DATA.password || '';   // 后台设置的查询密码
+  var unlocked = !PASS;             // 是否已通过密码验证
 
   var PAGE_SIZE = 50;
 
@@ -569,6 +596,33 @@
     }
   }
 
+  // ---- 密码锁定 ----
+  function applyLock() {
+    var locked = !unlocked;
+    $('gate').hidden = !locked;
+    $('tableSelectRow').hidden = locked || tables.length <= 1;
+    $('filterGrid').style.display = locked ? 'none' : '';
+    document.querySelector('.query-row').style.display = locked ? 'none' : 'flex';
+    if (locked) {
+      $('resultArea').hidden = true;
+      $('initPlaceholder').hidden = true;
+      setTimeout(function () { $('gateInput').focus(); }, 50);
+    } else {
+      $('initPlaceholder').hidden = false;
+    }
+  }
+  function tryUnlock() {
+    if ($('gateInput').value === PASS) {
+      unlocked = true;
+      try { sessionStorage.setItem('tq_unlocked', '1'); } catch (e) {}
+      $('gateErr').hidden = true;
+      applyLock();
+    } else {
+      $('gateErr').hidden = false;
+      $('gateInput').select();
+    }
+  }
+
   // ---- 初始化 ----
   function init() {
     applyTheme();
@@ -595,6 +649,15 @@
     $('initPlaceholder').hidden = false;
     $('initPlaceholderText').textContent = '输入条件后点击「查询」';
 
+    if (PASS) {
+      try { if (sessionStorage.getItem('tq_unlocked') === '1') unlocked = true; } catch (e) {}
+      applyLock();
+      $('gateBtn').addEventListener('click', tryUnlock);
+      $('gateInput').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+
     var foot = [];
     if (DATA.footerText) foot.push(String(DATA.footerText).trim());
     if (DATA.updatedAt) {
@@ -617,6 +680,7 @@
   // 调试/自动化入口（不影响正常使用）
   window.__TQ__ = {
     runQuery: runQuery,
+    tryUnlock: tryUnlock,
     setCondition: function (col, value) {
       filters.forEach(function (f) { if (f.col === col) f.input.value = value; });
       updateClearLink();
